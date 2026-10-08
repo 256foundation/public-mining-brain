@@ -20,6 +20,20 @@ The runner environment needs:
 | **Freshness scan** | Weekly | Registry sources with cadence `weekly`/`event`; volatile topics (`firmware/`, `pools/`, `economics/`, `hashrate-market/`) |
 | **Deep sweep** | Monthly | Full registry; lint judgment pass; orphan/backlog cleanup |
 | **Event-driven** | On trigger | Breaking changes: new firmware releases, pool policy changes, difficulty epochs, major industry news |
+| **Capture layer** | Continuous | Telegram/Discord/X watchers and GitHub monitors feed `raw/inbox/` (see below) |
+
+## Capture Layer (community & social sources)
+
+Chat and social sources are captured by dedicated bots/watchers (run on the automation infrastructure — e.g., buzz relay), which feed this repo through the same PR-only contract:
+
+1. **History exports** — one-time dumps (Telegram chat export, Discord server export, X archive) land in `raw/inbox/` as dated archive files, then get triaged like any source.
+2. **Live watchers** — Telegram bots (256F, Heatpunks groups), the X scraper (follows + tags of `256f-x` / `heatpunks-x`), and GitHub monitors (commits/PRs/issues/discussions of every repo in the registry's Open-Source Projects section) append incremental captures to `raw/inbox/`:
+   - `raw/inbox/YYYY-MM-DD-<source-id>-digest.md` — periodic digests (recommended: daily or weekly batch per source)
+   - `raw/inbox/YYYY-MM-DD-<source-id>-<slug>.md` — individual high-signal captures (release notes, major announcements, block found, significant threads)
+3. **Posture per registry**: Discourse forums and X are public → `verbatim` allowed. Telegram/Discord are gated communities → `extract` by default (knowledge extracted with attribution to public handles; personal details, wallet info, and private matters stripped). Tyler can flip any specific source to `verbatim`.
+4. Watchers open PRs on the same loop cadence (batched — one PR per loop run, not per message).
+5. **Signal triage**: most chat volume is noise. The watcher (or the ingest agent on scan) extracts *knowledge claims, decisions, field reports, links, and community consensus* — not transcripts. A claim that matters gets compiled into a wiki article per the normal Ingest flow; chatter that adds nothing gets logged as No material with the digest kept in raw/.
+
 
 ## Freshness scan SOP
 
