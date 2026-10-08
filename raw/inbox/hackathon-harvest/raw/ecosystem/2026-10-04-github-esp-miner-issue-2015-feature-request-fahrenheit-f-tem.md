@@ -1,0 +1,67 @@
+# bitaxeorg/ESP-Miner issue #2015: Feature request: Fahrenheit (°F) temperature display option
+
+> Source: https://github.com/bitaxeorg/ESP-Miner/issues/2015
+> Collected: 2026-10-07
+> Published: 2026-10-04
+
+- Repository: bitaxeorg/ESP-Miner
+- Type: issue
+- Number: 2015
+- State: open
+- Author: simdog765
+- Opened: 2026-10-04
+- Closed: n/a
+- Labels: none
+
+## Description
+
+Hi! I’d like to request an option in AxeOS/ESP-Miner to display temperatures in Fahrenheit (°F) as an alternative to Celsius (°C).
+
+I’m currently using a Bitaxe Gamma 602 on ESP-Miner/AxeOS v2.15.3.
+
+It would be helpful to have a simple setting such as:
+
+* Temperature units: Celsius / Fahrenheit
+* Celsius can remain the default
+* The setting could affect displayed temperatures only, while internal thermal-control values and safety logic remain in Celsius
+
+This would make the dashboard easier to read for users in the U.S. who are more familiar with Fahrenheit.
+
+Thanks for considering it!
+
+
+Note: Issues are not for 
+customer support, configuration or discussion. For those topics please consult with your HW vendor or the OSMU Discord at: https://osmu.bitaxe.org
+
+**Describe the bug**
+A clear and concise description of what the bug is.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
+
+**Expected behavior**
+A clear and concise description of what you expected to happen.
+
+**Screenshots & Photos**
+If applicable, add AxeOS screenshots and/or photos of your Bitaxe to help explain your problem.
+
+**Hardware (please complete the following information):**
+ - Bitaxe HW version: [e.g. Ultra 205, Supra 401, etc]
+ - Bitaxe HW vendor: [Where you purchased the Bitaxe, or self-built]
+ - ESP-Miner FW version: [e.g. 2.1.1, etc]
+ - Hash Frequency:
+ - Voltage:
+ - Pool URL, Port, User:
+
+**Additional context**
+Add any other context about the problem here.
+
+## Comments
+
+### mutatrum on 2026-10-04
+
+Maybe that can be done after we add i18n (#1532). It'll probably be easier then. And we should also add Kelvin.

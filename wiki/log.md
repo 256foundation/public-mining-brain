@@ -16,4 +16,10 @@ Append-only operation log. Newest entries at the bottom.
 - New source classes: chat / social / datasheet / code; Capture Layer added to AGENT-PLAYBOOK.md
 - Community-source rule: gated chats default to `extract` posture (PII hygiene); forums/X `verbatim`
 
+## [2026-10-08] ingest | hackathon harvest from 256foundation/public-brain
+- Disposition: New (staged to inbox, compile pending gate)
+- Raw: raw/inbox/hackathon-harvest/ (~500 sourced captures: ESP-Miner issues, asic-rs PR history #1-#409, OSMU Lab chip pages, POD256 transcripts e067-e127, BIP texts, 256F site/newsletter); raw/inbox/hackathon-wiki/ (~70 candidate drafts incl. wiki-new-sources branch)
+- Note: provenance + verification rules in raw/inbox/HARVEST.md — all material UNVERIFIED until re-compiled through our grounding invariant
+
+
 

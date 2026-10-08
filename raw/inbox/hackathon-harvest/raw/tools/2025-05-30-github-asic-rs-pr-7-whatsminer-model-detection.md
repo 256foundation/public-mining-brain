@@ -1,0 +1,61 @@
+# 256foundation/asic-rs pull request #7: WhatsMiner model detection
+
+> Source: https://github.com/256foundation/asic-rs/pull/7
+> Collected: 2026-10-07
+> Published: 2025-05-30
+
+- Repository: 256foundation/asic-rs
+- Type: pull request
+- Number: 7
+- State: closed
+- Author: s0kil
+- Opened: 2025-05-30
+- Closed: 2025-05-30
+- Labels: none
+
+## Description
+
+As discussed, better model detection accounting for devdetails deprecation
+
+Tested on these WM FW versions:
+```
+20240924.16.REL
+20240930.11.REL
+20241011.12.Rel
+20241012.13.REL
+20241022.15.REL
+20241030.17.REL
+20241108.22.Rel
+20241112.17.REL
+20241113.16.REL
+20241115.18.REL
+20241202.14.REL
+20241213.16.REL
+20241225.12.REL
+20250103.16.REL
+20250107.10.REL
+20250108.14.REL
+20250109.17.REL
+20250120.16.Rel
+20250121.16.REL
+20250210.10.REL
+20250212.11.REL
+20250217.11.REL
+20250304.15.REL
+20250306.11.REL
+20250307.16.REL
+20250314.15.REL
+20250319.16.REL
+20250321.14.Rel
+20250331.16.REL
+20250402.17.REL
+20250403.17.REL
+20250409.15.REL
+20250425.12.REL
+20250508.11.REL
+20250519.17.REL
+20250520.17.REL
+20250522.16.REL
+20250523.18.REL
+
+```

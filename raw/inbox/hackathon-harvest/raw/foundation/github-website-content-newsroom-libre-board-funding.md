@@ -1,0 +1,88 @@
+# 256foundation/website: content/newsroom/libre-board-funding.mdx
+
+> Source: https://github.com/256foundation/website/blob/HEAD/content/newsroom/libre-board-funding.mdx
+> Collected: 2026-10-07
+> Published: Unknown
+
+---
+title: "Additional Funding Reactivates Libre Board's 2026 Term: Revision Three Gets Validated"
+seoTitle: "Additional funding reactivates Libre Board's 2026 term"
+date: "2026-09-30"
+author: "256 Foundation"
+category: "grant-announcement"
+project: "Libre Board"
+program: "core"
+term: "Four months, September 2026 to December 2026"
+excerpt: "After a funding pause, the Foundation reactivates Libre Board's 2026 term for four months, financing the final validation so that anyone can build the open reference design with confidence."
+coverImage: "/newsroom/libre-board-funding/cover.webp"
+ogImage: "/newsroom/libre-board-funding/cover.webp"
+featured: false
+---
+
+The 256 Foundation is excited to announce additional funding that reactivates [Libre Board](https://libreboard.org)'s 2026 term, part of the Core Projects Program. The design already exists. The point of this stretch is the final polish and validation on revision three of the open hardware control board reference design, so that anyone can build a Libre Board and know it will work. The reactivated stretch runs four months, from September through December.
+
+The 2026 term was set in April and scheduled to run through December, and it was contingent on funding. Funding ran short, and the work paused. This grant restarts it for the final four months, and the term extends only if the funding holds.
+
+---
+
+## The Gap
+
+A control board silently decides what a miner is allowed to be.
+
+It sits between the hashboards and everything else, and it holds the firmware, the interfaces, and the power sequencing. Want your own firmware instead of the one the manufacturer shipped? Want a display, a temperature probe, or Wi-Fi on a machine in a remote shed? The closed board often says no, and because it is closed, you cannot read the code, change it, or build around it.
+
+Libre Board exists to remove that ceiling. It is an open hardware control board that runs full Linux rather than a vendor firmware image, so the mining firmware is one program on a general-purpose computer instead of the whole point of the machine. Every interface a mining system might need is exposed and documented, and the design file is there for anyone to read, copy, and strip down to their own parts list and form factor.
+
+It is licensed CERN-OHL-S and it is community open source. No permission is required to build on it.
+
+The design is already in hand. It works. What remains is the final polish, the small tweaks, and the validation that turn a working prototype into a reference anyone can build with confidence. That is what this term funds.
+
+## What the Funding Covers
+
+This is not a new term. The 2026 term was set in April, scheduled through December, and contingent on funding from the start. It began, the money ran out, and the work stopped. Secured funding reactivates it. The scope, drafted by the Foundation and the project's maintainer and approved by the board, funds the remaining stretch over four months, from September through December: the final polish, tweaks, and validation on revision three that make the design buildable by anyone.
+
+That work covers the unglamorous engineering that separates a reference design from a producible one:
+
+- Validating the power and interface stages against their rated ranges, from 12 to 24 volts DC and across the supported compute options
+- Confirming the full peripheral set, including Ethernet, WiFi, HDMI, NVMe, the Raspberry Pi 40-pin header, GPIO, and fan connectors
+- Checking mechanical fit and connector placement so the board drops into real enclosures and rigs
+- Bringing up the board end to end with [Mujina](https://mujina.org), the open-source mining firmware the Foundation also funds, so that a working board and working firmware are proven together
+- Cutting revision three to fabrication, with the bill of materials and design files updated to match
+
+When the term ends, the files and the bill of materials will sit in the project's [GitHub repository](https://github.com/256foundation/libre-board), complete and validated. Anyone will be able to order the parts, fabricate a board, and flash firmware onto it knowing it will work.
+
+The term is renewable. If the work is going well and there is more to do, it continues.
+
+## Who Is Building It
+
+Libre Board is designed and maintained by [Schnitzel](https://x.com/Schnitzel), who has been the project's architect from the start and has already brought the board through a working prototype, including hardware demonstrations that put Libre Board and Mujina together on real hardware.
+
+The Foundation funds the work. The project's achievements are the project's. Schnitzel sets the technical direction, does the engineering, and decides what the board is. The Foundation's job is to make sure the work is paid for, in public, under an open license, with the design files staying in the commons.
+
+## What's Next
+
+The goal is concrete. After this term, anyone should be able to take the design files and the bill of materials from the [GitHub repository](https://github.com/256foundation/libre-board), build a Libre Board, flash firmware onto it, and know it will work. No guesswork, no missing parts, no revision still in flux.
+
+Development happens in public. Schematics, board files, issues, and progress all live in the repository and on the Foundation forum, where anyone can follow along or contribute without asking.
+
+## Keep It Running
+
+A grant like this one does not run on a single lump of money. It runs on continuous support. Donations that arrive while the work is underway, at any size, are what keep a funded term on schedule instead of stopping and restarting while we wait for more funding to arrive.
+
+We are also looking for larger, longer commitments. More funding does not only pay for more work. It lets the Foundation promise a grantee a full, uninterrupted term, so an engineer can plan months ahead and build without wondering whether the next segment will be funded. That stability is the difference between a project that stalls and one that ships.
+
+**Donate →** [Become a supporter](/donate) · **Discuss a larger commitment →** [Get in touch](/contact)
+
+## Get Involved
+
+**Read the design →** [libreboard.org](https://libreboard.org) · [github.com/256foundation/libre-board](https://github.com/256foundation/libre-board)
+
+**Follow the work and ask questions →** [forum.256foundation.org](https://forum.256foundation.org)
+
+**Fund the work →** [Become a supporter](/donate)
+
+Libre Board is community open source. The design already exists; this term makes it buildable by everyone. Anyone can contribute, and no grant is required to do so. If you design hardware, the board files are public. If you run a miner, the interfaces are documented. If you build products, the reference is sitting there to use.
+
+---
+
+*The 256 Foundation is a 501(c)(3) nonprofit directly funding the core contributors building the open-source Bitcoin mining stack. [Become a supporter →](/donate)*

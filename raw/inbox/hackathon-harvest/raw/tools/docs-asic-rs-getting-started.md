@@ -1,0 +1,254 @@
+# Getting Started - asic-rs
+
+> Source: https://256foundation.github.io/asic-rs/getting-started
+> Collected: 2026-10-07
+> Published: Unknown
+
+# Getting Started[¶](https://256foundation.github.io#getting-started)
+
+All network operations are asynchronous in Rust and Python. Rust uses `async`
+methods returning `Result<T>` where an operation can fail. Python exposes
+awaitable methods and uses `None` for values or operations that are unavailable
+for a miner. Go methods are synchronous and return `error`; a missing miner is
+`asic_go.ErrNotFound`.
+
+## Get One Miner[¶](https://256foundation.github.io#get-one-miner)
+
+If you know a miner's IP address, let the factory identify the firmware and construct the matching miner implementation.
+
+```
+use asic_rs::MinerFactory;
+use std::{net::IpAddr, str::FromStr};
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let factory = MinerFactory::new();
+    let ip = IpAddr::from_str("192.168.1.10")?;
+    if let Some(miner) = factory.get_miner(ip).await? {
+        println!(
+            "Found {} {} at {}",
+            miner.get_device_info().make,
+            miner.get_device_info().model,
+            ip
+        );
+    }
+    Ok(())
+}
+```
+```
+import asyncio
+from pyasic_rs import MinerFactory
+async def main() -> None:
+    factory = MinerFactory()
+    miner = await factory.get_miner("192.168.1.10")
+    if miner is not None:
+        print(f"Found {miner.make} {miner.model} at {miner.ip}")
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+```
+factory := asic_go.NewMinerFactory()
+defer factory.Close()
+miner, err := factory.GetMiner("192.168.1.10")
+if errors.Is(err, asic_go.ErrNotFound) {
+    return
+}
+if err != nil {
+    log.Fatal(err)
+}
+defer miner.Close()
+info, err := miner.GetDeviceInfo()
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Printf("Found %s %s\n", info.Make, info.Model)
+```
+## Scan A Network[¶](https://256foundation.github.io#scan-a-network)
+
+Use a subnet, octet selectors, or range string when the exact IP address is not known. Large scans use bounded concurrency.
+
+```
+use asic_rs::MinerFactory;
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let miners = MinerFactory::from_subnet("192.168.1.0/24")?
+        .with_concurrent_limit(2500)
+        .scan()
+        .await?;
+    println!("Found {} miner(s)", miners.len());
+    Ok(())
+}
+```
+```
+import asyncio
+from pyasic_rs import MinerFactory
+async def main() -> None:
+    miners = await (
+        MinerFactory.from_subnet("192.168.1.0/24")
+        .with_concurrent_limit(2500)
+        .scan()
+    )
+    print(f"Found {len(miners)} miner(s)")
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+```
+factory, err := asic_go.NewMinerFactoryFromSubnet("192.168.1.0/24")
+if err != nil {
+    log.Fatal(err)
+}
+defer factory.Close()
+miners, err := factory.WithConcurrentLimit(2500).Scan()
+if err != nil {
+    log.Fatal(err)
+}
+for _, miner := range miners {
+    defer miner.Close()
+}
+fmt.Printf("Found %d miner(s)\n", len(miners))
+```
+Range helpers are available in Rust, Python, and Go.
+
+```
+let by_octets = MinerFactory::from_octets("192", "168", "1", "1-255")?;
+let by_range = MinerFactory::from_range("192.168.1.1-255")?;
+```
+```
+by_octets = MinerFactory.from_octets("192", "168", "1", "1-255")
+by_range = MinerFactory.from_range("192.168.1.1-255")
+```
+```
+byOctets, err := asic_go.NewMinerFactoryFromOctets("192", "168", "1", "1-255")
+byRange, err := asic_go.NewMinerFactoryFromRange("192.168.1.1-255")
+```
+## Stream Results[¶](https://256foundation.github.io#stream-results)
+
+Streaming scans let you act on miners as soon as they are found.
+
+```
+use asic_rs::MinerFactory;
+use futures::StreamExt;
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let mut stream = MinerFactory::from_subnet("192.168.1.0/24")?.scan_stream();
+    while let Some(miner) = stream.next().await {
+        println!("{} {}", miner.get_device_info().make, miner.get_device_info().model);
+    }
+    Ok(())
+}
+```
+```
+factory = MinerFactory.from_subnet("192.168.1.0/24")
+async for miner in factory.scan_stream():
+    print(f"{miner.make} {miner.model}")
+```
+Use the IP-preserving stream when you need to track unsupported or offline addresses.
+
+```
+let mut stream = MinerFactory::from_subnet("192.168.1.0/24")?.scan_stream_with_ip();
+while let Some((ip, miner)) = stream.next().await {
+    println!("{ip}: {}", miner.is_some());
+}
+```
+```
+async for ip, miner in factory.scan_stream_with_ip():
+    print(ip, miner is not None)
+```
+## Gather Data[¶](https://256foundation.github.io#gather-data)
+
+`get_data()` returns a full standardized telemetry snapshot. Focused `get_*`
+methods are useful when you only need one field.
+
+```
+let data = miner.get_data().await;
+let mac = miner.get_mac().await;
+println!("{} is mining: {}", data.ip, data.is_mining);
+println!("MAC: {mac:?}");
+```
+```
+data = await miner.get_data()
+mac = await miner.get_mac()
+print(f"{data.ip} is mining: {data.is_mining}")
+print(f"MAC: {mac}")
+```
+```
+data, err := miner.GetData()
+if err != nil {
+    log.Fatal(err)
+}
+mac, err := miner.GetMAC()
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Printf("%s is mining: %v\n", data.IP, data.IsMining)
+if mac != nil {
+    fmt.Printf("MAC: %s\n", *mac)
+}
+```
+Skip expensive fields when you do not need them.
+
+```
+use asic_rs::core::data::collector::DataField;
+let data = miner
+    .get_data_filtered(vec![DataField::Hashboards, DataField::Chips])
+    .await;
+```
+```
+from pyasic_rs.data import DataField
+data = await miner.get_data(exclude=[DataField.Hashboards, DataField.Chips])
+```
+```
+data, err := miner.GetData(asic_go.DataFieldHashboards, asic_go.DataFieldChips)
+if err != nil {
+    log.Fatal(err)
+}
+```
+## Authenticate[¶](https://256foundation.github.io#authenticate)
+
+Backends use their built-in default credentials unless you override them. Set credentials before starting concurrent operations on that miner handle.
+
+```
+use asic_rs::core::traits::auth::MinerAuth;
+miner.set_auth(MinerAuth::new("admin", "secret"));
+let data = miner.get_data().await;
+```
+```
+miner.set_auth("admin", "secret")
+data = await miner.get_data()
+```
+```
+if err := miner.SetAuth("admin", "secret"); err != nil {
+    log.Fatal(err)
+}
+data, err := miner.GetData()
+if err != nil {
+    log.Fatal(err)
+}
+```
+## Control A Miner[¶](https://256foundation.github.io#control-a-miner)
+
+Control support depends on miner make, model, and firmware. Check the matching support value before exposing controls in user-facing tools.
+
+```
+if miner.supports_restart() {
+    let restarted = miner.restart().await?;
+    println!("Restart accepted: {restarted}");
+}
+```
+```
+if miner.supports_restart:
+    restarted = await miner.restart()
+    print(f"Restart accepted: {restarted}")
+```
+```
+caps, err := miner.Supports()
+if err != nil {
+    log.Fatal(err)
+}
+if caps.Restart {
+    restarted, err := miner.Restart()
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("Restart accepted: %v\n", restarted)
+}
+```

@@ -1,0 +1,639 @@
+# 256foundation/asic-rs: docs-shared/guide.md
+
+> Source: https://github.com/256foundation/asic-rs/blob/HEAD/docs-shared/guide.md
+> Collected: 2026-10-07
+> Published: Unknown
+
+asic-rs is an async miner management and control library for ASIC miners.
+It provides one set of concepts across Rust, Python, and Go: a factory discovers
+miners, a miner object gathers data and performs supported control operations,
+and shared data/config models describe the result.
+
+The Rust crate is published as `asic-rs`. The Python bindings are published as
+`pyasic_rs` and expose the same high-level API through PyO3 classes and
+Pydantic-compatible data models. The Go bindings live in-tree as
+`github.com/256foundation/asic-rs/go/asic_go` and wrap a small C ABI (`asic-rs-ffi`).
+
+## API Map
+
+| Concept | Rust | Python | Go |
+| --- | --- | --- | --- |
+| Discovery and miner construction | [`MinerFactory`][minerfactory] | `pyasic_rs.MinerFactory` | `asic_go.MinerFactory` |
+| Miner handle | `Box<dyn Miner>` | `pyasic_rs.Miner` | `asic_go.Miner` |
+| Full telemetry snapshot | `MinerData` | `pyasic_rs.data.MinerData` | `asic_go.MinerData` |
+| Hashrate values | `HashRate`, `HashRateUnit` | `HashRate`, `HashRateUnit` | `HashRate`, `HashRateUnit` |
+| Pool configuration | `PoolGroupConfig`, `PoolConfig` | `PoolGroupConfig`, `PoolConfig` (aliases: `PoolGroup`, `Pool`) | `PoolGroupConfig`, `PoolConfig` |
+| Fan configuration | `FanConfig` | `FanConfig` | `FanConfig` |
+| Tuning configuration | `TuningConfig` | `TuningConfig` | `TuningConfig` |
+| Optional controls/configs | `supports_*` methods | `supports_*` properties | `Supports()` |
+
+All network operations are asynchronous in Rust and Python. Rust methods
+generally return `Result<T>` and use `Option<T>` when a miner does not expose a
+value. Python methods are awaitable and use `None` for missing or unsupported
+values. Go methods are synchronous (the FFI drives a Tokio runtime) and return
+`error`; a missing miner is `asic_go.ErrNotFound`.
+
+## Examples
+
+The paired examples below use stable markers so documentation tools can render
+Rust, Python, and Go snippets as language tabs while GitHub, PyPI, and docs.rs
+still show the examples plainly.
+
+### Get One Miner
+
+If the miner IP is known, ask `MinerFactory` to identify the firmware and build
+the correct miner implementation.
+
+<!-- asic-rs-example:get-miner rust -->
+
+```rust,no_run
+use asic_rs::MinerFactory;
+use std::{net::IpAddr, str::FromStr};
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let factory = MinerFactory::new();
+    let ip = IpAddr::from_str("192.168.1.10")?;
+
+    if let Some(miner) = factory.get_miner(ip).await? {
+        println!("Found {} {} at {}", miner.get_device_info().make, miner.get_device_info().model, ip);
+    }
+
+    Ok(())
+}
+```
+
+<!-- asic-rs-example:get-miner python -->
+
+```python
+import asyncio
+
+from pyasic_rs import MinerFactory
+
+
+async def main() -> None:
+    factory = MinerFactory()
+    miner = await factory.get_miner("192.168.1.10")
+
+    if miner is not None:
+        print(f"Found {miner.make} {miner.model} at {miner.ip}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+<!-- asic-rs-example:get-miner go -->
+
+```go
+package main
+
+import (
+    "errors"
+    "fmt"
+    "log"
+
+    "github.com/256foundation/asic-rs/go/asic_go"
+)
+
+func main() {
+    factory := asic_go.NewMinerFactory()
+    defer factory.Close()
+
+    miner, err := factory.GetMiner("192.168.1.10")
+    if errors.Is(err, asic_go.ErrNotFound) {
+        return
+    }
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer miner.Close()
+
+    info, err := miner.GetDeviceInfo()
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("Found %s %s\n", info.Make, info.Model)
+}
+```
+
+### Scan A Network
+
+When the exact IP is not known, add a subnet, octet range, or range string to
+the factory and scan it. Large scans automatically use bounded concurrency.
+
+<!-- asic-rs-example:scan rust -->
+
+```rust,no_run
+use asic_rs::MinerFactory;
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let miners = MinerFactory::from_subnet("192.168.1.0/24")?
+        .with_concurrent_limit(2500)
+        .scan()
+        .await?;
+
+    println!("Found {} miner(s)", miners.len());
+    Ok(())
+}
+```
+
+<!-- asic-rs-example:scan python -->
+
+```python
+import asyncio
+
+from pyasic_rs import MinerFactory
+
+
+async def main() -> None:
+    miners = await (
+        MinerFactory.from_subnet("192.168.1.0/24")
+        .with_concurrent_limit(2500)
+        .scan()
+    )
+
+    print(f"Found {len(miners)} miner(s)")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+<!-- asic-rs-example:scan go -->
+
+```go
+factory, err := asic_go.NewMinerFactoryFromSubnet("192.168.1.0/24")
+if err != nil {
+    log.Fatal(err)
+}
+defer factory.Close()
+
+miners, err := factory.WithConcurrentLimit(2500).Scan()
+if err != nil {
+    log.Fatal(err)
+}
+for _, miner := range miners {
+    defer miner.Close()
+}
+fmt.Printf("Found %d miner(s)\n", len(miners))
+```
+
+Other range constructors are available in Rust, Python, and Go:
+
+<!-- asic-rs-example:ranges rust -->
+
+```rust,no_run
+# use asic_rs::MinerFactory;
+# fn main() -> anyhow::Result<()> {
+let by_octets = MinerFactory::from_octets("192", "168", "1", "1-255")?;
+let by_range = MinerFactory::from_range("192.168.1.1-255")?;
+# let _ = (by_octets, by_range);
+# Ok(())
+# }
+```
+
+<!-- asic-rs-example:ranges python -->
+
+```python
+from pyasic_rs import MinerFactory
+
+by_octets = MinerFactory.from_octets("192", "168", "1", "1-255")
+by_range = MinerFactory.from_range("192.168.1.1-255")
+```
+
+<!-- asic-rs-example:ranges go -->
+
+```go
+byOctets, err := asic_go.NewMinerFactoryFromOctets("192", "168", "1", "1-255")
+byRange, err := asic_go.NewMinerFactoryFromRange("192.168.1.1-255")
+```
+
+### Stream Scan Results
+
+Use streaming scans when you want to act on miners as soon as they are found
+instead of waiting for the whole scan to finish.
+
+<!-- asic-rs-example:scan-stream rust -->
+
+```rust,no_run
+use asic_rs::MinerFactory;
+use futures::StreamExt;
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let mut stream = MinerFactory::from_subnet("192.168.1.0/24")?.scan_stream();
+
+    while let Some(miner) = stream.next().await {
+        println!("{} {}", miner.get_device_info().make, miner.get_device_info().model);
+    }
+
+    Ok(())
+}
+```
+
+<!-- asic-rs-example:scan-stream python -->
+
+```python
+import asyncio
+
+from pyasic_rs import MinerFactory
+
+
+async def main() -> None:
+    factory = MinerFactory.from_subnet("192.168.1.0/24")
+
+    async for miner in factory.scan_stream():
+        print(f"{miner.make} {miner.model}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### Gather Data
+
+`get_data` returns a full `MinerData` snapshot. Individual `get_*` calls are
+available when only one field is needed.
+
+<!-- asic-rs-example:data rust -->
+
+```rust,no_run
+use asic_rs::MinerFactory;
+use std::{net::IpAddr, str::FromStr};
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let factory = MinerFactory::new();
+    let ip = IpAddr::from_str("192.168.1.10")?;
+
+    if let Some(miner) = factory.get_miner(ip).await? {
+        let data = miner.get_data().await;
+        let mac = miner.get_mac().await;
+
+        println!("{} is mining: {}", data.ip, data.is_mining);
+        println!("MAC: {mac:?}");
+    }
+
+    Ok(())
+}
+```
+
+<!-- asic-rs-example:data python -->
+
+```python
+import asyncio
+
+from pyasic_rs import MinerFactory
+
+
+async def main() -> None:
+    miner = await MinerFactory().get_miner("192.168.1.10")
+    if miner is None:
+        return
+
+    data = await miner.get_data()
+    mac = await miner.get_mac()
+
+    print(f"{data.ip} is mining: {data.is_mining}")
+    print(f"MAC: {mac}")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+<!-- asic-rs-example:data go -->
+
+```go
+factory := asic_go.NewMinerFactory()
+defer factory.Close()
+miner, err := factory.GetMiner("192.168.1.10")
+if err != nil {
+    log.Fatal(err)
+}
+defer miner.Close()
+
+data, err := miner.GetData()
+if err != nil {
+    log.Fatal(err)
+}
+mac, err := miner.GetMAC()
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Printf("%s is mining: %v\n", data.IP, data.IsMining)
+if mac != nil {
+    fmt.Printf("MAC: %s\n", *mac)
+}
+```
+
+`data.operating_state` is an optional `OperatingState` enum for firmware that
+reports a detailed runtime state. It distinguishes mining, stable operation,
+startup, tuning, frequency/voltage adjustment, idling, pause, suspension,
+restriction, stopping, restart, cooldown, degraded mining, and errors.
+`Mining` alone does not promise that tuning is complete: `Stable` is only used
+when the firmware explicitly reports it.
+
+ePIC/UMC, VNish, Braiins REST (25.07+), MARA, and Proto populate this field from
+responses already used by the data collector. For example, ePIC's
+`AdjustingClockVoltage` becomes `OperatingState::AdjustingClockVoltage {}` in
+Rust and `OperatingState.AdjustingClockVoltage()` in Python. VNish's
+`auto-tuning` becomes `Tuning`; Braiins status `3` becomes `Paused`.
+
+The enum serializes identically in Rust and Python/Pydantic as a tagged object:
+`{"type": "Mining"}` or `{"type": "Unknown", "raw": "FutureFirmwareState"}`.
+Unrecognized labels (and Braiins numeric codes) retain their original value in
+`Unknown.raw`. Rust enums can be matched directly; Python callers can use
+`isinstance(state, OperatingState.Tuning)` or compare against
+`OperatingState.Tuning()`. States are hashable for grouping miners.
+
+Missing, null, invalid, or unsupported state telemetry remains `None`, including
+backends that only expose a boolean, hashrate, or configured work mode. Existing
+`is_mining` behavior is unchanged and may be true during startup or tuning, or
+default when a response is missing. It is not derived from `operating_state`.
+Use `miner.get_operating_state()` to fetch just this field, or exclude
+`DataField.OperatingState` (`DataField::OperatingState` in Rust) from a snapshot.
+
+`data.devfee_connected` reports developer-fee connection health when firmware
+exposes it: `True`/`Some(true)` is connected, `False`/`Some(false)` is
+disconnected, and `None` means no usable status is exposed. ePIC/UMC derives it
+from `Last Devfee Error` in `/summary` (without using the hidden devfee API),
+VNish derives it from typed `DevFee` pool status, and LuxOS derives it from
+`FeeStatus`. Use `miner.get_devfee_connected()` for this field alone.
+
+To reduce collection work, exclude fields from a full data snapshot.
+
+<!-- asic-rs-example:data-exclude rust -->
+
+```rust,no_run
+# use asic_rs::MinerFactory;
+use asic_rs::core::data::collector::DataField;
+# use std::{net::IpAddr, str::FromStr};
+# #[tokio::main]
+# async fn main() -> anyhow::Result<()> {
+# let factory = MinerFactory::new();
+# let ip = IpAddr::from_str("192.168.1.10")?;
+# if let Some(miner) = factory.get_miner(ip).await? {
+let data = miner
+    .get_data_filtered(vec![DataField::Hashboards, DataField::Chips])
+    .await;
+# let _ = data;
+# }
+# Ok(())
+# }
+```
+
+<!-- asic-rs-example:data-exclude python -->
+
+```python
+from pyasic_rs.data import DataField
+
+data = await miner.get_data(exclude=[DataField.Hashboards, DataField.Chips])
+```
+
+<!-- asic-rs-example:data-exclude go -->
+
+```go
+data, err := miner.GetData(asic_go.DataFieldHashboards, asic_go.DataFieldChips)
+if err != nil {
+    log.Fatal(err)
+}
+```
+
+### Authentication
+
+Backends use their built-in default credentials unless you override them.
+Set credentials before starting other operations on that miner.
+
+<!-- asic-rs-example:auth rust -->
+
+```rust,no_run
+use asic_rs::MinerFactory;
+use asic_rs::core::traits::auth::MinerAuth;
+use std::{net::IpAddr, str::FromStr};
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let factory = MinerFactory::new();
+    let ip = IpAddr::from_str("192.168.1.10")?;
+
+    if let Some(mut miner) = factory.get_miner(ip).await? {
+        miner.set_auth(MinerAuth::new("admin", "secret"));
+        let data = miner.get_data().await;
+        println!("{:?}", data.hashrate);
+    }
+
+    Ok(())
+}
+```
+
+<!-- asic-rs-example:auth python -->
+
+```python
+miner = await MinerFactory().get_miner("192.168.1.10")
+if miner is not None:
+    miner.set_auth("admin", "secret")
+    data = await miner.get_data()
+```
+
+<!-- asic-rs-example:auth go -->
+
+```go
+if err := miner.SetAuth("admin", "secret"); err != nil {
+    log.Fatal(err)
+}
+data, err := miner.GetData()
+if err != nil {
+    log.Fatal(err)
+}
+```
+
+### Control A Miner
+
+Control support depends on the miner and firmware. Check the matching
+`supports_*` value before issuing a control command in user-facing tools.
+
+<!-- asic-rs-example:control rust -->
+
+```rust,no_run
+# use asic_rs::MinerFactory;
+# use std::{net::IpAddr, str::FromStr};
+# #[tokio::main]
+# async fn main() -> anyhow::Result<()> {
+# let factory = MinerFactory::new();
+# let ip = IpAddr::from_str("192.168.1.10")?;
+# if let Some(miner) = factory.get_miner(ip).await? {
+if miner.supports_restart() {
+    let restarted = miner.restart().await?;
+    println!("Restart accepted: {restarted}");
+}
+# }
+# Ok(())
+# }
+```
+
+<!-- asic-rs-example:control python -->
+
+```python
+if miner.supports_restart:
+    restarted = await miner.restart()
+    print(f"Restart accepted: {restarted}")
+```
+
+<!-- asic-rs-example:control go -->
+
+```go
+caps, err := miner.Supports()
+if err != nil {
+    log.Fatal(err)
+}
+if caps.Restart {
+    restarted, err := miner.Restart()
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("Restart accepted: %v\n", restarted)
+}
+```
+
+### Configure Pools, Fans, And Tuning
+
+Configuration methods follow the same support pattern as controls. The Python
+models are Pydantic-compatible, so they can be validated, dumped, and embedded
+in your own Pydantic models.
+
+<!-- asic-rs-example:config rust -->
+
+```rust,no_run
+# use asic_rs::MinerFactory;
+use asic_rs::core::config::{
+    fan::FanConfig,
+    pools::{PoolConfig, PoolGroupConfig},
+    tuning::TuningConfig,
+};
+use asic_rs::core::data::{miner::TuningTarget, pool::PoolURL};
+# use std::{net::IpAddr, str::FromStr};
+# #[tokio::main]
+# async fn main() -> anyhow::Result<()> {
+# let factory = MinerFactory::new();
+# let ip = IpAddr::from_str("192.168.1.10")?;
+# if let Some(miner) = factory.get_miner(ip).await? {
+if miner.supports_pools_config() {
+    let group = PoolGroupConfig {
+        name: "default".to_string(),
+        quota: 1,
+        pools: vec![PoolConfig {
+            url: PoolURL::from("stratum+tcp://pool.example.com:3333".to_string()),
+            username: "worker.1".to_string(),
+            password: "x".to_string(),
+        }],
+    };
+    miner.set_pools_config(vec![group]).await?;
+}
+
+if miner.supports_fan_config() {
+    miner.set_fan_config(FanConfig::manual(80)).await?;
+}
+
+if miner.supports_tuning_config() {
+    let config = TuningConfig::new(TuningTarget::from_watts(3200.0));
+    miner.set_tuning_config(config, None).await?;
+}
+# }
+# Ok(())
+# }
+```
+
+<!-- asic-rs-example:config python -->
+
+```python
+from pyasic_rs.config import FanConfig, Pool, PoolGroup, TuningConfig
+
+if miner.supports_pools_config:
+    group = PoolGroup(
+        name="default",
+        quota=1,
+        pools=[
+            Pool(
+                url="stratum+tcp://pool.example.com:3333",
+                username="worker.1",
+                password="x",
+            )
+        ],
+    )
+    await miner.set_pools_config([group])
+
+if miner.supports_fan_config:
+    await miner.set_fan_config(FanConfig.manual(80))
+
+if miner.supports_tuning_config:
+    await miner.set_tuning_config(TuningConfig.power(3200.0))
+```
+
+<!-- asic-rs-example:config go -->
+
+```go
+caps, err := miner.Supports()
+if err != nil {
+    log.Fatal(err)
+}
+if caps.PoolsConfig {
+    pool, err := asic_go.NewPoolConfig("stratum+tcp://pool.example.com:3333", "worker.1", "x")
+    if err != nil {
+        log.Fatal(err)
+    }
+    _, err = miner.SetPoolsConfig([]asic_go.PoolGroupConfig{{
+        Name: "default", Quota: 1, Pools: []asic_go.PoolConfig{pool},
+    }})
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+if caps.FanConfig {
+    if _, err := miner.SetFanConfig(asic_go.NewFanConfigManual(80)); err != nil {
+        log.Fatal(err)
+    }
+}
+if caps.TuningConfig {
+    if _, err := miner.SetTuningConfig(asic_go.TuningConfig{Target: asic_go.NewTuningTargetPower(3200)}, nil); err != nil {
+        log.Fatal(err)
+    }
+}
+```
+
+## Python Data Models
+
+Python data/config classes are backed by Rust structs and implement a
+Pydantic-style surface:
+
+```python
+from pydantic import BaseModel
+
+from pyasic_rs.data import HashRate
+
+
+class Snapshot(BaseModel):
+    hashrate: HashRate
+
+
+snapshot = Snapshot.model_validate(
+    {"hashrate": {"value": 100.0, "unit": "TH/s", "algo": "SHA256"}}
+)
+print(snapshot.model_dump())
+```
+
+Use `model_validate`, `model_dump`, and `model_json_schema` on supported model
+classes when integrating with Python validation or API layers.
+
+## Go Bindings
+
+The Go module is `github.com/256foundation/asic-rs/go/asic_go`. It uses cgo
+against `asic-rs-ffi`; build the native library with `make -C go ffi` before
+`go test` or `go build`. Factory and miner handles must be `Close()`d.
+
+See `go/README.md` for packaging notes. Streaming scans and `MinerListener` are
+not wrapped yet; use `Scan()` and `GetMiner`.
+
+[minerfactory]: https://docs.rs/asic-rs/latest/asic_rs/struct.MinerFactory.html

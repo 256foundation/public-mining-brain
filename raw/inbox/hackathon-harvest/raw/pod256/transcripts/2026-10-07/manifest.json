@@ -1,0 +1,3201 @@
+{
+  "schema_version": 1,
+  "show": "POD256",
+  "feed_url": "https://serve.podhome.fm/rss/c0be02f5-0e88-59a3-84cb-b76041a83264",
+  "start_date": "2024-10-07",
+  "end_date": "2026-10-07",
+  "collected_date": "2026-10-07",
+  "publication_timezone": "America/Chicago",
+  "feed_episode_count": 126,
+  "feed_sha256": "20a422575a31a2fb17b619d98387e1a696fb7cc56716da2de6fb52d024d68a71",
+  "episode_count": 70,
+  "transcript_count": 49,
+  "missing_transcript_count": 21,
+  "episodes": [
+    {
+      "episode": 57,
+      "title": "057. From Sweden to Silicon: Bitcoin's Global Journey",
+      "guid": "48c86f30-fab3-41d6-8169-88f9e9ec060b",
+      "published_at": "2024-11-11T18:20:04+00:00",
+      "date": "2024-11-11",
+      "duration": "00:58:57",
+      "episode_url": "https://www.pod256.org/episodepage/57",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913284947574786d14e0de4-762f-4fc3-ab89-770e80b5608bv1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 58,
+      "title": "058. From Nairobi to Nashville, Rise of Open-Source Bitcoin Mining, Telehash, and More",
+      "guid": "0ef35608-5240-41f3-8940-03da7c307df0",
+      "published_at": "2024-12-26T11:32:18+00:00",
+      "date": "2024-12-26",
+      "duration": "00:49:17",
+      "episode_url": "https://www.pod256.org/episodepage/58",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/63891328409186508218bd9e9a-e42f-4f6f-9027-2746da9e5617v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 60,
+      "title": "060. WE HIT A BLOCK (Behind the Scenes)",
+      "guid": "bd75735e-c009-4e96-966d-3308e167e213",
+      "published_at": "2025-02-06T14:52:36+00:00",
+      "date": "2025-02-06",
+      "duration": "01:04:54",
+      "episode_url": "https://www.pod256.org/episodepage/60",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913286521940996496eaf5e-0f6b-4b79-abcb-d6914bb31c86.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 61,
+      "title": "061. Open Sourcing Everything: From Chip to Firmware, Software and More",
+      "guid": "6997c3f1-1b26-484f-8d8f-49c461b9780b",
+      "published_at": "2025-03-03T16:03:51+00:00",
+      "date": "2025-03-03",
+      "duration": "01:33:54",
+      "episode_url": "https://www.pod256.org/episodepage/61",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389132854199861771d6f7359-d89a-4fb2-8d1c-986e3d2ade5av1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 62,
+      "title": "062. How Community Supported Bitcoin Mining Works in Practice.",
+      "guid": "9c9d1bf3-f391-4073-ad0b-ba88c0239caf",
+      "published_at": "2025-03-06T16:12:05+00:00",
+      "date": "2025-03-06",
+      "duration": "01:11:34",
+      "episode_url": "https://www.pod256.org/episodepage/62",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389132853242440503a7cce64-2de6-4aa5-b294-92e026fc27f3v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 63,
+      "title": "063. Solo Mining--What the Heck is Even That?",
+      "guid": "a1fe0fbf-39f3-4b83-8392-f82bc65c81ca",
+      "published_at": "2025-03-13T16:50:51+00:00",
+      "date": "2025-03-13",
+      "duration": "01:10:03",
+      "episode_url": "https://www.pod256.org/episodepage/63",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913285270454721160801c9-0d62-4ecb-8346-90630bafe878v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 64,
+      "title": "064. The Power of Donor Advised Funds in Supporting Mining Innovation",
+      "guid": "87b6fa0d-3967-40bd-a876-36890667ac4a",
+      "published_at": "2025-03-20T14:39:55+00:00",
+      "date": "2025-03-20",
+      "duration": "01:28:05",
+      "episode_url": "https://www.pod256.org/episodepage/64",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913283503899232ee00813a-1901-4421-8759-0b623184a265v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 65,
+      "title": "065. How Bad Chainalysis Data Hurts Freedom Technology",
+      "guid": "5f2b1ece-fa35-4c3f-86a1-b340fbc8e58c",
+      "published_at": "2025-03-27T19:31:42+00:00",
+      "date": "2025-03-27",
+      "duration": "01:10:07",
+      "episode_url": "https://www.pod256.org/episodepage/65",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913285683108767d4ca1c37-105c-41cf-85fb-a25b3160a983v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 66,
+      "title": "066. Bitcoin Mining is the Killer App with Michael Schmid",
+      "guid": "6a662eb6-4ba7-47c4-b51c-ead1527950cb",
+      "published_at": "2025-04-03T14:43:53+00:00",
+      "date": "2025-04-03",
+      "duration": "01:21:15",
+      "episode_url": "https://www.pod256.org/episodepage/66",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913288365690584333b5093-f2ba-417e-9a1d-f27cf2e89e5bv1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 67,
+      "title": "067. Meet Ryan, Open Source Mujina Firmware Developer",
+      "guid": "0c58852f-4bb8-4efc-9af2-cf59876750ad",
+      "published_at": "2025-04-14T15:11:39+00:00",
+      "date": "2025-04-14",
+      "duration": "00:48:10",
+      "episode_url": "https://www.pod256.org/episodepage/67",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/63891328473561455675122369-b18c-4667-a5a1-6f2ea7fb9b3cv1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_75122369-b18c-4667-a5a1-6f2ea7fb9b3c638917415386211956.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/75122369-b18c-4667-a5a1-6f2ea7fb9b3c638917415380725919.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/75122369-b18c-4667-a5a1-6f2ea7fb9b3c638917415374381835.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-04-14-e067.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_75122369-b18c-4667-a5a1-6f2ea7fb9b3c638917415386211956.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e067.html",
+          "bytes": 62989,
+          "sha256": "94537eab877f2974f6438d6951c561703c73a1e804c5225b963197203dcdc847"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/75122369-b18c-4667-a5a1-6f2ea7fb9b3c638917415380725919.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e067.srt",
+          "bytes": 66541,
+          "sha256": "559212ef4ac8c34cb18ee3f9edaa67d104c212e6efa36e85bd49769cff2841cb"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/75122369-b18c-4667-a5a1-6f2ea7fb9b3c638917415374381835.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e067.vtt",
+          "bytes": 67082,
+          "sha256": "fff6939c7eb2b68ca969eb328615828ead8b57e58eb630dadc7592f1bd11178d"
+        }
+      ],
+      "segment_count": 672,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 68,
+      "title": "068. The Wordpress of Mining Pools with @Jungly",
+      "guid": "e674aaad-1fa1-48d3-93cf-c028a90e3be8",
+      "published_at": "2025-04-17T15:14:38+00:00",
+      "date": "2025-04-17",
+      "duration": "01:00:08",
+      "episode_url": "https://www.pod256.org/episodepage/68",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913286268649181e0fa1342-01d1-46db-a05b-c67b063a8c9ev1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 69,
+      "title": "069. The Nonce is a Myth and Bitcoin Social Scalability",
+      "guid": "a96e6013-36b2-474a-88f3-42fcd2016e3d",
+      "published_at": "2025-04-24T15:26:37+00:00",
+      "date": "2025-04-24",
+      "duration": "01:05:22",
+      "episode_url": "https://www.pod256.org/episodepage/69",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913286380109009537d9c13-ddc0-4f21-9050-d195058bda4bv1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 70,
+      "title": "070. Hydrapool is Live and the Texas Energy and Mining Summit is Almost Here",
+      "guid": "2c23309d-ffff-45c0-8fa6-85108e4ba6c7",
+      "published_at": "2025-05-01T14:21:06+00:00",
+      "date": "2025-05-01",
+      "duration": "01:05:43",
+      "episode_url": "https://www.pod256.org/episodepage/70",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913286619854792e3b3e654-d9ba-4b80-8051-daa8cbede2f6v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 71,
+      "title": "071. Reviewing the First Ever Texas Energy and Mining Summit",
+      "guid": "2fdf45f3-b769-4950-b1f4-f370a11e9b40",
+      "published_at": "2025-05-16T15:47:38+00:00",
+      "date": "2025-05-16",
+      "duration": "00:55:12",
+      "episode_url": "https://www.pod256.org/episodepage/71",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913287968047100386bcc42-02c6-4f79-b298-dfb00b3c9b05v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 72,
+      "title": "072. The Gift of Community in the FOSS Space",
+      "guid": "5da13dbe-8714-4283-91e0-af86145a3745",
+      "published_at": "2025-05-22T15:53:31+00:00",
+      "date": "2025-05-22",
+      "duration": "00:53:17",
+      "episode_url": "https://www.pod256.org/episodepage/72",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/63891328376406553744050190-227a-4e55-a266-1c060978c774v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 73,
+      "title": "073.  The AI Panopticon and Las Vegas",
+      "guid": "b5f2cd1d-1958-404b-85a0-847c0a8a190f",
+      "published_at": "2025-06-06T14:28:26+00:00",
+      "date": "2025-06-06",
+      "duration": "01:03:16",
+      "episode_url": "https://www.pod256.org/episodepage/73",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389132855803140656e8c6494-ee3e-4bec-8206-a052c7de4406v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 74,
+      "title": "074. Europe has no Air Conditioning",
+      "guid": "8bed8180-4d64-4159-b202-5c46c8ab43a1",
+      "published_at": "2025-06-20T16:29:38+00:00",
+      "date": "2025-06-20",
+      "duration": "00:50:45",
+      "episode_url": "https://www.pod256.org/episodepage/74",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913283187235399c72f14f6-e050-46f5-8be1-0226229ce0e7v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 75,
+      "title": "075. Sourcing Chips and Building Bitaxes",
+      "guid": "30249ead-d955-4aaf-99cf-6267e1445f7a",
+      "published_at": "2025-06-26T09:36:00+00:00",
+      "date": "2025-06-26",
+      "duration": "00:52:08",
+      "episode_url": "https://www.pod256.org/episodepage/75",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638913283341573964053e1ab0-9c68-42fb-9b1b-0434d20cab62v1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 76,
+      "title": "076. Keeping Open Source Channels Open",
+      "guid": "793f65c6-e3f8-4007-94c8-f5d71ec70b60",
+      "published_at": "2025-07-03T13:03:22+00:00",
+      "date": "2025-07-03",
+      "duration": "00:52:49",
+      "episode_url": "https://www.pod256.org/episodepage/76",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389132860749953388be9bd04-5023-4a9a-92b5-c05449a48c6ev1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 77,
+      "title": "077. Battle of the Minehackers with Stephen DeLorme",
+      "guid": "a2fe49c6-dd37-4145-8177-68672be65a90",
+      "published_at": "2025-07-14T15:43:54+00:00",
+      "date": "2025-07-14",
+      "duration": "01:20:04",
+      "episode_url": "https://www.pod256.org/episodepage/77",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389132880141431755c2f33a0-cd53-4a18-92d3-e40f76c5204av1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 78,
+      "title": "078. Devs on Trial. Privacy on the Line",
+      "guid": "bd90a48c-fddf-416f-b344-649e4f04746b",
+      "published_at": "2025-07-18T13:24:51+00:00",
+      "date": "2025-07-18",
+      "duration": "00:48:48",
+      "episode_url": "https://www.pod256.org/episodepage/78",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389132881159210563bc9ebee-b3e7-467b-b5d6-eae1a0ee46acv1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 79,
+      "title": "079. Hydrapool Testnet Launch Nears as Miners Prep",
+      "guid": "88dc31e2-2388-4f1e-b1fb-080207cbbbe3",
+      "published_at": "2025-07-24T15:53:11+00:00",
+      "date": "2025-07-24",
+      "duration": "00:43:41",
+      "episode_url": "https://www.pod256.org/episodepage/79",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389132855459831380b0cef8e-fa66-4276-994a-a0468866667bv1.mp3",
+      "transcript_sources": [],
+      "status": "not_published",
+      "markdown_path": null,
+      "original_files": []
+    },
+    {
+      "episode": 80,
+      "title": "080. The Chilling Effect: Legal Risks in Privacy Software Development",
+      "guid": "8500c5b4-5b21-4639-a5bb-e3a22dbeebee",
+      "published_at": "2025-08-01T14:08:31+00:00",
+      "date": "2025-08-01",
+      "duration": "00:43:19",
+      "episode_url": "https://www.pod256.org/episodepage/80",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/63891328330366076531c8a18c-fffe-4bc0-93b5-02d379e313acv1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_31c8a18c-fffe-4bc0-93b5-02d379e313ac638917409192426705.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/31c8a18c-fffe-4bc0-93b5-02d379e313ac638917409185445961.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/31c8a18c-fffe-4bc0-93b5-02d379e313ac638917409176662410.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-08-01-e080.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_31c8a18c-fffe-4bc0-93b5-02d379e313ac638917409192426705.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e080.html",
+          "bytes": 53548,
+          "sha256": "3275bccca4246afaf18a99dd350e8d3bbca0026ca56c0d84df4b765ba6809bb7"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/31c8a18c-fffe-4bc0-93b5-02d379e313ac638917409185445961.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e080.srt",
+          "bytes": 55996,
+          "sha256": "ff479ef24b38b3f5f846202ff3325902625defa35b520d449e87a7678f605a39"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/31c8a18c-fffe-4bc0-93b5-02d379e313ac638917409176662410.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e080.vtt",
+          "bytes": 56309,
+          "sha256": "bd711d5f8b85e67ff67fffca8c8425adce054bcd538bd6a41fe62f911438642a"
+        }
+      ],
+      "segment_count": 420,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 81,
+      "title": "081. Revamping Bitcoin Mining: From Cool Runnings to Cutting-Edge Tech",
+      "guid": "0871354e-c7fa-4884-bb7c-4bfe2dcc235d",
+      "published_at": "2025-08-21T00:00:20+00:00",
+      "date": "2025-08-20",
+      "duration": "00:47:16",
+      "episode_url": "https://www.pod256.org/episodepage/81",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389133045807193330871354e-c7fa-4884-bb7c-4bfe2dcc235dv1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_0871354e-c7fa-4884-bb7c-4bfe2dcc235d638913307008442780.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0871354e-c7fa-4884-bb7c-4bfe2dcc235d638913306993377547.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0871354e-c7fa-4884-bb7c-4bfe2dcc235d638913306987627432.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-08-20-e081.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_0871354e-c7fa-4884-bb7c-4bfe2dcc235d638913307008442780.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e081.html",
+          "bytes": 63157,
+          "sha256": "a1320d689205a54fd8b0eb2bd4a165a0f1eec90ca5c75101331fffc68170baf9"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0871354e-c7fa-4884-bb7c-4bfe2dcc235d638913306993377547.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e081.srt",
+          "bytes": 66385,
+          "sha256": "764f845b8afe671625118cdc68b1b5ceecde737f2f3a03c8cfeda223f58c4500"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0871354e-c7fa-4884-bb7c-4bfe2dcc235d638913306987627432.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e081.vtt",
+          "bytes": 66960,
+          "sha256": "e5b763d3a0a4959f139c35bd9eaa8318b984655b37e488ea5c781c04acad15a6"
+        }
+      ],
+      "segment_count": 648,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 82,
+      "title": "082. Decentralizing Bitcoin Mining: Challenges and Opportunities",
+      "guid": "f2bd8336-7e8c-4595-ae5d-6d8b74cc637f",
+      "published_at": "2025-08-27T22:58:52+00:00",
+      "date": "2025-08-27",
+      "duration": "01:13:58",
+      "episode_url": "https://www.pod256.org/episodepage/82",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638919319731032179f2bd8336-7e8c-4595-ae5d-6d8b74cc637f.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_f2bd8336-7e8c-4595-ae5d-6d8b74cc637f638919320195301815.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f2bd8336-7e8c-4595-ae5d-6d8b74cc637f638919320170964073.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f2bd8336-7e8c-4595-ae5d-6d8b74cc637f638919320168482870.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-08-27-e082.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_f2bd8336-7e8c-4595-ae5d-6d8b74cc637f638919320195301815.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e082.html",
+          "bytes": 97697,
+          "sha256": "6b0a1a10cb9d8f3e07ddd97ea8cf3b8ec8fafdf1c62fbb4bd2def24421acfff8"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f2bd8336-7e8c-4595-ae5d-6d8b74cc637f638919320170964073.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e082.srt",
+          "bytes": 103880,
+          "sha256": "3e1c6ebbbf3b06a60c1f081b03b518ae2a3045a4bd8c1b7cd840a6275fa3debc"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f2bd8336-7e8c-4595-ae5d-6d8b74cc637f638919320168482870.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e082.vtt",
+          "bytes": 104596,
+          "sha256": "6f694028399c08ae129721fec0f46624672663e80850e8eb2b80944482d2bb76"
+        }
+      ],
+      "segment_count": 1078,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 83,
+      "title": "083. Breaking New Ground: The Arrival of Intel BZM2 Chips",
+      "guid": "aa05fa32-0712-4ce8-a2ea-e9e30e89bd2f",
+      "published_at": "2025-09-03T22:03:03+00:00",
+      "date": "2025-09-03",
+      "duration": "01:12:26",
+      "episode_url": "https://www.pod256.org/episodepage/83",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638925334174387798aa05fa32-0712-4ce8-a2ea-e9e30e89bd2f.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_aa05fa32-0712-4ce8-a2ea-e9e30e89bd2f638925334601918065.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/aa05fa32-0712-4ce8-a2ea-e9e30e89bd2f638925334590338782.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/aa05fa32-0712-4ce8-a2ea-e9e30e89bd2f638925334588100126.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-09-03-e083.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_aa05fa32-0712-4ce8-a2ea-e9e30e89bd2f638925334601918065.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e083.html",
+          "bytes": 95772,
+          "sha256": "9deb6d140178af4c9e61be5aada9979d281f17e2984769784057a2742cbe139d"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/aa05fa32-0712-4ce8-a2ea-e9e30e89bd2f638925334590338782.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e083.srt",
+          "bytes": 102144,
+          "sha256": "6692946c71599ae6632bc8e3fae26d862f7d97276e7227766fa922d9dc940162"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/aa05fa32-0712-4ce8-a2ea-e9e30e89bd2f638925334588100126.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e083.vtt",
+          "bytes": 102804,
+          "sha256": "90d70144adcf25aa3812eaad3792616b25ed181c7697d05aeac65df290a365b0"
+        }
+      ],
+      "segment_count": 1075,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 84,
+      "title": "084. Proto Launch Party Live: Night 1",
+      "guid": "8ed1ba37-c92d-4df1-b23e-b5e131099d1f",
+      "published_at": "2025-09-08T01:07:29+00:00",
+      "date": "2025-09-07",
+      "duration": "00:42:44",
+      "episode_url": "https://www.pod256.org/episodepage/84",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389288990598200528ed1ba37-c92d-4df1-b23e-b5e131099d1f.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_8ed1ba37-c92d-4df1-b23e-b5e131099d1f638928900884952906.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/8ed1ba37-c92d-4df1-b23e-b5e131099d1f638928900876721945.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/8ed1ba37-c92d-4df1-b23e-b5e131099d1f638928900870728331.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-09-07-e084.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_8ed1ba37-c92d-4df1-b23e-b5e131099d1f638928900884952906.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e084.html",
+          "bytes": 57150,
+          "sha256": "05cde43169e381f653be32821e7fc5fa58e573a9bba7cd5c70fd199d2a8a8c4e"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/8ed1ba37-c92d-4df1-b23e-b5e131099d1f638928900876721945.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e084.srt",
+          "bytes": 60142,
+          "sha256": "9bcfa46cae45de07e3b2adbebf7238e351d5b97124a76a1e3e5a41ca29eeb6ed"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/8ed1ba37-c92d-4df1-b23e-b5e131099d1f638928900870728331.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e084.vtt",
+          "bytes": 60507,
+          "sha256": "3dfc1521ba2304b6f743e0c4dc9f3c7e8799a63fdb0d9f57f3811c0188021474"
+        }
+      ],
+      "segment_count": 515,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 85,
+      "title": "085. Proto Launch Party Live: Night 2",
+      "guid": "88e7aab8-7bd2-48e9-bbed-0507e0cbc952",
+      "published_at": "2025-09-08T01:16:29+00:00",
+      "date": "2025-09-07",
+      "duration": "00:33:29",
+      "episode_url": "https://www.pod256.org/episodepage/85",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/63892890497882549388e7aab8-7bd2-48e9-bbed-0507e0cbc952.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_88e7aab8-7bd2-48e9-bbed-0507e0cbc952638928906067557054.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/88e7aab8-7bd2-48e9-bbed-0507e0cbc952638928906061304870.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/88e7aab8-7bd2-48e9-bbed-0507e0cbc952638928906055672128.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-09-07-e085.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_88e7aab8-7bd2-48e9-bbed-0507e0cbc952638928906067557054.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e085.html",
+          "bytes": 44932,
+          "sha256": "5fd67015daaf2b2e8474dd2a354567809e90f57d503f787789b8637e98c14119"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/88e7aab8-7bd2-48e9-bbed-0507e0cbc952638928906061304870.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e085.srt",
+          "bytes": 46740,
+          "sha256": "96b087c09391b5d3d5af0aa35c0c48f3bdd4d0fe447b1ecae65ddb2372344023"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/88e7aab8-7bd2-48e9-bbed-0507e0cbc952638928906055672128.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e085.vtt",
+          "bytes": 47094,
+          "sha256": "a3afdbbb078f4d0a3d010287caed9f23eba7d8014f20d6ff34f2b07a1a33a492"
+        }
+      ],
+      "segment_count": 361,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 86,
+      "title": "086. Open Source vs. Closed Source: The Future of Bitcoin Mining",
+      "guid": "7ef8316a-f946-4820-8e76-320047f85ada",
+      "published_at": "2025-09-10T21:46:24+00:00",
+      "date": "2025-09-10",
+      "duration": "01:49:34",
+      "episode_url": "https://www.pod256.org/episodepage/86",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389313722254200377ef8316a-f946-4820-8e76-320047f85ada.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_7ef8316a-f946-4820-8e76-320047f85ada638931373306062666.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/7ef8316a-f946-4820-8e76-320047f85ada638931373296125253.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/7ef8316a-f946-4820-8e76-320047f85ada638931373293444042.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-09-10-e086.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_7ef8316a-f946-4820-8e76-320047f85ada638931373306062666.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e086.html",
+          "bytes": 144761,
+          "sha256": "6883f14887556c96b80da90b809fd243ddc22d7ef398c7c074e22584b1ff6395"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/7ef8316a-f946-4820-8e76-320047f85ada638931373296125253.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e086.srt",
+          "bytes": 153644,
+          "sha256": "cd0c0118e240863b0d18c5c4f281c01283897f2b363db91cbe68855200e0a06f"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/7ef8316a-f946-4820-8e76-320047f85ada638931373293444042.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e086.vtt",
+          "bytes": 154988,
+          "sha256": "61bb75d7dbf3c25766d8bdbd13451a9ff446a8effcd3199325399dd396df55fe"
+        }
+      ],
+      "segment_count": 1658,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 87,
+      "title": "087. Heat, Hash, and Hardware Freedom: Live at Bitcoin Park",
+      "guid": "bf6e4533-1dc4-4ad0-bf36-bb0212171744",
+      "published_at": "2025-09-17T22:10:40+00:00",
+      "date": "2025-09-17",
+      "duration": "01:29:09",
+      "episode_url": "https://www.pod256.org/episodepage/87",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638937435340248888bf6e4533-1dc4-4ad0-bf36-bb0212171744.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_bf6e4533-1dc4-4ad0-bf36-bb0212171744638937435899465427.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/bf6e4533-1dc4-4ad0-bf36-bb0212171744638937435886482326.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/bf6e4533-1dc4-4ad0-bf36-bb0212171744638937435883066822.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-09-17-e087.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_bf6e4533-1dc4-4ad0-bf36-bb0212171744638937435899465427.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e087.html",
+          "bytes": 119201,
+          "sha256": "3e296bf79ef5b7230eeb0de1e53ffd1a2ecaffe527ad8420b8931d193ec8f2b2"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/bf6e4533-1dc4-4ad0-bf36-bb0212171744638937435886482326.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e087.srt",
+          "bytes": 126314,
+          "sha256": "c4de8c7116baff6e3e69d5844c2dcf0fbeff1a01d7a9f1e6e9b722329312e1dd"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/bf6e4533-1dc4-4ad0-bf36-bb0212171744638937435883066822.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e087.vtt",
+          "bytes": 127387,
+          "sha256": "e71b68fdbeb2baeb4271de2c186d3536d7e402fe0f1fde1f150776f57e9c87ee"
+        }
+      ],
+      "segment_count": 1340,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 88,
+      "title": "088. Freedom Tech in Action: Open Miners, Sovereign Homes, and the Post-ImagineIF Debrief",
+      "guid": "652df830-5e1a-4aa7-ab25-77678abb6baa",
+      "published_at": "2025-09-24T20:28:27+00:00",
+      "date": "2025-09-24",
+      "duration": "00:55:04",
+      "episode_url": "https://www.pod256.org/episodepage/88",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638943420803380616652df830-5e1a-4aa7-ab25-77678abb6baa.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_652df830-5e1a-4aa7-ab25-77678abb6baa638943421687679867.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/652df830-5e1a-4aa7-ab25-77678abb6baa638943421684590939.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/652df830-5e1a-4aa7-ab25-77678abb6baa638943421682812491.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-09-24-e088.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_652df830-5e1a-4aa7-ab25-77678abb6baa638943421687679867.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e088.html",
+          "bytes": 73239,
+          "sha256": "ad91010234d160a51067a2fe98f34162f57caf0cb41e16e5ee05e4bfc98ed869"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/652df830-5e1a-4aa7-ab25-77678abb6baa638943421684590939.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e088.srt",
+          "bytes": 76971,
+          "sha256": "72be34739baaa60afef98fe946a35e4eaf779adc595e8d8e699c19b296c1eeb3"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/652df830-5e1a-4aa7-ab25-77678abb6baa638943421682812491.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e088.vtt",
+          "bytes": 77623,
+          "sha256": "84368370bb3af3d5fc9686fde4cb3296b55c9490ef1611d2bffa61b25618e301"
+        }
+      ],
+      "segment_count": 750,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 89,
+      "title": "089. Copyleft and Cold Rooms: Open Hardware, Passive Heat, and Economic Nodes",
+      "guid": "da78ea25-ce31-4c57-a6ce-8666884e1143",
+      "published_at": "2025-10-05T18:00:03+00:00",
+      "date": "2025-10-05",
+      "duration": "01:09:02",
+      "episode_url": "https://www.pod256.org/episodepage/89",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638952835979272433da78ea25-ce31-4c57-a6ce-8666884e1143.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_da78ea25-ce31-4c57-a6ce-8666884e1143638952837064501421.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/da78ea25-ce31-4c57-a6ce-8666884e1143638952837061374767.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/da78ea25-ce31-4c57-a6ce-8666884e1143638952837059733613.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-10-05-e089.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_da78ea25-ce31-4c57-a6ce-8666884e1143638952837064501421.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e089.html",
+          "bytes": 91731,
+          "sha256": "481485f8582ba92081a3573576e883d5541df5067d3359cfbfc806701854a501"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/da78ea25-ce31-4c57-a6ce-8666884e1143638952837061374767.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e089.srt",
+          "bytes": 98553,
+          "sha256": "c1db5deb498e904f41d25533b6abf6f1457359eddfb102a0aa8886a380cc9494"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/da78ea25-ce31-4c57-a6ce-8666884e1143638952837059733613.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e089.vtt",
+          "bytes": 99106,
+          "sha256": "0137885ca2ff064010f37f1b3b8b1619f001cacfeef8f7282611f6431741d353"
+        }
+      ],
+      "segment_count": 1077,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 90,
+      "title": "090. Make Every Meetup a Pool: Stratum v2, Hole Punching, and Open Mining",
+      "guid": "4a288529-e8ef-43b1-a339-15f15c37d58c",
+      "published_at": "2025-10-15T21:07:18+00:00",
+      "date": "2025-10-15",
+      "duration": "01:22:16",
+      "episode_url": "https://www.pod256.org/episodepage/90",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389615885561520674a288529-e8ef-43b1-a339-15f15c37d58c.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_4a288529-e8ef-43b1-a339-15f15c37d58c638961589054534726.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4a288529-e8ef-43b1-a339-15f15c37d58c638961589039294458.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4a288529-e8ef-43b1-a339-15f15c37d58c638961589036589388.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-10-15-e090.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_4a288529-e8ef-43b1-a339-15f15c37d58c638961589054534726.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e090.html",
+          "bytes": 110248,
+          "sha256": "66691fc589e187774041773dbc8dd6b73206a5ef70a866f75ea1760ddc88fcf5"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4a288529-e8ef-43b1-a339-15f15c37d58c638961589039294458.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e090.srt",
+          "bytes": 116419,
+          "sha256": "bb31eb002c8e5a1bac897ae72917e4f9fc636676af54bd3621e452e75bd2dbf4"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4a288529-e8ef-43b1-a339-15f15c37d58c638961589036589388.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e090.vtt",
+          "bytes": 117165,
+          "sha256": "9961d46dd56c3d4f86bbb4b344fa47ddb9fcb5b626e5622cf357f95602c829f3"
+        }
+      ],
+      "segment_count": 1090,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 91,
+      "title": "091. Hash, Heat, and Hardware: LibreBoard, Mujina, and the BitAxe Battle",
+      "guid": "2a568d1c-121f-45cd-bb61-9f171bb48b27",
+      "published_at": "2025-10-22T21:21:08+00:00",
+      "date": "2025-10-22",
+      "duration": "01:41:51",
+      "episode_url": "https://www.pod256.org/episodepage/91",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389676417561149472a568d1c-121f-45cd-bb61-9f171bb48b27.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_2a568d1c-121f-45cd-bb61-9f171bb48b27638967642522047431.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/2a568d1c-121f-45cd-bb61-9f171bb48b27638967642463588104.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/2a568d1c-121f-45cd-bb61-9f171bb48b27638967642450438789.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-10-22-e091.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_2a568d1c-121f-45cd-bb61-9f171bb48b27638967642522047431.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e091.html",
+          "bytes": 136975,
+          "sha256": "fbcc90a09ff5b223873243141bc25e23a11573ef896d4cc1695d857528e847fe"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/2a568d1c-121f-45cd-bb61-9f171bb48b27638967642463588104.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e091.srt",
+          "bytes": 146338,
+          "sha256": "25d2dd68e92ae8a3b16ca27262058b973e363d165afa8d4a9b675aa98345f028"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/2a568d1c-121f-45cd-bb61-9f171bb48b27638967642450438789.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e091.vtt",
+          "bytes": 147303,
+          "sha256": "f69801951cba046a765908580956d7c6acfb06c6928fa7cdeb244f849c4aa47c"
+        }
+      ],
+      "segment_count": 1542,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 92,
+      "title": "092. Hashrate at Home: Zigbee Thermostats, Bitaxe Wins, and Dockerized Pools",
+      "guid": "f40016e9-7697-48d9-8519-e23f6c3b569d",
+      "published_at": "2025-10-29T21:51:58+00:00",
+      "date": "2025-10-29",
+      "duration": "02:15:16",
+      "episode_url": "https://www.pod256.org/episodepage/92",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638973710918390234f40016e9-7697-48d9-8519-e23f6c3b569d.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_f40016e9-7697-48d9-8519-e23f6c3b569d638973711742863770.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f40016e9-7697-48d9-8519-e23f6c3b569d638973711708720707.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f40016e9-7697-48d9-8519-e23f6c3b569d638973711706003716.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-10-29-e092.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_f40016e9-7697-48d9-8519-e23f6c3b569d638973711742863770.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e092.html",
+          "bytes": 178696,
+          "sha256": "c43e97ce5b9a835c17923e641d4a68a5548d3e4628ac8997f7a75807b15054f0"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f40016e9-7697-48d9-8519-e23f6c3b569d638973711708720707.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e092.srt",
+          "bytes": 190780,
+          "sha256": "0fc6ec4d956b80d81eaa3346d066486ad57ac40dee5d316b911b3ea7d0185649"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f40016e9-7697-48d9-8519-e23f6c3b569d638973711706003716.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e092.vtt",
+          "bytes": 192282,
+          "sha256": "03a340db058f3adfaaf1d17424303e9cb2f33ab0cb7e0c929047a11f20b21ab0"
+        }
+      ],
+      "segment_count": 2083,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 93,
+      "title": "093. Decentralize or Die: Open Miners, Pool Payouts, and the Certification Gauntlet",
+      "guid": "0b1bd604-1ac9-4389-a9b7-c6e302fa5f3b",
+      "published_at": "2025-11-05T22:50:31+00:00",
+      "date": "2025-11-05",
+      "duration": "02:00:22",
+      "episode_url": "https://www.pod256.org/episodepage/093-decentralize-or-die-open-miners-pool-payouts-and-the-certification-gauntlet",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6389797880997145060b1bd604-1ac9-4389-a9b7-c6e302fa5f3b.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_0b1bd604-1ac9-4389-a9b7-c6e302fa5f3b638979788789520735.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0b1bd604-1ac9-4389-a9b7-c6e302fa5f3b638979788782016072.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0b1bd604-1ac9-4389-a9b7-c6e302fa5f3b638979788779632916.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-11-05-e093.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_0b1bd604-1ac9-4389-a9b7-c6e302fa5f3b638979788789520735.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e093.html",
+          "bytes": 158313,
+          "sha256": "51aac5b118cb7a3365824ee19baece1d07089f39ab28080aa487d3e02d71e777"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0b1bd604-1ac9-4389-a9b7-c6e302fa5f3b638979788782016072.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e093.srt",
+          "bytes": 170244,
+          "sha256": "d0514815870a080c0713b000513aaa52533ef69ec8297bfb1c9d591e0f3cc188"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0b1bd604-1ac9-4389-a9b7-c6e302fa5f3b638979788779632916.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e093.vtt",
+          "bytes": 171359,
+          "sha256": "2517247f83fa3f9c8cf6456e57a5e4e5a85ceda6c951c52c288965447e9a3954"
+        }
+      ],
+      "segment_count": 1894,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 94,
+      "title": "094. PPLNS, Pick-and-Place, and Pardon: A Deep Dive into Mining and Freedom Tech",
+      "guid": "b64bc1cf-b9e0-4887-9a35-8f8c150f0ad9",
+      "published_at": "2025-11-12T21:50:59+00:00",
+      "date": "2025-11-12",
+      "duration": "01:17:54",
+      "episode_url": "https://www.pod256.org/episodepage/94",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638985805458285771b64bc1cf-b9e0-4887-9a35-8f8c150f0ad9.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_b64bc1cf-b9e0-4887-9a35-8f8c150f0ad9638985805926997321.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/b64bc1cf-b9e0-4887-9a35-8f8c150f0ad9638985805922053252.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/b64bc1cf-b9e0-4887-9a35-8f8c150f0ad9638985805919085442.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-11-12-e094.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_b64bc1cf-b9e0-4887-9a35-8f8c150f0ad9638985805926997321.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e094.html",
+          "bytes": 100828,
+          "sha256": "c0e47e5df4f47cc551fe5978ea11bfb4989bd5e38d075d258d1af69855a8f223"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/b64bc1cf-b9e0-4887-9a35-8f8c150f0ad9638985805922053252.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e094.srt",
+          "bytes": 108628,
+          "sha256": "84e59df7fdb315b9f72d2d227aa2fc507dc49c17a3102bff145dce9606af55a1"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/b64bc1cf-b9e0-4887-9a35-8f8c150f0ad9638985805919085442.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e094.vtt",
+          "bytes": 109329,
+          "sha256": "38d811389c5347b9230d291043f4bec11f0d35b97746e97265a2a2ef01d02eac"
+        }
+      ],
+      "segment_count": 1251,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 95,
+      "title": "095. Open-Source or Bust: Mujina, Miner Firmware Wars, and the Future of Trustless Hashing",
+      "guid": "c5cef4c6-5d63-4ba2-b26b-018e62d0ddec",
+      "published_at": "2025-11-19T22:36:32+00:00",
+      "date": "2025-11-19",
+      "duration": "01:32:25",
+      "episode_url": "https://www.pod256.org/episodepage/095-open-source-or-bust-mujina-miner-firmware-wars-and-the-future-of-trustless-hashing",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638991879015914684c5cef4c6-5d63-4ba2-b26b-018e62d0ddec.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_c5cef4c6-5d63-4ba2-b26b-018e62d0ddec638991879658635331.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/c5cef4c6-5d63-4ba2-b26b-018e62d0ddec638991879644532859.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/c5cef4c6-5d63-4ba2-b26b-018e62d0ddec638991879642452855.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-11-19-e095.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_c5cef4c6-5d63-4ba2-b26b-018e62d0ddec638991879658635331.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e095.html",
+          "bytes": 125052,
+          "sha256": "3e18fa6441a37d6936f1eeba3ce9469e34c956a0d23f4558ebfeb8f2d877ae78"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/c5cef4c6-5d63-4ba2-b26b-018e62d0ddec638991879644532859.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e095.srt",
+          "bytes": 133131,
+          "sha256": "89aa478cc9c71bb43d319a528b8c4007dcb63819fcdd5103f0d278367cbd1be5"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/c5cef4c6-5d63-4ba2-b26b-018e62d0ddec638991879642452855.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e095.vtt",
+          "bytes": 133995,
+          "sha256": "4d03bc0691f7a91e1f68891d47f105d7f5a636d7fc18cc9cd79d45cd14ba9c51"
+        }
+      ],
+      "segment_count": 1354,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 96,
+      "title": "096. From Open Source to Federal Sentence: The Government vs. Samourai Wallet",
+      "guid": "895e8a43-6d72-4814-b773-f07e0209fa5f",
+      "published_at": "2025-11-27T00:21:29+00:00",
+      "date": "2025-11-26",
+      "duration": "02:08:38",
+      "episode_url": "https://www.pod256.org/episodepage/096-from-open-source-to-federal-sentence-the-government-vs-samourai-wallet",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/638997992362968595895e8a43-6d72-4814-b773-f07e0209fa5f.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_895e8a43-6d72-4814-b773-f07e0209fa5f638997992953162877.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/895e8a43-6d72-4814-b773-f07e0209fa5f638997992918922869.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/895e8a43-6d72-4814-b773-f07e0209fa5f638997992915194985.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-11-26-e096.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_895e8a43-6d72-4814-b773-f07e0209fa5f638997992953162877.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e096.html",
+          "bytes": 166945,
+          "sha256": "2c5d3d4f94b998523406252619ea07004e62ea86500e8f058a76c14419230cb1"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/895e8a43-6d72-4814-b773-f07e0209fa5f638997992918922869.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e096.srt",
+          "bytes": 182890,
+          "sha256": "0a5976ffd710fe3912a948caa5dbb7a45a0854b0b8685a68bcbb5d024d53636a"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/895e8a43-6d72-4814-b773-f07e0209fa5f638997992915194985.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e096.vtt",
+          "bytes": 183547,
+          "sha256": "8f2abad8d26d4771b3b092bcfdbd01da7e11a3ebbb8dba305a2fb81818fd0bd0"
+        }
+      ],
+      "segment_count": 2136,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 97,
+      "title": "097. From Lab to Hash: Ember One, Libre Board, and an Open-Source Mining Future",
+      "guid": "b548eca9-4384-4b54-9b7e-11ad8035b82e",
+      "published_at": "2025-12-03T23:38:11+00:00",
+      "date": "2025-12-03",
+      "duration": "01:38:06",
+      "episode_url": "https://www.pod256.org/episodepage/097-from-lab-to-hash-ember-one-libre-board-and-an-open-source-mining-future",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639003981901170149b548eca9-4384-4b54-9b7e-11ad8035b82e.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_b548eca9-4384-4b54-9b7e-11ad8035b82e639003982518285922.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/b548eca9-4384-4b54-9b7e-11ad8035b82e639003982511809697.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/b548eca9-4384-4b54-9b7e-11ad8035b82e639003982509578448.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-12-03-e097.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_b548eca9-4384-4b54-9b7e-11ad8035b82e639003982518285922.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e097.html",
+          "bytes": 124842,
+          "sha256": "940153928ca4596d596f9deb5467a7e6315408117ad50d615be06a9e5907a92c"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/b548eca9-4384-4b54-9b7e-11ad8035b82e639003982511809697.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e097.srt",
+          "bytes": 135033,
+          "sha256": "646f490a1365c27b9908f7552509024a056648862440a505103ee6f3929085c5"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/b548eca9-4384-4b54-9b7e-11ad8035b82e639003982509578448.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e097.vtt",
+          "bytes": 135809,
+          "sha256": "0efe7d0b71685e5580d9b6762de6744cb5ce0979092aeaf13e455936e5fffe04"
+        }
+      ],
+      "segment_count": 1550,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 98,
+      "title": "098. From Mauritius to Modular Miners: Open-Source Bitcoin Mining, Direct-DC Solar, and Hydra Pool",
+      "guid": "1d0067a0-85f5-4faa-98d3-df1eed2c783e",
+      "published_at": "2025-12-13T19:41:23+00:00",
+      "date": "2025-12-13",
+      "duration": "01:58:56",
+      "episode_url": "https://www.pod256.org/episodepage/098-from-mauritius-to-modular-miners-open-source-bitcoin-mining-direct-dc-solar-and-hydra-pool",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6390125098945873691d0067a0-85f5-4faa-98d3-df1eed2c783e.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_1d0067a0-85f5-4faa-98d3-df1eed2c783e639012512078110443.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1d0067a0-85f5-4faa-98d3-df1eed2c783e639012512064710917.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1d0067a0-85f5-4faa-98d3-df1eed2c783e639012512062709933.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-12-13-e098.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_1d0067a0-85f5-4faa-98d3-df1eed2c783e639012512078110443.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e098.html",
+          "bytes": 157048,
+          "sha256": "3335ef458cf5765f769660af4f1793c6bff6d53ce51e400329a0a89305964979"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1d0067a0-85f5-4faa-98d3-df1eed2c783e639012512064710917.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e098.srt",
+          "bytes": 168298,
+          "sha256": "00a106c8f013a39490119c7eca1e8cf0112d489b512ab1f59b2a1d254e4cd90f"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1d0067a0-85f5-4faa-98d3-df1eed2c783e639012512062709933.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e098.vtt",
+          "bytes": 169365,
+          "sha256": "df328375c6350f0092b0ad23ab2ad33bea8a5e3f3e20311f7b6de809dc89841d"
+        }
+      ],
+      "segment_count": 1797,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 99,
+      "title": "099. Code Is Not Crime: Samourai Petition, Pool Scams, and Open Mining Tools",
+      "guid": "6d3b0c1c-ab8e-4e0e-b141-aa776a571573",
+      "published_at": "2025-12-17T23:37:57+00:00",
+      "date": "2025-12-17",
+      "duration": "02:24:47",
+      "episode_url": "https://www.pod256.org/episodepage/99",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6390161055867153096d3b0c1c-ab8e-4e0e-b141-aa776a571573.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_6d3b0c1c-ab8e-4e0e-b141-aa776a571573639016106570630383.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/6d3b0c1c-ab8e-4e0e-b141-aa776a571573639016106525087908.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/6d3b0c1c-ab8e-4e0e-b141-aa776a571573639016106522737743.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-12-17-e099.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_6d3b0c1c-ab8e-4e0e-b141-aa776a571573639016106570630383.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e099.html",
+          "bytes": 185380,
+          "sha256": "57f0461f56b53d94269cb21b8176840a9ba6123afc358f6f74c658609e2822f1"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/6d3b0c1c-ab8e-4e0e-b141-aa776a571573639016106525087908.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e099.srt",
+          "bytes": 199387,
+          "sha256": "2468585e81f6023c96f1dc695cdbf502a4c855b7f93b617e8dfccccd6564599b"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/6d3b0c1c-ab8e-4e0e-b141-aa776a571573639016106522737743.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e099.vtt",
+          "bytes": 200740,
+          "sha256": "1bd30a63a404109fccec2e9a433d91ddbb4b2e42887abd13876b898de8d36473"
+        }
+      ],
+      "segment_count": 2230,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 100,
+      "title": "100. Dismantling the Black Box: Hydra Pool, Libre Board, and a Fully Open Miner Demo",
+      "guid": "d019412b-7d77-4161-892a-b621eabea4d4",
+      "published_at": "2025-12-31T21:49:43+00:00",
+      "date": "2025-12-31",
+      "duration": "01:36:57",
+      "episode_url": "https://www.pod256.org/episodepage/100-dismantling-the-black-box-hydra-pool-libre-board-and-a-fully-open-miner-demo",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639028138882380931d019412b-7d77-4161-892a-b621eabea4d4.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_d019412b-7d77-4161-892a-b621eabea4d4639028139195503384.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/d019412b-7d77-4161-892a-b621eabea4d4639028139190978098.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/d019412b-7d77-4161-892a-b621eabea4d4639028139188867579.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2025/2025-12-31-e100.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_d019412b-7d77-4161-892a-b621eabea4d4639028139195503384.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2025/e100.html",
+          "bytes": 126345,
+          "sha256": "9df96a0b053af36e352e66f9ac43f5c752eb931d30e59a4b5baad5844d343eef"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/d019412b-7d77-4161-892a-b621eabea4d4639028139190978098.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2025/e100.srt",
+          "bytes": 133437,
+          "sha256": "b8946e49888e1b666c50283ded71d230ef30f65271572a948de7cf73f6ad7da8"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/d019412b-7d77-4161-892a-b621eabea4d4639028139188867579.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2025/e100.vtt",
+          "bytes": 134513,
+          "sha256": "750eac4cbf06a027fc8e32395d90bd178c6354219848969f3d12e7f13f6de745"
+        }
+      ],
+      "segment_count": 1339,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 101,
+      "title": "101. HydraPool, HashDash, and the Telehash Playbook: Open-Sourcing Bitcoin Mining",
+      "guid": "ca0eab91-a6aa-4d17-9b27-16ec25e925fc",
+      "published_at": "2026-01-14T22:38:15+00:00",
+      "date": "2026-01-14",
+      "duration": "01:27:53",
+      "episode_url": "https://www.pod256.org/episodepage/101-hydrapool-hashdash-and-the-telehash-playbook-open-sourcing-bitcoin-mining",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639040267679429487ca0eab91-a6aa-4d17-9b27-16ec25e925fc.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_ca0eab91-a6aa-4d17-9b27-16ec25e925fc639040268051583354.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/ca0eab91-a6aa-4d17-9b27-16ec25e925fc639040268044476482.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/ca0eab91-a6aa-4d17-9b27-16ec25e925fc639040268041492935.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-01-14-e101.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_ca0eab91-a6aa-4d17-9b27-16ec25e925fc639040268051583354.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e101.html",
+          "bytes": 116400,
+          "sha256": "a118ee6b57358ccb6c8e0b8cf1dcb85963d8eb5c1c957e77c8bb2dbf6fb09589"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/ca0eab91-a6aa-4d17-9b27-16ec25e925fc639040268044476482.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e101.srt",
+          "bytes": 122850,
+          "sha256": "e98103dceb7109454b97dfb900da989c02ec7a47170a24694449e4612568c4d3"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/ca0eab91-a6aa-4d17-9b27-16ec25e925fc639040268041492935.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e101.vtt",
+          "bytes": 124091,
+          "sha256": "7582441ab92ca09a7cf9f0de94627fac94c66d04cf46ecd7c2e0f7296567cf9b"
+        }
+      ],
+      "segment_count": 1341,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 102,
+      "title": "102. Why Open Firmware Wins: A Post-NEMS Debrief with Mujina’s Lead Dev",
+      "guid": "4e258607-9299-4671-b11b-ff7c2fa3170f",
+      "published_at": "2026-01-30T19:06:29+00:00",
+      "date": "2026-01-30",
+      "duration": "01:10:25",
+      "episode_url": "https://www.pod256.org/episodepage/102-why-open-firmware-wins-a-post-nems-debrief-with-mujinas-lead-dev",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6390539641264909774e258607-9299-4671-b11b-ff7c2fa3170f.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_4e258607-9299-4671-b11b-ff7c2fa3170f639053964563039999.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4e258607-9299-4671-b11b-ff7c2fa3170f639053964558296754.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4e258607-9299-4671-b11b-ff7c2fa3170f639053964555173483.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-01-30-e102.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_4e258607-9299-4671-b11b-ff7c2fa3170f639053964563039999.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e102.html",
+          "bytes": 92877,
+          "sha256": "ee62c0ac39cb72e58f2c820bb30d853142c83840689282acdd581bc0df1ee33d"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4e258607-9299-4671-b11b-ff7c2fa3170f639053964558296754.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e102.srt",
+          "bytes": 98898,
+          "sha256": "ae5c4549357ec51cb2379ad147e279172ce2740abd25308d2b70d6d0df374b70"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4e258607-9299-4671-b11b-ff7c2fa3170f639053964555173483.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e102.vtt",
+          "bytes": 99496,
+          "sha256": "fa697a43ae9e7dc63774549726f001493b848abbe1dd1a7c8841301f70db3ef4"
+        }
+      ],
+      "segment_count": 1008,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 103,
+      "title": "103. Closed-Source is Retarded: Building Bitcoin Miners for Homes, Businesses, and Beyond",
+      "guid": "745a6a2d-c1e5-4387-8e04-42b83064b691",
+      "published_at": "2026-02-04T22:47:16+00:00",
+      "date": "2026-02-04",
+      "duration": "01:19:57",
+      "episode_url": "https://www.pod256.org/episodepage/103-closed-source-is-retarded-building-bitcoin-miners-for-homes-businesses-and-beyond",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639058414816421827745a6a2d-c1e5-4387-8e04-42b83064b691.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_745a6a2d-c1e5-4387-8e04-42b83064b691639058415162713275.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/745a6a2d-c1e5-4387-8e04-42b83064b691639058415154990804.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/745a6a2d-c1e5-4387-8e04-42b83064b691639058415152210126.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-02-04-e103.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_745a6a2d-c1e5-4387-8e04-42b83064b691639058415162713275.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e103.html",
+          "bytes": 107366,
+          "sha256": "57f2b2cfc6b884aa1c178951090974d3ebdaaa5f086619d8410d3afe45e470a0"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/745a6a2d-c1e5-4387-8e04-42b83064b691639058415154990804.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e103.srt",
+          "bytes": 113099,
+          "sha256": "8b1e00685051f047b7d73638da8a2cc21f3a4a050acaafc00c8f2230d8f80dd3"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/745a6a2d-c1e5-4387-8e04-42b83064b691639058415152210126.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e103.vtt",
+          "bytes": 113868,
+          "sha256": "c7a034e7ea84560aa9304873ed297e8dc74878f27dc9448fbc86921e3c00b65d"
+        }
+      ],
+      "segment_count": 1052,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 104,
+      "title": "104. AI, Open-Source Bitcoin Mining, and Battling Surveillance",
+      "guid": "302108d3-4002-46f2-9807-596854b28274",
+      "published_at": "2026-02-11T23:06:39+00:00",
+      "date": "2026-02-11",
+      "duration": "00:57:13",
+      "episode_url": "https://www.pod256.org/episodepage/104-ai-open-source-bitcoin-mining-and-battling-surveillance",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639064476924857068302108d3-4002-46f2-9807-596854b28274.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_302108d3-4002-46f2-9807-596854b28274639064477310893201.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/302108d3-4002-46f2-9807-596854b28274639064477305214510.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/302108d3-4002-46f2-9807-596854b28274639064477301604720.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-02-11-e104.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_302108d3-4002-46f2-9807-596854b28274639064477310893201.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e104.html",
+          "bytes": 74914,
+          "sha256": "0fd4d0695c734d862bdd84ec5bcd2f55982e4b589080fffb9d6441c7c7ddf603"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/302108d3-4002-46f2-9807-596854b28274639064477305214510.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e104.srt",
+          "bytes": 79474,
+          "sha256": "54e5d0c8473b2b01869c32df65b05b3b540f225f1b5d6bd31467fe28d170ad6f"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/302108d3-4002-46f2-9807-596854b28274639064477301604720.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e104.vtt",
+          "bytes": 80118,
+          "sha256": "41c357d0384b5fcffd484929fa88154b087db988e0b07d4d92947419ba0a8068"
+        }
+      ],
+      "segment_count": 849,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 105,
+      "title": "105. Chips, Chains, and Hot Tubs: Open Mining Goes Hands‑On",
+      "guid": "1f3acd3a-24f4-41a1-ad90-bca3479dbfbb",
+      "published_at": "2026-02-19T00:45:54+00:00",
+      "date": "2026-02-18",
+      "duration": "01:09:02",
+      "episode_url": "https://www.pod256.org/episodepage/105-chips-chains-and-hot-tubs-open-mining-goes-hands-on",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6390705841440379561f3acd3a-24f4-41a1-ad90-bca3479dbfbb.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_1f3acd3a-24f4-41a1-ad90-bca3479dbfbb639070584633899931.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1f3acd3a-24f4-41a1-ad90-bca3479dbfbb639070584629849990.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1f3acd3a-24f4-41a1-ad90-bca3479dbfbb639070584627570914.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-02-18-e105.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_1f3acd3a-24f4-41a1-ad90-bca3479dbfbb639070584633899931.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e105.html",
+          "bytes": 91409,
+          "sha256": "0b9a04491556841ebd493643c4205188e6bb856c337e858148abc9cd0cc6f919"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1f3acd3a-24f4-41a1-ad90-bca3479dbfbb639070584629849990.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e105.srt",
+          "bytes": 95813,
+          "sha256": "437ad0ed1716a103e596827def5d08341ac3ce0c31bbfdbc77fcc205c4f16639"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1f3acd3a-24f4-41a1-ad90-bca3479dbfbb639070584627570914.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e105.vtt",
+          "bytes": 96508,
+          "sha256": "618aec83bf715fdfb6ce7e2dcf9a9bee8f45feaf17ea41c8ba6ba7f3a56ecd4f"
+        }
+      ],
+      "segment_count": 855,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 106,
+      "title": "106. High Signal in the Hashtub: Workshops, Open Source, and Hashrate Heat",
+      "guid": "321e3f46-d8e7-427c-90a3-cd3ab4a558b6",
+      "published_at": "2026-03-04T21:54:46+00:00",
+      "date": "2026-03-04",
+      "duration": "00:44:01",
+      "episode_url": "https://www.pod256.org/episodepage/106-high-signal-in-the-hashtub-workshops-open-source-and-hashrate-heat",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639082572144786962321e3f46-d8e7-427c-90a3-cd3ab4a558b6.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_321e3f46-d8e7-427c-90a3-cd3ab4a558b6639082572379325292.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/321e3f46-d8e7-427c-90a3-cd3ab4a558b6639082572361718682.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/321e3f46-d8e7-427c-90a3-cd3ab4a558b6639082572358544698.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-03-04-e106.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_321e3f46-d8e7-427c-90a3-cd3ab4a558b6639082572379325292.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e106.html",
+          "bytes": 56153,
+          "sha256": "c1496cf9718880e2456bef08081b3598e3b4d9cb88f5803ff352e63f2ce421d3"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/321e3f46-d8e7-427c-90a3-cd3ab4a558b6639082572361718682.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e106.srt",
+          "bytes": 59177,
+          "sha256": "aca4dd55b4944cec7c0f4fa8c8d9110c84a6b06a2fcaeacf57a3253ee3e2eab7"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/321e3f46-d8e7-427c-90a3-cd3ab4a558b6639082572358544698.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e106.vtt",
+          "bytes": 59675,
+          "sha256": "001e1bb5b807137098bdbd804c02cba5d43ab040122e1ff035ce21f61e792824"
+        }
+      ],
+      "segment_count": 585,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 107,
+      "title": "107. Hacking the Antminer: Mujina on Stock Control Boards, Dev Fees Be Gone",
+      "guid": "cac53cbb-baaf-412a-af85-04b3e6e62094",
+      "published_at": "2026-03-11T22:05:01+00:00",
+      "date": "2026-03-11",
+      "duration": "01:10:08",
+      "episode_url": "https://www.pod256.org/episodepage/107-hacking-the-antminer-mujina-on-stock-control-boards-dev-fees-be-gone",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639088631082185033cac53cbb-baaf-412a-af85-04b3e6e62094.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_cac53cbb-baaf-412a-af85-04b3e6e62094639088631480315703.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/cac53cbb-baaf-412a-af85-04b3e6e62094639088631453057228.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/cac53cbb-baaf-412a-af85-04b3e6e62094639088631448207870.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-03-11-e107.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_cac53cbb-baaf-412a-af85-04b3e6e62094639088631480315703.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e107.html",
+          "bytes": 90808,
+          "sha256": "4f0c3aae10dbf8e858b91845f3f4af097f6477ea4ebfff2e7bab1869d99caa53"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/cac53cbb-baaf-412a-af85-04b3e6e62094639088631453057228.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e107.srt",
+          "bytes": 96988,
+          "sha256": "2f98d51159c8f63d2e72690e9cebc3d0eec290310d6c4e0cbf2c08dfeaa1a493"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/cac53cbb-baaf-412a-af85-04b3e6e62094639088631448207870.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e107.vtt",
+          "bytes": 97607,
+          "sha256": "91977671ff41f561298667ea368ab2d53523a3868fa641decf53fde8f4ceb252"
+        }
+      ],
+      "segment_count": 1035,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 108,
+      "title": "108. From Mixers to Miners: Why Samourai Matters for All of Bitcoin (and What You Can Do)",
+      "guid": "86be92e7-26ca-4ab0-b1ca-7572f733430d",
+      "published_at": "2026-03-18T21:23:46+00:00",
+      "date": "2026-03-18",
+      "duration": "01:16:45",
+      "episode_url": "https://www.pod256.org/episodepage/108",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/63909465054563492586be92e7-26ca-4ab0-b1ca-7572f733430d.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_86be92e7-26ca-4ab0-b1ca-7572f733430d639094650903994120.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/86be92e7-26ca-4ab0-b1ca-7572f733430d639094650885062735.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/86be92e7-26ca-4ab0-b1ca-7572f733430d639094650882298783.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-03-18-e108.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_86be92e7-26ca-4ab0-b1ca-7572f733430d639094650903994120.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e108.html",
+          "bytes": 98410,
+          "sha256": "1290fdacbef63930465603739d4040368ce12433afce541e3439928c8115031b"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/86be92e7-26ca-4ab0-b1ca-7572f733430d639094650885062735.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e108.srt",
+          "bytes": 105262,
+          "sha256": "481c747df25b5606c2a38a381b5469350cfcbbc102e885168ed4a07a6470d683"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/86be92e7-26ca-4ab0-b1ca-7572f733430d639094650882298783.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e108.vtt",
+          "bytes": 105884,
+          "sha256": "f5231a6ceb624b85a7a51971f3606c1796f4fa5b5c7baec808b4752e6460f5ae"
+        }
+      ],
+      "segment_count": 1111,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 109,
+      "title": "109. Hashrate Heat, Home Sovereignty, and the Open-Source Mining Stack",
+      "guid": "26259ec4-5e43-4690-97a4-4dea34ba507c",
+      "published_at": "2026-03-25T20:47:30+00:00",
+      "date": "2026-03-25",
+      "duration": "00:51:54",
+      "episode_url": "https://www.pod256.org/episodepage/109-hashrate-heat-home-sovereignty-and-the-open-source-mining-stack",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/63910068143951384326259ec4-5e43-4690-97a4-4dea34ba507c.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_26259ec4-5e43-4690-97a4-4dea34ba507c639100681752180592.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/26259ec4-5e43-4690-97a4-4dea34ba507c639100681748709666.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/26259ec4-5e43-4690-97a4-4dea34ba507c639100681745710261.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-03-25-e109.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_26259ec4-5e43-4690-97a4-4dea34ba507c639100681752180592.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e109.html",
+          "bytes": 64113,
+          "sha256": "4f35094a7f4724e16e5391f83313ba5ac9368c3778f4436ee409fc02df775ae2"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/26259ec4-5e43-4690-97a4-4dea34ba507c639100681748709666.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e109.srt",
+          "bytes": 67429,
+          "sha256": "9df97b3e667fca5ab065f9dbc4f51a0816f94732093b389460aa60baf579ca6d"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/26259ec4-5e43-4690-97a4-4dea34ba507c639100681745710261.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e109.vtt",
+          "bytes": 67780,
+          "sha256": "6a5a5c66c66b7924f6776da3199e52e941a92ad5420d24df93f9725963ad306b"
+        }
+      ],
+      "segment_count": 548,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 110,
+      "title": "110. April Fools, Real Progress: Open Firmware, Open Pools, and the Path to Decentralized Mining",
+      "guid": "3437a351-ce30-4f2c-8ced-790eb730c694",
+      "published_at": "2026-04-01T22:33:18+00:00",
+      "date": "2026-04-01",
+      "duration": "01:01:51",
+      "episode_url": "https://www.pod256.org/episodepage/110-april-fools-real-progress-open-firmware-open-pools-and-the-path-to-decentralized-mining",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6391067908626199713437a351-ce30-4f2c-8ced-790eb730c694v1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_3437a351-ce30-4f2c-8ced-790eb730c694639106792280807279.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/3437a351-ce30-4f2c-8ced-790eb730c694639106792271967550.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/3437a351-ce30-4f2c-8ced-790eb730c694639106792268348566.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-04-01-e110.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_3437a351-ce30-4f2c-8ced-790eb730c694639106792280807279.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e110.html",
+          "bytes": 78040,
+          "sha256": "53542e216f574c65efc12fdca8282b4ac322a9039557e8837d25bc2e2f9d9e32"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/3437a351-ce30-4f2c-8ced-790eb730c694639106792271967550.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e110.srt",
+          "bytes": 83500,
+          "sha256": "565e33d1865977db2765ce92a8a4a4e5d621d29cba945beb2c25da4a9d0add42"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/3437a351-ce30-4f2c-8ced-790eb730c694639106792268348566.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e110.vtt",
+          "bytes": 84146,
+          "sha256": "d2fbcf5e33487eff3f52563f4f96f3cf2c26ba4b063e65eecc3f126102011b17"
+        }
+      ],
+      "segment_count": 963,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 111,
+      "title": "111. Open-Source Overdrive: Mujina Breakthroughs, Public Pool’s First Block, and LibreBoard v3",
+      "guid": "615e71e8-e13b-4c08-9807-cdc6a511ff4b",
+      "published_at": "2026-04-11T01:02:48+00:00",
+      "date": "2026-04-10",
+      "duration": "01:29:37",
+      "episode_url": "https://www.pod256.org/episodepage/111",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639114657919636605615e71e8-e13b-4c08-9807-cdc6a511ff4bv1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_615e71e8-e13b-4c08-9807-cdc6a511ff4b639114659484536524.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/615e71e8-e13b-4c08-9807-cdc6a511ff4b639114659481591008.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/615e71e8-e13b-4c08-9807-cdc6a511ff4b639114659478059579.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-04-10-e111.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_615e71e8-e13b-4c08-9807-cdc6a511ff4b639114659484536524.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e111.html",
+          "bytes": 113612,
+          "sha256": "edff94999685307280203aaab95e7af46c5c682a95131b4a75d1645feb55dbb6"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/615e71e8-e13b-4c08-9807-cdc6a511ff4b639114659481591008.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e111.srt",
+          "bytes": 122189,
+          "sha256": "c35c4b47c377bf98bf25b1fa4e86f6573c099360d3a865b49fb5704668334668"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/615e71e8-e13b-4c08-9807-cdc6a511ff4b639114659478059579.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e111.vtt",
+          "bytes": 123013,
+          "sha256": "f9c82bb1ab811c78c744cb1c1941794f2797831c52f147017b3f7c90f2e415ec"
+        }
+      ],
+      "segment_count": 1392,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 112,
+      "title": "112. Stratum v2, Nonce Space, and the DIY Miner’s Comeback",
+      "guid": "e3c390f4-e4ae-4b6a-9ae8-8db5e0d7d675",
+      "published_at": "2026-04-15T23:15:41+00:00",
+      "date": "2026-04-15",
+      "duration": "01:23:43",
+      "episode_url": "https://www.pod256.org/episodepage/112-stratum-v2-nonce-space-and-the-diy-miners-comeback",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639118912188835123e3c390f4-e4ae-4b6a-9ae8-8db5e0d7d675v1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_e3c390f4-e4ae-4b6a-9ae8-8db5e0d7d675639118913637903573.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/e3c390f4-e4ae-4b6a-9ae8-8db5e0d7d675639118913632021157.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/e3c390f4-e4ae-4b6a-9ae8-8db5e0d7d675639118913629031234.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-04-15-e112.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_e3c390f4-e4ae-4b6a-9ae8-8db5e0d7d675639118913637903573.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e112.html",
+          "bytes": 107697,
+          "sha256": "a161736e0e1692e49c6b8fd872e5cf7c92df3c2caacaed569703c9e1abc07870"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/e3c390f4-e4ae-4b6a-9ae8-8db5e0d7d675639118913632021157.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e112.srt",
+          "bytes": 112521,
+          "sha256": "d1a8977958809a94264629e21b7f4335624cb2854742263a373a7ff462956b0f"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/e3c390f4-e4ae-4b6a-9ae8-8db5e0d7d675639118913629031234.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e112.vtt",
+          "bytes": 113261,
+          "sha256": "134383def4f68a26fe296fe7eabd9d8d0b514b2d3a481c73a5dfb9d9b85bb196"
+        }
+      ],
+      "segment_count": 930,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 113,
+      "title": "113. Touchscreens, Thermostats, and Doom: A Weekend of Open Mining Hacks",
+      "guid": "64c9aadb-47cc-4718-a228-016ce7ac142e",
+      "published_at": "2026-04-22T22:08:53+00:00",
+      "date": "2026-04-22",
+      "duration": "00:40:32",
+      "episode_url": "https://www.pod256.org/episodepage/113-touchscreens-thermostats-and-doom-a-weekend-of-open-mining-hacks",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/63912491824864838164c9aadb-47cc-4718-a228-016ce7ac142ev1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_64c9aadb-47cc-4718-a228-016ce7ac142e639124923331650310.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/64c9aadb-47cc-4718-a228-016ce7ac142e639124923328983252.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/64c9aadb-47cc-4718-a228-016ce7ac142e639124923326758560.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-04-22-e113.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_64c9aadb-47cc-4718-a228-016ce7ac142e639124923331650310.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e113.html",
+          "bytes": 50788,
+          "sha256": "2b6a1d8808939f7bc3ec3e296e69863f808c3ac974fb18c5256fc019634364e2"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/64c9aadb-47cc-4718-a228-016ce7ac142e639124923328983252.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e113.srt",
+          "bytes": 52072,
+          "sha256": "48e89ec7eda71a2df9d6a23e54407f413c2e47c7eacda5f86e0002c79ba83551"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/64c9aadb-47cc-4718-a228-016ce7ac142e639124923326758560.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e113.vtt",
+          "bytes": 52401,
+          "sha256": "77fa9da8ffd1b3e047223115e4d1687b45e4c0e351f4ca89efdf12d51a9b8f99"
+        }
+      ],
+      "segment_count": 282,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 114,
+      "title": "114. Open Source Wins in Vegas: $100k Boost, DoomAxe Demo, and Telehash #4",
+      "guid": "1419a570-0be7-4bac-b18e-c1fdef750745",
+      "published_at": "2026-05-13T22:44:50+00:00",
+      "date": "2026-05-13",
+      "duration": "00:51:06",
+      "episode_url": "https://www.pod256.org/episodepage/114-open-source-wins-in-vegas-100k-boost-doomaxe-demo-and-telehash-4",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6391430864963998451419a570-0be7-4bac-b18e-c1fdef750745v1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_1419a570-0be7-4bac-b18e-c1fdef750745639143087553069068.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1419a570-0be7-4bac-b18e-c1fdef750745639143087551296172.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1419a570-0be7-4bac-b18e-c1fdef750745639143087549622567.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-05-13-e114.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_1419a570-0be7-4bac-b18e-c1fdef750745639143087553069068.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e114.html",
+          "bytes": 63648,
+          "sha256": "9eb8639838946cafa6920ce78804bb977ef1b8586e1528c0bf5a7f6143c9ded3"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1419a570-0be7-4bac-b18e-c1fdef750745639143087551296172.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e114.srt",
+          "bytes": 65368,
+          "sha256": "585469ee455dc2c8aafc8f271867ec9ee4ef4684af2e72542aa9b8e412d4c409"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/1419a570-0be7-4bac-b18e-c1fdef750745639143087549622567.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e114.vtt",
+          "bytes": 65759,
+          "sha256": "9203ef63bca6177b25f0f6f8c6bf821c8082fb91c20f94d86ed97d8b5321080a"
+        }
+      ],
+      "segment_count": 368,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 115,
+      "title": "115. From Bitaxe to Exahash: Inside HydroPool’s Record Stress Test and What’s Next",
+      "guid": "0994b5ff-4f54-4485-b6f2-8981542373d4",
+      "published_at": "2026-05-27T23:47:36+00:00",
+      "date": "2026-05-27",
+      "duration": "01:15:42",
+      "episode_url": "https://www.pod256.org/episodepage/115-from-bitaxe-to-exahash-inside-hydropools-record-stress-test-and-whats-next",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6391552181896507990994b5ff-4f54-4485-b6f2-8981542373d4v1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_0994b5ff-4f54-4485-b6f2-8981542373d4639155219667284464.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0994b5ff-4f54-4485-b6f2-8981542373d4639155219657219413.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0994b5ff-4f54-4485-b6f2-8981542373d4639155219652756433.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-05-27-e115.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_0994b5ff-4f54-4485-b6f2-8981542373d4639155219667284464.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e115.html",
+          "bytes": 95390,
+          "sha256": "6a8b3022542fda928ba36b448172d189815f99ef76c1a255ab0c08257bd6d23e"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0994b5ff-4f54-4485-b6f2-8981542373d4639155219657219413.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e115.srt",
+          "bytes": 97666,
+          "sha256": "8d0a40424666ec3f3657e1b6264be695b61512a094c20bf290ba1bcd3ec30dd1"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/0994b5ff-4f54-4485-b6f2-8981542373d4639155219652756433.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e115.vtt",
+          "bytes": 98156,
+          "sha256": "e293507b724d9238d4b9b430a4d0f1b3af769bb1bc3d4f77a5090c2dc379df11"
+        }
+      ],
+      "segment_count": 487,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 116,
+      "title": "116. Decentralizing Pool Payouts: Inside GridPool with Agent P",
+      "guid": "5c382281-1e7f-4c25-b99f-d5c1d013dbe0",
+      "published_at": "2026-06-10T17:04:31+00:00",
+      "date": "2026-06-10",
+      "duration": "01:04:33",
+      "episode_url": "https://www.pod256.org/episodepage/116-decentralizing-pool-payouts-inside-gridpool-with-agent-p",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6391670742950868385c382281-1e7f-4c25-b99f-d5c1d013dbe0v1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_5c382281-1e7f-4c25-b99f-d5c1d013dbe0639167075879017674.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/5c382281-1e7f-4c25-b99f-d5c1d013dbe0639167075874138662.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/5c382281-1e7f-4c25-b99f-d5c1d013dbe0639167075869892379.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-06-10-e116.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_5c382281-1e7f-4c25-b99f-d5c1d013dbe0639167075879017674.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e116.html",
+          "bytes": 78617,
+          "sha256": "0c976b58664883e1975c1d0d655c1720d88944ca5043641c55b936ab8cd5db97"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/5c382281-1e7f-4c25-b99f-d5c1d013dbe0639167075874138662.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e116.srt",
+          "bytes": 81293,
+          "sha256": "9e945cbde400f059b0d4fcf89838a7659687d3f42a5fa94dbf5a165615175296"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/5c382281-1e7f-4c25-b99f-d5c1d013dbe0639167075869892379.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e116.vtt",
+          "bytes": 81609,
+          "sha256": "1c41c0aaa4c07d8a8f63f6c7e88b0985f500ebbf0198a64fd14ef6b5d36b1b83"
+        }
+      ],
+      "segment_count": 450,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 117,
+      "title": "117. Decentralizing the Dark Corner: Building an Open Mining Stack",
+      "guid": "45a41f32-e524-413c-978c-d91350605a8d",
+      "published_at": "2026-06-17T18:27:47+00:00",
+      "date": "2026-06-17",
+      "duration": "01:01:32",
+      "episode_url": "https://www.pod256.org/episodepage/117-decentralizing-the-dark-corner-building-an-open-mining-stack",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/63917317300895466945a41f32-e524-413c-978c-d91350605a8dv1.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_45a41f32-e524-413c-978c-d91350605a8d639173174557224625.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/45a41f32-e524-413c-978c-d91350605a8d639173174554171429.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/45a41f32-e524-413c-978c-d91350605a8d639173174551482253.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-06-17-e117.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_45a41f32-e524-413c-978c-d91350605a8d639173174557224625.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e117.html",
+          "bytes": 79060,
+          "sha256": "a70ca1a506370fa591f13c82bee5bee91056bdef9a3262d8c5d0b4eca7d93594"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/45a41f32-e524-413c-978c-d91350605a8d639173174554171429.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e117.srt",
+          "bytes": 81240,
+          "sha256": "148a4a70cd7c4bcd17431537dd43161abcdc54ecf9dac9f276b0c1fec31021bb"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/45a41f32-e524-413c-978c-d91350605a8d639173174551482253.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e117.vtt",
+          "bytes": 81634,
+          "sha256": "586e016e3021b8262cbea62ac59e5f41d2ff148b3a2f02b8245d5d992922a615"
+        }
+      ],
+      "segment_count": 427,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 118,
+      "title": "118. From Nairobi to Mugena: Teaching Bitcoin Mining With Open Hardware",
+      "guid": "f83728d2-bdd8-485a-8d4f-0904467d042f",
+      "published_at": "2026-06-24T18:23:14+00:00",
+      "date": "2026-06-24",
+      "duration": "01:09:09",
+      "episode_url": "https://www.pod256.org/episodepage/118-from-nairobi-to-mugena-teaching-bitcoin-mining-with-open-hardware",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639179217067201633f83728d2-bdd8-485a-8d4f-0904467d042f.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_f83728d2-bdd8-485a-8d4f-0904467d042f639179218121444023.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f83728d2-bdd8-485a-8d4f-0904467d042f639179218115092794.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f83728d2-bdd8-485a-8d4f-0904467d042f639179218111385002.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-06-24-e118.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_f83728d2-bdd8-485a-8d4f-0904467d042f639179218121444023.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e118.html",
+          "bytes": 87077,
+          "sha256": "f0268374dcf3aa05619369c4906a2dc8a2840175077affb1e654b3eae0ff0115"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f83728d2-bdd8-485a-8d4f-0904467d042f639179218115092794.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e118.srt",
+          "bytes": 89537,
+          "sha256": "9ab5182793f714bfbfd4949db0470992152ecad961dcf365d513af1219859660"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f83728d2-bdd8-485a-8d4f-0904467d042f639179218111385002.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e118.vtt",
+          "bytes": 89907,
+          "sha256": "59e5386bea62be1728402b7d89e8d0bf0d12d21ddcdc1df19f0ffdff62436e35"
+        }
+      ],
+      "segment_count": 450,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 119,
+      "title": "119. Soft Forks, Censorship Risks, and Open-Source Bitcoin",
+      "guid": "3d2ac707-0117-452b-82db-755df5c4369a",
+      "published_at": "2026-07-08T18:04:00+00:00",
+      "date": "2026-07-08",
+      "duration": "00:51:26",
+      "episode_url": "https://www.pod256.org/episodepage/119-soft-forks-censorship-risks-and-open-source-bitcoin",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6391913019262845133d2ac707-0117-452b-82db-755df5c4369a.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_3d2ac707-0117-452b-82db-755df5c4369a639191302556745031.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/3d2ac707-0117-452b-82db-755df5c4369a639191302553018892.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/3d2ac707-0117-452b-82db-755df5c4369a639191302549708886.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-07-08-e119.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_3d2ac707-0117-452b-82db-755df5c4369a639191302556745031.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e119.html",
+          "bytes": 63144,
+          "sha256": "1fdef68304e51016434a6da6b0972aa46d0cf79fdb46d7e43f3f286e8b1321f8"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/3d2ac707-0117-452b-82db-755df5c4369a639191302553018892.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e119.srt",
+          "bytes": 64668,
+          "sha256": "bfff17acc5f5cf9401b0922d9b5f244923b6908e6876d2a8e4c9d9f6089fd21e"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/3d2ac707-0117-452b-82db-755df5c4369a639191302549708886.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e119.vtt",
+          "bytes": 65012,
+          "sha256": "752820e8ec2296a6583a88450ff0cda6f5627fbf40b535cfb2730b3615c0f0fb"
+        }
+      ],
+      "segment_count": 321,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 120,
+      "title": "120. Precise Wattage Control Changes Everything for Bitcoin Mining",
+      "guid": "f4934487-12d8-4f91-9811-e1afad81f267",
+      "published_at": "2026-07-15T17:16:14+00:00",
+      "date": "2026-07-15",
+      "duration": "01:18:33",
+      "episode_url": "https://www.pod256.org/episodepage/120-precise-wattage-control-changes-everything-for-bitcoin-mining",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639197318439822194f4934487-12d8-4f91-9811-e1afad81f267.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_f4934487-12d8-4f91-9811-e1afad81f267639197319407938150.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f4934487-12d8-4f91-9811-e1afad81f267639197319397100366.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f4934487-12d8-4f91-9811-e1afad81f267639197319392935848.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-07-15-e120.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_f4934487-12d8-4f91-9811-e1afad81f267639197319407938150.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e120.html",
+          "bytes": 98959,
+          "sha256": "30894094f5da9fcf4216701416d479b771bbf38ed856141402edd08d9300fd5f"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f4934487-12d8-4f91-9811-e1afad81f267639197319397100366.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e120.srt",
+          "bytes": 100859,
+          "sha256": "bb42286d50a70ae8313b232c5d5f6807db540b86b8f9be009545fce288fd169b"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/f4934487-12d8-4f91-9811-e1afad81f267639197319392935848.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e120.vtt",
+          "bytes": 101169,
+          "sha256": "3537c05255051c143c95d748b4df8a5efb458726054a1f90827842abf30d816b"
+        }
+      ],
+      "segment_count": 350,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 121,
+      "title": "121. Why Open-Source Mining Firmware Matters: Inside Mujina’s Next Phase",
+      "guid": "d367bcd3-d19c-4896-9f76-39d74f13713d",
+      "published_at": "2026-07-27T22:59:50+00:00",
+      "date": "2026-07-27",
+      "duration": "01:22:01",
+      "episode_url": "https://www.pod256.org/episodepage/121-why-open-source-mining-firmware-matters-inside-mujinas-next-phase",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639207885952943266d367bcd3-d19c-4896-9f76-39d74f13713d.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_d367bcd3-d19c-4896-9f76-39d74f13713d639207886963297041.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/d367bcd3-d19c-4896-9f76-39d74f13713d639207886949470069.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/d367bcd3-d19c-4896-9f76-39d74f13713d639207886943725727.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-07-27-e121.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_d367bcd3-d19c-4896-9f76-39d74f13713d639207886963297041.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e121.html",
+          "bytes": 103479,
+          "sha256": "51cd105ee2ede14d56a5869135cfb960a1db2ff8c34154743b3e6fb4a44b14c6"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/d367bcd3-d19c-4896-9f76-39d74f13713d639207886949470069.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e121.srt",
+          "bytes": 106235,
+          "sha256": "c71189f8bdc8f8b9396363c0071fb61a97fbbe60eaaf481c22c6af5bd4896d47"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/d367bcd3-d19c-4896-9f76-39d74f13713d639207886943725727.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e121.vtt",
+          "bytes": 106678,
+          "sha256": "2b72349f3f35d8d225f4e0495ca8c11c5c389a07f93f9bbfe73b37a736ed6343"
+        }
+      ],
+      "segment_count": 523,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 122,
+      "title": "122. Weak Entropy, Broken Trust, and the $90M Coldcard Fallout",
+      "guid": "e2838fbb-a43f-4767-adab-c489c6d17853",
+      "published_at": "2026-08-03T23:23:20+00:00",
+      "date": "2026-08-03",
+      "duration": "01:00:47",
+      "episode_url": "https://www.pod256.org/episodepage/122-weak-entropy-broken-trust-and-the-90m-coldcard-fallout",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639213914575582919e2838fbb-a43f-4767-adab-c489c6d17853.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_e2838fbb-a43f-4767-adab-c489c6d17853639213915429126651.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/e2838fbb-a43f-4767-adab-c489c6d17853639213915420365547.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/e2838fbb-a43f-4767-adab-c489c6d17853639213915416567765.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-08-03-e122.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_e2838fbb-a43f-4767-adab-c489c6d17853639213915429126651.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e122.html",
+          "bytes": 76321,
+          "sha256": "cd6e3ce71d1ff15f24d56a2086751cc25709a762ab3414c98adf50bcfa9ba746"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/e2838fbb-a43f-4767-adab-c489c6d17853639213915420365547.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e122.srt",
+          "bytes": 79197,
+          "sha256": "e176a9eabb393647b7afd3fd40954c9f343f5f42a52c014f0c25c77b34865f64"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/e2838fbb-a43f-4767-adab-c489c6d17853639213915416567765.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e122.vtt",
+          "bytes": 79693,
+          "sha256": "7550b5790cc8f6d5545196299129ac3ee200dfca06a293f0ce5fff2aeed3924c"
+        }
+      ],
+      "segment_count": 565,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 123,
+      "title": "123. Coldcard Fallout, Mining Firmware, and the BIP 110 Blowup",
+      "guid": "4d28411c-85b5-4b9c-9e33-2d2c91d63aaa",
+      "published_at": "2026-08-10T23:54:26+00:00",
+      "date": "2026-08-10",
+      "duration": "01:07:42",
+      "episode_url": "https://www.pod256.org/episodepage/123-coldcard-fallout-mining-firmware-and-the-bip-110-blowup",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6392200250578125114d28411c-85b5-4b9c-9e33-2d2c91d63aaa.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_4d28411c-85b5-4b9c-9e33-2d2c91d63aaa639220025816474285.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4d28411c-85b5-4b9c-9e33-2d2c91d63aaa639220025811905865.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4d28411c-85b5-4b9c-9e33-2d2c91d63aaa639220025809596278.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-08-10-e123.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_4d28411c-85b5-4b9c-9e33-2d2c91d63aaa639220025816474285.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e123.html",
+          "bytes": 83813,
+          "sha256": "32448544f01f9513d4172350ebfda26e486f9c25928eeace52814a6a71bfc42a"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4d28411c-85b5-4b9c-9e33-2d2c91d63aaa639220025811905865.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e123.srt",
+          "bytes": 86449,
+          "sha256": "fdeed0b3a6feae7ea6670e1a0d641a1c2d631b71568db6313c8aea1daad9884a"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/4d28411c-85b5-4b9c-9e33-2d2c91d63aaa639220025809596278.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e123.vtt",
+          "bytes": 86946,
+          "sha256": "2965b87b778121572720c32d82c1a75662064034281f876ab284fb0f6b20a79c"
+        }
+      ],
+      "segment_count": 535,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 124,
+      "title": "124. Mining Forks, Firmware Red Teams, and the Future of Sovereign Hashrate",
+      "guid": "5abfc766-0f5e-4790-a2de-c3d25c935a19",
+      "published_at": "2026-08-18T03:30:29+00:00",
+      "date": "2026-08-17",
+      "duration": "01:05:48",
+      "episode_url": "https://www.pod256.org/episodepage/124-mining-forks-firmware-red-teams-and-the-future-of-sovereign-hashrate",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6392262011014717095abfc766-0f5e-4790-a2de-c3d25c935a19.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_5abfc766-0f5e-4790-a2de-c3d25c935a19639226201933432442.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/5abfc766-0f5e-4790-a2de-c3d25c935a19639226201914830756.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/5abfc766-0f5e-4790-a2de-c3d25c935a19639226201911279987.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-08-17-e124.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_5abfc766-0f5e-4790-a2de-c3d25c935a19639226201933432442.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e124.html",
+          "bytes": 84426,
+          "sha256": "d83381d374142533e7f1145e51927ad0001d0d19768acff3e69a477d61d1b8cc"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/5abfc766-0f5e-4790-a2de-c3d25c935a19639226201914830756.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e124.srt",
+          "bytes": 86858,
+          "sha256": "c85bf52ddc49795b1da5550ead044e248abc24ebbc6b3b82653180c2dc02bca3"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/5abfc766-0f5e-4790-a2de-c3d25c935a19639226201911279987.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e124.vtt",
+          "bytes": 87375,
+          "sha256": "3aef096ef68cbf13933efa057a039db906ea24d5098633c3835985e799c5d1ab"
+        }
+      ],
+      "segment_count": 520,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 125,
+      "title": "125. Why Open Source and AI Are Colliding in Bitcoin Mining",
+      "guid": "7f6da525-7580-41a9-8b4f-46b076aeee0f",
+      "published_at": "2026-09-08T03:03:00+00:00",
+      "date": "2026-09-07",
+      "duration": "00:53:36",
+      "episode_url": "https://www.pod256.org/episodepage/125",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/6392564175829027387f6da525-7580-41a9-8b4f-46b076aeee0f.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_7f6da525-7580-41a9-8b4f-46b076aeee0f639256420444097227.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/7f6da525-7580-41a9-8b4f-46b076aeee0f639256420434680155.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/7f6da525-7580-41a9-8b4f-46b076aeee0f639256420429068351.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-09-07-e125.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_7f6da525-7580-41a9-8b4f-46b076aeee0f639256420444097227.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e125.html",
+          "bytes": 68912,
+          "sha256": "4213e519ecf6bd70c298c68289c47b4183bac8107276ebcaab80780d0844ae3c"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/7f6da525-7580-41a9-8b4f-46b076aeee0f639256420434680155.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e125.srt",
+          "bytes": 71848,
+          "sha256": "a5f0975134b7793320c2ac459aa43a6b8f48004c250a9f729f6d4c6ce2f9a35e"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/7f6da525-7580-41a9-8b4f-46b076aeee0f639256420429068351.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e125.vtt",
+          "bytes": 72328,
+          "sha256": "9695473e72ddaf3bddd9ca15a1c0e2cd228a2e259069b3f3404d1b3927a32fa5"
+        }
+      ],
+      "segment_count": 565,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 126,
+      "title": "126. Why Open Source Bitcoin Mining Matters More Than Ever",
+      "guid": "683f95c3-13c0-4651-9c89-1d82a0b6cc30",
+      "published_at": "2026-09-22T03:20:54+00:00",
+      "date": "2026-09-21",
+      "duration": "01:10:04",
+      "episode_url": "https://www.pod256.org/episodepage/126-why-open-source-bitcoin-mining-matters-more-than-ever",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639256430610901253683f95c3-13c0-4651-9c89-1d82a0b6cc30.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_683f95c3-13c0-4651-9c89-1d82a0b6cc30639256432403466448.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/683f95c3-13c0-4651-9c89-1d82a0b6cc30639256432389507576.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/683f95c3-13c0-4651-9c89-1d82a0b6cc30639256432386687726.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-09-21-e126.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_683f95c3-13c0-4651-9c89-1d82a0b6cc30639256432403466448.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e126.html",
+          "bytes": 88105,
+          "sha256": "6cbef272d47d61bee37c911178e73463bd06559e07b1040f798245c96005c7bf"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/683f95c3-13c0-4651-9c89-1d82a0b6cc30639256432389507576.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e126.srt",
+          "bytes": 91909,
+          "sha256": "32b264bea188732df62c8a31ab4ae8a1773f793fdbe2778c1364459dbabe9c4b"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/683f95c3-13c0-4651-9c89-1d82a0b6cc30639256432386687726.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e126.vtt",
+          "bytes": 92459,
+          "sha256": "c1a065e30d28e09e8473d58b28fd6773a9ba223fa43ea564d5eb831f79ab5249"
+        }
+      ],
+      "segment_count": 708,
+      "speakers": [
+        "Unknown"
+      ]
+    },
+    {
+      "episode": 127,
+      "title": "127. Self-Hosted AI and Open Mining: Tools for a More Sovereign Future",
+      "guid": "c0148fe7-cddb-44fe-97fe-48919ae64954",
+      "published_at": "2026-09-28T22:15:28+00:00",
+      "date": "2026-09-28",
+      "duration": "01:09:38",
+      "episode_url": "https://www.pod256.org/episodepage/127-self-hosted-ai-and-open-mining-tools-for-a-more-sovereign-future",
+      "audio_url": "https://serve.podhome.fm/episode/45f744d1-5b5f-4847-ed5e-08dde03e6614/639262294148694600c0148fe7-cddb-44fe-97fe-48919ae64954.mp3",
+      "transcript_sources": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_c0148fe7-cddb-44fe-97fe-48919ae64954639262296174919651.html",
+          "type": "text/html",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/c0148fe7-cddb-44fe-97fe-48919ae64954639262296157257103.srt",
+          "type": "application/x-subrip",
+          "language": "en-us"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/c0148fe7-cddb-44fe-97fe-48919ae64954639262296154228774.vtt",
+          "type": "text/vtt",
+          "language": "en-us"
+        }
+      ],
+      "status": "published",
+      "markdown_path": "transcripts/2026/2026-09-28-e127.md",
+      "original_files": [
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/transcript_c0148fe7-cddb-44fe-97fe-48919ae64954639262296174919651.html",
+          "type": "text/html",
+          "language": "en-us",
+          "path": "originals/2026/e127.html",
+          "bytes": 85939,
+          "sha256": "0323ef47b0305e6d783361123279911650230333fc04d3fc8bfb65ed58c844e5"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/c0148fe7-cddb-44fe-97fe-48919ae64954639262296157257103.srt",
+          "type": "application/x-subrip",
+          "language": "en-us",
+          "path": "originals/2026/e127.srt",
+          "bytes": 90087,
+          "sha256": "dcc828fabbbcac69c722130308409170be5bfd3fce9956d3823e45f6d06b47ed"
+        },
+        {
+          "url": "https://assets.podhome.fm/45f744d1-5b5f-4847-ed5e-08dde03e6614/c0148fe7-cddb-44fe-97fe-48919ae64954639262296154228774.vtt",
+          "type": "text/vtt",
+          "language": "en-us",
+          "path": "originals/2026/e127.vtt",
+          "bytes": 90542,
+          "sha256": "0d573977cc5670288b3eb049515440b6d347747f8fab5a8092e947e50a46c5b4"
+        }
+      ],
+      "segment_count": 703,
+      "speakers": [
+        "Unknown"
+      ]
+    }
+  ]
+}
