@@ -1,0 +1,16 @@
+# macOS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Build artifacts (knowledge pack is built, not hand-maintained)
+export/
+
+# Local agent scratch
+.agent/
