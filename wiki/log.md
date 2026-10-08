@@ -21,5 +21,11 @@ Append-only operation log. Newest entries at the bottom.
 - Raw: raw/inbox/hackathon-harvest/ (~500 sourced captures: ESP-Miner issues, asic-rs PR history #1-#409, OSMU Lab chip pages, POD256 transcripts e067-e127, BIP texts, 256F site/newsletter); raw/inbox/hackathon-wiki/ (~70 candidate drafts incl. wiki-new-sources branch)
 - Note: provenance + verification rules in raw/inbox/HARVEST.md — all material UNVERIFIED until re-compiled through our grounding invariant
 
+## [2026-10-08] ingest | 256F Telegram history — signal digest staged
+- Disposition: New (staged to inbox, compile in progress)
+- Raw: raw/inbox/2026-10-08-256f-telegram-signal.md
+- Note: 4,485 messages (2024-02-24 → 2026-10-07, 117 authors) filtered to 2,166 substantive via scripts/process_telegram_export.py (extract posture, PII redacted, bots/service dropped). Knowledge extraction + compile next.
+
+
 
 
