@@ -26,6 +26,13 @@ Append-only operation log. Newest entries at the bottom.
 - Raw: raw/inbox/2026-10-08-256f-telegram-signal.md
 - Note: 4,485 messages (2024-02-24 → 2026-10-07, 117 authors) filtered to 2,166 substantive via scripts/process_telegram_export.py (extract posture, PII redacted, bots/service dropped). Knowledge extraction + compile next.
 
+## [2026-10-08] compile | 256F Telegram knowledge → first 12 wiki articles
+- Disposition: Compiled (Draft)
+- Raw: raw/history/2026-10-08-256f-telegram-signal.md (moved from inbox to topic dir at compile)
+- Wiki: hardware/asic-thermals-and-heat-reuse; hardware/ember-one-bzm2; firmware/mujina; mining-software/asic-rs; pools/hydrapool; pools/pool-payout-schemes; protocols/decentralized-pool-designs; economics/open-mining-economics; hashrate-market/on-demand-hashrate; history/256f-community-timeline; industry/repair-supply-and-vendors; getting-started/community-workshop-wisdom
+- Note: 870 anchored claims extracted via .agent/telegram-extraction-256f.md (subagent full read); every claim cites [#msgid · date · author] anchors greppable in the digest; disputes rendered as Disputed blocks; lint --strict must pass before push
+
+
 
 
 

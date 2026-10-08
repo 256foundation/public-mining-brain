@@ -57,8 +57,15 @@ EVIDENCE_RES = [
     re.compile(r"\$\s?\d[\d,]*(?:\.\d+)?"),
     re.compile(r"\d{4}-\d{2}-\d{2}"),
     re.compile(r"\bv?\d+\.\d+(?:\.\d+)+\b"),
-    re.compile(r'"([^"]{20,})"'),
 ]
+
+
+def quoted_literals(body: str) -> list[str]:
+    """Double-quoted spans of >=20 chars, paired by splitting (regex pairing
+    falsely joins the closing quote of one string to the opening quote of the
+    next, capturing the text between them)."""
+    parts = body.split('"')
+    return [seg for i, seg in enumerate(parts) if i % 2 == 1 and len(seg) >= 20]
 
 issues: list[dict] = []
 fixes = 0
@@ -260,6 +267,12 @@ def lint(root_override: Path | None, do_fix: bool, strict: bool, as_json: bool) 
                     if lit in raw_text or norm_num(lit) in raw_norm:
                         continue
                     misses.append(lit)
+            for lit in quoted_literals(art["body"]):
+                if lit in meta_dates:
+                    continue
+                if lit in raw_text or norm_num(lit) in raw_norm:
+                    continue
+                misses.append(lit)
             if misses:
                 uniq = list(dict.fromkeys(misses))[:8]
                 issue("warn", "evidence", rel, "literals not found in linked raws (candidates): " + ", ".join(f"`{m}`" for m in uniq))
