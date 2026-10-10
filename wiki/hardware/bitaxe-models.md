@@ -248,6 +248,8 @@ Note: the 2022-03-04 commit predates the 2022-05-16 repo-creation date because c
 - [Bitaxe Board Design & Errata](bitaxe-board-design-and-errata.md)
 - [Bitmain ASIC Reference](bitmain-asic-reference.md)
 - [Ember One & the BZM2 Hardware Stack](ember-one-bzm2.md)
+- [OSMU Open Miners](osmu-open-miners.md)
+- Different topic: [Mining Policy and Legal](../industry/mining-policy-and-legal.md)
 - [ASIC Thermals & Heat Reuse](asic-thermals-and-heat-reuse.md)
 - [ESP-Miner / AxeOS](../firmware/esp-miner-axeos.md)
 - [Mujina](../firmware/mujina.md)
