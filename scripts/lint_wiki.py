@@ -186,7 +186,7 @@ def lint(root_override: Path | None, do_fix: bool, strict: bool, as_json: bool) 
 
     articles = load_articles()
     index_rows, index_lines = parse_index()
-    raw_files = [p for p in RAW.glob("*/*") if p.is_file() and p.name != ".gitkeep"]
+    raw_files = [p for p in RAW.rglob("*") if p.is_file() and p.name != ".gitkeep"]
 
     # ---- per-article checks ------------------------------------------------
     raw_referenced: set[Path] = set()
@@ -222,7 +222,7 @@ def lint(root_override: Path | None, do_fix: bool, strict: bool, as_json: bool) 
             if not target.exists():
                 fix = find_unique(Path(target_link).name, raw_files) if do_fix else None
                 if fix:
-                    new_link = f"[{Path(target_link).stem}](../../raw/{fix.parent.name}/{fix.name})"
+                    new_link = f"[{Path(target_link).stem}](../../raw/{fix.relative_to(RAW).as_posix()})"
                     text = art["path"].read_text(encoding="utf-8")
                     text = text.replace(f"]({target_link})", f"]({new_link.split('](', 1)[1]}", 1)
                     art["path"].write_text(text, encoding="utf-8")
@@ -234,11 +234,16 @@ def lint(root_override: Path | None, do_fix: bool, strict: bool, as_json: bool) 
             resolved_raws.append(target)
             raw_referenced.add(target)
 
-        # Body link resolution
+        # Body link resolution (inline links into raw/ count as evidence sources,
+        # so claims can cite the exact capture they came from)
         for link in MD_LINK_RE.findall(art["body"]):
             target = resolve_link(link, art["path"].parent)
             if target is None:
                 continue
+            if str(target).startswith(str(RAW.resolve())) and target.exists():
+                if target not in resolved_raws:
+                    resolved_raws.append(target)
+                raw_referenced.add(target)
             if str(target).startswith(str(WIKI.resolve())) and target.name not in ("index.md", "log.md"):
                 linked_articles.add(target)
             if not target.exists():
@@ -341,7 +346,7 @@ def lint(root_override: Path | None, do_fix: bool, strict: bool, as_json: bool) 
             issue("info", "orphan", art["rel"], "no inbound links from other wiki articles")
 
     for p in raw_files:
-        if p not in raw_referenced and p.parent.name != "inbox":
+        if p not in raw_referenced and "inbox" not in p.relative_to(RAW).parts:
             issue("info", "raw-backlog", str(p.relative_to(ROOT)), "raw file not referenced by any article")
 
     # ---- log format ---------------------------------------------------------
