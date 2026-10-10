@@ -1,14 +1,14 @@
 # Network State 2022–2026
 
-> Sources: POD256 show notes ("State of the Network" segment and news links), 2022-12-03 → 2026-09-28; POD256 episode 126 machine transcript (2026-09-21); 256 Foundation monthly newsletter "Bitcoin Network" sections, 2025-05 → 2025-10, and weekly "Assembling Freedom" issues, 2025-11 → 2026-05; 256 Foundation website, Telehash page and forum, 2026; heatpunks.org summit page (captured 2026-10-07)
-> Raw: [POD256 ep 031](../../raw/history/pod256/2023-10-30-pod256-031-no-holds-barred-w-special-guest-bitmaker-creator.md); [POD256 ep 046](../../raw/history/pod256/2024-05-24-pod256-046-no-holds-barred-w-special-guest-luke-dashjr-chair.md); [Newsletter, May 2025](../../raw/history/256f-newsletter/2025-05-05-bitcoin-mining-will-not-be-decentralized-until-it-is-open-so.md); [Newsletter, Jul 2025](../../raw/history/256f-newsletter/2025-07-15-the-bigger-they-are-the-harder-they-fall.md); [Newsletter, Oct 2025](../../raw/history/256f-newsletter/2025-10-28-assembling-freedom-10.md); [POD256 ep 126 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md)
-> Updated: 2026-10-09
-> As-Of: 2026-10-09
+> Sources: POD256 show notes ("State of the Network" segment and news links), 2022-12-03 → 2026-09-28; POD256 episode 126 machine transcript (2026-09-21); 256 Foundation monthly newsletter "Bitcoin Network" sections, 2025-05 → 2025-10, and weekly "Assembling Freedom" issues, 2025-11 → 2026-05; 256 Foundation website, Telehash page and forum, 2026; heatpunks.org summit page (captured 2026-10-07); POD256 transcripts (2025-04 → 2026-09)
+> Raw: [POD256 ep 031](../../raw/history/pod256/2023-10-30-pod256-031-no-holds-barred-w-special-guest-bitmaker-creator.md); [POD256 ep 046](../../raw/history/pod256/2024-05-24-pod256-046-no-holds-barred-w-special-guest-luke-dashjr-chair.md); [Newsletter, May 2025](../../raw/history/256f-newsletter/2025-05-05-bitcoin-mining-will-not-be-decentralized-until-it-is-open-so.md); [Newsletter, Jul 2025](../../raw/history/256f-newsletter/2025-07-15-the-bigger-they-are-the-harder-they-fall.md); [Newsletter, Oct 2025](../../raw/history/256f-newsletter/2025-10-28-assembling-freedom-10.md); [POD256 ep 126 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md); [POD256 e086 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-10-e086.md); [POD256 e088 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-24-e088.md); [POD256 e101 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-01-14-e101.md); [POD256 e119 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-07-08-e119.md)
+> Updated: 2026-10-10
+> As-Of: 2026-10-10
 > Status: Draft
 
 ## Overview
 
-This page collects dated snapshots of the Bitcoin mining network as the 256 Foundation's podcast ([POD256](../history/pod256-podcast.md)) and newsletter reported them between December 2022 and September 2026: network hashrate, difficulty, hashvalue/hashprice, ASIC price tiers, fee-market episodes such as 2025's "sub-sat summer", and the corporate, policy/legal and conference events those sources covered. **Every number here is volatile and is stamped with the date of the source that reported it** — none of it is current data. Values are copied in the units and formatting the source used (Eh vs Eh/s, sats/TH/day vs sats/Ph/day); where sources disagree the conflict is shown rather than resolved. Use it as a reference for what the network looked like around a given event and as context for home-mining economics, not as a live dashboard.
+This page collects dated snapshots of the Bitcoin mining network as the 256 Foundation's podcast ([POD256](../history/pod256-podcast.md)) and newsletter reported them between December 2022 and September 2026: network hashrate, difficulty, hashvalue/hashprice, ASIC price tiers, fee-market episodes such as 2025's "sub-sat summer", and the corporate, policy/legal and conference events those sources covered. From mid-2025 the POD256 machine transcripts add on-air readings — the network crossing a zetahash in September 2025, record-low hashprice in spring 2026, the December 2025 China hashrate drop, the S23 delays, the AI/HPC pivot of public miners and the August 2026 BIP 110 fork. Transcripts have no speaker labels, so on-air claims are attributed as the hosts identified themselves and opinions are marked as opinions. **Every number here is volatile and is stamped with the date of the source that reported it** — none of it is current data. Values are copied in the units and formatting the source used (Eh vs Eh/s, sats/TH/day vs sats/Ph/day); where sources disagree the conflict is shown rather than resolved. Use it as a reference for what the network looked like around a given event and as context for home-mining economics, not as a live dashboard.
 
 ## Reading the numbers (durable reference)
 
@@ -21,6 +21,14 @@ This page collects dated snapshots of the Bitcoin mining network as the 256 Foun
 | ASIC prices | USD per TH of machine capacity, by efficiency tier (2025 tiers: <19 J/Th, 19–25 J/Th, >25 J/Th) | Luxor's Hashrate Index |
 
 Two practical notes for home miners. First, hashvalue roughly halves at a halving — the show's readings went from 160k sats/PH/day the day before the April 2024 halving to 80k sats/Ph/day a month after ([ep 044](../../raw/history/pod256/2024-04-19-pod256-044-state-of-the-network-news-tangents-home-miner-of.md); [ep 046](../../raw/history/pod256/2024-05-24-pod256-046-no-holds-barred-w-special-guest-luke-dashjr-chair.md)). Second, the hosts argue that price per terahash and cost per kilowatt-hour are the units home miners relate to, not hashprice per petahash ([ep 126 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md)). For profitability math see [Open Mining Economics](../economics/open-mining-economics.md) and [Hashrate Heating Economics](../economics/hashrate-heating-economics.md).
+
+**On-air readings (2025–2026).** In the transcribed episodes the hosts read hashrate off mempool.space's one-week moving average (sometimes the three-day) and hashprice/hashvalue off Braiins Insights, and read the numbers aloud, so values below are copied as the machine transcript rendered them ("996 x a hash", "1.09 per second") ([e086](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-10-e086.md); [e088](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-24-e088.md)). Difficulty notation itself was debated on air in January 2026: AxeOS settled on giga-style SI prefixes while some hosts preferred million/billion/trillion, the ambiguity being B (billion) versus G (giga) ([e101](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-01-14-e101.md)).
+
+**Network energy and average efficiency.** Two rough estimates came up on air, both explicitly hedged by the hosts:
+
+- On 2025-08-27 Tyler divided the Cambridge electricity-consumption index (about 170 terawatt hours, "I don't know how accurate that is") by the seven-day hashrate and got 27 joules per terahash in January 2025 and 23 at recording — far from latest-generation machines, which he read as many older machines still running ([e082](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-27-e082.md)).
+- On 2025-10-29 a host read the Cambridge (CCAF) dashboard's estimate of 26 gigawatts for Bitcoin; Eco cautioned that after the 2021 China ban the same site still showed some 60% of hashrate in China, so it lags ([e092](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-10-29-e092.md)).
+- In September 2026 Tyler summarized an article by Safedine hypothesizing that Bitcoin mining's total energy use has peaked as large on-grid miners move to AI; Tyler disagreed, citing new integration use cases, and Scott noted efficiency gains lower energy per terahash at constant hashrate ([e126 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md)). This is an opinion exchange, not a measurement.
 
 ## Snapshots
 
@@ -75,6 +83,38 @@ Each row is the newsletter's month-in-review. Hashrate is the mempool.space 14-d
 
 The September 2025 issue put the next halving (block height 1,050,000) around March 29, 2028 ([newsletter, Oct 2025](../../raw/history/256f-newsletter/2025-10-28-assembling-freedom-10.md)). The monthly network section ended when the newsletter went weekly in 2026 ([newsletter, Dec 2025](../../raw/history/256f-newsletter/2025-12-22-assembling-freedom-12.md)).
 
+### 2025–2026 on-air readings (POD256 transcripts)
+
+Dates are episode publish dates. Hashrate is mempool.space's one-week moving average unless noted; numbers are as the machine transcript rendered the spoken values.
+
+| Episode (published) | Hashrate | Difficulty | Hashprice / hashvalue | Other | Source |
+|---|---|---|---|---|---|
+| e080 (2025-08-01) | 895.6 exahashes (seven-day), almost 900 | — (a recent negative 7.5% adjustment mentioned as since rebounded) | hashvalue 50,000 per petahash per day; hashprice $59 per petahash per day | halving nine hundred and seventy seven days away | [e080](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-01-e080.md) |
+| e081 (2025-08-20) | "roughly" one zetahash (Tyler) | — | — | — | [e081](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-20-e081.md) |
+| e082 (2025-08-27) | "about to pass one Zeta Hash" | — | — | — | [e082](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-27-e082.md) |
+| e086 (2025-09-10) | 996 x a hash, "just shy of a Zeta hash" | 129,700,000,000,000.0 until September 4, then 136,040,000,000,000.00 | hashprice $52.79 per petahash per day; hashvalue 49,000 sats before the adjustment → about 46,500 sats per petahash per day | — | [e086](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-10-e086.md) |
+| e088 (2025-09-24) | 1.09 (zetahash) one-week — the network crossed a zetahash in 2025, settling an on-air wager | 142,340,000,000,000.00 at block height 916222 | hashprice 51 US dollars per petahash; hashvalue 40,000 sats per petahash per day | halving nine hundred and eleven days away; Scott: bitcoin's price about where it began the year while hashrate is 30% higher | [e088](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-24-e088.md) |
+| e092 (2025-10-29) | 1.12 Zeta Hash | — | — | — | [e092](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-10-29-e092.md) |
+| e101 (2026-01-14) | 1.01 zeta hash | 146,470,000,000,000.00 at block height 932289 | — | — | [e101](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-01-14-e101.md) |
+| e109 (2026-03-25) | (garbled in transcript) | — | "Hash price in the dumps": a year earlier $50 per petahash (5¢ per terahash), now 3¢ | — | [e109](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-03-25-e109.md) |
+| e112 (2026-04-15) | — | — | hashprice "already at its lowest ever", 3¢ a terahash per day | — | [e112](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-04-15-e112.md) |
+| e114 (2026-05-13) | 984 ex a hash | — | — | — | [e114](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-05-13-e114.md) |
+| e126 (2026-09-21) | see September 2026 snapshot below | | | fees averaged 2,100,000 sats per block above the subsidy over the last 144 blocks; under 85,000 transactions in the mempool | [e126](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md) |
+
+### Crossing a zetahash (September 2025)
+
+The newsletter's September 2025 row above ends at ~1,060 Eh/s (1.06 Zh/s) on the 7-day MA. On air, the hosts tracked the approach: Tyler called the network "roughly" one zetahash on 2025-08-20, the hosts were "about to pass one Zeta Hash" a week later, the one-week average was 996 x a hash on 2025-09-10 and 1.09 on 2025-09-24 ([e081](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-20-e081.md); [e082](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-27-e082.md); [e086](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-10-e086.md); [e088](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-24-e088.md)). On 2025-10-29 a host relayed an article by Marty saying that six weeks after one zeta hash the network had already added another 100 x a hash, whereas it took twelve years to reach the first 100 x a hash; the reading that day was 1.12 Zeta Hash ([e092](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-10-29-e092.md)). Hashrate then drifted back: 1.01 zeta hash in January 2026, 984 ex a hash in May and about 936 in September 2026 ([e101](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-01-14-e101.md); [e114](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-05-13-e114.md); [e126 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md)).
+
+Scott's rough supply-side math in August 2025: latest chips do about one terahash each, so a zetahash is about a billion chips; a circulated, unverified TSMC allocation showing Bitmain at 120,000 wafers for the rest of 2025 and 2026 would represent "in the neighborhood of 260, ex a hash" by his estimate ([e082](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-27-e082.md)).
+
+### Record-low hashprice (spring 2026)
+
+Hashprice fell from $59 per petahash per day (2025-08-01) to $52.79 (2025-09-10) and 51 US dollars per petahash (2025-09-24) in the readings above. By March 2026 the hosts put it at 3¢ per terahash versus 5¢ a year earlier, and on 2026-04-15 called it "at its lowest ever", 3¢ a terahash per day, wondering whether it could trigger a mass hashrate decline ([e109](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-03-25-e109.md); [e112](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-04-15-e112.md)). The hosts' takeaway was that public miners pivoting to AI/HPC might reduce demand for industrial rigs and push ASIC makers toward home and heat-reuse customers — an opinion, see the AI/HPC section below.
+
+### China hashrate drop (December 2025)
+
+On 2025-12-17 a host read a chart he attributed to Blockspace Media: computing power had dropped by a 100 exahash versus the previous day, estimated as 1.3 to 1.63 gigawatts winding down (he also said "Some, like, three gigawatts of capacity went offline") ([e099](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-12-17-e099.md)). Causes were unclear on air: the piece recalled China's province-by-province ban of 2021 and a "system of favoritism", which the host called "mostly, like, insider scoop speculation", while Eco favored the narrative that miners were moving their power to AI hosting. No follow-up figure appears in these sources.
+
 ### ASIC price tiers, 2025 (Hashrate Index via the newsletter)
 
 USD per TH of machine capacity, as reported at each month's end.
@@ -91,7 +131,22 @@ USD per TH of machine capacity, as reported at each month's end.
 In April and May 2025 the newsletter added that a new-gen miner with 230+ Th/s cost roughly $4,000 ([May 2025](../../raw/history/256f-newsletter/2025-05-05-bitcoin-mining-will-not-be-decentralized-until-it-is-open-so.md)).
 
 > **Status: Disputed** — August 2025 tier prices
-> The September 2025 issue gives August's closing prices as $13.92/Th, $7.56/Th and $3.64/Th ([Sep 2025](../../raw/history/256f-newsletter/2025-09-25-rig-bitcoin-mining-re-imagined.md)). The October 2025 issue describes the same tiers as up from $13.96/Th, down from $8.57/Th "at the beginning of the month", and compared to $3.92/Th last month ([Oct 2025](../../raw/history/256f-newsletter/2025-10-28-assembling-freedom-10.md)). Best assessment: the later issue appears to quote a different snapshot date of the index (start of September rather than end of August); treat the per-row values as approximate.
+> The September 2025 issue gives August's closing prices as $13.92/Th, $7.56/Th and $3.64/Th ([Sep 2025](../../raw/history/256f-newsletter/2025-09-25-rig-bitcoin-mining-re-imagined.md)). The October 2025 issue describes the same tiers as up from $13.96/Th, down from $8.57/Th "at the beginning of the month", and compared to $3.92/Th last month ([Oct 2025](../../raw/history/256f-newsletter/2025-10-28-assembling-freedom-10.md)). Best assessment: the later issue appears to quote a different snapshot date of the index (start of September rather than end of August); treat the per-row values as approximate. Supporting the September-issue figures: on 2025-09-10 the podcast read the same three values ($13.92, $7.56 per terahash, $3.64 per terahash) as current hashrateindex.com prices, labeling the tiers "under 19", "under 25" and "under 38" joules per terahash rather than ">25" — the hosts noted the free Intel BZM2 chips fall in that last tier ([e086](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-10-e086.md)).
+
+### Machine and chip prices read on air (2025–2026)
+
+| Episode (published) | Item | Price as read | Source |
+|---|---|---|---|
+| e080 (2025-08-01) | Antminer S21 XP (270 TH class) via Altair; single chips | $27 a terra hash; each chip $26.90 | [e080](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-01-e080.md) |
+| e086 (2025-09-10) | Antminer S23 | hosts unsure: heard 7 or $8,000, "maybe it's $12,000" with coupons bringing it down; Eco estimated about 220 days to pay off a $12,000 unit if hashrate stayed flat | [e086](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-10-e086.md) |
+| e088 (2025-09-24) | Antminer S21 XP via Altair | $5,600 for 270 Terahash | [e088](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-24-e088.md) |
+| e095 (2025-11-19) | TSMC two-nanometer wafer (Scott, via an AI estimate) | $20,000 each, roughly 300 dies per wafer → around $70 a chip | [e095](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-11-19-e095.md) |
+| e101 (2026-01-14) | Antminer S21 XP, 270 terahash, carrying 273 BM1370 chips | around $4,900, which is $27 per terahash | [e101](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-01-14-e101.md) |
+| e105 (2026-02-18) | Single BM1370 chip (Bitaxe Gamma chip), when obtainable | $30.40 | [e105](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-02-18-e105.md) |
+| e112 (2026-04-15) | Used Antminer S19 J Pro (MegaMiner), 100 terahash units, 90-unit minimum | $99 each — roughly a dollar per terahash; a host recalled paying a $100 per terahash for a 110 terahash S19 in 2021 | [e112](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-04-15-e112.md) |
+| e117 (2026-06-17) | Antminer S23 hydro (rack-mount) / smaller hydro form factor | "like $23,000" / "15 or $16,000" (hosts' recollection) | [e117](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-06-17-e117.md) |
+
+The hosts disliked quoting miners in dollars per terahash ("I hate that miners have this, like, commodity unit basis") and read the unit as a sign of a monopoly market ([e101](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-01-14-e101.md)). For a mid-2026 snapshot of unit economics, a host read electronics.dev's page on 2026-05-27: an Antminer S23 Hydro "could earn a daily profit of $11.91", breaking even at 15¢ a kilowatt hour, while an Antminer T19 Hydro would lose $2.87 a day, breaking even at 3.8¢; the same data set forecast 2 joules per terahash in 2031 ([e115](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-05-27-e115.md)).
 
 ### June 2025 difficulty drop
 
@@ -118,6 +173,78 @@ From the machine transcript of episode 126, recorded 2026-09-21 ([ep 126 transcr
 - Difficulty "one thirty two point seven six trillion with the last retarget going up 4.16%", at block height 967,680 on September 19.
 - Average block reward 3.146 bitcoin.
 - Seven-day block share: Foundry 23.7%, AntPool (transcribed "amp pool") 20.3%, F2Pool 16%; Ocean down to 1.8% after bouncing back to 3.3% following the BIP 110 episode.
+
+## Hardware market: share, roadmaps and rumors (2025–2026)
+
+### Bitmain market share (hosts' estimates)
+
+No source here measures ASIC market share; the figures are the hosts' recurring estimates and vary between 80% and 90%:
+
+| Episode (published) | Claim | Source |
+|---|---|---|
+| e067 (2025-04-14) | Scott: incumbents "control, like, 80% or more of the market" | [e067](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-04-14-e067.md) |
+| e082 (2025-08-27) | Bitmain "controls 80% of the market", so public miners preorder by default and falling behind on hashrate acts as an unofficial halving | [e082](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-27-e082.md) |
+| e092 / e094 (2025-10-29 / 2025-11-12) | "90 plus percent market dominance" / "90% market share", in discussions of a Bitcoin Magazine video on Bitmain; Canaan described as having single-digit share, "or maybe, like, 10%" | [e092](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-10-29-e092.md); [e094](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-11-12-e094.md) |
+| e097 (2025-12-03) | roughly 80% (90% elsewhere in the same episode), so a US import ban would severely limit miner supply | [e097](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-12-03-e097.md) |
+| e101 (2026-01-14) | "somewhere in the neighborhood of 80%" | [e101](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-01-14-e101.md) |
+| e103 (2026-02-04) | Scott's Plan B talk: Bitmain controls "80% of the market by hash rate"; his slide claimed 99.999% of blocks since ASICs were mined by closed-source miners | [e103](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-02-04-e103.md) |
+| e117 (2026-06-17) | Core developers at Oslo BitDevs were often unaware Bitmain "controls 80% of the hardware market" | [e117](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-06-17-e117.md) |
+
+### Efficiency targets and the S23 saga
+
+| Episode (published) | Report | Source |
+|---|---|---|
+| e081 (2025-08-20) | Scott: the Antminer S23, supposed to ship "in January 26" (January 2026), is listed at 9.5 (spoken as "listed at 9.5", joules per terahash implied); Proto's Rig cited 14.1 joules per terahash | [e081](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-20-e081.md) |
+| e085 (2025-09-07) | Rod: Bitmain's top of the line at "12 and a half or maybe even lower", with Bitmain claiming "nine and a half" for the S23 at the beginning of the year | [e085](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-07-e085.md) |
+| e092 (2025-10-29) | S23 "supposed to be nine"; Canaan "just announced the a 16, which is 12 joules per terra hash"; Tyler: for heating the difference between nine and twelve doesn't matter, for on-grid miners it is a deal breaker | [e092](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-10-29-e092.md) |
+| e098 (2025-12-13) | Scott: S23 targeting about 9.5 joules per terahash for release in Q1 2026; Bitdeer had claimed a 5 joules-per-terahash SealMiner by Q2 2025 but its best in Q4 2025 was 12.5 joules per terahash — investors filed a class action and the stock was down 41% | [e098](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-12-13-e098.md) |
+| e098 (2025-12-13) | MicroBT M70 series (announced at Bitcoin MENA, per Tyler): five of six models need 380 to 480 volts three-phase, only one is two-twenty volt and none is one-twenty volt | [e098](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-12-13-e098.md) |
+| e101 (2026-01-14) | The air-cooled S23 disappeared from Bitmain's website, with rumors that only "a couple thousand air cooled machines" were made; the hydro S23 reportedly not shipping until March. Scott suspected chip performance/yield; Rod suspected weak demand as public miners shift to AI (both speculation). Rod also relayed an unconfirmed rumor that MicroBT may exit Bitcoin mining hardware | [e101](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-01-14-e101.md) |
+| e103 (2026-02-04) | "Bitmain just pulled the s 23 high air cooled" — hydro only; with MicroBT's 70 series mostly hydro/three-phase, few or no 240 volt miners remain | [e103](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-02-04-e103.md) |
+| e105 (2026-02-18) | FutureBit Apollo three announced: 18 terahash, 13 joules per terahash, up to 400 watts (Scott believes Auradine chips, unconfirmed) | [e105](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-02-18-e105.md) |
+| e107 (2026-03-11) | The S23 had been promised for "Q one, twenty twenty six" with twenty days left in the quarter; S23 hydros touted at "ten, eleven joules per terahash" | [e107](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-03-11-e107.md) |
+| e112 (2026-04-15) | Rumor relayed by a host: the S23 series was delayed and partly canceled by a failed tape-out, "like a $20,000,000 oopsies" | [e112](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-04-15-e112.md) |
+| e117 (2026-06-17) | At BTC Prague a Bitmain booth staffer told Scott the air-cooled S23 would ship "never" — by his count the second cancellation; S23 Hydro units were on display. The rumored S23 chip is transcribed "BM thirteen seventy three" | [e117](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-06-17-e117.md) |
+| e125 (2026-09-07) | Bitmain's S23 XP is 8.9 joules per terahash, hydro-only and three-phase | [e125](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-07-e125.md) |
+| e126 (2026-09-21) | At Bitcoin Asia in Hong Kong and a mining summit, Bitmain announced its next S23-generation chip and devoted slides to heat reuse; Tyler argued real hydronic heating needs boiler-like control, not a dry cooler | [e126 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md) |
+
+> **Status: Outdated** (2026-10-10)
+> The August–December 2025 expectation that the S23 would ship in January / Q1 2026 at about 9.5 joules per terahash ([e081](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-20-e081.md); [e098](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-12-13-e098.md)) did not hold for the air-cooled model, which was pulled and, per a Bitmain staffer in June 2026, will ship "never" ([e117](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-06-17-e117.md)). The hydro line continued, with the S23 XP read at 8.9 joules per terahash in September 2026 ([e125](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-07-e125.md)).
+
+> **Status: Disputed** — S23 efficiency
+> The quoted target moved between 9.5 (August and December 2025), "nine" (October 2025) and "ten, eleven" for the hydros (March 2026) ([e081](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-20-e081.md); [e092](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-10-29-e092.md); [e107](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-03-11-e107.md)). These are hosts recalling listings and marketing, not spec sheets; the only model-specific figure is the S23 XP at 8.9 joules per terahash ([e125](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-07-e125.md)).
+
+Context on slowing efficiency gains: Scott argued in August 2025 that low-hanging chip-efficiency gains are gone and that "two nanometers" is largely a marketing term near physical limits ([e082](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-27-e082.md)); in May 2026 hosts relayed a rumor that TSMC is not ready for mining ASICs at two nanometers ([e115](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-05-27-e115.md)). Operators at TEMS 2026 were moving from immersion to hydro cooling — "No one no one is bullish on immersion anymore" ([e115](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-05-27-e115.md)).
+
+## AI/HPC pivot of public miners (2025–2026)
+
+- **August 2025.** Hosts said public miners diversify revenue via AI/HPC and merge mining (Rootstock and Slipstream named) ([e082](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-08-27-e082.md)).
+- **September 2025.** Rob Warren's ImagineIF takeaway, as relayed: activist investors push large public miners toward AI/HPC to lift stock prices, and hashrate might decline as they shift; Foreman's customer off-site was dominated by HPC talk. Rod: HPC tenants paying "17 times, 20 times, or 10 times" the cost of electricity beat standalone grid mining; Scott noted Core Scientific investing in higher-tier HPC data centers ([e088](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-24-e088.md)).
+- **October 2025.** An infrastructure vendor told Tyler hyperscalers turn to Bitcoin miners such as CleanSpark and TeraWulf because firms able to build two-gigawatt sites are booked years out, and that HPC switchgear is about nine times as large as a mining site's for equivalent power because of redundancy ([e092](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-10-29-e092.md)).
+- **December 2025.** Hut 8 partnered with Google to double its power capacity across four new US sites on a fifteen-year, $7,000,000,000 data-center lease; Scott said miners' AI advantage is existing power purchase agreements and transformers ([e099](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-12-17-e099.md)).
+- **March 2026.** Auradine appeared to rebrand as an AI company (name heard as "Valora"); Marathon, Bitdeer and Core Scientific were cited as pivoting toward AI; Scott expected chip vendors to need new customers as large miners buy fewer industrial machines ([e106](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-03-04-e106.md)).
+- **May 2026.** At TEMS many miners were pivoting part of operations to AI/HPC; Tyler said Auradine "just vaporized" after selling hardware, so his commercial heating project would likely use WhatsMiners instead — supplier risk ([e115](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-05-27-e115.md)).
+- **September 2026.** The peak-energy hypothesis (see Reading the numbers) ties the same trend to network energy use ([e126 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md)).
+
+Rod's taxonomy of public miners (September 2025, opinion): bitcoin accumulators via financial engineering (he cited Mara), diversified operators with treasury teams (CleanSpark), and fiat/stock maximizers that may not hold bitcoin (Iren) ([e088](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-09-24-e088.md)).
+
+## BIP 110 fork timeline (2026)
+
+The BIP 110 soft fork, proposed by Luke Dashjr to restrict arbitrary data, ended in a short-lived chain split in August 2026. Dated reads from the transcripts (hosts were openly opposed; Eco's opinions were flagged as not necessarily the foundation's):
+
+| Episode (published) | Event | Source |
+|---|---|---|
+| e092 (2025-10-29) | Eco relayed unverified reports of legal letters circulating to mining companies urging a switch to Knots; he criticized the BIP's language warning non-adopters of legal consequences | [e092](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2025/2025-10-29-e092.md) |
+| e112 (2026-04-15) | Matt Kratter urged followers to rent hashrate to signal for BIP 110 via version bits; hosts called rented signaling inauthentic and warned of a chain split without enforcing miners | [e112](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-04-15-e112.md) |
+| e119 (2026-07-08) | Orange Surf's simulator: mandatory signaling at block nine six one six three two "expected around August 2026"; activation needs 55% of blocks in a difficulty epoch, then a 2,016 block lock-in; e.g. a window ending at block 961,631 means fork risk from 963,648. Wicked's dashboard showed 7.4 exahash signaling, "around point 5%" of hashrate | [e119](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-07-08-e119.md) |
+| e122 (2026-08-03) | Mandatory activation due the following week with "two percent best case" signaling; OCEAN made its default non-DATUM stratum endpoint a BIP 110 node and opened a separate non-BIP 110 endpoint; OCEAN's dashboard showed between thirty and forty exahash across both | [e122](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-08-03-e122.md) |
+| e123 (2026-08-10) | Activation began at the start of the signaling period (difficulty epoch four seventy seven) with zero mainnet blocks signaling; the BIP 110 chain forked off, got two blocks, and the main chain's "two seventy five block lead" made overtaking statistically impossible; the fork was mined essentially by Roughnecks alone. OCEAN reportedly offered refunds for hashrate redirected via its default endpoint | [e123](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-08-10-e123.md) |
+| e124 (2026-08-17) | Luke Dashjr stepped down as OCEAN's CTO, followed by Mechanic on sabbatical; OCEAN's fork endpoint showed about 1.15 exahash with the last fork block five days earlier; the fork ("LukeCoin") targeted a September proof-of-work change to Blake2b | [e124](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-08-17-e124.md) |
+| e125 (2026-09-07) | The fork got a total of four blocks before switching to Blake2b; its hashrate came from Roughnecks, reportedly largely rented | [e125](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-07-e125.md) |
+| e126 (2026-09-21) | OCEAN's seven-day block share had bounced to 3.3% after the fork episode, then fell to 1.8%, though OCEAN's site showed 21.63 x a hash (about 2.3%) — the gap reflecting luck | [e126 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md) |
+
+> **Status: Disputed** — fork block count
+> The 2026-08-10 episode says the BIP 110 chain "only got two blocks in" by then ([e123](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-08-10-e123.md)); on 2026-08-17 a host floated "Five blocks now?" ([e124](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-08-17-e124.md)); on 2026-09-07 the hosts settled on "a total of four blocks" before the Blake2b switch ([e125](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-07-e125.md)). Best assessment: four, the latest on-air figure; none is checked against a block explorer.
 
 ## Pool concentration readings
 

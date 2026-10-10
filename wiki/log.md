@@ -50,3 +50,10 @@ Append-only operation log. Newest entries at the bottom.
 - Wiki (new): hardware/bitaxe-models; hardware/bitaxe-board-design-and-errata; hardware/bitmain-asic-reference; hardware/libre-board-and-control-boards; firmware/esp-miner-axeos; getting-started/bitaxe-troubleshooting; mining-software/hashscope; pools/public-pool; pools/pool-centralization-and-fpps; protocols/stratum-in-practice; protocols/rhap; history/256-foundation-organization; history/open-source-solo-blocks; history/pod256-podcast; industry/mining-firmware-security; industry/network-state-2022-2026
 - Updated: Mujina; Ember One & the BZM2 Hardware Stack; Hydrapool; asic-rs; Decentralized Pool Designs; 256F Community Timeline; Repair, Supply & Vendors; ASIC Thermals and Heat Reuse
 - Note: 2,457 claims extracted by 12 parallel readers (.agent/harvest-*.md), every [src:] path validated; articles cite exact captures via inline raw links (lint now counts these as evidence). hackathon-wiki drafts used as leads only, never cited. Website-styling PRs (84) and code-churn PRs judged no material. Raw backlog 2,185 → 1,038 unreferenced files. POD256 full transcripts (50) pending phase 2.
+
+## [2026-10-10] compile | POD256 transcripts (phase 2) — PARTIAL, interrupted by usage limit
+- Disposition: Update; New
+- Raw: raw/history/pod256/transcripts/2026-10-07/transcripts/ (50 episode transcripts, e067–e127)
+- Wiki (new): protocols/mining-nodes-and-templates
+- Updated (transcript material merged, citations preserved): Mujina; Bitaxe Models; Mining Firmware Security; Network State 2022–2026; Hydrapool; Pool Centralization & FPPS; Stratum V1 & V2 in Practice
+- Note: 1,458 claims extracted to .agent/harvest-pod-tx-1..6.md (all [src:] paths valid). NOT YET MERGED: POD256 Podcast, The 256 Foundation, Ember One & BZM2, Libre Board & Control Boards, Decentralized Pool Designs, Open Mining Economics, Hashrate Heating Economics; new article industry/mining-policy-and-legal not yet written. The updated articles above may also be incomplete relative to the notes.
