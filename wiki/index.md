@@ -75,6 +75,7 @@ Farms, public miners, hosting, colocation, energy interplay.
 | Article | Summary | Updated |
 |---------|---------|---------|
 | [Repair, Supply & Vendors](industry/repair-supply-and-vendors.md) | Repair grey market (ZeusBTC), schematics peer review, JLCPCB economics, GekkoScience dispute, hosting, Canaan. | 2026-10-09 |
+| [Mining Policy and Legal](industry/mining-policy-and-legal.md) | Samourai prosecution and money-transmitter theory, operation Red Sunset, Bitaxe USPTO trademark fight, tariffs/customs, UL-FCC-CE, net metering. | 2026-10-10 |
 
 ## hashrate-market
 
