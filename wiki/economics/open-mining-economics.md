@@ -57,3 +57,4 @@ What open-source mining actually costs, why it can't win on $/TH alone, and wher
 - [Ember One & the BZM2 Hardware Stack](../hardware/ember-one-bzm2.md)
 - [On-Demand Hashrate](../hashrate-market/on-demand-hashrate.md)
 - [Repair, Supply & Vendors](../industry/repair-supply-and-vendors.md)
+- Same topic: [Hashrate Heating Economics](hashrate-heating-economics.md)

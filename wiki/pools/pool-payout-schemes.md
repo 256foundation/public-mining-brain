@@ -47,3 +47,4 @@ How pools actually pay miners, why custody shows up, and what the community cons
 - [Hydrapool](hydrapool.md)
 - [Decentralized Pool Designs](../protocols/decentralized-pool-designs.md)
 - [On-Demand Hashrate](../hashrate-market/on-demand-hashrate.md)
+- Same topic: [Pool Choice for Heat Miners](pool-choice-for-heat-miners.md)

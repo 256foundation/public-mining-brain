@@ -49,3 +49,4 @@ The management layer above firmware: pyasic (the Python SDK that unified vendor 
 - [Mujina](../firmware/mujina.md)
 - [On-Demand Hashrate](../hashrate-market/on-demand-hashrate.md)
 - [Hydrapool](../pools/hydrapool.md)
+- Same topic: [Home Assistant Heater Control](home-assistant-heater-control.md)

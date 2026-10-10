@@ -32,7 +32,14 @@ Append-only operation log. Newest entries at the bottom.
 - Wiki: hardware/asic-thermals-and-heat-reuse; hardware/ember-one-bzm2; firmware/mujina; mining-software/asic-rs; pools/hydrapool; pools/pool-payout-schemes; protocols/decentralized-pool-designs; economics/open-mining-economics; hashrate-market/on-demand-hashrate; history/256f-community-timeline; industry/repair-supply-and-vendors; getting-started/community-workshop-wisdom
 - Note: 870 anchored claims extracted via .agent/telegram-extraction-256f.md (subagent full read); every claim cites [#msgid · date · author] anchors greppable in the digest; disputes rendered as Disputed blocks; lint --strict must pass before push
 
+## [2026-10-09] ingest | Hashrate Heatpunks Telegram history — signal digest staged
+- Disposition: New (staged to inbox, compile in progress)
+- Raw: raw/inbox/2026-10-09-heatpunks-telegram-signal.md
+- Note: 9,590 messages (2024-08-02 → 2026-10-08, 129 authors) filtered to 3,271 via scripts/process_telegram_export.py --strict (new signal-only mode: heat-reuse vocabulary, unit-bearing numbers, bare links kept only for resource domains, welcome-bot dropped); processor now reads multi-file exports (messages*.html) and takes title/source/registry flags; PII redaction wired in (was defined but never called — 256F digest re-checked: only public org addresses present, no phones)
 
-
-
-
+## [2026-10-09] compile | Heatpunks Telegram knowledge → 11 wiki articles
+- Disposition: New; Update (cross-links)
+- Raw: raw/economics/2026-10-09-heatpunks-telegram-signal.md (moved from inbox to topic dir at compile)
+- Wiki: hardware/air-cooled-hashrate-heating; hardware/heater-electrical-and-120v-builds; hardware/hydronic-heat-reuse; hardware/whatsminer-m64-hydro-heaters; hardware/immersion-heat-reuse; firmware/heater-firmware-and-power-control; mining-software/home-assistant-heater-control; pools/pool-choice-for-heat-miners; economics/hashrate-heating-economics; industry/hashrate-heating-products-and-installs; history/heatpunks-community-timeline
+- Updated: See Also cross-links added to ASIC Thermals and Heat Reuse, Open Mining Economics, Pool Payout Schemes, Decentralized Pool Designs, asic-rs, Mujina, 256F Community Timeline, Repair Supply & Vendors, Community Workshop Wisdom, On-Demand Hashrate
+- Note: 1,154 anchored claims extracted via .agent/heatpunks-extraction-part1..6.md (6 parallel full reads, signal-only); 2,437 [#msgid · date · author] anchors in compiled articles, all mechanically resolved against the digest; disputes rendered as Disputed blocks (TIDES vs FPPS for intermittent hashrate, heat pumps vs miners, J/TH relevance for resistive replacement, electricity-cost-irrelevance, and others)

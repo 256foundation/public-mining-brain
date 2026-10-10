@@ -75,3 +75,4 @@ The 256 Foundation's story as its own community lived it in Telegram, February 2
 - [Open Mining Economics](../economics/open-mining-economics.md)
 - [Ember One & the BZM2 Hardware Stack](../hardware/ember-one-bzm2.md)
 - [Hydrapool](../pools/hydrapool.md)
+- Same topic: [Hashrate Heatpunks Community Timeline](heatpunks-community-timeline.md)

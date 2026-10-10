@@ -32,3 +32,4 @@ Point-in-time price points and mechanics for buying, renting, and donating hashr
 - [Hydrapool](../pools/hydrapool.md)
 - [Pool Payout Schemes](../pools/pool-payout-schemes.md)
 - [256F Community Timeline](../history/256f-community-timeline.md)
+- Different topic: [Hashrate Heating Economics](../economics/hashrate-heating-economics.md)

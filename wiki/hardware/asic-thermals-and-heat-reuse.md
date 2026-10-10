@@ -69,3 +69,7 @@ What mining silicon and hashboards can actually tolerate thermally, from practit
 - [Ember One & the BZM2 Hardware Stack](ember-one-bzm2.md)
 - [Open Mining Economics](../economics/open-mining-economics.md)
 - [Mujina](../firmware/mujina.md)
+- Same topic: [Air-Cooled Hashrate Heating](air-cooled-hashrate-heating.md)
+- Same topic: [Hydronic Heat Reuse](hydronic-heat-reuse.md)
+- Same topic: [Immersion Heat Reuse](immersion-heat-reuse.md)
+- Same topic: [Whatsminer M64-Family Hydro Heaters](whatsminer-m64-hydro-heaters.md)

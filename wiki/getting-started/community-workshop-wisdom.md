@@ -42,3 +42,5 @@ Practical advice the 256F community gives people getting into mining hardware an
 - [Mujina](../firmware/mujina.md)
 - [Ember One & the BZM2 Hardware Stack](../hardware/ember-one-bzm2.md)
 - [Repair, Supply & Vendors](../industry/repair-supply-and-vendors.md)
+- Different topic: [Heater Electrical & 120V Builds](../hardware/heater-electrical-and-120v-builds.md)
+- Different topic: [Air-Cooled Hashrate Heating](../hardware/air-cooled-hashrate-heating.md)

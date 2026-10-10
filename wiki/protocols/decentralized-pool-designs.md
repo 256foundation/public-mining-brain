@@ -71,3 +71,4 @@ The design space beyond the hosted-pool model: template selection (DATUM), trust
 - [Hydrapool](../pools/hydrapool.md)
 - [Pool Payout Schemes](../pools/pool-payout-schemes.md)
 - [Mujina](../firmware/mujina.md)
+- Different topic: [Pool Choice for Heat Miners](../pools/pool-choice-for-heat-miners.md)

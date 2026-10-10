@@ -61,3 +61,4 @@ The unglamorous industrial base of mining: who repairs miners, where boards and 
 - [Open Mining Economics](../economics/open-mining-economics.md)
 - [Ember One & the BZM2 Hardware Stack](../hardware/ember-one-bzm2.md)
 - [Community Workshop Wisdom](../getting-started/community-workshop-wisdom.md)
+- Same topic: [Hashrate Heating Products & Installs](hashrate-heating-products-and-installs.md)

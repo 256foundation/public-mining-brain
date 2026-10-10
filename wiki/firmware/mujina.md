@@ -65,3 +65,4 @@ Mujina is the 256 Foundation's open-source mining firmware, written in Rust. It 
 - [Ember One & the BZM2 Hardware Stack](../hardware/ember-one-bzm2.md)
 - [asic-rs and the Fleet-Tooling Stack](../mining-software/asic-rs.md)
 - [Decentralized Pool Designs](../protocols/decentralized-pool-designs.md)
+- Same topic: [Heater Firmware & Power Control](heater-firmware-and-power-control.md)
