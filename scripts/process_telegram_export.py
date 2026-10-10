@@ -8,9 +8,11 @@ public handles; phone numbers and emails are redacted.
 
 Usage:
     python3 scripts/process_telegram_export.py <export_dir> <out_file> \
+        --title "Group Name" --source-url t.me/group --registry-id some-id \
         [--author-drop "Name1,Name2"] [--min-length 40]
 
-Reads <export_dir>/messages.html (Telegram desktop export, HTML format).
+Reads <export_dir>/messages.html, messages2.html, ... (Telegram desktop export,
+HTML format; large chats are split across numbered files).
 Writes a markdown digest grouped by month, one blockquote-cited message per
 entry, suitable as a raw/ source file for the brain.
 """
@@ -45,8 +47,26 @@ KEYWORD_RE = re.compile(
     r"flashed|OTA|overclock|underclock|autotun|dev call|grant|telehash|hashrate)\b",
     re.IGNORECASE)
 
+# --strict: heat-reuse vocabulary, unit-bearing numbers, and resource domains worth keeping bare
+HEAT_KEYWORD_RE = re.compile(
+    r"\b(heater|heating|HVAC|furnace|boiler|radiator|hot water|water heater|dry ?cooler|heat exchanger|HX|"
+    r"plate exchanger|glycol|coolant|dielectric|mineral oil|duct|baffle|shroud|plenum|CFM|static pressure|"
+    r"thermostat|Home Assistant|setpoint|BTU|COP|heat pump|radiant|floor heat|pool heat|hot tub|greenhouse|"
+    r"sauna|grain dry|noise|dB|decibel|quiet|240 ?v|220 ?v|120 ?v|110 ?v|breaker|circuit|amps?|"
+    r"Loki|Avalon|Nano ?3|Braiins|BOS|Vnish|LuxOS|Ocean|DATUM|tune|tuning|undervolt|power target|"
+    r"waterblock|water ?block|cold ?plate|pump|reservoir|tank|gallon|liter|"
+    r"heat\w*|hot|cold|warm|temps?|temperature|cool\w*|oil|canola|water|dehydrat\w*|dry\w*|insulat\w*|"
+    r"j/t|API|(?:S9|S17|S19|S21|M3\d|M5\d|M6\d)\w*|whatsminers?|antminers?|"
+    r"efficien\w*|sats?/TH|sat/th/day|FPPS|PPLNS|fee|mount\w*|inspector|code|permit|insurance)\b",
+    re.IGNORECASE)
+UNIT_NUM_RE = re.compile(r"\d[\d,.]*\s?(?:TH|PH|EH|GH|J/TH|W|kW|kWh|V|A|°[CF]|C\b|F\b|CFM|BTU|gal|L\b|dB|%|¢|c/kWh|cents)",
+                         re.IGNORECASE)
+RESOURCE_DOMAINS = ("github.com", "heatpunks.org", "gitlab.com", "youtube.com", "youtu.be")
+NOISE_DOMAINS = ("meet.jit.si", "cornychat.com", "zoom.us", "t.me/+")
+
 EMAIL_RE = re.compile(r"[\w.+-]+@[\w-]+\.[\w.-]+")
-PHONE_RE = re.compile(r"(\+\d{1,3}[- ]?)?(\(?\d{3}\)?[- .]?\d{3}[- .]?\d{4})")
+# boundaries keep long digit runs inside URLs/ids (tweet ids, block hashes) intact
+PHONE_RE = re.compile(r"(?<![\w/=._-])(\+\d{1,3}[- ]?)?(\(?\d{3}\)?[- .]?\d{3}[- .]?\d{4})(?![\w/])")
 
 
 def clean_text(raw: str) -> str:
@@ -67,9 +87,8 @@ def redact(t: str) -> str:
     return t
 
 
-def parse(html: str) -> list[dict]:
+def parse(html: str, author: str = "(unknown)") -> tuple[list[dict], str]:
     msgs: list[dict] = []
-    author = "(unknown)"
     matches = list(MSG_SPLIT_RE.finditer(html))
     for i, m in enumerate(matches):
         joined = bool(m.group(1))
@@ -91,14 +110,21 @@ def parse(html: str) -> list[dict]:
         text = ""
         tm = TEXT_RE.search(chunk)
         if tm:
-            text = clean_text(tm.group(1))
+            text = redact(clean_text(tm.group(1)))
         photos = PHOTO_RE.findall(chunk)
         msgs.append({
             "id": mid, "date": f"{year:04d}-{month:02d}-{day:02d}", "time": time,
             "author": author, "text": text,
             "photos": photos[:1], "links": LINK_RE.findall(chunk),
         })
-    return msgs
+    return msgs, author
+
+
+def export_files(export_dir: Path) -> list[Path]:
+    def num(p: Path) -> int:
+        d = re.sub(r"\D", "", p.stem)
+        return int(d) if d else 1
+    return sorted(export_dir.glob("messages*.html"), key=num)
 
 
 def keep(m: dict, min_length: int, dropped_authors: set[str]) -> bool:
@@ -116,30 +142,60 @@ def keep(m: dict, min_length: int, dropped_authors: set[str]) -> bool:
     return False
 
 
+def keep_strict(m: dict, dropped_authors: set[str]) -> bool:
+    """Signal-only filter: substance over chatter. Bare links survive only for
+    resource domains; photo-only, meeting links, and short banter are dropped."""
+    if m["author"] in dropped_authors or not m["text"]:
+        return False
+    t = m["text"]
+    prose = re.sub(r"\(?https?://\S+\)?", "", t).strip()
+    links = m["links"]
+    if links and all(any(d in u for d in NOISE_DOMAINS) for u in links) and len(prose) < 120:
+        return False
+    if len(prose) < 25:
+        return bool(links) and any(any(d in u for d in RESOURCE_DOMAINS) for u in links)
+    technical = KEYWORD_RE.search(t) or HEAT_KEYWORD_RE.search(t) or UNIT_NUM_RE.search(t)
+    if technical and len(prose) >= 40:
+        return True
+    return len(prose) >= 160
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("export_dir")
     ap.add_argument("out_file")
     ap.add_argument("--author-drop", default="Group Help", help="comma-separated author names to drop (bots)")
     ap.add_argument("--min-length", type=int, default=60)
+    ap.add_argument("--title", default="256 Foundation Telegram")
+    ap.add_argument("--source-url", default="t.me/the256foundation")
+    ap.add_argument("--registry-id", default="256f-telegram")
+    ap.add_argument("--collected", default="2026-10-08")
+    ap.add_argument("--strict", action="store_true",
+                    help="signal-only filter (drops banter, bare non-resource links, photo-only, meeting links)")
     args = ap.parse_args()
 
-    export_dir = Path(args.export_dir)
-    html = (export_dir / "messages.html").read_text(encoding="utf-8")
-    msgs = parse(html)
+    msgs: list[dict] = []
+    author = "(unknown)"
+    for f in export_files(Path(args.export_dir)):
+        part, author = parse(f.read_text(encoding="utf-8"), author)
+        msgs.extend(part)
     dropped = {a.strip() for a in args.author_drop.split(",") if a.strip()}
-    kept = [m for m in msgs if keep(m, args.min_length, dropped)]
+    if args.strict:
+        kept = [m for m in msgs if keep_strict(m, dropped)]
+    else:
+        kept = [m for m in msgs if keep(m, args.min_length, dropped)]
 
     out = Path(args.out_file)
     out.parent.mkdir(parents=True, exist_ok=True)
     lines: list[str] = []
-    lines.append("# 256 Foundation Telegram — Mining Signal Digest")
+    lines.append(f"# {args.title} — Mining Signal Digest")
     lines.append("")
-    lines.append("> Source: Telegram export (t.me/the256foundation), HTML format")
-    lines.append("> Registry ID: 256f-telegram")
-    lines.append("> Collected: 2026-10-08")
+    lines.append(f"> Source: Telegram export ({args.source_url}), HTML format")
+    lines.append(f"> Registry ID: {args.registry_id}")
+    lines.append(f"> Collected: {args.collected}")
     lines.append(f"> Published: {msgs[0]['date']} → {msgs[-1]['date']} (chat range)")
-    lines.append("> Posture: extract — service/bot/noise messages dropped; phones/emails redacted; public handles retained; photos referenced by filename only (not committed)")
+    filt = "strict signal filter" if args.strict else "default filter"
+    lines.append(f"> Posture: extract ({filt}) — service/bot/noise messages dropped; phones/emails redacted; public handles retained; photos referenced by filename only (not committed)")
     lines.append(f"> Chat stats: {len(msgs)} messages total, {len(kept)} kept in digest, {len({m['author'] for m in msgs})} authors")
     lines.append("")
     lines.append("Signals of interest for compilation: field reports, hardware/firmware decisions,")
