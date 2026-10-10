@@ -192,6 +192,7 @@ The donor pipeline for #4 shows how these events are now fed: on e114 eco listed
 
 - [256F Community Timeline](256f-community-timeline.md)
 - [Hashrate Heatpunks Community Timeline](heatpunks-community-timeline.md)
+- [Community Channels & X Presence](../getting-started/community-channels-and-x.md)
 - [POD256 Podcast](pod256-podcast.md)
 - [Mining Firmware Security](../industry/mining-firmware-security.md)
 - [Ember One & the BZM2 Hardware Stack](../hardware/ember-one-bzm2.md)
