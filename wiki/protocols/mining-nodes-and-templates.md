@@ -99,6 +99,7 @@ Every pool needs to learn about new blocks immediately (`blocknotify`). Per Dyla
 - [Stratum V1 & V2 in Practice](stratum-in-practice.md)
 - [Decentralized Pool Designs](decentralized-pool-designs.md)
 - Different topic: [Hydrapool](../pools/hydrapool.md)
+- Different topic: [Mining Policy and Legal](../industry/mining-policy-and-legal.md)
 - Different topic: [Public Pool](../pools/public-pool.md)
 - Different topic: [Libre Board & Mining Control Boards](../hardware/libre-board-and-control-boards.md)
 - Different topic: [Mujina](../firmware/mujina.md)

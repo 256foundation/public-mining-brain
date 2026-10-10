@@ -151,6 +151,7 @@ Other dated notes: scam pools and coinbase-checking tools were discussed on POD2
 - [Pool Payout Schemes](pool-payout-schemes.md)
 - [Pool Choice for Heat Miners](pool-choice-for-heat-miners.md)
 - [Hydrapool](hydrapool.md)
+- Different topic: [Mining Policy and Legal](../industry/mining-policy-and-legal.md)
 - [Public Pool](public-pool.md)
 - [Decentralized Pool Designs](../protocols/decentralized-pool-designs.md)
 - [Stratum in Practice](../protocols/stratum-in-practice.md)
