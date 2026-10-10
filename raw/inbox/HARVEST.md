@@ -20,3 +20,24 @@
 ## Next step
 
 Gate approval → triage moves this material from inbox into topic directories → compile begins, this harvest first (it is the largest ready-made corpus, covering the open-source ecosystem pillar).
+
+## Triage (2026-10-09)
+
+Raw captures moved out of `hackathon-harvest/raw/` into topic directories (content unchanged):
+
+| Was | Now | Files |
+|---|---|---|
+| `ecosystem/` ESP-Miner issues + docs | `raw/firmware/esp-miner/` | 740 |
+| `ecosystem/` Bitaxe/OSMU wiki, hardware repos, bitaxe.org, grants | `raw/hardware/bitaxe-osmu/` | 294 |
+| `tools/` asic-rs, HashScope, btc-toolkit | `raw/mining-software/256f-tools/` | 456 |
+| `hardware/` emberOne, Libre Board, usbserial fw | `raw/hardware/256f-hardware/` | 113 |
+| `mujina/` | `raw/firmware/mujina/` | 131 |
+| `hydrapool/` | `raw/pools/hydrapool/` | 63 |
+| `protocols/` | `raw/protocols/harvest/` | 6 |
+| `foundation/` | `raw/history/256f-org/` | 140 |
+| `newsletter/` | `raw/history/256f-newsletter/` | 24 |
+| `pod256/` (episode pages + transcripts) | `raw/history/pod256/` | 184 |
+| `inbox/` research notes, X archive digests | `raw/history/256f-research/` | 34 |
+
+`hackathon-wiki/` drafts stay here: they are derived pages, used only as leads during compile, never cited as grounding.
+
