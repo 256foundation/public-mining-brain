@@ -57,3 +57,19 @@ Append-only operation log. Newest entries at the bottom.
 - Wiki (new): protocols/mining-nodes-and-templates
 - Updated (transcript material merged, citations preserved): Mujina; Bitaxe Models; Mining Firmware Security; Network State 2022–2026; Hydrapool; Pool Centralization & FPPS; Stratum V1 & V2 in Practice
 - Note: 1,458 claims extracted to .agent/harvest-pod-tx-1..6.md (all [src:] paths valid). NOT YET MERGED: POD256 Podcast, The 256 Foundation, Ember One & BZM2, Libre Board & Control Boards, Decentralized Pool Designs, Open Mining Economics, Hashrate Heating Economics; new article industry/mining-policy-and-legal not yet written. The updated articles above may also be incomplete relative to the notes.
+
+## [2026-10-10] compile | POD256 transcripts (phase 2) — COMPLETE
+- Disposition: Update; Disputed
+- Raw: raw/history/pod256/transcripts/2026-10-07/transcripts/ (50 episode transcripts, e067–e127)
+- Updated (all prior citations preserved, zero removed links, verified vs HEAD): pod256-podcast; 256-foundation-organization; ember-one-bzm2; libre-board-and-control-boards; decentralized-pool-designs; open-mining-economics; hashrate-heating-economics; mujina; bitaxe-models; mining-firmware-security; network-state-2022-2026; hydrapool; pool-centralization-and-fpps; stratum-in-practice; mining-nodes-and-templates; asic-rs
+- Wiki (new this phase): industry/mining-policy-and-legal (e080–e127 + newsletter e108 breakdown); hardware/osmu-open-miners (NerdMiner line, PiAxe/QAxe, BitForge, firmware forks — 15 captures incl. 5 previously unreferenced)
+- Note: all 1,458 harvest claims dispositioned; citation lines grew 14→44, 1→28, 1→26 on the three pools/economics articles; Disputed blocks for Telehash #2 peak (245 Ph/s record vs ~400 Ph/s recall), M74 unit economics, district-heating taxonomy, peak-energy thesis, Ocean-vs-FPPS, BIP 110. lint --strict: 0 errors, 0 warnings.
+
+## [2026-10-10] audit | hackathon harvest — per-source provenance ledger + dispositions
+- Disposition: Audit complete; No material; Backlog
+- Tooling: scripts/ingest_ledger.py committed (ledger output is local-only at .agent/ingest-ledger.md, gitignored); 68 upstream sources identified under what the log previously called one "hackathon harvest"
+- Coverage verified live against upstream (GitHub API, 2026-10-10): ESP-Miner 729/730 issues (PRs uncaptured), web-flasher 30/31, osmu.wiki 39/39 repo pages, ultraHex/Gamma/GT/Bonanza/Max/Supra/Ultra/GammaHex/bitaxe-raw/bitaxeBIRDS 100%, asic-rs 409/415, mujina 74/79 (rest deleted upstream), website repo #1–46/47, newsletter 23/23, hydrapool 44/44
+- No material: btc-toolkit repo article (1-2 sentences added to asic-rs instead — reference GUI consumer, quiet since early 2026); Block-Watcher-website (paused-2025 grant site, config PR only); bitaxe.org residue; web-flasher/osmu residue (~480 unref files across cluster judged genuine churn — kept, not deleted)
+- Backlog for Tyler: asic-rs #410–415 recapture; ESP-Miner PR backfill (1,204) + issue #2026; legitlist vendor-application PRs; emberone-usbserial-fw 1/12 gap; gamma-603 tag/README diff (resolves errata 603 question); website PR #47; 18 auth-only forum topics; Treasury PDF capture; "Community channels & X presence" article (5 sprint drafts, no new captures needed); docs-mirror dedupe (hashscope 8 + asic-rs 6 + mujina-website 8); ESP-Miner keeper issues (#65/#138/#1789/#1777/#385) + web-flasher #29/#1 + mujina PR #30 + hydrapool PR #33 companion-cites
+- Registry: +legitlist, +naja-duo, +bitaxebirds, +block-watcher-site (all proposed, already captured); substack span corrected to 2025-05 → 2026-05 (dormant since #27)
+- Note: sprint drafts' leads-only verdict re-verified against all compiled articles; 64/87 drafts link pre-triage raw paths (re-resolve via HARVEST.md triage map before any future compile)

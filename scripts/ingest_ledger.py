@@ -224,7 +224,7 @@ def main() -> None:
         old = LEDGER.read_text(encoding="utf-8")
         if AUDIT_BEGIN in old and AUDIT_END in old:
             kept = old.split(AUDIT_BEGIN, 1)[1].split(AUDIT_END, 1)[0]
-            lines += ["## Audit verdicts (hand-maintained)", kept.rstrip(), AUDIT_END, ""]
+            lines += [kept.lstrip("\n"), AUDIT_END, ""]
         else:
             lines += ["## Audit verdicts (hand-maintained)", "", "<!-- per source: verdict / keep-drop / next action -->", "", AUDIT_END, ""]
     else:

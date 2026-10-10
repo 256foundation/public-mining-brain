@@ -74,6 +74,10 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | ID | Source | URL | Type | Cadence | Posture | Owner | Status |
 |---|---|---|---|---|---|---|---|
 | `tyler-datasheets` | Tyler's silicon datasheet collection (BM13xx, S19/S21 BMPs, Whatsminer, Seal chips, Intel BZM2...) | *provided files land in raw/inbox/* | datasheet | static | verbatim | tyler | active |
+| `legitlist` | legitlist — community-vetted registry of legit Bitaxe units vs clones | https://github.com/bitaxeorg/legitlist | repo | weekly | verbatim | agent | proposed |
+| `naja-duo` | Bitaxe Naja Duo — next-gen dual-chip prototype board | https://github.com/bitaxeorg/naja-duo | repo | event | verbatim | agent | proposed |
+| `bitaxebirds` | BitaxeBIRDS — Intel BZM2 research board (docs, issues, PRs) | https://github.com/bitaxeorg/bitaxeBIRDS | repo | event | verbatim | agent | proposed |
+| `block-watcher-site` | Block-Watcher website (256F org) | https://github.com/256foundation/Block-Watcher-website | repo | monthly | verbatim | agent | proposed |
 | `public-datasheets` | Publicly circulated ASIC datasheets + teardown analyses | *URLs verified per document at ingest* | datasheet | monthly | extract | agent | proposed |
 
 ## Manufacturers & Hardware
