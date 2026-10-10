@@ -32,7 +32,7 @@ The persistent list of sources the update loops pull from. This is the contract 
 | `hashdash` | Hashdash live pool/hashrate dashboard | https://dash.256f.org | data | weekly | extract | tyler | active |
 | `telehash` | Telehash solo-mining fundraiser events | https://256foundation.org/telehash | site | event | extract | tyler | active |
 | `heatpunks-site` | Hashrate Heatpunks site (mission, education, summit archive) | https://www.heatpunks.org | site | weekly | verbatim | tyler | active |
-| `osmu-wiki` | OSMU wiki / project index | https://osmu.wiki | wiki | weekly | verbatim | tyler | active |
+| `osmu-wiki` | OSMU — Open Source Miners United wiki & project index | https://osmu.wiki | wiki | weekly | verbatim | tyler | active |
 
 ## Community & Forums
 
@@ -67,7 +67,7 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | `btc-toolkit` | btc-toolkit — ASIC farm GUI manager | https://github.com/256foundation/btc-toolkit | repo | weekly | verbatim | tyler | active |
 | `esp-miner` | ESP-Miner / AxeOS — Bitaxe firmware | https://github.com/bitaxeorg/ESP-Miner | repo | weekly | verbatim | tyler | active |
 | `bitaxe-hw` | Bitaxe hardware design files (bitaxeorg) | https://github.com/bitaxeorg | repo | weekly | verbatim | tyler | active |
-| `osmu-projects` | OSMU project index (NerdAxe, NerdMiner, AxeOS forks) | https://osmu.wiki | repo | weekly | verbatim | tyler | active |
+| `osmu-projects` | OSMU project index (Open Source Miners United: NerdAxe, NerdMiner, AxeOS forks) | https://osmu.wiki | repo | weekly | verbatim | tyler | active |
 
 ## Silicon & Datasheets
 
