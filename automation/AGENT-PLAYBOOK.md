@@ -34,6 +34,29 @@ Chat and social sources are captured by dedicated bots/watchers (run on the auto
 4. Watchers open PRs on the same loop cadence (batched — one PR per loop run, not per message).
 5. **Signal triage**: most chat volume is noise. The watcher (or the ingest agent on scan) extracts *knowledge claims, decisions, field reports, links, and community consensus* — not transcripts. A claim that matters gets compiled into a wiki article per the normal Ingest flow; chatter that adds nothing gets logged as No material with the digest kept in raw/.
 
+### Method contracts (Tyler, 2026-10-10 — inherit verbatim)
+
+- **OSMU Discourse**: `https://osmu.xyz` — same Discourse JSON: `/latest.json`, `/t/<id>.json`.
+  Read-only. Adjacent ecosystem, not a 256F deliverable.
+- **256F forum RSS** (feed form): `https://forum.256foundation.org/latest.rss`, `/new.rss`,
+  `/t/<topic-id>.rss`, `/c/<category-slug>.rss`. For what a feed omits, fetch the public topic page.
+- **Pool Prometheus** (live, not a page scrape): `GET https://pool.256foundation.org/api/v1/query?query=<PromQL>`,
+  no auth. Metric `worker_shares_valid_total` by `btcaddress` (BTC address or npub1…);
+  `rate(...[5m])` is treated as H/s.
+  - Total: `sum(rate(worker_shares_valid_total[5m]))`
+  - Top N: `topk(N, sum by (btcaddress) (rate(worker_shares_valid_total[5m])))`
+  - Active count: `count(sum by (btcaddress) (rate(worker_shares_valid_total[5m])))`
+  - Npub labels: decode npub→hex, `POST https://primal.net/api` with
+    `["user_profile",{"pubkey":"<hex>"}]`, read kind-0 `display_name`/`name`.
+    Cache, short timeout, fall back to truncated npub.
+- **X**: `@256Foundation` mentions/replies/quote-tweets via the harness live X search (keyword +
+  semantic). Explicitly NOT an exhaustive firehose — thin coverage must be called thin.
+- **Nostr (256F)**: mentions/engagement via whatever well-connected public relays are reachable.
+- **POD256 + key mining podcasts**: always keep current (weekly loop rows).
+- **SEC EDGAR**: declare a User-Agent with contact; rate-limit to ≤10 req/s.
+- **dash.256f.org is NOT a data source** — dashboard only, do not scrape; pull live numbers from the
+  pool Prometheus endpoint above.
+
 
 ## Freshness scan SOP
 
