@@ -1,68 +1,399 @@
 # Mujina
 
-> Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07
-> Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md)
-> Updated: 2026-10-08
-> As-Of: 2026-10-08
+> Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07; mujina.org docs and 256foundation/mujina repository docs, issues and PRs (captured 2026-10-07), 2025-01 → 2026-10; 256foundation/mujina-mips and mujina-xilinx-platform READMEs; 256 Foundation forum (Mujina category, dev-call posts), 2026-05 → 2026-09; Assembling Freedom newsletter and 256foundation.org newsroom, 2025-05 → 2026-09; 256 Foundation and community X posts, 2025-11 → 2026-10
+> Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md); [256foundation/mujina README](../../raw/firmware/mujina/github-256foundation-mujina.md); [mujina.org: Where Mujina Is Today](../../raw/firmware/mujina/mujina-org-explanation-status.md); [mujina.org: Hardware Compatibility](../../raw/firmware/mujina/mujina-org-reference-hardware-compatibility.md); [Mujina architecture doc](../../raw/firmware/mujina/github-mujina-docs-architecture.md); [MIP-0001](../../raw/firmware/mujina/github-mujina-mips-mip-0001-configuration-and-api.md)
+> Updated: 2026-10-09
+> As-Of: 2026-10-09
 > Status: Draft
 
 ## Overview
 
-Mujina is the 256 Foundation's open-source mining firmware, written in Rust. It exists because every proprietary miner firmware targets grid-connected industrial mining — home heat reuse, grid-stabilization and similar alternative uses end up fighting the firmware instead of being served by it [#309 · 2024-03-03 · Skot Bitaxe] [#319 · 2024-03-03 · Skot Bitaxe] [#320 · 2024-03-03 · Michael Schmid @Schnitzel]. It runs as a single `mujina-miner` program on nearly any Linux machine, with a whole-OS image (MujinaOS) as the longer-term goal, and by 2026 it runs on everything from a Bitaxe Gamma to a stock Bitmain S19j Pro control board.
+Mujina is the 256 Foundation's open-source mining firmware, written in Rust and licensed GPL-3.0-or-later ([mujina.org: community](../../raw/firmware/mujina/mujina-org-community.md)). It exists because every proprietary miner firmware targets grid-connected industrial mining. Home heat reuse, grid stabilization and similar uses end up fighting the firmware instead of being served by it [#309 · 2024-03-03 · Skot Bitaxe] [#319 · 2024-03-03 · Skot Bitaxe] [#320 · 2024-03-03 · Michael Schmid @Schnitzel]. The project's stated aim is to be the "Linux kernel of Bitcoin mining firmware". That means one open codebase in which the scheduler, pool protocols, API and monitoring are written once, and each hashboard only adds a driver. It charges no dev fee, and anyone can read the code ([mujina.org home](../../raw/firmware/mujina/mujina-org-home.md); [Why Mujina](../../raw/firmware/mujina/mujina-org-explanation-why-mujina.md)).
 
-## Architecture & goals
+Today Mujina is a daemon, `mujina-minerd`, that you build and run on a Linux machine (macOS and Windows work for development). It drives USB hashboards such as the Bitaxe Gamma through the [RHAP](../protocols/rhap.md) pass-through firmware, and it can run on the stock control boards of Bitmain miners. The longer-term goal is Mujina OS, a complete operating-system image for control boards, but as of 2026-10-07 no such images exist ([Where Mujina Is Today](../../raw/firmware/mujina/mujina-org-explanation-status.md)). The fastest way in is the CPU backend: no hardware, about fifteen minutes from clone to a hashing status line ([first-run tutorial](../../raw/firmware/mujina/mujina-org-tutorial-first-run.md)).
 
-- Supported-hardware reality (February 2026): only the Bitaxe Gamma (+ CPU miner) is mainline; EmberOne and S19j Pro support in the works [#4378 · 2026-02-02 · Ryan]
-- Architecture goal: many hashboards of many types per Mujina instance, hotpluggable while Mujina runs [#4376 · 2026-02-02 · Ryan]
-- MujinaOS concept (November 2025): today Mujina is a single `mujina-miner` program you install on any Linux; the bigger goal is MujinaOS — a whole-Linux image for LibreBoard (and later other control boards) with kernel mods, DTs and modules integrated, and a platform for app-specific components (sensors/actuators driving a hot tub, etc.) [#3485 · 2025-11-20 · Ryan] [#3487 · 2025-11-20 · Dan Sokil]
-- MineralOS referenced as a project to study for OS structure [#3500 · 2025-11-21 · Dan Sokil]
-- Host requirements are modest: it runs on any Linux [#3472 · 2025-11-20 · Ryan]
-- Deliberately modular and hashboard-agnostic; priorities are emberOne/Libre/derivatives, with big-vendor board support tracked where feasible [#2182 · 2025-05-16 · Ryan] [#2268 · 2025-05-22 · Ryan]
+## Why Mujina exists
 
-### Power policy design
+- **Two kinds of closed firmware.** The project describes the problem as manufacturer firmware on one side and, on the other, third-party firmware that charges a dev fee: a cut of hashrate skimmed by the firmware, which phones home and can stop mining if the cut fails. Mujina promises no dev fee and readable code ([Why Mujina](../../raw/firmware/mujina/mujina-org-explanation-why-mujina.md)). The 256 Foundation's newsletter puts closed-firmware dev fees at often 2-3%. It notes that ASIC makers at NEMS showed interest in Mujina's multi-driver approach ([Assembling Freedom #14](../../raw/history/256f-newsletter/2026-01-30-assembling-freedom-14.md)).
+- **Why the GPL.** It makes the ownership promise enforceable. Anyone who distributes a modified version has to pass the same rights on, so owners are not tied to one vendor's team, prices or survival ([Why Mujina](../../raw/firmware/mujina/mujina-org-explanation-why-mujina.md)).
+- **Funding.** Mujina takes no donations of its own; support goes to the 256 Foundation ([mujina.org: community](../../raw/firmware/mujina/mujina-org-community.md)). The Ember One and Libre Board are its sister hardware projects, both designed to run open firmware without reverse engineering ([Why Mujina](../../raw/firmware/mujina/mujina-org-explanation-why-mujina.md)).
+- **"Drivers, not ports."** In the project's vocabulary Mujina is never "ported" to a board. A driver for the board is added and the shared core does the rest ([Hardware Compatibility](../../raw/firmware/mujina/mujina-org-reference-hardware-compatibility.md)). The same idea frames Mujina as a framework of modular components: ASIC chips, PSUs, fan controllers and temperature sensors. A "supported miner" is a built-in recipe for combining them ([forum: Mujina on Antminer](../../raw/firmware/mujina/2026-05-11-forum-mujina-antminer.md)).
+- **Forks first, by design.** Board bring-up involves experiments that can brick hardware and needs fast iteration that mainline review would slow down. Code merges into mainline once it is stable ([Why Mujina](../../raw/firmware/mujina/mujina-org-explanation-why-mujina.md)).
+- **The name.** Mujina is the Japanese word for the badger, a shape-shifter in folklore. The mascot is an armored badger ([mujina.org site source](../../raw/firmware/mujina/github-mujina-website-index.md)).
 
-- Power-target design (January 2026): (A) user sets a system-wide power target and Mujina optimizes efficiency across boards, or (B) per-board/per-group constraints (different cooling loops); a 'scheduler' sits between hashboards, pools and the user API applying policies as boards come and go [#4175 · 2026-01-07 · Ryan] [#4180 · 2026-01-07 · Ryan]; Home-Assistant sketch: each EmberOne adds 100 W to a controllable budget, split across boards [#4182 · 2026-01-07 · Dylan Seib]
-- Layered power-policy proposal (golana): policy layers split by time scale — an economic layer coordinating a whole site passes slower goals down to faster local controllers that enforce constraints (slew limits, valid V/f); his power-aware source (solar MPPT + wall power) would tell Mujina '1000 W solar, 1400 W wall'; example policy 'please break even' [#5138 · 2026-07-22 · golana]; Ryan's response: distill concrete use cases into low-level primitives (per-board power/efficiency curves); grid-price subscription might belong in a second daemon next to the mining daemon [#5139 · 2026-07-22 · Ryan]
-- Roadmap ask: thermostat-like control of chip voltage/speed as the feature that makes bitcoin-as-space-heater take off; Aadhi picked it up [#4673 · 2026-04-18 · Collin] [#4674 · 2026-04-18 · Aadhi M]
+## Feature status (as of July 2026)
 
-## Hardware ports (As-Of 2026-10-08)
+The project's own status page, marked "Current as of July 2026" ([Where Mujina Is Today](../../raw/firmware/mujina/mujina-org-explanation-status.md)):
 
-- Bitaxe Gamma: mainline [#4378 · 2026-02-02 · Ryan]
-- S19j Pro stock Bitmain control board: 'very rough version of Mujina compiled and working' (2026-03-09, single hashboard) [#4553 · 2026-03-09 · Skot Bitaxe]; proof-of-concept announced on the forum (2026-05-11): 'Bitmain Antminer controlboards run linux and are perfectly capable of running Mujina firmware' [#4787 · 2026-05-11 · 256F Forum] — this unlocks the entire installed Antminer fleet
-- Amlogic control boards: stop LuxOS, compile Mujina for ARM, copy it over; notes in github.com/skot/amlogic-cb-tools; network install over anything is the goal, USB burn works even on bricked boards; Bitmain's signed bootloader/boot partitions required [#4734 · 2026-05-01 · Skot Bitaxe] [#4736 · 2026-05-01 · Skot Bitaxe] [#4737 · 2026-05-01 · Skot Bitaxe] [#4741 · 2026-05-01 · Skot Bitaxe] [#4755 · 2026-05-03 · Skot Bitaxe]
-- mujina-loader repo for getting Mujina onto an Amlogic board, plus Skot's mujina fork with Antminer-specific bits (PSU communications) [#4942 · 2026-06-12 · Aadhi M] [#4944 · 2026-06-12 · AgentP]
-- Braiins BCB100 control board running Debian: BCB100_Mujina port (github.com/aadhi1014/BCB100_Mujina), Loki-rig testing planned [#4655 · 2026-04-09 · Aadhi M]
-- Xilinx Zynq control boards: mujina-xilinx-platform package boots to a mujina shell on the Zynq (ARMv7) — first Zynq execution [#3499 · 2025-11-21 · Dan Sokil] [#3509 · 2025-11-21 · Ryan]
-- Windows native (no WSL/docker): community port via Claude assistance; uses tokio-serial with VID:PID auto-discovery [#4090 · 2026-01-05 · Aadhi M] [#4094 · 2026-01-05 · Aadhi M]
-- Canaan: A3197 protocol reverse engineered; BMM101 running Mujina + Doom [#5081 · 2026-07-22 · Aadhi M]
-- Intel RDS with 300× BZM2 (September 2026): community bring-up attempt on the Intel controller — would be the highest-hashrate Mujina system so far [#5482 · 2026-09-14 · Reckless Apotheosis] [#5489 · 2026-09-14 · Reckless Apotheosis]
+| Area | State |
+|---|---|
+| Pool | Stratum v1 with version-rolling negotiation. One pool at a time, no failover |
+| Hardware | Bitaxe Gamma end to end, with temperature and hashrate monitoring and USB hotplug. CPU virtual hashboard |
+| API | REST API with pause/resume and Swagger UI |
+| Packaging | Container image. No prebuilt OS images; installing on a stock control board is unsettled |
+| Tuning | No frequency, voltage or power controls, and no autotuning |
+| Efficiency data | No J/TH figures published for any board |
+| Automation | No power targets and no home-automation integration in mainline |
+
+- **Who it is for.** Developers and tinkerers: yes, today. Home miners with S19-class machines: "not yet as a firmware replacement". Mining operations: not yet, because there is no tuning, no efficiency data and no fleet management.
+- **Current focus.** S19-class support in mainline (a prototype S19j/S19k Pro fork exists), reworking the EmberOne/00 bring-up, and Intel BZM2 drivers on johnny9's `bonanza` branch ([Where Mujina Is Today](../../raw/firmware/mujina/mujina-org-explanation-status.md)).
+- **README targets.** Installable images for the Antminer S19 series and the Libreboard control board, broader support for commercial machines, and a warning that APIs are still moving ([README](../../raw/firmware/mujina/github-256foundation-mujina.md)).
+
+> **Status: Disputed**: what Mujina can do
+> The 256foundation.org projects page lists "Per-chip power targeting and watt budgets", "Stratum V1/V2 with DATUM compatibility", "Drivers for Antminer, Whatsminer, Avalon" and "Web dashboard, REST API, CLI" ([256foundation.org projects](../../raw/history/256f-org/256foundation-org-projects.md)). A January 2026 newsletter also says a community contributor added multipool support ([Assembling Freedom #14](../../raw/history/256f-newsletter/2026-01-30-assembling-freedom-14.md)). Against this, the mujina.org status page (July 2026) says mainline has no power controls, connects to one pool at a time over Stratum v1 only, and has S19 support only in a fork ([Where Mujina Is Today](../../raw/firmware/mujina/mujina-org-explanation-status.md)). Best assessment: the projects page describes the roadmap plus fork and downstream work. Power targeting does exist downstream: RY3T Nova settles on targets such as 1,400W or 2,900W ([RY3T Nova announcement](../../raw/history/256f-org/256foundation-org-newsroom-ry3t-nova.md)). SV2 is an open PR (see below). Treat the status page as authoritative for mainline.
+
+## Hardware compatibility (As-Of 2026-10-09)
+
+The official matrix uses three status words. **Working** means it runs in mainline. **In progress** means code exists but is incomplete. **In a fork** means it works, but in a fork that mainline may diverge from ([Hardware Compatibility](../../raw/firmware/mujina/mujina-org-reference-hardware-compatibility.md)).
+
+| Hardware | Official status | Where | Notes |
+|---|---|---|---|
+| Bitaxe Gamma (1× BM1370) | Working | mainline | About 1 TH/s at stock (525 MHz, 1.15V). Recommended first real hardware ([Bitaxe Gamma board doc](../../raw/firmware/mujina/github-mujina-mujina-miner-src-board-bitaxe-gamma.md)) |
+| CPU backend | Working | mainline | A few MH/s per thread ([CPU mining doc](../../raw/firmware/mujina/github-mujina-docs-cpu-mining.md)) |
+| EmberOne/00 (12× BM1362) | Working (driver being reworked) | mainline | See the dispute below |
+| Antminer S19j Pro, S19k Pro | In a fork | Schnitzel's fork | Powers RY3T Nova prototypes. Installing on a stock control board needs a loader |
+| Intel BZM2 boards | In progress | johnny9's `bonanza` branch, plus the recklessnode PR series | See [Intel BZM2 driver](#intel-bzm2-driver) |
+
+> **Status: Disputed**: EmberOne/00 maturity
+> The README labels EmberOne00 support "Landing now" ([README](../../raw/firmware/mujina/github-256foundation-mujina.md)). The compatibility matrix lists EmberOne/00 as "Working" in mainline, with its driver being reworked ([Hardware Compatibility](../../raw/firmware/mujina/mujina-org-reference-hardware-compatibility.md)). A forum thread from late June 2026 found `board/` holding only bitaxe, emberone00 and cpu ([forum: where is S19j Pro support](../../raw/history/256f-org/2026-06-27-forum-where-is-s19jpro-support.md)). Best assessment: an EmberOne00 driver is in mainline, but the multi-chip BM13xx rework (PR #77/#105, below) is still landing, so expect rough edges.
+
+### Community ports and bring-ups (Telegram and forum record)
+
+- **February 2026:** only the Bitaxe Gamma (plus the CPU miner) was mainline; EmberOne and S19j Pro support were in the works [#4378 · 2026-02-02 · Ryan]
+- **S19j Pro on the stock Bitmain control board:** 'very rough version of Mujina compiled and working' (2026-03-09, single hashboard) [#4553 · 2026-03-09 · Skot Bitaxe]. A proof of concept was announced on the forum on 2026-05-11: 'Bitmain Antminer controlboards run linux and are perfectly capable of running Mujina firmware' [#4787 · 2026-05-11 · 256F Forum]. This opens up the entire installed Antminer fleet. Skot said he "vibe coded S19j Pro support into Mujina firmware in a few hours", crediting Ryan Kuester's architecture ([Assembling Freedom #19](../../raw/history/256f-newsletter/2026-03-11-assembling-freedom-19-revolutionizing-bitcoin-mining-hacking.md))
+- **Amlogic control boards:** stop LuxOS, compile Mujina for ARM and copy it over. Notes are in github.com/skot/amlogic-cb-tools. Network install over anything is the goal; USB burn works even on bricked boards; Bitmain's signed bootloader/boot partitions are required [#4734 · 2026-05-01 · Skot Bitaxe] [#4736 · 2026-05-01 · Skot Bitaxe] [#4737 · 2026-05-01 · Skot Bitaxe] [#4741 · 2026-05-01 · Skot Bitaxe] [#4755 · 2026-05-03 · Skot Bitaxe]
+- **mujina-loader:** a repo for getting Mujina onto an Amlogic board, plus Skot's Mujina fork with Antminer-specific parts (PSU communications) [#4942 · 2026-06-12 · Aadhi M] [#4944 · 2026-06-12 · AgentP]
+- **Braiins BCB100 control board running Debian:** BCB100_Mujina port (github.com/aadhi1014/BCB100_Mujina), with Loki-rig testing planned [#4655 · 2026-04-09 · Aadhi M]. The newsletter says this extends Mujina compatibility to whole generations of Antminer S19s ([Assembling Freedom #23](../../raw/history/256f-newsletter/2026-04-11-assembling-freedom-23.md))
+- **Xilinx Zynq control boards:** the mujina-xilinx-platform package boots to a Mujina shell on the Zynq (ARMv7), the first time Mujina ran on a Zynq [#3499 · 2025-11-21 · Dan Sokil] [#3509 · 2025-11-21 · Ryan]. See [Xilinx section](#xilinx-zynq-7007s-control-boards-mujina-xilinx-platform)
+- **Windows native (no WSL/docker):** community port built with Claude's help, using tokio-serial with VID:PID auto-discovery [#4090 · 2026-01-05 · Aadhi M] [#4094 · 2026-01-05 · Aadhi M]
+- **Canaan:** A3197 protocol reverse engineered; BMM101 running Mujina + Doom [#5081 · 2026-07-22 · Aadhi M]. "Mujina is now running on Canaan Nano 3S" (2026-08-12). Reverse engineering of the Avalon Mini 3 followed by 2026-10-03 ([X: Canaan Mujina port](../../raw/history/256f-research/2026-10-07-x-notable-canaan-mujina-port.md))
+- **FPGA:** Skot wrote a quick Mujina driver branch for his TangMiner FPGA miner ([forum: FPGA mining](../../raw/history/256f-org/2026-05-05-forum-messing-around-with-fpga-mining.md))
+- **Intel RDS with 300× BZM2 (September 2026):** community bring-up on the Intel controller, which would be the highest-hashrate Mujina system so far [#5482 · 2026-09-14 · Reckless Apotheosis] [#5489 · 2026-09-14 · Reckless Apotheosis]. Results are under [Intel BZM2 driver](#intel-bzm2-driver)
+- **LibreBoard-Axe (April 2026):** Mujina on a Raspberry Pi CM5 Libre Board driving a Bitaxe through bitaxe-raw, with OLED stats, Qwiic temperature sensors and fan RPM control ([Assembling Freedom #25](../../raw/history/256f-newsletter/2026-04-22-assembling-freedom-25.md)). Skot's Ampminer prototype is a stock S19j Pro running Mujina, with the control board's hidden USB port feeding a Wi-Fi dongle and a Bitaxe GT Touch screen ([Assembling Freedom #25](../../raw/history/256f-newsletter/2026-04-22-assembling-freedom-25.md))
+
+## Getting started
+
+### First run on a CPU (no hardware)
+
+1. **Install prerequisites.** You need Linux, Rust via rustup, and on Debian/Ubuntu `sudo apt install libudev-dev libssl-dev`. Clone `https://github.com/256foundation/mujina.git`. Expect about fifteen minutes, mostly compile time ([first-run tutorial](../../raw/firmware/mujina/mujina-org-tutorial-first-run.md)).
+2. **Start the daemon.** Run `MUJINA_CPUMINER_THREADS=2 MUJINA_USB_DISABLE=1 cargo run --release --bin mujina-minerd`. With no pool set, a dummy job source generates synthetic work and a virtual "CPU Miner" board connects.
+3. **Watch the status line.** It appears about every half minute; the tutorial shows `hashrate=5.2 MH/s` on two threads. `shares` usually stays at zero because CPU candidates rarely clear the threshold.
+4. **Check the API.** `curl http://127.0.0.1:7785/api/v0/health` returns OK, and `/swagger-ui` is browsable. Ctrl+C shuts down cleanly with a final status ([first-run tutorial](../../raw/firmware/mujina/mujina-org-tutorial-first-run.md)).
+5. **Workspace shortcuts.** The workspace builds `mujina-minerd` and `mujina-cli`. `just run`, `just test` and `just checks` (fmt, lint, test) are shortcuts ([README](../../raw/firmware/mujina/github-256foundation-mujina.md)).
+
+### Pointing it at a pool
+
+- **Set the pool variables.** Set `MUJINA_POOL_URL` (e.g. `stratum+tcp://pool.example.com:3333`) and `MUJINA_POOL_USER`, which is usually a payout address plus a worker suffix (the default is a shared testing name). `MUJINA_POOL_PASS` is optional. Version rolling is negotiated automatically ([Connect to a pool](../../raw/firmware/mujina/mujina-org-howto-connect-to-a-pool.md)).
+- **Check that shares land.** Watch the scheduler's periodic "Mining status" line: a rising `shares` count means the pool is accepting work.
+- **Testing on a CPU.** At ASIC-scale pool difficulty, a CPU would wait days for a share. `MUJINA_POOL_FORCED_RATE=6` targets one share every ten seconds to exercise the submission path. The pool will reject those shares as below difficulty, which is expected ([Connect to a pool](../../raw/firmware/mujina/mujina-org-howto-connect-to-a-pool.md)).
+
+### Set up a Bitaxe Gamma
+
+Under Mujina the Bitaxe's ESP32 stops mining. It runs **rhapd-bitaxe-gamma**, which passes the ASIC serial bus, I2C, GPIO and ADC through USB, and `mujina-minerd` on the host drives the board ([mujina.org: set up a Bitaxe Gamma](../../raw/firmware/mujina/github-mujina-website-howto-set-up-a-bitaxe-gamma.md)). Protocol details are in [RHAP](../protocols/rhap.md).
+
+1. **What you need.** A Bitaxe Gamma and its PSU, a USB data cable, Rust, `just`, Python 3, and permission to open serial devices (on Debian/Ubuntu, join `dialout` and log in again).
+2. **Flash the firmware.** Clone rhapd-bitaxe-gamma and run `just setup-tools`. Hold BOOT while applying power, then run `just flash`. Later reflashes need no button press. Hold BOOT at power-up to go back to stock.
+3. **Start the daemon** with the pool variables. The board shows up as two CDC ACM ports (control and ASIC data), which Mujina claims on its own, and appears under `/api/v0/boards` ([mujina.org: set up a Bitaxe Gamma](../../raw/firmware/mujina/github-mujina-website-howto-set-up-a-bitaxe-gamma.md)).
+
+- **bitaxe-raw is deprecated.** rhapd-bitaxe-gamma replaces bitaxe-raw, though Mujina still drives bitaxe-raw boards. The docs were changed to point at rhapd-bitaxe-gamma because people kept building bitaxe-raw (PR #112, closed 2026-10-05) ([Mujina PR #112](../../raw/firmware/mujina/2026-09-26-github-mujina-pr-112-docs-point-bitaxe-users-at-rhapd-bitaxe.md)).
+- **Debug tip.** Restarting Mujina does not reset the Bitaxe, and the reset button resets only the ESP32, not the voltage regulator. Pull the plug for a clean run ([bitaxe-raw #9](../../raw/hardware/bitaxe-osmu/2026-03-03-github-bitaxe-raw-issue-9-having-trouble-flashing-and-runnin.md)).
+- **USB identification for Bonanza.** The VID/PID allocation is not under the project's control. The USB product string therefore encodes the hardware version (e.g. "Bitaxe 1002"), since ESP-Miner keys on 601/602/1002 ([dev call #2](../../raw/firmware/mujina/2026-05-05-forum-mujina-dev-call-2.md)).
+
+### Container
+
+The image `ghcr.io/256foundation/mujina-minerd:latest` is mainly a testing tool. It is about 100MB, uses a multi-stage build ending in debian:bookworm-slim, runs as non-root user `mujina` and exposes port 7785. Set `MUJINA_API_LISTEN=0.0.0.0:7785` to reach the API from the host ([container doc](../../raw/firmware/mujina/github-mujina-docs-container.md); [run in a container](../../raw/firmware/mujina/github-mujina-website-howto-run-in-a-container.md)). The Containerfile switched from ENTRYPOINT to CMD because some environments struggle to override the entrypoint (PR #14) ([Mujina PR #14](../../raw/firmware/mujina/2026-01-12-github-mujina-pr-14-change-entrypoint-to-cmd-in-containerfil.md)).
+
+## Configuration
+
+### Environment variables (current mechanism)
+
+| Variable | Meaning |
+|---|---|
+| `MUJINA_POOL_URL` | Pool URL. Unset = built-in dummy job source |
+| `MUJINA_POOL_USER` / `MUJINA_POOL_PASS` | Defaults `mujina-testing` / `x` |
+| `MUJINA_POOL_FORCED_RATE` | Forced share rate, for testing |
+| `MUJINA_CPUMINER_THREADS` | Enables the CPU backend |
+| `MUJINA_CPUMINER_DUTY` | Duty cycle 1-100, default `50` |
+| `MUJINA_USB_DISABLE` | Skips USB discovery |
+| `MUJINA_API_LISTEN` | API bind address. A bare host gets `:7785` appended |
+| `MUJINA_LOG` | Filters Mujina's own modules and takes precedence over `RUST_LOG` (PR #79) |
+| `MUJINA_OBSERVE` | Observer mode: attaches and enumerates with the scheduler paused (proposed in PR #120) |
+
+Sources: [Environment Variables](../../raw/firmware/mujina/github-mujina-website-reference-environment-variables.md); [Mujina PR #79](../../raw/firmware/mujina/2026-07-15-github-mujina-pr-79-feat-tracing-add-mujina-log-filter-varia.md); [Mujina PR #120](../../raw/firmware/mujina/2026-10-01-github-mujina-pr-120-feat-general-changes-made-while-buildin.md).
+
+- **Authoritative list.** `mujina-minerd --help` prints the variables for the exact build and is authoritative when the docs lag.
+- **Logging.** PR #79 fixed a root cause: previously `RUST_LOG=trace` raised third-party crates to trace while Mujina stayed capped at info. Debug logs show logical stages; trace adds serial frames, I2C transactions and USB events ([README](../../raw/firmware/mujina/github-256foundation-mujina.md)).
+
+### Configuration design: from the YAML PR to MIP-0001
+
+- **First attempt.** The YAML config PR #36 (opened 2026-03-05) used `MUJINA__SECTION__KEY` variables and later a generic `--set key=value` flag. In review the CPU miner failed with "CPU miner not configured" under the new scheme ([Mujina PR #36](../../raw/firmware/mujina/2026-03-05-github-mujina-pr-36-yaml-based-configuration.md)).
+- **Design first.** Dev call #2 (2026-05-18) concluded that configuration needed a design before code. API changes should persist across restarts; Skot's example was derated settings after an overheat surviving a power cycle. The design should separate user-managed from process-managed layers. Hardware configuration (mostly static) is distinct from application configuration (pools, API, logs), and dynamic discovery (USB hotplug, board EEPROMs, Amlogic self-detect) is preferred over static configuration ([dev call #2](../../raw/firmware/mujina/2026-05-05-forum-mujina-dev-call-2.md)).
+- **MIP-0001** (created 2026-05-30; PR closed 2026-09-27) unifies defaults, config files, env vars, CLI arguments and the REST API into one tree of named nodes. Every node is readable, subscribable, validated and persisted ([MIP-0001](../../raw/firmware/mujina/github-mujina-mips-mip-0001-configuration-and-api.md); [MIP PR #1](../../raw/firmware/mujina/2026-05-31-github-mujina-mips-pr-1-mip-0001-configuration-and-api.md)). Key rules:
+  - **Setpoints vs measurements:** `target_power_w` next to measured `power_w`. Writing `null` returns a setpoint to automatic control. Overlapping setpoints resolve as "The client constrains, the daemon fills in the rest".
+  - **Cascade, low to high:** code defaults → `/usr/lib/mujina/config.d/*.yaml` → `/run/mujina/config.d/*.yaml` (volatile, boot-generated) → `/etc/mujina/` → `/var/lib/mujina/saved-config.yaml` (API writes) → env vars → CLI args.
+  - **Saved config** is a sparse overlay of API-written values, so changing a default never disturbs explicit user intent. A flag like `--delete-saved-config` moves it aside for recovery.
+  - **API paths** are RFC 6901 JSON Pointers (PUT a leaf, PATCH a node, DELETE a saved entry). JSONPath (RFC 9535) selects sets of nodes, and subscriptions deliver path/value deltas.
+  - **Validation** applies to every input. An invalid value at startup is fatal; unknown keys in files or env warn; an unknown `--set` path is an error. An offline config-check tool is required.
+  - **Boards** can be discovered (USB hotplug) or declared in config for hardware that cannot be enumerated, such as RS-232. Config reloads only on SIGHUP or an API request.
+  - **Development runs** use `--config-file`, `--mujina-dir`/`MUJINA_DIR`, a discovered `.mujina/` directory, XDG directories or defaults-only mode, so they never touch system paths. YAML is used everywhere, so a value tuned through the API can be pasted into a file.
+- **Rollout.** MIP-0001 is being implemented step by step, piloted on pool configuration (tracking issue #83, 2026-07-27). PR #88 (opened 2026-08-05) adds `GET /api/v0/config` and a typed `kind` on sources (`"stratum_v1"` only so far). Because the API still has no authentication, it also exposes the plaintext pool password ([issue #83](../../raw/firmware/mujina/2026-07-27-github-mujina-issue-83-feat-pool-configuration-via-mip-001-c.md); [Mujina PR #88](../../raw/firmware/mujina/2026-08-05-github-mujina-pr-88-feat-config-introduce-config-tree-with-s.md)).
+- **The MIP process.** MIPs (Mujina Improvement Proposals, modelled on BIPs and NIPs) live in the mujina-mips repo. Ideas start as GitHub Discussions and become a `mip-NNNN-title.md` PR only when they need an editable design document ([mujina-mips README](../../raw/firmware/mujina/github-256foundation-mujina-mips.md)).
+
+## REST API
+
+- **Address and security.** The API listens on port 7785 ("MU" in ASCII), bound to localhost by default. It has no authentication or encryption, and the daemon logs a warning when it is bound to a non-loopback address ([API doc](../../raw/firmware/mujina/github-mujina-docs-api.md)).
+- **Paths.** Everything lives under `/api/v0/`, which signals an unstable contract. The OpenAPI spec is at `/api/v0/openapi.json` and Swagger UI at `/swagger-ui`.
+- **One state tree.** `GET /miner` returns the full snapshot. `/boards`, `/boards/{name}`, `/sources` and `/sources/{name}` are subtrees. `PATCH /miner` updates configuration, for example to pause, and `/health` returns "OK".
+- **Conventions.** Sensor readings are nullable: null means the read failed or the sensor is absent, not zero. A null `target_percent` means there is no API override. Units are encoded by suffix (`_secs`, `_c`, `_v`, `_a`, `_w`, `rpm`), and hashrate is in hashes per second. Types live in `api_client::types` and are shared with the CLI/TUI ([API doc](../../raw/firmware/mujina/github-mujina-docs-api.md)).
+- **Per-board commands.** PR #68 wired `PATCH /api/v0/boards/{name}/fans/{fan}` to a per-board command channel with a 5 s reply timeout. Boards without a command loop answer 400 ([Mujina PR #68](../../raw/firmware/mujina/2026-06-11-github-mujina-pr-68-feat-board-per-board-command-channel-pow.md)).
+- **SNMP and enterprise tooling:** see [Internals](#internals).
+
+## Architecture
+
+### Design (from the architecture doc)
+
+- **Three subsystems.** Boards hash and keep hardware powered, cooled and monitored. The mining core schedules work from sources to chips. The API carries telemetry and commands. The subsystems talk through channels, not direct calls ([architecture doc](../../raw/firmware/mujina/github-mujina-docs-architecture.md)).
+- **The backplane** watches transport events (USB hotplug today), spawns and tears down boards, hands their HashThreads to the scheduler and registers telemetry with the API. Neither the backplane nor the scheduler knows the API exists.
+- **Peripherals** (fan controllers, temperature sensors, regulators) are written against `hw_traits`, mainly I2C. The same driver runs over native Linux I2C, an I2C tunnel through a management protocol such as RHAP, or a test mock. For example, the EMC2101 fan driver runs unchanged on any board.
+- **ASIC drivers** deliberately bypass `hw_traits` and speak their wire protocol directly over serial. The abstraction that matters for them is the HashThread interface the scheduler sees.
+- **HashThreads per board:** one for a single-chip Bitaxe, one per chain for multi-chip boards, and one per configured thread for the CPU backend.
+- **Share filtering in three stages.** A low hardware target on the chip gives about one share per second per chip for health monitoring. The HashThread computes the actual difficulty and forwards every share, which gives the scheduler ground truth for hashrate. The scheduler forwards only pool-worthy shares.
+- **Commands** use one channel per addressable component rather than one large enum.
+- **Example compositions:**
+  - Bitaxe Gamma: 1 BM1370, EMC2101 + TPS546, RHAP over USB serial.
+  - EmberOne00: 12 BM1362, one HashThread per chain, TMP1075/TMP451 sensors and an RGB LED, RHAP over USB serial.
+  - CPU backend: N threads ([architecture doc](../../raw/firmware/mujina/github-mujina-docs-architecture.md)).
+- **Adding a board** used to mean implementing the `Board` trait and registering it by VID/PID ([board README](../../raw/firmware/mujina/github-mujina-mujina-miner-src-board-readme.md)). By 2026-06-11, main had replaced that with a `BackplaneConnector` factory architecture, which forced the BZM2 work to be re-ported ([Mujina PR #38](../../raw/firmware/mujina/2026-03-07-github-mujina-pr-38-add-experimental-blockscale-bzm2-support.md)).
+
+### Goals and power policy (community discussion)
+
+- **Hotplug, many boards:** many hashboards of many types per Mujina instance, hotpluggable while Mujina runs [#4376 · 2026-02-02 · Ryan]. USB-C hashboards are hot-swappable without a reboot: Mujina detects the new board, picks the driver by ASIC type and starts hashing without disturbing the other boards ([Assembling Freedom, 2025-07-15](../../raw/history/256f-newsletter/2025-07-15-the-bigger-they-are-the-harder-they-fall.md))
+- **Mixed chips and nonce space:** Mujina is designed to mix hashboards with different chips (e.g. Bitmain and Intel) and to allocate rollable bits (nonce, time, version) per chip capability ([Assembling Freedom #10](../../raw/history/256f-newsletter/2025-10-28-assembling-freedom-10.md)). This avoids the nonce-exhaustion problems that appear at high hash rates ([Assembling Freedom #11](../../raw/history/256f-newsletter/2025-11-24-assembling-freedom-11.md))
+- **MujinaOS concept (November 2025):** today Mujina is a single `mujina-miner` program you install on any Linux. The bigger goal is MujinaOS, a whole-Linux image for LibreBoard (and later other control boards) with kernel mods, DTs and modules integrated. It would also be a platform for app-specific components, such as sensors and actuators driving a hot tub [#3485 · 2025-11-20 · Ryan] [#3487 · 2025-11-20 · Dan Sokil]. MineralOS was referenced as a project to study for OS structure [#3500 · 2025-11-21 · Dan Sokil]. Host requirements are modest: it runs on any Linux [#3472 · 2025-11-20 · Ryan]
+- **Modular and hashboard-agnostic:** the priorities are emberOne, Libre and their derivatives, with big-vendor board support tracked where feasible [#2182 · 2025-05-16 · Ryan] [#2268 · 2025-05-22 · Ryan]
+- **Power-target design (January 2026):** either (A) the user sets a system-wide power target and Mujina optimizes efficiency across boards, or (B) the user sets per-board or per-group constraints (for example, different cooling loops). A 'scheduler' sits between hashboards, pools and the user API, applying policies as boards come and go [#4175 · 2026-01-07 · Ryan] [#4180 · 2026-01-07 · Ryan]. A Home Assistant sketch: each EmberOne adds 100 W to a controllable budget, which is split across the boards [#4182 · 2026-01-07 · Dylan Seib]
+- **Layered power-policy proposal (golana):** policy layers split by time scale. An economic layer coordinating a whole site passes slower goals down to faster local controllers, which enforce constraints (slew limits, valid V/f). His power-aware source (solar MPPT + wall power) would tell Mujina '1000 W solar, 1400 W wall'; an example policy is 'please break even' [#5138 · 2026-07-22 · golana]. Ryan's response: distill concrete use cases into low-level primitives (per-board power/efficiency curves); a grid-price subscription might belong in a second daemon next to the mining daemon [#5139 · 2026-07-22 · Ryan]
+- **Thermostat-like control:** roadmap ask for thermostat-like control of chip voltage and speed, described as the feature that would make bitcoin-as-space-heater take off; Aadhi picked it up [#4673 · 2026-04-18 · Collin] [#4674 · 2026-04-18 · Aadhi M]
+- **Downstream power targeting:** RY3T Nova, the first commercial product built on Mujina, accepts a power target and settles on it in seconds without restarting mining. A single Nova tracked a target from 1,000W to 3,000W, stepless, within seconds, and up to three miners act as one appliance scaling to 9kW. The stock Bitmain control board runs both Mujina and the Nova control layer ([RY3T Nova announcement](../../raw/history/256f-org/256foundation-org-newsroom-ry3t-nova.md))
+
+## Platform support
+
+| Platform | State | Source |
+|---|---|---|
+| Linux (glibc) | Primary target. Needs `libudev-dev libssl-dev` | [first-run tutorial](../../raw/firmware/mujina/mujina-org-tutorial-first-run.md) |
+| macOS | Supported per README (Xcode CLT; `openssl-sys` failures usually mean openssl isn't found). USB discovery via IOKit merged 2026-03-31; it maps devices to `/dev/cu.*` ports by location ID | [README](../../raw/firmware/mujina/github-256foundation-mujina.md); [Mujina PR #39](../../raw/firmware/mujina/2026-03-07-github-mujina-pr-39-feat-transport-implement-macos-usb-disco.md) |
+| Windows (native) | PR #76 (2026-07-05) mines end to end on Windows 11 with a Bitaxe Gamma at ~1.25 TH/s. No USB hotplug on Windows (issue #58) | [Mujina PR #76](../../raw/firmware/mujina/2026-07-05-github-mujina-pr-76-feat-native-windows-support-for-bitaxe-m.md); [issue #58](../../raw/firmware/mujina/2026-06-01-github-mujina-issue-58-feat-transport-add-usb-hotplug-suppor.md) |
+| Windows (WSL2 + usbipd) | Control-port writes hang. Reported upstream as bitaxe-raw #14 | [forum: WSL issues](../../raw/firmware/mujina/2026-07-01-forum-wsl-issues-prevents-bitaxe-raw-talking-to-mijuna.md) |
+| aarch64 musl (static) | PR #55: the 17 MB static binary ran on an Antminer S19j Pro control board | [Mujina PR #55](../../raw/firmware/mujina/2026-05-04-github-mujina-pr-55-make-non-glibc-linux-cross-compilation-w.md) |
+
+> **Status: Disputed**: is Mujina Linux-only?
+> The mujina.org tutorial says Mujina runs only on Linux ([first-run tutorial](../../raw/firmware/mujina/mujina-org-tutorial-first-run.md)). The repository README says macOS is supported ([README](../../raw/firmware/mujina/github-256foundation-mujina.md)), and native Windows mining has been demonstrated in PR #76. Best assessment: Linux is the deployment target. macOS and Windows work for development with a USB Bitaxe, with the gaps noted in the table.
+
+- **macOS details.** Review of the macOS PR found a race: enumerating before registering the IOKit notification can miss a device plugged in during the gap. It also noted that `kIOMasterPortDefault` is deprecated. `cargo test` hung on macOS in `test_concurrent_read_write` (issue #46), which was fixed by 9ea2497 ([issue #46](../../raw/firmware/mujina/2026-03-11-github-mujina-issue-46-cargo-test-hangs-on-macos.md)).
+- **USB enumeration** uses the cross-platform `nusb` crate; only the mapping from device to serial port is platform-specific ([issue #58](../../raw/firmware/mujina/2026-06-01-github-mujina-issue-58-feat-transport-add-usb-hotplug-suppor.md)).
+- **Windows details.** Windows PR #75 polled COM ports every 2s and matched Bitaxes by VID:PID `c0de:cafe`, because Windows reports "Microsoft" as the manufacturer of CDC ACM devices ([Mujina PR #75](../../raw/firmware/mujina/2026-06-15-github-mujina-pr-75-feat-transport-add-native-windows-suppor.md)). PR #76 superseded it. PR #76 adds a 500ms wait after ASIC reset and up to 5 BM1370 discovery retries, so a cold board does not fail with "no chips discovered".
+- **WSL root cause.** On WSL the control CDC ACM endpoint was not drained: 4 KB went to the ASIC port in 340 ms, against a 2 s timeout on control ([forum: WSL issues](../../raw/firmware/mujina/2026-07-01-forum-wsl-issues-prevents-bitaxe-raw-talking-to-mijuna.md)).
+- **musl build.** PR #55 switched reqwest to rustls and gated udev/journald. On 2026-07-06 the maintainer asked for udev, journald and rustls to become cargo features instead (udev/journald on by default, native-tls by default). His reasoning: the libc choice does not predict those capabilities, and rustls changes CA-store and proxy behaviour on every platform ([Mujina PR #55](../../raw/firmware/mujina/2026-05-04-github-mujina-pr-55-make-non-glibc-linux-cross-compilation-w.md)).
+
+## Antminer S19 on stock control boards
+
+### Amlogic control boards (S19j Pro, S19k Pro, S19 XP)
+
+- **What full support requires.** Proof of concept on 2026-05-11: Mujina ran on an S19j Pro with a stock Amlogic control board, though building and loading were very manual ([forum: Mujina on Antminer](../../raw/firmware/mujina/2026-05-11-forum-mujina-antminer.md)). Real S19 support needs four things ([Mujina PR #55](../../raw/firmware/mujina/2026-05-04-github-mujina-pr-55-make-non-glibc-linux-cross-compilation-w.md)):
+  - driving the BM1362 chips over UART;
+  - driving the APW12 PSU over I2C;
+  - fans;
+  - EEPROM decoding and PIC sensor reads.
+  skot/amlogic-cb-tools validates those interfaces. POD256 #107 described Mujina flashed onto stock S19 control boards over Ethernet/USB via LuxOS, with Rust drivers for the undocumented APW12 PSU interface. That enables single-board mode and immersion use without fan spoofers ([Assembling Freedom #19](../../raw/history/256f-newsletter/2026-03-11-assembling-freedom-19-revolutionizing-bitcoin-mining-hacking.md)).
+- **Two separate problems.** (1) Getting any software running on the control board means removing proprietary firmware and dealing with Secure Boot. (2) Adding Mujina support for the board is a separate job. Porting docs must lead with safety warnings about fire and hardware destruction ([dev call #2](../../raw/firmware/mujina/2026-05-05-forum-mujina-dev-call-2.md)).
+- **Root access.** The daemonc root exploit used by LuxOS (and reportedly Braiins) was blocked by a Bitmain update in mid-2025, and recent LuxOS turned off root. Boards with recent stock firmware need the "usb burn" method to roll back to early-2025 firmware. The stock filesystem is not writable, so the easiest route to persistence is installing LuxOS or Braiins first. skot's mujina-loader does it from scratch but needs cleanup ([forum: Mujina on Antminer](../../raw/firmware/mujina/2026-05-11-forum-mujina-antminer.md)).
+- **S19 XP (AgentP, 2026-05-30).** Hashed on an Amlogic board with LuxOS preinstalled, but the UART was stuck at 115200, and moving to 3M lost contact with the chips. Two gotchas came out of this work ([forum: best practices](../../raw/firmware/mujina/2026-05-18-forum-best-practices-for-hacking-mujina-onto-other-miners.md)):
+  - The XP's chips return the nonce with different endianness from the S19j Pro, which produced super-low-difficulty shares until it was fixed.
+  - Stopping the LuxOS service made the PSU cut hashboard power.
+  His rig was a single hashboard with an external duct fan and an APW12 modded for 120V, running LuxOS at 110MHz for a low, stable ~10TH and 290W. Hindsight tip: start from skot's `amlogic-s19jpro` fork to avoid rebuilding the PSU control logic.
+- **AI-agent workflow.** SSH is "technically no, but practically yes": an agent that can SSH directly turns days of USB/SD shuffling into minutes. The safety rules were that the agent ran no code on the miner unless the human was physically present, and that limited sudo actions were wrapped in specific scripts.
+- **Safety and maturity.** As of late June 2026 the maintainer warned that Mujina is not fail-safe on S19s and may not detect an insufficient PSU, and advised starting with one hashboard ([forum: where is S19j Pro support](../../raw/history/256f-org/2026-06-27-forum-where-is-s19jpro-support.md)). As of 2026-08-05 there was still no image file; S19 forks (Schnitzel, skot, AgentP) need SSH access and side-loading ([forum: best practices](../../raw/firmware/mujina/2026-05-18-forum-best-practices-for-hacking-mujina-onto-other-miners.md)). A community request is PSU bypass support, so that S19 owners don't need Loki kits ([forum: Mujina on Antminer](../../raw/firmware/mujina/2026-05-11-forum-mujina-antminer.md)).
+
+### Xilinx Zynq-7007S control boards: mujina-xilinx-platform
+
+- **The constraint and the workaround.** This Buildroot package targets Bitmain's Xilinx Zynq-7007S control boards. RSA authentication is permanently enabled in eFuses there, so BOOT.bin and the kernel cannot be replaced. U-Boot, however, verifies the ramdisk only by SHA256 against the mtd3 signature partition, not by RSA. Writing a custom ramdisk to mtd1 and patching mtd3 bytes 1024-1279 with its SHA256 therefore boots custom firmware. The README says other open-source miner firmware uses the same method ([mujina-xilinx-platform README](../../raw/firmware/mujina/github-256foundation-mujina-xilinx-platform.md)).
+- **NAND layout:**
+
+  | Partition | Size | Contents | Treatment |
+  |---|---|---|---|
+  | mtd0 | 40MB | BOOT.bin + kernel | preserved |
+  | mtd1 | 32MB | ramdisk (~10MB, FIT) | replaced |
+  | mtd2 | 8MB | configs | — |
+  | mtd3 | 2MB | signatures | patched |
+  | mtd4 | 171MB | reserve | — |
+- **Toolchain.** Linaro GCC 7.2-2017.11 and 4.6.x kernel headers, for ABI compatibility with stock kernel 4.6.0-xilinx. Dropbear's `getrandom()` is disabled because entropy on kernel 4.6 would block boot. A first build takes 15-30 minutes.
+- **Stock modules.** The stock `bitmain_axi.ko` and `fpga_mem_driver.ko` modules are reused. The init script loads them with a memory offset that depends on whether the board has 256MB or 512MB of RAM ([board package README](../../raw/firmware/mujina/github-mujina-xilinx-platform-br2-external-bitmain-board-xil.md)).
+- **First install and console.** The first install from Bitmain firmware uses `bitmain_ramdisk_install.sh`, which unlocks sudo via daemonc. The serial console needs a 3.3V USB-TTL adapter (never 5V) at 115200 baud 8N1.
+- **Reverse-engineering kit.** A test-fixture kit runs Bitmain's factory `single_board_test` without fixture hardware. An LD_PRELOAD shim emulates the LCD and start button, and `fpga_logger` polls FPGA registers every 1ms. Factory mode PT1 detects all 114 BM1398 chips; PT2 runs mining patterns. The target hardware is the S19 Pro NBP1901-38 hashboard, rated 110 TH/s ([test-fixture README](../../raw/firmware/mujina/github-mujina-xilinx-platform-br2-external-bitmain-board-xil-2.md)).
+
+## Intel BZM2 driver
+
+- **Background.** The 256 Foundation received the Intel BZM2 as a 54,000-unit grant. The Satoshi Starter (1 ASIC) and bitaxeBIRDS (4 ASICs) boards are built around it. Unlike the BM13xx chips, the BZM2 is publicly documented; its reference lives in Blockscale-Solutions/bzm2-hwref (CC-BY-SA) ([Mujina PR #69](../../raw/firmware/mujina/2026-06-11-github-mujina-pr-69-feat-asic-intel-bzm2-bonanza-mine-2-asic.md); [Mujina PR #70](../../raw/firmware/mujina/2026-06-11-github-mujina-pr-70-feat-board-bzm2-board-driver-with-calibr.md)).
+- **Protocol facts.** 9-bit multidrop UART, TDM result reads, and a 20x12 logical engine grid (236 active engines by default). NOOP returns "BZ2". Chain enumeration walks IDs from the `0xFA` power-on default. There are on-die DTS/VS sensors.
+- **Serial hardening from an audit** (PR #69) fixed four problems:
+  - a parser hang and an unbounded buffer on line noise;
+  - fault frames dropped for out-of-range ASIC ids, which silently disabled over-temperature protection;
+  - unbounded reads that froze the actor;
+  - a single noisy fault frame killing the thread.
+- **Board driver** (PR #70). It retunes when temperature hits 85 °C or voltage imbalance reaches 150 mV. A saved-operating-point bug was fixed in c4e714e: nothing ever wrote `Invalidated`, so a known-bad operating point was replayed on restart.
+- **PR lineage.** johnny9's BIRDS PR #41 needed a voltage-regulator init script. On 2026-07-27 he published beta bonanza-bridge-fw and esp-miner-bonanza firmware ([Mujina PR #41](../../raw/firmware/mujina/2026-03-08-github-mujina-pr-41-introduce-birds-board-and-bzm2-asic-modu.md)). The recklessnode series went through PRs #37/#38/#53 and #68–#71. All of these were superseded on 2026-09-28 by PR #117 (chip/UART driver), #120 (general fixes) and #121 (RDS platform) ([Mujina PR #117](../../raw/firmware/mujina/2026-09-28-github-mujina-pr-117-feat-bzm2-add-bzm2-asic-support.md)).
+- **Design rule** from PR #121: a fact that changes when you swap the chassis belongs in the platform layer; one that changes with the hashboard belongs in the chip driver. `rds-2.0` is a 3-board, 300-ASIC chassis. Review fixes in PR #121 ([Mujina PR #121](../../raw/firmware/mujina/2026-10-01-github-mujina-pr-121-feat-bzm2-add-rds-platform-support.md)):
+  - dispatch scrams on a confirmed supply-rail drop;
+  - bring-up refuses to calibrate when on-die protection cannot be confirmed;
+  - raw-register endpoints return 403 unless explicitly enabled.
+- **Serial descriptor fix** (PR #120): the descriptor is now closed when a stream is dropped, which previously caused `EBUSY` on reopen ([Mujina PR #120](../../raw/firmware/mujina/2026-10-01-github-mujina-pr-120-feat-general-changes-made-while-buildin.md)).
+
+**Hardware baseline** (run `20261001T085812Z`, 3.5 h, 300-ASIC RDS mining to Ocean on stock OpenWrt 18.06.2) ([Mujina PR #117](../../raw/firmware/mujina/2026-09-28-github-mujina-pr-117-feat-bzm2-add-bzm2-asic-support.md)):
+
+| Metric | Value |
+|---|---|
+| Pool-accepted / rejected shares | 1207 / 0 |
+| Share-derived hashrate | 107.85 TH/s |
+| Supply power (mean) | 3674.53 W |
+| Efficiency | 32.17 J/TH (wall-meter step); 34.07 J/TH (supply power); a separate 2 h run measured 33.64 J/TH at the wall |
+| Hottest die | 81.87 °C |
+| Bring-up to first accepted share | 5 s |
+| Faults / trips / scrams | 0 (one reconnect after a pool "Failed to parse JSON" error lost one share) |
+
+These are the first published efficiency figures for any Mujina-driven system. The July 2026 status page had said none existed.
+
+## BM13xx chip layer
+
+Mujina keeps a reverse-engineered BM13xx reference. No public manufacturer documentation exists, so it is built from ESP-Miner, cgminer, emberone-miner, older Bitmain datasheets, factory firmware and serial captures of the Bitaxe Gamma, S21 Pro, S19j Pro, S19k Pro and S19 XP ([BM13xx reference](../../raw/firmware/mujina/github-mujina-mujina-miner-src-asic-bm13xx-reference.md)). Facts that matter when running Mujina:
+
+| Chip | Cores × sub-cores | Used in |
+|---|---|---|
+| BM1362 | 65 × 8 | S19j Pro, EmberOne00 |
+| BM1366 | 112 × 8 | S19 XP, S19k Pro |
+| BM1368 | 16 sub-cores | S21 |
+| BM1370 | 128 × 16 | Bitaxe Gamma, S21 Pro |
+
+- **Search space.** Each job covers 2^32 nonces × 2^16 rolled versions (BIP320). A BM1370 at 600 MHz hashes about 1.2 TH/s. It would exhaust the bare nonce space in under 4 ms, and version rolling stretches that to about four minutes.
+- **Serial chain.** Chips come out of reset at 115,740 baud. Captured chains mine at 3.125 Mbaud and the Bitaxe at about 1 Mbaud.
+- **Difficulty steps.** TICKET_MASK is a bitwise filter, so only power-of-2 difficulty steps are possible.
+- **Re-tasking deadline.** The host must replace work within one version epoch, because the chips give no "work complete" signal. Epochs range from 0.91 s on the S21 to 1.77 s on the S19 XP ([BM13xx reference](../../raw/firmware/mujina/github-mujina-mujina-miner-src-asic-bm13xx-reference.md)).
+- **Multi-chip groundwork.** PR #77 and PR #105 (merged 2026-08-30) restructured the BM13xx layer from a Bitaxe-shaped single-chip driver into a chain model targeting EmberOne00, S19 and S21. Its typed registers are tested against captured factory bytes ([Mujina PR #105](../../raw/firmware/mujina/2026-08-30-github-mujina-pr-105-refactor-bm13xx-merge-the-first-part-of.md)). PR #106 makes the TPS546 OFF status bit count as a fault only while OPERATION is on ([Mujina PR #106](../../raw/firmware/mujina/2026-08-30-github-mujina-pr-106-fix-tps546-report-off-as-a-fault-only-w.md)).
+
+## Pool protocols
+
+### Stratum v1 client
+
+- **Word-swapped hashes.** Stratum v1 `prev_blockhash` is "word-swapped": eight 4-byte words, each little-endian internally but hex-encoded big-endian. This is a historical accident from 32-bit implementations around 2012.
+- **Other byte orders.** Merkle branches are not word-swapped. Version, nbits and ntime are big-endian hex. extranonce2 and the nonce are submitted as little-endian hex.
+- **Testing.** Parsing is validated against a real ESP-Miner capture whose share was accepted at difficulty 29588 ([Stratum quirks doc](../../raw/firmware/mujina/github-mujina-mujina-miner-src-stratum-v1-stratum-quirks.md)).
+- **Float difficulty.** Pools may send fractional difficulty such as `0.001`. Mujina failed with "difficulty not a number" against the SRI translator until PR #24 switched to `f64` ([Mujina PR #24](../../raw/firmware/mujina/2026-01-23-github-mujina-pr-24-fix-stratum-v1-support-float-difficulty.md)).
+
+### Stratum v2 client
+
+- **First experiment.** An early SV2 experiment (PR #11, 2025-12-13) submitted shares through sv2-apps with a Bitaxe 602 on raw firmware ([Mujina PR #11](../../raw/firmware/mujina/2025-12-13-github-mujina-pr-11-vibe-sv2.md)).
+- **PR #65** (opened 2026-06-05) reuses the SRI crates for the Noise handshake, framing and state machine. URLs use the `stratum2+tcp://` scheme with the pool's authority key appended ([Mujina PR #65](../../raw/firmware/mujina/2026-06-05-github-mujina-pr-65-feat-stratum-v2-add-sv2-support.md)).
+- **Extended channels first.** Standard channels (header-only mining) have a theoretical limit of 280TH/s, and Mujina targets high-hashrate devices.
+- **Test results.** Against the SRI pool, 100% of shares were accepted. Duplicate shares appeared in debug logs, suspected to come from the same search-space partitioning problem as ESP-Miner PR #420.
+- **Later changes.** A pool answering REQUIRES_FIXED_VERSION now triggers a fatal error, and `SetExtranoncePrefix` was added. SV1 and SV2 share an exponential-backoff reconnect strategy that separates retryable errors from fatal ones.
+- **Working group.** The 256 Foundation joined the Stratum V2 Working Group on 2026-08-24, citing client-side SV2 in Mujina and server-side SV2 in Hydrapool ([X: 256 Foundation 2026](../../raw/history/256f-research/2026-10-07-x-256foundation-2026.md)).
+
+## Robustness and security fixes
+
+The Stratum v1 transport is plaintext, so a malicious pool or a man-in-the-middle can inject hostile input. A summer-2026 hardening pass closed these holes:
+
+| Problem | Effect | Fix |
+|---|---|---|
+| A peer that never sends a newline | Memory grows until OOM | Messages capped at 64 KiB, closed 2026-08-14 ([PR #89](../../raw/firmware/mujina/2026-08-07-github-mujina-pr-89-fix-stratum-v1-bound-pool-reads-by-lengt.md)) |
+| Idle pool | A proposed 20-minute read timeout counted share submissions as activity | Detection moved into the job source, which expects jobs no more than two minutes apart; the client disconnects when a share submission goes unanswered (PR #89) |
+| `extranonce2_size` of 0 or above 8 | Connected but mining nothing; 264 wrapped to 8, so every share was invalid | Reject out-of-range sizes (1–8 bytes) at subscribe ([PR #90](../../raw/firmware/mujina/2026-08-07-github-mujina-pr-90-fix-validate-pool-controlled-extranonce2.md)) |
+| extranonce2 space smaller than the thread count | Scheduler `expect()` panic; daemon stays up with no thread working (issue #114) | Assign work to as many threads as fit and leave the rest idle with a warning ([PR #116](../../raw/firmware/mujina/2026-09-28-github-mujina-pr-116-fix-scheduler-leave-excess-threads-idle.md)) |
+| Unparseable coinbase in `mining.notify` | "looks-alive-but-idle": zero shares and no log | Reject the job instead of dropping the error silently ([PR #98](../../raw/firmware/mujina/2026-08-14-github-mujina-pr-98-fix-reject-unparseable-job-coinbases-ins.md)) |
+| A forged `mining.authorize` error | Miner stops permanently while systemd sees a healthy process | Retry with backoff; only `InvalidUrl` stays fatal ([PR #99](../../raw/firmware/mujina/2026-08-14-github-mujina-pr-99-fix-stratum-v1-retry-authorization-failu.md)) |
+
+- **Error design.** Issue #113 (2026-09-28) proposes one design for upstream errors. Transient errors reconnect forever with capped backoff. Deterministic errors latch a fault that is retested periodically. Per-message errors are dropped and counted. Source `status`/`conditions` would be exposed in Kubernetes style, and a scheduler-level watchdog would track share acceptance rate ([issue #113](../../raw/firmware/mujina/2026-09-28-github-mujina-issue-113-feat-job-source-report-upstream-erro.md)).
+- **No-panic rule.** The project allows no panics anywhere. `expect()` calls in bitaxe.rs were removed by PR #74 (closed 2026-06-16) ([Mujina PR #74](../../raw/firmware/mujina/2026-06-15-github-mujina-pr-74-fix-bitaxe-replace-bitaxe-expect-calls-w.md)). The bug-fix pattern: first commit a test marked `#[should_panic]` that documents the bug, then fix it and remove the annotation, so the test stays as a regression test ([CONTRIBUTING](../../raw/firmware/mujina/github-mujina-contributing.md)).
+- **Old-branch panic.** A `clamp` "assertion failed: min <= max" panic seen overnight on a Bitaxe 602 had already been fixed in 4059d89; the reporter was on an older branch ([issue #49](../../raw/firmware/mujina/2026-03-12-github-mujina-issue-49-bug-clamp-being-used-incorrectly-afte.md)).
+
+## Fan control (Bitaxe)
+
+- **History.** Mainline ran the Bitaxe fan at 100% as a safe default (issue #9). PR #33 adds PI fan control with temperature filtering ([issue #9](../../raw/firmware/mujina/2025-11-22-github-mujina-issue-9-feat-bitaxe-implement-closed-loop-fan.md); [Mujina PR #33](../../raw/firmware/mujina/2026-03-03-github-mujina-pr-33-feat-bitaxe-add-pi-based-fan-speed-contr.md)).
+- **Design decision.** One task owns the EMC2101 exclusively. It runs a synchronous `FanController::update(temp, dt)` and publishes a snapshot over a watch channel, replacing four async tasks and five channels. The derivative term is omitted because thermal diodes are noisy, and an EMA filter was preferred. If fan initialization fails, `initialize()` returns an error so the board does not start: no panic, and no silent continuation.
+- **Field test.** On a Gamma 601, a ~30 minute run settled the fan at 47% (~4,600 RPM) with the ASIC stable at 70°C. A user reported that ESP-Miner reached much higher frequencies than Mujina on the same hardware. That question moved to discussion #50, unresolved in the capture ([Mujina PR #33](../../raw/firmware/mujina/2026-03-03-github-mujina-pr-33-feat-bitaxe-add-pi-based-fan-speed-contr.md)).
+
+## CPU backend and pool testing
+
+- **What it is for.** The CPU backend hashes SHA-256 in software at a few MH/s per thread. Its uses are development, pool connectivity testing, stress-testing pool infrastructure, and teaching. By default each thread hashes for 50ms and then sleeps for 50ms, a 50% duty cycle ([CPU mining doc](../../raw/firmware/mujina/github-mujina-docs-cpu-mining.md)).
+- **Forced share rate.** It wraps pool jobs and replaces the share target. Rates around 600 shares/min per thread or higher are capped by the scheduler's internal filter. A bug (issue #59) made the forced rate wrong: 6/min at 50% duty gave roughly 3/min, after commit a5c3e62 stopped the periodic hashrate broadcasts ([issue #59](../../raw/firmware/mujina/2026-06-01-github-mujina-issue-59-bug-cpu-miner-forced-share-rate-is-wr.md)).
+- **Use outside Mujina.** The CPU miner was used in a Vinteum BDL mining workshop and reportedly by P2PoolV2 developers. devpool (rkuester) is a remix of Hydrapool's container image for tinkering with Mujina, Bitaxe and similar hardware [#3726 · 2025-11-29 · Ryan].
+- **API visibility bug.** PR #56 fixed the CPU board vanishing from `/api/v0/boards`: its telemetry sender was dropped at construction ([Mujina PR #56](../../raw/firmware/mujina/2026-05-04-github-mujina-pr-56-cpu-miner-make-the-cpu-backend-a-first-c.md)).
 
 ## Internals
 
-- Custom serial layer: tokio-serial was dropped because it couldn't handle baud-rate changes after the tx/rx streams were split (ownership issues); the replacement is POSIX/Linux-specific — possibly why WSL misbehaves [#4116 · 2026-01-05 · Ryan] [#4118 · 2026-01-05 · Ryan]; background in mujina discussion #10 [#4117 · 2026-01-05 · Ryan]
-- All SHA256 Mujina does outside the ASICs goes through the rust-bitcoin crate [#3514 · 2025-11-21 · Ryan]; rust-bitcoin PR #5493 (SHA intrinsics, due in bitcoin_hashes 0.20.0) worth watching — Bitcoin Core already uses the ARM intrinsics [#4563 · 2026-03-11 · Johnny] [#4564 · 2026-03-11 · Skot Bitaxe]; 'Mujina uses rust bitcoin_hashes' [#4571 · 2026-03-11 · Johnny]
-- CI parity: `just ci` runs exactly what the GitHub workflow runs, in the same container image (plain `just checks` runs in the local shell) [#5315 · 2026-08-05 · Ryan] [#5316 · 2026-08-05 · Ryan]
-- Self-hosted ARM runners: deploy runners on the expected arm targets (Gamma, emberOne, bm13xx hashboards, mixes), label by target/ASIC, keep hardware checks advisory so they don't block merges; prior art: johnny9's esp-miner-e2e master-controller with a container per USB-connected Bitaxe [#4584 · 2026-03-11 · Johnny] [#4587 · 2026-03-11 · Ryan] [#4590 · 2026-03-11 · Johnny] [#4595 · 2026-03-11 · Johnny]
-- SNMP directly on miners: impossible with Bitmain/MicroBT's closed firmware, but 100% possible with Mujina — e.g. a daemon hitting Mujina's API and throwing SNMP traps, on or off the Libre Board; an open MIB would let enterprise tools (openNMS, Nagios) manage miner fleets like switches and PDUs; Wade already graphs drycooler fan/pump speed, PDU power and coolant temps via openNMS [#2618 · 2025-07-02 · Wade Bowlin] [#2620 · 2025-07-02 · Michael Schmid @Schnitzel] [#2621 · 2025-07-02 · Ryan] [#2637 · 2025-07-02 · Reckless Apotheosis] [#2638 · 2025-07-02 · Reckless Apotheosis] [#2639 · 2025-07-02 · Wade Bowlin] [#2641 · 2025-07-02 · Wade Bowlin] [#2642 · 2025-07-02 · Wade Bowlin]
+- **Custom serial layer:** tokio-serial was dropped because it couldn't handle baud-rate changes after the tx/rx streams were split (ownership issues). The replacement is POSIX/Linux-specific, which may be why WSL misbehaves [#4116 · 2026-01-05 · Ryan] [#4118 · 2026-01-05 · Ryan]. Background is in mujina discussion #10 [#4117 · 2026-01-05 · Ryan]
+- **SHA256 outside the ASICs:** all of it goes through the rust-bitcoin crate [#3514 · 2025-11-21 · Ryan]. rust-bitcoin PR #5493 (SHA intrinsics, due in bitcoin_hashes 0.20.0) is worth watching; Bitcoin Core already uses the ARM intrinsics [#4563 · 2026-03-11 · Johnny] [#4564 · 2026-03-11 · Skot Bitaxe]. 'Mujina uses rust bitcoin_hashes' [#4571 · 2026-03-11 · Johnny]
+- **SNMP directly on miners:** impossible with Bitmain/MicroBT's closed firmware, but 100% possible with Mujina, for example a daemon that reads Mujina's API and throws SNMP traps, on or off the Libre Board. An open MIB would let enterprise tools (openNMS, Nagios) manage miner fleets like switches and PDUs. Wade already graphs drycooler fan/pump speed, PDU power and coolant temps via openNMS [#2618 · 2025-07-02 · Wade Bowlin] [#2620 · 2025-07-02 · Michael Schmid @Schnitzel] [#2621 · 2025-07-02 · Ryan] [#2637 · 2025-07-02 · Reckless Apotheosis] [#2638 · 2025-07-02 · Reckless Apotheosis] [#2639 · 2025-07-02 · Wade Bowlin] [#2641 · 2025-07-02 · Wade Bowlin] [#2642 · 2025-07-02 · Wade Bowlin]. A miner-management company also planned native Mujina support, pulling hashrate, uptime and temperatures via the API ([dev call #2](../../raw/firmware/mujina/2026-05-05-forum-mujina-dev-call-2.md))
 
 ## Sensor debate (resolved January 2026)
 
-> **Status: Disputed** — resolved
-> Field report: Gamma hitting 87C in 2 minutes with fan '92 rpm' under Mujina [#4095 · 2026-01-05 · Aadhi M]; Ryan: 'Mujina definitely reports the wrong RPM' — the temp and fan duty cycles were correct [#4114 · 2026-01-05 · Ryan] [#4115 · 2026-01-05 · Ryan]. Cross-firmware check closed it: Mujina and esp-miner agree on the same temperatures with the same Gamma, at identical clock/voltage (525 MHz, 1.146V — noting 1.15V is identical to esp-miner's default); the earlier readings were a reporting bug, not silicon reality [#4173 · 2026-01-07 · Ryan] [#4207 · 2026-01-11 · Ryan].
+> **Status: Disputed**: resolved
+> Field report: a Gamma hit 87C in 2 minutes with the fan at '92 rpm' under Mujina [#4095 · 2026-01-05 · Aadhi M]. Ryan: 'Mujina definitely reports the wrong RPM'; the temperature and fan duty cycles were correct [#4114 · 2026-01-05 · Ryan] [#4115 · 2026-01-05 · Ryan]. A cross-firmware check closed it: Mujina and esp-miner agree on temperatures with the same Gamma at identical clock and voltage (525 MHz, 1.146V, noting that 1.15V is identical to esp-miner's default). The earlier readings were a reporting bug, not silicon reality [#4173 · 2026-01-07 · Ryan] [#4207 · 2026-01-11 · Ryan].
 
 ## Stock-firmware interplay
 
 - Bitmain ASICs default to 115200 baud; most miners increase it after init [#4096 · 2026-01-05 · Skot Bitaxe]
-- BraiinsOS+ and stock firmware disagree on S9 temperature readings; Braiins' numbers considered the more trustworthy [#559 · 2024-03-23 · Brett Rowan]
-- esp-miner goes through undocumented-diode setup (ideality/gain parameters) for the EMC2101 on Bitmain ASICs; Mujina users were told to check the same values [#4148 · 2026-01-06 · Skot Bitaxe] [#4151 · 2026-01-06 · Skot Bitaxe]
+- BraiinsOS+ and stock firmware disagree on S9 temperature readings; Braiins' numbers are considered the more trustworthy [#559 · 2024-03-23 · Brett Rowan]
+- esp-miner goes through an undocumented diode setup (ideality/gain parameters) for the EMC2101 on Bitmain ASICs; Mujina users were told to check the same values [#4148 · 2026-01-06 · Skot Bitaxe] [#4151 · 2026-01-06 · Skot Bitaxe]
+- Without proper driver tuning, boards running Mujina can overheat, and improper fan control can trip breakers ([Assembling Freedom #19](../../raw/history/256f-newsletter/2026-03-11-assembling-freedom-19-revolutionizing-bitcoin-mining-hacking.md))
 
-## Docs governance
+## Supply chain and dependencies
 
-- Chip documentation doesn't belong in the Mujina repo — Reckless Apotheosis already maintained the bzm2-hwref repo for exactly that purpose; PRs reworked so only function-relevant docs stay with the code [#5110 · 2026-07-22 · Ryan] [#5112 · 2026-07-22 · Reckless Apotheosis] [#5114 · 2026-07-22 · Reckless Apotheosis] [#5118 · 2026-07-22 · Reckless Apotheosis]
+- **Dependency inflation.** TheBlueMatt's issue #6 (2025-11-17) argued that many transitive dependencies, especially single-maintainer ones, are a critical risk for software that may back "a trillion dollar asset" ([issue #6](../../raw/firmware/mujina/2025-11-17-github-mujina-issue-6-dependency-inflation.md)).
+- **Removals.** PR #32 removed six unused dependencies, found with `cargo-machete` and `cargo +nightly udeps` ([Mujina PR #32](../../raw/firmware/mujina/2026-03-03-github-mujina-pr-32-refactor-deps-remove-unused-dependencies.md)). PR #103 replaced `crc_all` with inline CRC-5-USB and CRC-16-CCITT-FALSE, verified by exhaustive differential testing ([Mujina PR #103](../../raw/firmware/mujina/2026-08-21-github-mujina-pr-103-chore-deps-replace-crc-all-with-inline.md)).
+- **Pinned build inputs.** PR #91 pins every build input to exact content: a committed `Cargo.lock`, cargo tools at the justfile versions, GitHub Actions by commit hash, container base images by digest, and cargo-deny audits ([Mujina PR #91](../../raw/firmware/mujina/2026-08-10-github-mujina-pr-91-build-harden-the-dependency-supply-chain.md)).
+- **Seven-day cooldown.** Every crate release is held back seven days before it can enter `Cargo.lock`, via cargo's `min-publish-age` (RFC 3923). A CI job, "Check dep cooldown", flags versions that are too young ([Mujina PR #109](../../raw/firmware/mujina/2026-09-04-github-mujina-pr-109-build-deps-use-cargo-s-own-min-publish.md)). For example, h2 went from 0.4.15 to 0.4.19 for RUSTSEC-2026-0258 only after the cooldown passed. The vulnerable HTTP/2 path is not reached by default, because the API speaks HTTP/1 and pool links are raw TCP ([Mujina PR #104](../../raw/firmware/mujina/2026-08-25-github-mujina-pr-104-chore-deps-update-h2-to-0-4-19.md)).
+- **Python requirement.** `just checks` needs Python 3.11+ because the cooldown script imports `tomllib`. Ubuntu 22.04 and the macOS Xcode tools fail with "No module named 'tomllib'" ([Mujina PR #119](../../raw/firmware/mujina/2026-10-01-github-mujina-pr-119-docs-contributing-add-python-prerequisi.md)).
+
+## Development process
+
+- **Workflow.** Bugs go Discussion → Issue → PR. Features go Ideas discussion → draft PR. Simple fixes go straight to a PR. Telegram is ephemeral, and decisions belong on GitHub. The workflow is adapted from Ghostty. PR CI checks every commit individually, which enforces atomic, bisectable commits in conventional-commit format ([CONTRIBUTING](../../raw/firmware/mujina/github-mujina-contributing.md)).
+- **CI.** CI (PR #44, merged 2026-03-11) is containerized, with the justfile as the single source of truth ([Mujina PR #44](../../raw/firmware/mujina/2026-03-11-github-mujina-pr-44-ci-add-initial-ci-pipeline.md)). `just ci` runs exactly what the GitHub workflow runs, in the same container image; plain `just checks` runs in the local shell [#5315 · 2026-08-05 · Ryan] [#5316 · 2026-08-05 · Ryan].
+- **Hardware in the loop.** One proposal is self-hosted ARM runners on the expected targets (Gamma, emberOne, bm13xx hashboards, mixes), labelled by target/ASIC, with hardware checks kept advisory so they don't block merges. Prior art is johnny9's esp-miner-e2e master controller, with a container per USB-connected Bitaxe [#4584 · 2026-03-11 · Johnny] [#4587 · 2026-03-11 · Ryan] [#4590 · 2026-03-11 · Johnny] [#4595 · 2026-03-11 · Johnny]. Dev call #2 preferred a standardized, downloadable test suite that anyone with hardware can run, with Bitaxes as the safe starter target ([dev call #2](../../raw/firmware/mujina/2026-05-05-forum-mujina-dev-call-2.md)).
+- **Coding guidelines.** Log levels: trace = step-by-step detail, debug = logical stages, info = final outcomes. Tests use known-good hardware captures and paused-time tokio tests ([coding guidelines](../../raw/firmware/mujina/github-mujina-coding-guidelines.md)).
+- **Vibe-coded prototypes.** Ryan framed a possible new open-source workflow: vibe-coded prototypes do the research, then maintainers turn them into production-quality merges. That only works if Mujina stays modular ([dev call #2](../../raw/firmware/mujina/2026-05-05-forum-mujina-dev-call-2.md)).
+- **Docs governance.** Chip documentation doesn't belong in the Mujina repo; Reckless Apotheosis already maintained the bzm2-hwref repo for exactly that purpose. PRs were reworked so only docs that describe Mujina's code stay with it [#5110 · 2026-07-22 · Ryan] [#5112 · 2026-07-22 · Reckless Apotheosis] [#5114 · 2026-07-22 · Reckless Apotheosis] [#5118 · 2026-07-22 · Reckless Apotheosis]. The 2026-06-15 dev call made this a rule: nothing unmaintained lives in-tree ([Mujina PR #66](../../raw/firmware/mujina/2026-06-10-github-mujina-pr-66-docs-add-bzm2-port-engineering-notes-und.md)).
+- **Security review.** A 256 Red Team audit did not find "any major flaws in Mujina, just a couple of small improvements". As of August 2026 there were still no flashable Mujina OS images for the S19 ([X: notable open-source mining](../../raw/history/256f-research/2026-10-07-x-notable-open-source-mining.md)).
+
+## Timeline
+
+| Date | Milestone |
+|---|---|
+| 2025-01-30 | A Stratum V2 grantee offers help after learning of the Mujina firmware grant ([website issue #1](../../raw/firmware/mujina/2025-01-30-github-mujina-website-issue-1-stratum-v2.md)) |
+| April 5, 2025 | Mujina, Hydra Pool and Libre Board grants launch ([Assembling Freedom, 2025-05-05](../../raw/history/256f-newsletter/2025-05-05-bitcoin-mining-will-not-be-decentralized-until-it-is-open-so.md)) |
+| 2025-04-18 → 2025-04-30 | Initial Rust project and logging tasks, then basic Bitaxe Gamma ASIC communication over bitaxe-raw ([issue #4](../../raw/firmware/mujina/2025-04-18-github-mujina-issue-4-task-add-basic-bitaxe-gamma-communicat.md)) |
+| 2025-11-15 | Developer preview opened to the public, announced at btc++ ([X: 256 Foundation 2025 H2](../../raw/history/256f-research/2026-10-07-x-256foundation-2025-h2.md)) |
+| 2026-03-31 | macOS USB discovery merged ([Mujina PR #39](../../raw/firmware/mujina/2026-03-07-github-mujina-pr-39-feat-transport-implement-macos-usb-disco.md)) |
+| 2026-05-04 | First public dev call (12+ attendees); the top priority is official S19 support ([forum: dev call](../../raw/firmware/mujina/2026-05-03-forum-mujina-dev-call.md)) |
+| 2026-05-11 | S19j Pro on a stock Amlogic board announced. S19 XP reported working on 2026-05-30 ([forum: Mujina on Antminer](../../raw/firmware/mujina/2026-05-11-forum-mujina-antminer.md)) |
+| 2026-05-18 → 2026-09-28 | Dev calls roughly every two weeks (#2–#11), recorded in GitHub Discussions ([forum: dev call #11](../../raw/firmware/mujina/2026-09-27-forum-mujina-dev-call-11-20260928.md)) |
+| 2026-07-07 | mujina.org redirected to the repo, later rebuilt as a VitePress site organized by Diataxis ([website PR #4](../../raw/firmware/mujina/2026-07-07-github-mujina-website-pr-4-redirect-mujina-org-to-the-source.md)) |
+| 2026-08-03 | BM13xx protocol doc expanded into a chip reference ([Mujina PR #86](../../raw/firmware/mujina/2026-08-03-github-mujina-pr-86-docs-bm13xx-grow-protocol-doc-into-chip.md)) |
+| 2026-08-12 | Mujina running on a Canaan Nano 3S ([X: Canaan Mujina port](../../raw/history/256f-research/2026-10-07-x-notable-canaan-mujina-port.md)) |
+| 2026-08-17 | RY3T Nova, the first mining product built on Mujina ([X: 256 Foundation 2026](../../raw/history/256f-research/2026-10-07-x-256foundation-2026.md)) |
+| 2026-08-30 | RHAP-D firmware support and the first part of the multi-chip BM13xx driver merged ([Mujina PR #107](../../raw/firmware/mujina/2026-08-30-github-mujina-pr-107-feat-bitaxe-support-the-rhap-d-firmware.md)) |
+| 2026-09-28 | BZM2 support resubmitted as PR #117 after mining on 3 hashboards with 300 BZM2 ASICs ([Mujina PR #117](../../raw/firmware/mujina/2026-09-28-github-mujina-pr-117-feat-bzm2-add-bzm2-asic-support.md)) |
 
 ## See Also
 
+- [RHAP (Raw Hardware Access Protocol)](../protocols/rhap.md), the USB protocol Mujina uses to drive Bitaxe and Ember One boards
 - [Ember One & the BZM2 Hardware Stack](../hardware/ember-one-bzm2.md)
-- [asic-rs and the Fleet-Tooling Stack](../mining-software/asic-rs.md)
+- [Libre Board & Control Boards](../hardware/libre-board-and-control-boards.md)
+- [Bitmain ASIC Reference](../hardware/bitmain-asic-reference.md)
+- [Bitaxe Models](../hardware/bitaxe-models.md)
+- [ESP-Miner / AxeOS](esp-miner-axeos.md)
+- [Stratum in Practice](../protocols/stratum-in-practice.md)
 - [Decentralized Pool Designs](../protocols/decentralized-pool-designs.md)
+- [Hydrapool](../pools/hydrapool.md)
+- [asic-rs and the Fleet-Tooling Stack](../mining-software/asic-rs.md)
+- [Mining Firmware Security](../industry/mining-firmware-security.md)
+- [256 Foundation Organization](../history/256-foundation-organization.md)
 - Same topic: [Heater Firmware & Power Control](heater-firmware-and-power-control.md)

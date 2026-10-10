@@ -1,13 +1,16 @@
 # Decentralized Pool Designs
 
-> Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07
-> Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md)
-> Updated: 2026-10-08
+> Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07; 256 Foundation forum (GridPool threads), 2026-06 → 2026-09; Assembling Freedom newsletter, 2025-05 → 2025-10; GitHub/OpenSats/HRF grant research (captured 2026-10-07)
+> Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md); [GridPool landing page thread](../../raw/pools/hydrapool/2026-06-16-forum-new-gridpool-landing-page-is-up.md); [GridPool 1-click packages](../../raw/pools/hydrapool/2026-09-15-forum-gridpool-1-click-packages-are-released.md); [Braidpool & grants research](../../raw/history/256f-research/2026-10-07-research-proto-braidpool-canaan-grants.md); [Assembling Freedom, 2025-06](../../raw/history/256f-newsletter/2025-06-19-you-know-i-m-something-of-a-decentralized-pool-myself.md)
+> Updated: 2026-10-09
+> As-Of: 2026-10-09
 > Status: Draft
 
 ## Overview
 
-The design space beyond the hosted-pool model: template selection (DATUM), trustless payout schemes that avoid custodians, decentralized share accounting (GridPool, P2Poolv2, Dean's sketch), and the small protocol details — pool signatures, coinbase payout limits, midstate handling — that turn out to matter. Much of this is live 256F-adjacent engineering: Hydrapool shares core libs with P2Poolv2, and GridPool runs on an experimental Hydrapool fork.
+The design space beyond the hosted-pool model: template selection (DATUM), trustless payout schemes that avoid custodians, decentralized share accounting (GridPool, P2Poolv2, Dean's sketch), and the small protocol details — pool signatures, coinbase payout limits, midstate handling — that turn out to matter. Much of this is live 256F-adjacent engineering: Hydrapool shares core libs with P2Poolv2, and GridPool runs on an experimental Hydrapool fork. For the wire protocols these designs ride on (Stratum V1 quirks, SV2 channels, Noise auth, translator interop), see [Stratum V1 & V2 in Practice](stratum-in-practice.md).
+
+Editorial position from the 256 Foundation newsletter: miner-built templates (DATUM, SV2) are a good step, but while a centralized pool still counts shares and coordinates payouts it can exclude non-conforming shares or payout addresses, so "centralized pools will never decentralize Bitcoin mining" ([Assembling Freedom, 2025-06](../../raw/history/256f-newsletter/2025-06-19-you-know-i-m-something-of-a-decentralized-pool-myself.md)).
 
 ## Template selection & DATUM
 
@@ -47,15 +50,35 @@ The design space beyond the hosted-pool model: template selection (DATUM), trust
 - Censorship-resistance argument: a censoring node works on a lower-difficulty list, so even 99%-hashrate censorship should lose economically (author flags it needs more careful gaming) [#5004 · 2026-06-25 · AgentP]
 - Pool-hopping rebuttal: the block finder keeps Slot-0 + all transaction fees on their own templates, so a lucky miner's rational move is to point more power at GridPool, not leave [#5000 · 2026-06-25 · AgentP]
 
+- Launch & architecture (forum, 2026-06-16): landing page at gridpool.net; miners either send hash to the demo node with their own DATUM client or run their own GridPool node ([GridPool landing thread](../../raw/pools/hydrapool/2026-06-16-forum-new-gridpool-landing-page-is-up.md))
+- Protocol Version 2: Jason Hughes argued no large miner would give up 50% of the reward; in response GridPool's Version 2 syncs the active payout list with the best-shares list more often, so new miners get paid sooner ([GridPool landing thread](../../raw/pools/hydrapool/2026-06-16-forum-new-gridpool-landing-page-is-up.md))
+- Evidence gap: another developer said there was no supporting data for the network-modelling, bandwidth and latency claims; AgentP accepted it and put network performance testing high on his list ([GridPool landing thread](../../raw/pools/hydrapool/2026-06-16-forum-new-gridpool-landing-page-is-up.md))
+- 1-click packages (2026-09-15): Umbrel and StartOS installs (StartOS v0.2.2-beta.7, Umbrel v0.2.2-beta.9) — paste a payout address and join the network; pitched as no pool operator, no custodial wallet, no sharechain, no central share accountant, templates kept hidden; **SV2 only for the beta**; the 256 Foundation Red Team (Schnitzel) found key vulnerabilities fixed before release ([GridPool packages](../../raw/pools/hydrapool/2026-09-15-forum-gridpool-1-click-packages-are-released.md))
+
 > **Status: Disputed** — GridPool pool-hopping & 'loose consensus' (June 2026)
 > jungly: classic pool-hopping exposure (win a high-difficulty share, then leave; TTLs punish honest miners) and sync-to-match is not a real consensus protocol — use something explicit à la radpool or p2pool's sharechain; 'I still think pool hopping will be exploited in grid pool' [#4998 · 2026-06-25 · jungly 🐕💸] [#5007 · 2026-06-25 · jungly 🐕💸]. AgentP: hopping 'strikes me as a strategy used by miners who don't understand statistics' — block finders keep Slot-0 + fees, so luck attracts more power, and the heaviest-Winners-List rule is the trustless consensus layer [#5000 · 2026-06-25 · AgentP] [#5002 · 2026-06-25 · AgentP]. Unresolved as of 2026-10-08; jungly notes P2Poolv2 independently landed on the same two ideas (finder bonus; sending work not blocks) [#5007 · 2026-06-25 · jungly 🐕💸].
 
 ## P2Poolv2 (2025-2026)
 
+- Aim: improve on the original P2Pool with sharechains and atomic swaps for non-custodial payouts; eventually multiple Hydra Pool instances combine work for shared rewards through it ([Assembling Freedom #10](../../raw/history/256f-newsletter/2025-10-28-assembling-freedom-10.md)); hydrapool.org lists talking to other Hydra Pool instances via P2Poolv2 among its long-term goals ([hydrapool.org](../../raw/pools/hydrapool/hydrapool-org-home.md))
+- Funding: OpenSats' Eleventh Wave (2025-05-14) included a P2Pool v2 renewal, described as a follow-on to the Braidpool grant of Feb 2024 ([grants research](../../raw/history/256f-research/2026-10-07-research-proto-braidpool-canaan-grants.md))
+
 - Repo + community: github.com/p2poolv2/p2poolv2 with a Matrix room [#3333 · 2025-11-18 · jungly 🐕💸]
 - Payout-scaling roadmap: Lightning atomic swaps first, then Ark (Steven Roose already has a solution in mind for the exchange problem) [#4461 · 2026-02-19 · jungly 🐕💸]
 - Performance: jmeter load tests of the stratum server vs ckpool published in the repo [#4714 · 2026-04-26 · jungly 🐕💸]
 - The original p2pool gave the block finder a bonus; P2Poolv2 does the same, and internally debates broadcasting the block vs sending only work (blinded work, like GridPool) [#5007 · 2026-06-25 · jungly 🐕💸]
+
+## Braidpool
+
+- A scalable peer-to-peer mining pool with support for hashrate futures; main repo braidpool/braidpool (created 2021-02-09, AGPL-3.0). Activity has moved from the original pool2win/braidpool repo to the braidpool org, which also hosts stratum and sv2-apps (Stratum V2 pool/miner apps) repos ([grants research](../../raw/history/256f-research/2026-10-07-research-proto-braidpool-canaan-grants.md))
+- Funding: OpenSats' Fourth Wave (2024-02-25) funded Braidpool alongside Bitaxe; HRF's Bitcoin Development Fund round of 2026-01-13 funded Braidpool and SV2 SRI work ([grants research](../../raw/history/256f-research/2026-10-07-research-proto-braidpool-canaan-grants.md))
+- Lineage: jungly (Hydrapool/P2Poolv2 lead) previously worked on Braidpool ([256F on X, 2025 H1](../../raw/history/256f-research/2026-10-07-x-256foundation-2025-h1.md))
+
+## Ecash share pools (Hashpool / Axepool)
+
+- Hashpool issues an ehash ecash token for every submitted share, uses ecash epochs to age shares in FIFO order, expires them with a rotating key set, and publishes verification proofs per epoch and per solved block; payouts resemble PPLNS ([Assembling Freedom, 2025-05](../../raw/history/256f-newsletter/2025-05-05-bitcoin-mining-will-not-be-decentralized-until-it-is-open-so.md))
+- Hashpool and Axepool run ecash shares over a modified Stratum V2, Axepool being a proxy layer for small miners such as Bitaxes; both funded in OpenSats' Twelfth Wave (2025-07-08) ([grants research](../../raw/history/256f-research/2026-10-07-research-proto-braidpool-canaan-grants.md))
+- Hydrapool lists ecash (echash) payout models among its long-term goals ([hydrapool.org](../../raw/pools/hydrapool/hydrapool-org-home.md)); see also the custody discussion above
 
 ## Dean's decentralized-pool sketch (November 2025)
 
@@ -68,6 +91,7 @@ The design space beyond the hosted-pool model: template selection (DATUM), trust
 
 ## See Also
 
+- [Stratum V1 & V2 in Practice](stratum-in-practice.md)
 - [Hydrapool](../pools/hydrapool.md)
 - [Pool Payout Schemes](../pools/pool-payout-schemes.md)
 - [Mujina](../firmware/mujina.md)

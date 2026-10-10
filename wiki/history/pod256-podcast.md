@@ -1,0 +1,238 @@
+# POD256 Podcast
+
+> Sources: POD256 show notes (pod256.org episode pages 001–127), 2022-12-03 → 2026-09-28; pod256.org home page (captured 2026-10-07); POD256 transcript archive from the publisher RSS feed (captured 2026-10-07); 256 Foundation website archive (March 2025) and forum posts, 2026; 256 Foundation newsletter, 2025-12 → 2026-01
+> Raw: [pod256.org home](../../raw/history/pod256/pod256-org-home.md); [Episode 001](../../raw/history/pod256/2022-12-03-pod256-001-hashrate-down-14-from-ath-hashprice-at-atl-territ.md); [Episode 029](../../raw/history/pod256/2023-09-21-pod256-029-pod-256-s-telehash-uniting-bitcoiners-for-a-cause.md); [Episode 100](../../raw/history/pod256/2025-12-31-pod256-100-dismantling-the-black-box-hydra-pool-libre-board.md); [Transcript archive README](../../raw/history/pod256/transcripts/2026-10-07/README.md); [256F POD256 page (archived 2025-03-23)](../../raw/history/256f-org/archive-20250323-256foundation-pod256-html.md)
+> Updated: 2026-10-09
+> As-Of: 2026-10-09
+> Status: Draft
+
+## Overview
+
+POD256 is the 256 Foundation's podcast: in its own words, a Bitcoin podcast "focused on open-source Bitcoin mining, energy, and freedom tech", recorded weekly at Bitcoin Park in Nashville, TN and co-hosted (as of the 2026-10-07 capture) by @econoalchemist, @skot9000 and @tylerkstevens ([pod256.org](../../raw/history/pod256/pod256-org-home.md)). Episode 001 was published 2022-12-03 ([ep 001](../../raw/history/pod256/2022-12-03-pod256-001-hashrate-down-14-from-ath-hashprice-at-atl-territ.md)) and the latest captured, episode 127, on 2026-09-28 ([ep 127](../../raw/history/pod256/2026-09-28-pod256-127-self-hosted-ai-and-open-mining-tools-for-a-more-s.md)). It began as a weekly mining-industry news show with a fixed "State of the Network" segment, and over 2024–2025 turned into the public progress log of the 256 Foundation's open mining stack (Ember One, Libre Board, Mujina, Hydrapool) and of the Heatpunk hashrate-heating scene. For a newcomer, it is the best single chronological record of how the open-source home-mining movement formed; for a builder, the episode index below says where each hardware, firmware and pool milestone was first discussed. The network figures the hosts read on air are collected separately in [Network State 2022–2026](../industry/network-state-2022-2026.md).
+
+## Hosts
+
+| Host | What the sources say |
+|---|---|
+| Econoalchemist ("eco") | Hosts with Rod from episode 004 ([ep 004](../../raw/history/pod256/2023-01-21-pod256-004-recap-nashville-energy-mining-summit-2023-state-o.md)); still a co-host on the 2026 home page ([pod256.org](../../raw/history/pod256/pod256-org-home.md)). |
+| Rod (@bitkite) | Co-host from episode 004; episode 048 says it is "hosted by @bitkite and @econoalchemist" ([ep 048](../../raw/history/pod256/2024-06-12-pod256-048-decentralizing-bitcoin-mining-insights-from-boers.md)); still present in 2025, e.g. thanking the ImagineIF presenters ([ep 088](../../raw/history/pod256/2025-09-24-pod256-088-freedom-tech-in-action-open-miners-sovereign-home.md)). Not listed on the 2026 home page. |
+| Rob (@BikesandBitcoin) | Listed with Rod, Skot and eco on the Foundation's POD256 page archived in March 2025 ([256F archive](../../raw/history/256f-org/archive-20250323-256foundation-pod256-html.md)). Distinct from guest Rob Warren. |
+| Skot (@skot9000) | First a guest, billed as instigator of the Bitaxe ([ep 030](../../raw/history/pod256/2023-10-07-pod256-030-no-holds-barred-w-special-guest-skot-instigator-b.md)); named as a host with eco and Tyler by episode 082 ([ep 082](../../raw/history/pod256/2025-08-27-pod256-082-decentralizing-bitcoin-mining-challenges-and-oppo.md)). |
+| Tyler Stevens (@tylerkstevens) | Welcomed as a new addition in episode 081 ([ep 081](../../raw/history/pod256/2025-08-21-pod256-081-revamping-bitcoin-mining-from-cool-runnings-to-cu.md)); guest-billed as CEO and founder of Exergy Heat in episode 103 ([ep 103](../../raw/history/pod256/2026-02-04-pod256-103-closed-source-is-retarded-building-bitcoin-miners.md)). |
+
+Episode 104 describes Skot and Tyler as "freshly minted 256 Foundation board members" ([ep 104](../../raw/history/pod256/2026-02-11-pod256-104-ai-open-source-bitcoin-mining-and-battling-survei.md)). The sources do not say when or why Rod and Rob left the line-up.
+
+## Format and how it changed
+
+1. **Guest interviews (001–003).** One guest (Colin Harper of Luxor, Standard Bitcoin's Tom Masiero and Marty Bent) and a short topic list.
+2. **Segment show (004–046).** State of the Network, News, Tangents, Home Miner of the Week and a guest slot called "No Holds Barred" (see e.g. [ep 009](../../raw/history/pod256/2023-02-25-pod256-009-state-of-the-network-news-tangents-home-miner-of.md)). The notes give the block height and a halving countdown and link the same data sources every week: Bitrawr's difficulty estimator, mempool.space, Luxor's Hashrate Index and Braiins Insights ([ep 005](../../raw/history/pod256/2023-01-27-pod256-005-expected-difficulty-adjustment-trending-miner-pri.md)); Newhedge replaced Bitrawr by episode 030 ([ep 030](../../raw/history/pod256/2023-10-07-pod256-030-no-holds-barred-w-special-guest-skot-instigator-b.md)). The last full snapshot is episode 046 ([ep 046](../../raw/history/pod256/2024-05-24-pod256-046-no-holds-barred-w-special-guest-luke-dashjr-chair.md)).
+3. **Prose summaries (047 onward).** Guests shift toward pool and hardware builders (Wilson Mining, boerst, Bob McElrath).
+4. **Keywords, takeaways and chapters (roughly 061–080)**, e.g. [ep 080](../../raw/history/pod256/2025-08-01-pod256-080-the-chilling-effect-legal-risks-in-privacy-softwa.md).
+5. **Project log (081 onward).** Dense first-person paragraphs about the open stack, heat reuse and freedom tech; from 2026 several episodes are recorded live and announced on the 256 Foundation forum, e.g. episode 114 at 2100 UTC on Wednesday, May 13th ([forum: Ep 114](../../raw/history/pod256/2026-05-12-forum-pod256-episode-114.md)).
+
+Episode 100 marked three years of POD256 and recalled the early "Hash Cast" days ([ep 100](../../raw/history/pod256/2025-12-31-pod256-100-dismantling-the-black-box-hydra-pool-libre-board.md)). Breaks: episode 027 mentions a two week hiatus ([ep 027](../../raw/history/pod256/2023-08-19-pod256-027-state-of-the-network-tangents-no-holds-barred-w-s.md)) and episode 125 opens "After a short hiatus" ([ep 125](../../raw/history/pod256/2026-09-08-pod256-125-why-open-source-and-ai-are-colliding-in-bitcoin-m.md)). Episode 126 notes that Eco called it #125 on air by mistake ([ep 126](../../raw/history/pod256/2026-09-22-pod256-126-why-open-source-bitcoin-mining-matters-more-than.md)). In 2025–2026 the show prepped episodes with a dedicated podcast AI agent on BuzzRelay, a Nostr-based collaboration tool ([ep 125](../../raw/history/pod256/2026-09-08-pod256-125-why-open-source-and-ai-are-colliding-in-bitcoin-m.md)).
+
+### Where it is recorded
+
+Bitcoin Park, Nashville is home ([pod256.org](../../raw/history/pod256/pod256-org-home.md)); episode 057 was recorded before a live audience there on November 4, 2024 ([ep 057](../../raw/history/pod256/2024-11-11-pod256-057-from-sweden-to-silicon-bitcoin-s-global-journey.md)). Road episodes include the Proto Rig launch (night 2 broadcast live on August 14, 2025 from Dalton, Georgia — [ep 085](../../raw/history/pod256/2025-09-08-pod256-085-proto-launch-party-live-night-2.md)), TabConf updates ([ep 090](../../raw/history/pod256/2025-10-15-pod256-090-make-every-meetup-a-pool-stratum-v2-hole-punching.md)), the Hashtub in Denver during the Heatpunk Summit ([ep 106](../../raw/history/pod256/2026-03-04-pod256-106-high-signal-in-the-hashtub-workshops-open-source.md)) and a live Denver episode ([ep 108](../../raw/history/pod256/2026-03-18-pod256-108-from-mixers-to-miners-why-samourai-matters-for-al.md)).
+
+### Supporting the show (hash-pointing)
+
+- **2023–2024: Lincoin.** "Stream Sats, Point Hash" asked listeners to pick a regional Lincoin stratum URL on port 3333 and use a `pod256.YourAlias` worker name; worker names were read out weekly ([ep 006](../../raw/history/pod256/2023-02-03-pod256-006-state-of-the-network-the-taproot-wizard-and-the-4.md); [ep 037](../../raw/history/pod256/2024-02-24-pod256-037-no-holds-barred-w-special-guest-rapha-zagury-alph.md)).
+- **Donations and sponsors.** PayNym donations from episode 008 ([ep 008](../../raw/history/pod256/2023-02-17-pod256-008-state-of-the-network-argo-blockchain-ceo-steps-do.md)); a Tier II Supporters list headed by Foundry USA from episode 052 ([ep 052](../../raw/history/pod256/2024-08-22-pod256-052-from-owls-on-cocaine-to-bitcoin-mining-a-wild-rid.md)).
+- **2026: the Foundation's own Hydrapool.** Listeners are asked to point hash at the 256 Foundation pool when the show is live, or to run their own Hydrapool ([ep 104](../../raw/history/pod256/2026-02-11-pod256-104-ai-open-source-bitcoin-mining-and-battling-survei.md)); the HashDash leaderboard at dash.256f.org gained loyalty, luck and difficulty rankings ([ep 114](../../raw/history/pod256/2026-05-13-pod256-114-open-source-wins-in-vegas-100k-boost-doomaxe-demo.md); [ep 126](../../raw/history/pod256/2026-09-22-pod256-126-why-open-source-bitcoin-mining-matters-more-than.md)).
+
+### Transcripts
+
+The publisher's RSS feed carries machine transcripts for part of the catalogue: for 2024-10-07 through 2026-10-07 the feed has 70 episodes, 49 with archived transcripts and 21 without ([transcript README](../../raw/history/pod256/transcripts/2026-10-07/README.md)). Names in them are unverified — e.g. the episode 126 transcript renders Exahash as "x a hash" ([ep 126 transcript](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-09-21-e126.md)). Feed dates use America/Chicago and can differ by a day from the show-notes date (episode 126 is 2026-09-21 in the feed, 2026-09-22 on the episode page).
+
+## The show and the 256 Foundation
+
+The Foundation's origin can be read straight out of the show notes:
+
+| Episode | Milestone |
+|---|---|
+| [029](../../raw/history/pod256/2023-09-21-pod256-029-pod-256-s-telehash-uniting-bitcoiners-for-a-cause.md) (2023-09-21) | Rod and Econoalchemist pitch the "telehash", a 24-hour event raising funds, bitcoin and mining equipment for grassroots communities. |
+| [034](../../raw/history/pod256/2024-02-02-pod256-034-home-open-source-mining-initiative-state-of-the-n.md) (2024-02-02) | Titled for a Home & Open Source Mining Initiative. |
+| [035](../../raw/history/pod256/2024-02-10-pod256-035-no-holds-barred-w-special-guests-wilson-mining-st.md) (2024-02-10) | "The 256 Foundation" appears as the working name of an open-source mining non-profit. |
+| [038](../../raw/history/pod256/2024-03-01-pod256-038-state-of-the-network-news-tangents-home-miner-of.md) (2024-03-01) | 256 Foundation Telegram group announced. |
+| [051](../../raw/history/pod256/2024-08-14-pod256-051-mining-mondays-and-making-bitcoin-mining-free-and.md) (2024-08-14) | Mission to make Bitcoin mining free and open; monthly Mining Mondays meetup. |
+| [056](../../raw/history/pod256/2024-09-19-pod256-056-from-grilling-to-mining-the-birth-of-a-bitcoin-me.md) (2024-09-19) | HRF support announced; idea of recording at the monthly meetup. |
+| [060](../../raw/history/pod256/2025-02-06-pod256-060-we-hit-a-block-behind-the-scenes.md) (2025-02-06) | Telehash hits a block after two years of planning. |
+| [066](../../raw/history/pod256/2025-04-03-pod256-066-bitcoin-mining-is-the-killer-app-with-michael-sch.md)–[068](../../raw/history/pod256/2025-04-17-pod256-068-the-wordpress-of-mining-pools-with-jungly.md) (April 2025) | Grant leads introduced: Schnitzel (Libre Board), Ryan (Mujina), Jungly (Hydrapool). |
+| [100](../../raw/history/pod256/2025-12-31-pod256-100-dismantling-the-black-box-hydra-pool-libre-board.md) (2025-12-31) | Over $400k in grants allocated across Ember One, Libre Board, Mujina and Hydra Pool; block 881423 retrospective. |
+| [114](../../raw/history/pod256/2026-05-13-pod256-114-open-source-wins-in-vegas-100k-boost-doomaxe-demo.md) (2026-05-13) | Surprise $100,000 grant win at Bitcoin 2026 in Vegas; Foundation site and forum relaunched. |
+
+> **Status: Disputed** — which pool found block 881423
+> Episode 100 says that during the Telehash "an Apollo-powered solo pool briefly wrangled an exahash and struck block 881423" ([ep 100](../../raw/history/pod256/2025-12-31-pod256-100-dismantling-the-black-box-hydra-pool-libre-board.md)), and the January 2026 newsletter likewise says "#1 with the Apollo solo pool" ([newsletter #13](../../raw/history/256f-newsletter/2026-01-14-assembling-freedom-13.md)). The Foundation's Telehash page says participants point hashrate at the Foundation's Hydrapool instance ([Telehash page](../../raw/history/256f-org/256foundation-org-telehash.md)). Best assessment: the podcast and newsletter accounts are first-hand and specific; the Telehash page describes the format of later events. See [256 Foundation Organization](256-foundation-organization.md).
+
+## Recurring themes
+
+- **State of the network (2022–2024).** Weekly hashrate, difficulty, hashvalue and ASIC price readings in the run-up to the 2024 halving; later only occasional updates (e.g. the difficulty drop discussed in [ep 104](../../raw/history/pod256/2026-02-11-pod256-104-ai-open-source-bitcoin-mining-and-battling-survei.md) and a network update in [ep 126](../../raw/history/pod256/2026-09-22-pod256-126-why-open-source-bitcoin-mining-matters-more-than.md)). Numbers: [Network State 2022–2026](../industry/network-state-2022-2026.md).
+- **Home mining and heat reuse.** Home Miner of the Week (2023–2024), Schnitzel's HashTub ([ep 033](../../raw/history/pod256/2024-01-25-pod256-033-nems-2024-recap-state-of-the-network-tangents-new.md)), Rev Hodl's homestead ([ep 050](../../raw/history/pod256/2024-07-03-pod256-050-building-a-bitcoin-powered-homestead-with-rev-hod.md)), Home Assistant control of Canaan miners ([ep 092](../../raw/history/pod256/2025-10-29-pod256-092-hashrate-at-home-zigbee-thermostats-bitaxe-wins-a.md)) and the Heatpunk Summit ([ep 106](../../raw/history/pod256/2026-03-04-pod256-106-high-signal-in-the-hashtub-workshops-open-source.md)).
+- **Open hardware.** Bitaxe from its first appearance ([ep 030](../../raw/history/pod256/2023-10-07-pod256-030-no-holds-barred-w-special-guest-skot-instigator-b.md)) through Ember One, Intel BZM2 chips ([ep 083](../../raw/history/pod256/2025-09-03-pod256-083-breaking-new-ground-the-arrival-of-intel-bzm2-chi.md)) and the Bitaxe Bonanza ([ep 110](../../raw/history/pod256/2026-04-01-pod256-110-april-fools-real-progress-open-firmware-open-pool.md)).
+- **Open firmware vs closed firmware and dev fees.** Recurring from Luxor's firmware tease ([ep 005](../../raw/history/pod256/2023-01-27-pod256-005-expected-difficulty-adjustment-trending-miner-pri.md)) to the dev-fee debate ([ep 086](../../raw/history/pod256/2025-09-10-pod256-086-open-source-vs-closed-source-the-future-of-bitcoi.md)), Mujina on stock S19 boards ([ep 107](../../raw/history/pod256/2026-03-11-pod256-107-hacking-the-antminer-mujina-on-stock-control-boar.md)) and red-team firmware analysis ([ep 124](../../raw/history/pod256/2026-08-18-pod256-124-mining-forks-firmware-red-teams-and-the-future-of.md)).
+- **Pools and decentralization.** Solo CK blocks, Braidpool ([ep 049](../../raw/history/pod256/2024-06-27-pod256-049-exploring-braidpool-innovations-in-decentralized.md)), Hydrapool, GridPool ([ep 116](../../raw/history/pod256/2026-06-10-pod256-116-decentralizing-pool-payouts-inside-gridpool-with.md)) and the FPPS-centred pool landscape ([ep 112](../../raw/history/pod256/2026-04-15-pod256-112-stratum-v2-nonce-space-and-the-diy-miner-s-comeba.md)).
+- **Freedom tech and legal risk.** Samourai Wallet runs through the show from a co-founder guest slot ([ep 032](../../raw/history/pod256/2023-12-18-pod256-032-no-holds-barred-w-special-guests-diverter-author.md)) to Keonne Rodriguez ([ep 096](../../raw/history/pod256/2025-11-27-pod256-096-from-open-source-to-federal-sentence-the-governme.md)) and Lauren Rodriguez ([ep 108](../../raw/history/pod256/2026-03-18-pod256-108-from-mixers-to-miners-why-samourai-matters-for-al.md)); also Coldcard ([ep 122](../../raw/history/pod256/2026-08-03-pod256-122-weak-entropy-broken-trust-and-the-90m-coldcard-fa.md)) and BIP 110 ([ep 119](../../raw/history/pod256/2026-07-08-pod256-119-soft-forks-censorship-risks-and-open-source-bitco.md)).
+- **Tangents.** Some episodes are mostly lifestyle banter (e.g. [ep 052](../../raw/history/pod256/2024-08-22-pod256-052-from-owls-on-cocaine-to-bitcoin-mining-a-wild-rid.md), [ep 055](../../raw/history/pod256/2024-09-13-pod256-055-ditching-shampoo-and-embracing-raw-milk-a-journey.md)) — "Awesome Tangents" is in the show's subtitle ([pod256.org](../../raw/history/pod256/pod256-org-home.md)).
+
+## Recurring events
+
+| Event | Where it shows up |
+|---|---|
+| NEMS (January, Nashville) | Recapped in [004](../../raw/history/pod256/2023-01-21-pod256-004-recap-nashville-energy-mining-summit-2023-state-o.md) and [033](../../raw/history/pod256/2024-01-25-pod256-033-nems-2024-recap-state-of-the-network-tangents-new.md); post-NEMS debrief in [102](../../raw/history/pod256/2026-01-30-pod256-102-why-open-firmware-wins-a-post-nems-debrief-with-m.md). |
+| Telehash | Concept in [029](../../raw/history/pod256/2023-09-21-pod256-029-pod-256-s-telehash-uniting-bitcoiners-for-a-cause.md); block find in [060](../../raw/history/pod256/2025-02-06-pod256-060-we-hit-a-block-behind-the-scenes.md); playbook in [101](../../raw/history/pod256/2026-01-14-pod256-101-hydrapool-hashdash-and-the-telehash-playbook-open.md); Telehash #4 stress test in [115](../../raw/history/pod256/2026-05-27-pod256-115-from-bitaxe-to-exahash-inside-hydropool-s-record.md). |
+| Texas Energy and Mining Summit | Previewed in [070](../../raw/history/pod256/2025-05-01-pod256-070-hydrapool-is-live-and-the-texas-energy-and-mining.md), reviewed as the first ever in [071](../../raw/history/pod256/2025-05-16-pod256-071-reviewing-the-first-ever-texas-energy-and-mining.md). |
+| Heatpunk Summit (Denver) | Workshops previewed in [102](../../raw/history/pod256/2026-01-30-pod256-102-why-open-firmware-wins-a-post-nems-debrief-with-m.md); second annual summit debriefed in [106](../../raw/history/pod256/2026-03-04-pod256-106-high-signal-in-the-hashtub-workshops-open-source.md). |
+| Africa Bitcoin Conference | Nairobi trip in [058](../../raw/history/pod256/2024-12-26-pod256-058-from-nairobi-to-nashville-rise-of-open-source-bit.md); Mauritius edition in [098](../../raw/history/pod256/2025-12-13-pod256-098-from-mauritius-to-modular-miners-open-source-bitc.md). |
+
+> **Status: Disputed** — what NEMS stands for
+> Episodes 004 and 033 expand it as the Nashville Energy & Mining Summit ([ep 004](../../raw/history/pod256/2023-01-21-pod256-004-recap-nashville-energy-mining-summit-2023-state-o.md); [ep 033](../../raw/history/pod256/2024-01-25-pod256-033-nems-2024-recap-state-of-the-network-tangents-new.md)) and episode 051 as the Nashville Energy and Mining Summit ([ep 051](../../raw/history/pod256/2024-08-14-pod256-051-mining-mondays-and-making-bitcoin-mining-free-and.md)); episode 058 says National Energy and Mining Summit ([ep 058](../../raw/history/pod256/2024-12-26-pod256-058-from-nairobi-to-nashville-rise-of-open-source-bit.md)); the January 2026 newsletter says "the North East Mining Summit" ([newsletter #14](../../raw/history/256f-newsletter/2026-01-30-assembling-freedom-14.md)). Best assessment: the Nashville expansion is the most frequent; the 2026 newsletters look AI-assisted and are lower confidence.
+
+## Episode index
+
+Dates are the show-notes publish dates. Episode 059 has no captured page; the sequence otherwise runs 001–127. Episodes 084 and 085 share a publish date.
+
+| Ep | Published | Guests / voices | Topics |
+|---|---|---|---|
+| [001](../../raw/history/pod256/2022-12-03-pod256-001-hashrate-down-14-from-ath-hashprice-at-atl-territ.md) | 2022-12-03 | Colin Harper (Luxor) | Hashrate down ~14% from ATH, hashprice lows, Compute North asset sale |
+| [002](../../raw/history/pod256/2022-12-10-pod256-002-miner-capitulation-and-compute-north-bankruptcy-d.md) | 2022-12-10 | Tom Masiero, Marty Bent (Standard Bitcoin) | Capitulation, difficulty down 7.3%, ERCOT/Texas, nuclear, ESG |
+| [003](../../raw/history/pod256/2022-12-16-pod256-003-public-miners-against-the-ropes-esg-anti-bitcoin.md) | 2022-12-16 | Colin Harper | Public miners' debt, ESG narrative, heat-reuse efficiency ideas |
+| [004](../../raw/history/pod256/2023-01-21-pod256-004-recap-nashville-energy-mining-summit-2023-state-o.md) | 2023-01-21 | Hosts (Econoalchemist, Rod) | NEMS 2023 recap, Warren bill, Intel-chip ASICs with Hive |
+| [005](../../raw/history/pod256/2023-01-27-pod256-005-expected-difficulty-adjustment-trending-miner-pri.md) | 2023-01-27 | Hosts | Difficulty estimate, miner prices, Luxor firmware tease, Galaxy exahash forecast, solo mining |
+| [006](../../raw/history/pod256/2023-02-03-pod256-006-state-of-the-network-the-taproot-wizard-and-the-4.md) | 2023-02-03 | Medi Naseri (Lincoin) | Taproot Wizard 4MB block, reliable vs renewable energy; Lincoin hash-pointing begins |
+| [007](../../raw/history/pod256/2023-02-11-pod256-007-state-of-the-network-industrial-scale-miner-conso.md) | 2023-02-11 | Casey Rodarmor (Ordinals) | Industrial miner consolidation, Fedipool |
+| [008](../../raw/history/pod256/2023-02-17-pod256-008-state-of-the-network-argo-blockchain-ceo-steps-do.md) | 2023-02-17 | John Stefanopoulos (FutureBit) | Argo CEO exit after Helios sale; PayNym donations |
+| [009](../../raw/history/pod256/2023-02-25-pod256-009-state-of-the-network-news-tangents-home-miner-of.md) | 2023-02-25 | Jesse Myers | Solo blocks, valuation thesis |
+| [010](../../raw/history/pod256/2023-03-04-pod256-010-state-of-the-network-news-tangents-home-miner-of.md) | 2023-03-04 | Harry Sudock (Griid) | TVA curtailment letter, is Braiins still open source? |
+| [011](../../raw/history/pod256/2023-03-11-pod256-011-state-of-the-network-news-tangents-home-miner-of.md) | 2023-03-11 | Neil RoninMiner | Block's Mining Development Kit, Braiins OS response |
+| [012](../../raw/history/pod256/2023-03-18-pod256-012-state-of-the-network-news-tangents-home-miner-of.md) | 2023-03-18 | Ethan Vera (Luxor) | Proposed 30% mining electricity tax, Luxor firmware |
+| [013](../../raw/history/pod256/2023-04-14-pod256-013-state-of-the-network-news-tangents-home-miner-of.md) | 2023-04-14 | Tom Masiero | Foundry hashrate share and fees, CK solo blocks |
+| [014](../../raw/history/pod256/2023-04-21-pod256-014-state-of-the-network-news-tangents-home-miner-of.md) | 2023-04-21 | DM Dive | Iris Energy, Intel Blockscale exit, Sweden tax, SV2 reference implementation |
+| [015](../../raw/history/pod256/2023-04-29-pod256-015-state-of-the-network-news-tangents-home-miner-of.md) | 2023-04-29 | Rob Warren (distributed hash) | S19J Pro+ heat sinks, Russia ASIC-sales claim |
+| [016](../../raw/history/pod256/2023-05-05-pod256-016-state-of-the-network-news-tangents-home-miner-of.md) | 2023-05-05 | Hosts | NerdMiner, Luxor ASIC RFQ report |
+| [017](../../raw/history/pod256/2023-05-13-pod256-017-state-of-the-network-news-tangents-home-miner-of.md) | 2023-05-13 | Rob Warren, Business Cat | SEC subpoena to Marathon |
+| [018](../../raw/history/pod256/2023-05-22-pod256-018-state-of-the-network-news-tangents-home-miner-of.md) | 2023-05-22 | Hosts | M50S++, Schnitzel's cooler immersion |
+| [019](../../raw/history/pod256/2023-05-28-pod256-019-state-of-the-network-news-tangents-home-miner-of.md) | 2023-05-28 | Rob Warren | Mempool Accelerator, Upstream v Crusoe, CK solo block |
+| [020](../../raw/history/pod256/2023-06-05-pod256-020-state-of-the-network-news-tangents-home-miner-of.md) | 2023-06-05 | Rob Warren, Diverter | Mining for the Streets |
+| [021](../../raw/history/pod256/2023-06-10-pod256-021-state-of-the-network-news-tangents-home-miner-of.md) | 2023-06-10 | Rob Warren (guest host) | Cathedra off-grid partnership |
+| [022](../../raw/history/pod256/2023-06-17-pod256-022-state-of-the-network-news-tangents-home-miner-of.md) | 2023-06-17 | Michael Schmid (Schnitzel) | Blockstream ASIC plans, nonce-analysis census |
+| [023](../../raw/history/pod256/2023-06-24-pod256-023-state-of-the-network-news-tangents-home-miner-of.md) | 2023-06-24 | Rob Warren, Alex (kaboomracks) | Mining-heated spa, 120v S19 jPro |
+| [024](../../raw/history/pod256/2023-07-01-pod256-024-state-of-the-network-news-tangents-home-miner-of.md) | 2023-07-01 | Michael Schmid (Schnitzel) | Riot/MicroBT deal |
+| [025](../../raw/history/pod256/2023-07-08-pod256-025-state-of-the-network-news-tangents-home-miner-of.md) | 2023-07-08 | Bassload | Energy procurement, H1 review |
+| [026](../../raw/history/pod256/2023-07-22-pod256-026-nuclear-energy-roundtable-tangents-no-holds-barre.md) | 2023-07-22 | Nuclear roundtable | Nuclear energy and mining |
+| [027](../../raw/history/pod256/2023-08-19-pod256-027-state-of-the-network-tangents-no-holds-barred-w-s.md) | 2023-08-19 | Jeff (Double Hash Farm) | 1MW farm expanding in Iowa; after a two-week hiatus |
+| [028](../../raw/history/pod256/2023-09-09-pod256-028-no-holds-barred-w-special-guest-zack-bomsta-found.md) | 2023-09-09 | Zack Bomsta (Pivotal Pleb Tech) | Njord and Loki boards |
+| [029](../../raw/history/pod256/2023-09-21-pod256-029-pod-256-s-telehash-uniting-bitcoiners-for-a-cause.md) | 2023-09-21 | Hosts (Rod, Econoalchemist) | The Telehash idea |
+| [030](../../raw/history/pod256/2023-10-07-pod256-030-no-holds-barred-w-special-guest-skot-instigator-b.md) | 2023-10-07 | skot (Bitaxe) | Bitaxe; Newhedge replaces Bitrawr |
+| [031](../../raw/history/pod256/2023-10-30-pod256-031-no-holds-barred-w-special-guest-bitmaker-creator.md) | 2023-10-30 | BitMaker (NerdMiner) | NerdMiner |
+| [032](../../raw/history/pod256/2023-12-18-pod256-032-no-holds-barred-w-special-guests-diverter-author.md) | 2023-12-18 | Diverter; Samourai Wallet co-founder | Mining for the Streets, privacy |
+| [033](../../raw/history/pod256/2024-01-25-pod256-033-nems-2024-recap-state-of-the-network-tangents-new.md) | 2024-01-25 | Hosts | NEMS 2024 recap, Schnitzel's HashTub |
+| [034](../../raw/history/pod256/2024-02-02-pod256-034-home-open-source-mining-initiative-state-of-the-n.md) | 2024-02-02 | Hosts | Home & Open Source Mining Initiative, APW12 unlock, Swan 4.5Eh |
+| [035](../../raw/history/pod256/2024-02-10-pod256-035-no-holds-barred-w-special-guests-wilson-mining-st.md) | 2024-02-10 | Wilson Mining | "The 256 Foundation" working name, bitaxeSupra |
+| [036](../../raw/history/pod256/2024-02-16-pod256-036-no-holds-barred-w-special-guest-bassload-energy-p.md) | 2024-02-16 | BASSLOAD | PPAs and power procurement |
+| [037](../../raw/history/pod256/2024-02-24-pod256-037-no-holds-barred-w-special-guest-rapha-zagury-alph.md) | 2024-02-24 | Rapha Zagury (Swan) | Swan mining, leap-day adjustment |
+| [038](../../raw/history/pod256/2024-03-01-pod256-038-state-of-the-network-news-tangents-home-miner-of.md) | 2024-03-01 | Hosts | Riot MicroBT order, 256 Foundation Telegram group |
+| [039](../../raw/history/pod256/2024-03-09-pod256-039-no-holds-barred-w-special-guest-pennyether-bitcoi.md) | 2024-03-09 | pennyether | Public miner economics |
+| [040](../../raw/history/pod256/2024-03-15-pod256-040-state-of-the-network-news-tangents-home-miner-of.md) | 2024-03-15 | Hosts | Riot/Reformed Energy, mining tax |
+| [041](../../raw/history/pod256/2024-03-22-pod256-041-no-holds-barred-w-special-guest-zack-bomsta-found.md) | 2024-03-22 | Zack Bomsta (Pivotal Pleb Tech, UnBound) | 120V and wire gauge |
+| [042](../../raw/history/pod256/2024-03-30-pod256-042-no-holds-barred-w-special-guest-montana-dukes-ceo.md) | 2024-03-30 | Montana Dukes (EHT Capital) | APW12 120V mod |
+| [043](../../raw/history/pod256/2024-04-06-pod256-043-special-guest-skot-instigator-bitaxe-state-of-the.md) | 2024-04-06 | skot (Bitaxe) | OSMU, ePIC UMC control board review |
+| [044](../../raw/history/pod256/2024-04-19-pod256-044-state-of-the-network-news-tangents-home-miner-of.md) | 2024-04-19 | Hosts | Halving eve, Braiins Lightning payouts, coinbase custodian concentration |
+| [045](../../raw/history/pod256/2024-05-17-pod256-045-party-rip-w-special-guests-skot9000-barnminer-nei.md) | 2024-05-17 | skot9000, Barnminer, Neil RoninMiner | Party episode |
+| [046](../../raw/history/pod256/2024-05-24-pod256-046-no-holds-barred-w-special-guest-luke-dashjr-chair.md) | 2024-05-24 | Luke Dashjr (OCEAN) | Post-halving snapshot, OCEAN |
+| [047](../../raw/history/pod256/2024-06-06-pod256-047-wilson-mining-s-game-changing-pool-launch-a-low-f.md) | 2024-06-06 | Wilson Mining | Low-fee pool launch |
+| [048](../../raw/history/pod256/2024-06-12-pod256-048-decentralizing-bitcoin-mining-insights-from-boers.md) | 2024-06-12 | boerst, skot9000 | stratum.work, Stratum V2 |
+| [049](../../raw/history/pod256/2024-06-27-pod256-049-exploring-braidpool-innovations-in-decentralized.md) | 2024-06-27 | Bob McElrath | Braidpool |
+| [050](../../raw/history/pod256/2024-07-03-pod256-050-building-a-bitcoin-powered-homestead-with-rev-hod.md) | 2024-07-03 | Rev Hodl | Homestead mining, maple syrup |
+| [051](../../raw/history/pod256/2024-08-14-pod256-051-mining-mondays-and-making-bitcoin-mining-free-and.md) | 2024-08-14 | Hosts | Mining Mondays, 256 Foundation mission |
+| [052](../../raw/history/pod256/2024-08-22-pod256-052-from-owls-on-cocaine-to-bitcoin-mining-a-wild-rid.md) | 2024-08-22 | Hosts | Mostly off-topic; Tier II supporters list begins |
+| [053](../../raw/history/pod256/2024-08-30-pod256-053-from-ice-cream-to-encryption-navigating-temptatio.md) | 2024-08-30 | Hosts | Durov arrest, privacy, Mining Monday |
+| [054](../../raw/history/pod256/2024-09-09-pod256-054-lighting-up-the-studio-and-the-bitcoin-network-wi.md) | 2024-09-09 | Rob Warren | His book, who is plugging in miners |
+| [055](../../raw/history/pod256/2024-09-13-pod256-055-ditching-shampoo-and-embracing-raw-milk-a-journey.md) | 2024-09-13 | Hosts | Lifestyle, Nostr |
+| [056](../../raw/history/pod256/2024-09-19-pod256-056-from-grilling-to-mining-the-birth-of-a-bitcoin-me.md) | 2024-09-19 | Skot | Monthly mining meetup, Bitaxe |
+| [057](../../raw/history/pod256/2024-11-11-pod256-057-from-sweden-to-silicon-bitcoin-s-global-journey.md) | 2024-11-11 | Live at Bitcoin Park (Calle and others) | Ember One, Apollo self-sovereign block, Heatbit |
+| [058](../../raw/history/pod256/2024-12-26-pod256-058-from-nairobi-to-nashville-rise-of-open-source-bit.md) | 2024-12-26 | Hosts | Africa Bitcoin Conference, Telehash prep, Ember One |
+| [060](../../raw/history/pod256/2025-02-06-pod256-060-we-hit-a-block-behind-the-scenes.md) | 2025-02-06 | Hosts | Telehash block find |
+| [061](../../raw/history/pod256/2025-03-03-pod256-061-open-sourcing-everything-from-chip-to-firmware-so.md) | 2025-03-03 | Hosts | AddIt board, open-sourcing the stack |
+| [062](../../raw/history/pod256/2025-03-06-pod256-062-how-community-supported-bitcoin-mining-works-in-p.md) | 2025-03-06 | Hosts | Community-supported mining, Intel chip manufacturing |
+| [063](../../raw/history/pod256/2025-03-13-pod256-063-solo-mining-what-the-heck-is-even-that.md) | 2025-03-13 | Hosts | Solo vs pool mining |
+| [064](../../raw/history/pod256/2025-03-20-pod256-064-the-power-of-donor-advised-funds-in-supporting-mi.md) | 2025-03-20 | Phil Geiger | Donor Advised Funds |
+| [065](../../raw/history/pod256/2025-03-27-pod256-065-how-bad-chainalysis-data-hurts-freedom-technology.md) | 2025-03-27 | Hosts | Chainalysis data, veterans, regulation |
+| [066](../../raw/history/pod256/2025-04-03-pod256-066-bitcoin-mining-is-the-killer-app-with-michael-sch.md) | 2025-04-03 | Michael Schmid (Schnitzel) | Libre Board |
+| [067](../../raw/history/pod256/2025-04-14-pod256-067-meet-ryan-open-source-mujina-firmware-developer.md) | 2025-04-14 | Ryan | Mujina firmware |
+| [068](../../raw/history/pod256/2025-04-17-pod256-068-the-wordpress-of-mining-pools-with-jungly.md) | 2025-04-17 | Jungly | Hydrapool pitched as the WordPress of mining pools |
+| [069](../../raw/history/pod256/2025-04-24-pod256-069-the-nonce-is-a-myth-and-bitcoin-social-scalabilit.md) | 2025-04-24 | Hosts | The nonce myth, UTXO Live |
+| [070](../../raw/history/pod256/2025-05-01-pod256-070-hydrapool-is-live-and-the-texas-energy-and-mining.md) | 2025-05-01 | Hosts | Hydrapool public testing, Ember One release, TEMS preview |
+| [071](../../raw/history/pod256/2025-05-16-pod256-071-reviewing-the-first-ever-texas-energy-and-mining.md) | 2025-05-16 | Hosts | First Texas Energy and Mining Summit |
+| [072](../../raw/history/pod256/2025-05-22-pod256-072-the-gift-of-community-in-the-foss-space.md) | 2025-05-22 | Hosts | Samourai legal update, hackathons |
+| [073](../../raw/history/pod256/2025-06-06-pod256-073-the-ai-panopticon-and-las-vegas.md) | 2025-06-06 | Hosts | AI workflows, privacy |
+| [074](../../raw/history/pod256/2025-06-20-pod256-074-europe-has-no-air-conditioning.md) | 2025-06-20 | Hosts | Stratum V2, open source business models |
+| [075](../../raw/history/pod256/2025-06-26-pod256-075-sourcing-chips-and-building-bitaxes.md) | 2025-06-26 | Hosts | Sourcing chips, building Bitaxes, possible difficulty drop |
+| [076](../../raw/history/pod256/2025-07-03-pod256-076-keeping-open-source-channels-open.md) | 2025-07-03 | Hosts | Bitaxe copycats, Belgrade meetup |
+| [077](../../raw/history/pod256/2025-07-14-pod256-077-battle-of-the-minehackers-with-stephen-delorme.md) | 2025-07-14 | Stephen DeLorme | ATL BitLab mining hackathon |
+| [078](../../raw/history/pod256/2025-07-18-pod256-078-devs-on-trial-privacy-on-the-line.md) | 2025-07-18 | Hosts | Low fees, legal cases against developers |
+| [079](../../raw/history/pod256/2025-07-24-pod256-079-hydrapool-testnet-launch-nears-as-miners-prep.md) | 2025-07-24 | Hosts | Hydrapool testnet launch nears |
+| [080](../../raw/history/pod256/2025-08-01-pod256-080-the-chilling-effect-legal-risks-in-privacy-softwa.md) | 2025-08-01 | Hosts | Samourai plea deal and chilling effects |
+| [081](../../raw/history/pod256/2025-08-21-pod256-081-revamping-bitcoin-mining-from-cool-runnings-to-cu.md) | 2025-08-21 | Tyler Stevens joins | Heat reuse, Proto Rig launch |
+| [082](../../raw/history/pod256/2025-08-27-pod256-082-decentralizing-bitcoin-mining-challenges-and-oppo.md) | 2025-08-27 | Skot, eco, Tyler | Antminer S23 chip reverse engineering, Hydra Pool test server |
+| [083](../../raw/history/pod256/2025-09-03-pod256-083-breaking-new-ground-the-arrival-of-intel-bzm2-chi.md) | 2025-09-03 | Hosts | Intel BZM2 chips arrive |
+| [084](../../raw/history/pod256/2025-09-08-pod256-084-proto-launch-party-live-night-1.md) | 2025-09-08 | Steven Wilson, Tyler Stevens (live) | Proto launch party, night 1 |
+| [085](../../raw/history/pod256/2025-09-08-pod256-085-proto-launch-party-live-night-2.md) | 2025-09-08 | Marty Bent, Brad Cuddy (live, Dalton GA) | Proto launch party, night 2 |
+| [086](../../raw/history/pod256/2025-09-10-pod256-086-open-source-vs-closed-source-the-future-of-bitcoi.md) | 2025-09-10 | Hosts | Dev fees, open vs closed firmware |
+| [087](../../raw/history/pod256/2025-09-17-pod256-087-heat-hash-and-hardware-freedom-live-at-bitcoin-pa.md) | 2025-09-17 | Skot, Ryan, Tyler (live at Bitcoin Park) | Heat reuse configurability, PMBus, Mujina |
+| [088](../../raw/history/pod256/2025-09-24-pod256-088-freedom-tech-in-action-open-miners-sovereign-home.md) | 2025-09-24 | Hosts incl. Rod | ImagineIF debrief, HPC/AI pivots, hydro Bitaxe array |
+| [089](../../raw/history/pod256/2025-10-05-pod256-089-copyleft-and-cold-rooms-open-hardware-passive-hea.md) | 2025-10-05 | Hosts | Ember One v5, copyleft vs MIT, IPv6 |
+| [090](../../raw/history/pod256/2025-10-15-pod256-090-make-every-meetup-a-pool-stratum-v2-hole-punching.md) | 2025-10-15 | AverageGary (TabConf) | Mujina, Hydrapool rewrite, SV2 hole punching |
+| [091](../../raw/history/pod256/2025-10-22-pod256-091-hash-heat-and-hardware-libreboard-mujina-and-the.md) | 2025-10-22 | Hosts | Bitaxe trademark fight, radiant-floor immersion |
+| [092](../../raw/history/pod256/2025-10-29-pod256-092-hashrate-at-home-zigbee-thermostats-bitaxe-wins-a.md) | 2025-10-29 | Hosts | Forbes Heatpunk feature, Home Assistant + Canaan, NerdQAX solo block |
+| [093](../../raw/history/pod256/2025-11-05-pod256-093-decentralize-or-die-open-miners-pool-payouts-and.md) | 2025-11-05 | Hosts | Canaan GitHub drop, certification gauntlet, BZM2 |
+| [094](../../raw/history/pod256/2025-11-12-pod256-094-pplns-pick-and-place-and-pardon-a-deep-dive-into.md) | 2025-11-12 | Hosts | Bitcoin Veterans telehash, PPLNS, Buena Vista immersion install |
+| [095](../../raw/history/pod256/2025-11-19-pod256-095-open-source-or-bust-mujina-miner-firmware-wars-an.md) | 2025-11-19 | Hosts | Mujina developer preview, firmware wars |
+| [096](../../raw/history/pod256/2025-11-27-pod256-096-from-open-source-to-federal-sentence-the-governme.md) | 2025-11-27 | Keonne Rodriguez | Samourai prosecution and sentence |
+| [097](../../raw/history/pod256/2025-12-03-pod256-097-from-lab-to-hash-ember-one-libre-board-and-an-ope.md) | 2025-12-03 | Tyler, eco | Hydra Pool 100-address PPLNS, Bitmain probe |
+| [098](../../raw/history/pod256/2025-12-13-pod256-098-from-mauritius-to-modular-miners-open-source-bitc.md) | 2025-12-13 | Skot | Mauritius conference, Bitdeer, M70, BitCrain, JuaKali |
+| [099](../../raw/history/pod256/2025-12-17-pod256-099-code-is-not-crime-samourai-petition-pool-scams-an.md) | 2025-12-17 | Hosts | Samourai petition, scam pools, Heatbit Canvas |
+| [100](../../raw/history/pod256/2025-12-31-pod256-100-dismantling-the-black-box-hydra-pool-libre-board.md) | 2025-12-31 | Hosts | Episode 100: grants, block 881423 retrospective |
+| [101](../../raw/history/pod256/2026-01-14-pod256-101-hydrapool-hashdash-and-the-telehash-playbook-open.md) | 2026-01-14 | d++ | Hydrapool, HashDash, Telehash playbook |
+| [102](../../raw/history/pod256/2026-01-30-pod256-102-why-open-firmware-wins-a-post-nems-debrief-with-m.md) | 2026-01-30 | Ryan | Post-NEMS debrief, Telehash #3 sous vide |
+| [103](../../raw/history/pod256/2026-02-04-pod256-103-closed-source-is-retarded-building-bitcoin-miners.md) | 2026-02-04 | Tyler Stevens (Exergy Heat) | Closed hardware vs home and business miners |
+| [104](../../raw/history/pod256/2026-02-11-pod256-104-ai-open-source-bitcoin-mining-and-battling-survei.md) | 2026-02-11 | eco, Skot, Tyler (live) | Difficulty drop, dash.256f.org monitor, AI |
+| [105](../../raw/history/pod256/2026-02-19-pod256-105-chips-chains-and-hot-tubs-open-mining-goes-hands.md) | 2026-02-19 | Hosts | Ember One IO-voltage fix, chip sales, hot tubs |
+| [106](../../raw/history/pod256/2026-03-04-pod256-106-high-signal-in-the-hashtub-workshops-open-source.md) | 2026-03-04 | Hosts (from the Hashtub, Denver) | Heatpunk Summit 2026 debrief |
+| [107](../../raw/history/pod256/2026-03-11-pod256-107-hacking-the-antminer-mujina-on-stock-control-boar.md) | 2026-03-11 | Hosts | Mujina on stock S19 control boards |
+| [108](../../raw/history/pod256/2026-03-18-pod256-108-from-mixers-to-miners-why-samourai-matters-for-al.md) | 2026-03-18 | Lauren Rodriguez (live, Denver) | Samourai case |
+| [109](../../raw/history/pod256/2026-03-25-pod256-109-hashrate-heat-home-sovereignty-and-the-open-sourc.md) | 2026-03-25 | Hosts | Venstar/Home Assistant heat dashboard, roadmap |
+| [110](../../raw/history/pod256/2026-04-01-pod256-110-april-fools-real-progress-open-firmware-open-pool.md) | 2026-04-01 | Hosts | Bitaxe Bonanza, grant renewals |
+| [111](../../raw/history/pod256/2026-04-11-pod256-111-open-source-overdrive-mujina-breakthroughs-public.md) | 2026-04-11 | Hosts | Solo block streak, LibreBoard v3, Ember One v6.1 |
+| [112](../../raw/history/pod256/2026-04-15-pod256-112-stratum-v2-nonce-space-and-the-diy-miner-s-comeba.md) | 2026-04-15 | Hosts | Nonce space, Stratum V2, Mujina on BCB100 |
+| [113](../../raw/history/pod256/2026-04-22-pod256-113-touchscreens-thermostats-and-doom-a-weekend-of-op.md) | 2026-04-22 | Hosts | S19j Pro touchscreen, thermostats, BlitzPool |
+| [114](../../raw/history/pod256/2026-05-13-pod256-114-open-source-wins-in-vegas-100k-boost-doomaxe-demo.md) | 2026-05-13 | Skot, Tyler, econoalchemist | Bitcoin 2026 Vegas recap, MARA Foundation grant |
+| [115](../../raw/history/pod256/2026-05-27-pod256-115-from-bitaxe-to-exahash-inside-hydropool-s-record.md) | 2026-05-27 | Hosts (live) | Telehash #4 Hydrapool stress test |
+| [116](../../raw/history/pod256/2026-06-10-pod256-116-decentralizing-pool-payouts-inside-gridpool-with.md) | 2026-06-10 | Agent P | GridPool |
+| [117](../../raw/history/pod256/2026-06-17-pod256-117-decentralizing-the-dark-corner-building-an-open-m.md) | 2026-06-17 | Hosts | Oslo Freedom Forum, BTC Prague, mining as a "dark corner" of education |
+| [118](../../raw/history/pod256/2026-06-24-pod256-118-from-nairobi-to-mugena-teaching-bitcoin-mining-wi.md) | 2026-06-24 | Ryan | BTC++ Nairobi workshop |
+| [119](../../raw/history/pod256/2026-07-08-pod256-119-soft-forks-censorship-risks-and-open-source-bitco.md) | 2026-07-08 | Hosts | BIP 110 debate |
+| [120](../../raw/history/pod256/2026-07-15-pod256-120-precise-wattage-control-changes-everything-for-bi.md) | 2026-07-15 | Schnitzel | Precise wattage control in Mujina |
+| [121](../../raw/history/pod256/2026-07-27-pod256-121-why-open-source-mining-firmware-matters-inside-mu.md) | 2026-07-27 | Ryan | Mujina, GPL, OS images |
+| [122](../../raw/history/pod256/2026-08-03-pod256-122-weak-entropy-broken-trust-and-the-90m-coldcard-fa.md) | 2026-08-03 | Hosts | Coldcard entropy exploit |
+| [123](../../raw/history/pod256/2026-08-10-pod256-123-coldcard-fallout-mining-firmware-and-the-bip-110.md) | 2026-08-10 | Hosts | AI reverse engineering of mining firmware, BIP 110/Ocean |
+| [124](../../raw/history/pod256/2026-08-18-pod256-124-mining-forks-firmware-red-teams-and-the-future-of.md) | 2026-08-18 | Hosts | Ocean/Luke Dashjr departure, firmware red team |
+| [125](../../raw/history/pod256/2026-09-08-pod256-125-why-open-source-and-ai-are-colliding-in-bitcoin-m.md) | 2026-09-08 | Hosts | BuzzRelay agents, AI PCB design |
+| [126](../../raw/history/pod256/2026-09-22-pod256-126-why-open-source-bitcoin-mining-matters-more-than.md) | 2026-09-22 | Hosts | Network update, HashDash metrics, SF fundraiser |
+| [127](../../raw/history/pod256/2026-09-28-pod256-127-self-hosted-ai-and-open-mining-tools-for-a-more-s.md) | 2026-09-28 | Hosts | Midwest Bitcoin Summit, patents vs open source, self-hosted AI |
+
+## See Also
+
+- [256 Foundation Organization](256-foundation-organization.md)
+- [256 Foundation community timeline](256f-community-timeline.md)
+- [Heatpunks community timeline](heatpunks-community-timeline.md)
+- [Open-source solo blocks](open-source-solo-blocks.md)
+- [Network State 2022–2026](../industry/network-state-2022-2026.md)
+- [Hydrapool](../pools/hydrapool.md)
+- [Mujina](../firmware/mujina.md)
+- [Ember One (BZM2)](../hardware/ember-one-bzm2.md)
+- [Libre Board and control boards](../hardware/libre-board-and-control-boards.md)
+- [Bitaxe models](../hardware/bitaxe-models.md)
+- [Mining firmware security](../industry/mining-firmware-security.md)
+- [Pool centralization and FPPS](../pools/pool-centralization-and-fpps.md)

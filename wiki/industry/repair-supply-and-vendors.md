@@ -1,8 +1,9 @@
 # Repair, Supply & Vendors
 
-> Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07
-> Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md)
-> Updated: 2026-10-08
+> Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07; bitaxeorg/legitlist (README, vendor and maintainer guides, releases), captured 2026-10-07; bitaxeorg/ESP-Miner GitHub issues, 2024-01 → 2026-09
+> Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md); [legitlist README](../../raw/hardware/bitaxe-osmu/github-bitaxeorg-legitlist.md); [legitlist vendor guide](../../raw/hardware/bitaxe-osmu/github-legitlist-vendor-guide.md)
+> Updated: 2026-10-09
+> As-Of: 2026-10-09
 > Status: Draft
 
 ## Overview
@@ -36,6 +37,24 @@ The unglamorous industrial base of mining: who repairs miners, where boards and 
 - econoalchemist lost confidence in GekkoScience: they forked the Bitaxe Gamma Turbo, modified the design and distributed it without providing complete source the next developer could take and modify — 'they broke the open-source license'; the Twitter conversation 'devolved quickly' and he got blocked [#3190 · 2025-10-30 · econoalchemist]
 - Reckless Apotheosis had spent months trying to sway GekkoScience on OSHW, 'clearly, not with great success' [#3192 · 2025-10-30 · Reckless Apotheosis]
 
+## Open-source miner vendors & the legitlist
+
+Because Bitaxe is open hardware, anyone may build and sell it — so the community keeps its own list of sellers that ship genuine, license-respecting boards. As-Of 2026-10-09.
+
+- **What it is:** bitaxeorg/legitlist is the community-verified list of genuine Bitaxe vendors; listings sync to bitaxe.org/buy, and the pitch is "No backroom deals. No paid placements. Just miners vouching for miners." The repo itself is AGPL v3 ([legitlist README](../../raw/hardware/bitaxe-osmu/github-bitaxeorg-legitlist.md)). It replaced an older bitaxe.org page that was a curated list by Skot of sellers supporting the project ([bitaxe.org legacy list](../../raw/hardware/bitaxe-osmu/bitaxe-org-legacy-list.md)); the GitHub backend, which shows the reasoning behind each listing, went live 2026-05-06 ([X: skot](../../raw/history/256f-research/2026-10-07-x-notable-skot-bitaxe.md)).
+- **How a vendor gets listed:** open a PR adding `vendors/{slug}.json` plus a square logo (400×400px recommended, max 200 KB); PR titles start with Add/Update/Remove/Deactivate vendor; the community reviews and maintainers merge. Open PRs have two weeks to address requested changes or are closed ([legitlist README](../../raw/hardware/bitaxe-osmu/github-bitaxeorg-legitlist.md); [vendor guide](../../raw/hardware/bitaxe-osmu/github-legitlist-vendor-guide.md)).
+- **Approval criteria:** genuine Bitaxe hardware (not clones or unverified boards sold as Bitaxe), a live shop, community presence, no open fraud/counterfeit reports, correct "Bitaxe" spelling, real product photos, and Bitaxe product pages that link to bitaxe.org. Selling closed-source miners is fine as long as they are not Bitaxe derivatives sold in violation of the open-source license ([vendor guide](../../raw/hardware/bitaxe-osmu/github-legitlist-vendor-guide.md); [maintainer guide](../../raw/hardware/bitaxe-osmu/github-legitlist-maintainers.md)).
+- **Removal:** vendors can be removed for no longer selling genuine hardware, confirmed fraud/counterfeit reports, or going dark; a soft removal sets `active` to false, and only active vendors are displayed ([maintainer guide](../../raw/hardware/bitaxe-osmu/github-legitlist-maintainers.md); [legitlist README](../../raw/hardware/bitaxe-osmu/github-bitaxeorg-legitlist.md)).
+- **Size and spread (snapshot 2026-10-07):** 27 vendors — 17 in Europe, 5 in North America, 2 in South America, 2 in Asia Pacific, 1 in India ([legitlist regions](../../raw/history/256f-research/2026-10-07-github-legitlist-vendor-regions.md)). legitlist releases: v1.0.0 and v1.1.0 on 2026-03-12, v1.2.0 on 2026-03-20, v1.2.1 on 2026-06-04 ([legitlist releases](../../raw/hardware/bitaxe-osmu/github-legitlist-releases.md)).
+- **Trademark:** bitaxe.org states the Bitaxe name and logo are internationally trademarked by bitaxeorg ([bitaxe.org legacy list](../../raw/hardware/bitaxe-osmu/bitaxe-org-legacy-list.md)).
+
+### Clone-support policy
+
+- **Firmware maintainers do not support clones.** LuckyMiner devices (LV06, LV07) are not supported by ESP-Miner; maintainers call them knockoffs that turned the Bitaxe work into a closed-source product, and skot called LuckyMiner "a scam product" ([ESP-Miner #351](../../raw/firmware/esp-miner/2024-09-25-github-esp-miner-issue-351-board-version-0-11-vs-board-versi.md); [ESP-Miner #1024](../../raw/firmware/esp-miner/2025-06-10-github-esp-miner-issue-1024-vin-and-vout-error.md)). Closed-source ESP-Miner derivatives are also turned away, because their changes are unknown ([ESP-Miner #1457](../../raw/firmware/esp-miner/2025-12-15-github-esp-miner-issue-1457-open-the-password-field.md)).
+- **Unreleased prototypes are not supported either:** GT board 800 prototypes were sold before the 801 release; maintainers tell owners to return the unit or ask for an 801, revert to the shipped firmware, or get firmware from the manufacturer ([ESP-Miner #1543](../../raw/firmware/esp-miner/2026-02-06-github-esp-miner-issue-1543-800xxx-support-for-lastest-firmw.md)).
+- **Support routing:** GitHub issues are not customer support — buyers go to their seller, DIY builders to the OSMU Discord ([bitaxeGamma #29](../../raw/hardware/bitaxe-osmu/2025-03-14-github-bitaxegamma-issue-29-bitaxe-gamma-not-hashing.md)). Maintainer advice since 2024: buy from legit sellers, because "Bitaxe being FOSS, there are many vendors that cut corners or make other modifications" ([ESP-Miner #94](../../raw/firmware/esp-miner/2024-01-21-github-esp-miner-issue-94-about-board-version-distinction.md)).
+- **Silent part swaps:** even listed hardware can ship with substituted parts — one early small batch from one vendor used ESP32-S3 modules without PSRAM, which newer firmware cannot run; that vendor fixed affected units ([ESP-Miner #1998](../../raw/firmware/esp-miner/2026-09-24-github-esp-miner-issue-1998-psram-issue-gamma-601-totally-br.md)). Model and module details: [Bitaxe Models & Open-Source Miner Family](../hardware/bitaxe-models.md).
+
 ## Hosting & fleet dashboards
 
 - Hosting warning from the field: szarka's S21 Pro sat dark at Kaboomracks — 'Kaboomracks' hosting sucks ass... Never again with these guys', 'Worst hosting ever', with an almost one-month outage as the last straw, despite Foreman access being the original draw [#2054 · 2025-05-05 · szarka] [#2065 · 2025-05-05 · szarka] [#2067 · 2025-05-05 · szarka]
@@ -60,5 +79,6 @@ The unglamorous industrial base of mining: who repairs miners, where boards and 
 
 - [Open Mining Economics](../economics/open-mining-economics.md)
 - [Ember One & the BZM2 Hardware Stack](../hardware/ember-one-bzm2.md)
+- [Bitaxe Models & Open-Source Miner Family](../hardware/bitaxe-models.md)
 - [Community Workshop Wisdom](../getting-started/community-workshop-wisdom.md)
 - Same topic: [Hashrate Heating Products & Installs](hashrate-heating-products-and-installs.md)

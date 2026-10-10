@@ -1,15 +1,274 @@
 # asic-rs and the Fleet-Tooling Stack
 
-> Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07
-> Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md)
-> Updated: 2026-10-08
+> Sources: 256foundation/asic-rs README, docs and release notes (captured 2026-10-07); 256foundation/asic-rs GitHub pull requests and issues, 2025-03 → 2026-10; 256foundation/btc-toolkit README and CLAUDE.md (captured 2026-10-07); 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07
+> Raw: [asic-rs README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md); [asic-rs API guide](../../raw/mining-software/256f-tools/github-asic-rs-docs-api.md); [asic-rs supported devices](../../raw/mining-software/256f-tools/github-asic-rs-docs-supported-devices.md); [asic-rs release notes](../../raw/mining-software/256f-tools/github-asic-rs-releases.md); [asic-rs Go README](../../raw/mining-software/256f-tools/github-asic-rs-go-readme.md); [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md)
+> Updated: 2026-10-09
+> As-Of: 2026-10-09
 > Status: Draft
 
 ## Overview
 
-The management layer above firmware: pyasic (the Python SDK that unified vendor APIs), its Rust successor asic-rs (a 256 Foundation project), the Home Assistant integrations built on them, and the gateway/automation tooling the community builds for home miners. In 2026 this stack crossed into industrial use: Proto's proto-fleet farm-management tool is built on asic-rs.
+asic-rs is the 256 Foundation's async library for discovering, monitoring and controlling ASIC miners across vendors and firmwares. One `MinerFactory` finds miners on a network, each miner handle gathers telemetry and runs whatever controls that firmware supports, and shared data/config models describe the results ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md)). It is the Rust successor to pyasic, the Python SDK that first unified vendor APIs; both are maintained by Brett Rowan (b-rowan), and pyasic is being dropped in favour of asic-rs [#4898 · 2026-05-26 · Brett Rowan]. Around it sits a management layer: Home Assistant integrations, a desktop scanner (BTC Toolkit), gateway and automation tools built by home miners, and since 2026 industrial users such as Proto's proto-fleet [#4699 · 2026-04-24 · Brett Rowan]. This article covers what the library is, how to use it, what it supports, the vendor API quirks its maintainers found, and its history. Values here are dated: the supported-device list and release line move every few weeks (As-Of 2026-10-09).
 
-## pyasic origins (2024)
+## What it is: packages and licensing
+
+| Package | Language | Notes |
+|---|---|---|
+| `asic-rs` (crates.io) | Rust | Async; methods return `Result<T>`, with `Option<T>` when a miner does not expose a value ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md)) |
+| `pyasic_rs` (PyPI) | Python | PyO3 classes plus Pydantic-compatible models; awaitable methods, `None` for missing values ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md)) |
+| `asic_go` (in-tree, `go/`) | Go | Wraps the C ABI crate `asic-rs-ffi`; synchronous because the FFI runs a Tokio runtime internally; a missing miner is `asic_go.ErrNotFound` ([Go README](../../raw/mining-software/256f-tools/github-asic-rs-go-readme.md)) |
+| TypeScript types | TypeScript | Shared model types derived with ts-rs ([PR #329](../../raw/mining-software/256f-tools/2026-08-18-github-asic-rs-pr-329-feat-types-derive-typescript-bindings.md)); a full JavaScript bindings PR was still open at capture ([PR #322](../../raw/mining-software/256f-tools/2026-08-04-github-asic-rs-pr-322-feat-add-javascript-bindings.md)) |
+
+- License: Apache-2.0 ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md)).
+- The Telegram announcement called the Python package "pyasic-rs on PyPI"; the README spells it `pyasic_rs` (PyPI treats the two spellings as the same name) [#4899 · 2026-05-26 · Brett Rowan].
+- Crate layout: in March 2026 the repo was split into a Cargo workspace of per-make and per-firmware crates for maintainability and compile time, with "Lots of breaking changes" ([PR #158](../../raw/mining-software/256f-tools/2026-03-04-github-asic-rs-pr-158-feature-convert-to-using-workspaces.md)). The top-level `asic-rs` crate now re-exports the core crate and each firmware crate behind feature flags, so you depend on one crate and pick firmware support by feature ([PR #231](../../raw/mining-software/256f-tools/2026-04-10-github-asic-rs-pr-231-feat-re-export-core-and-firmware-crate.md)).
+- Feature-gating bug: the `python` feature enabled every firmware crate because it lacked Cargo's weak `?` syntax; the fix cut a cp314 musllinux wheel build from 621 to 601 compile requests. Makes stay non-optional by design ([PR #281](../../raw/mining-software/256f-tools/2026-06-17-github-asic-rs-pr-281-fix-features-weak-python-features-so-f.md); [issue #278](../../raw/mining-software/256f-tools/2026-06-17-github-asic-rs-issue-278-interest-in-optional-per-miner-carg.md)).
+- Firmware types must stay externally extensible: a proposal to centralize firmware names in one enum was rejected, and a per-crate version was merged later ([PR #349](../../raw/mining-software/256f-tools/2026-09-01-github-asic-rs-pr-349-refactor-firmware-centralize-firmware.md); [PR #367](../../raw/mining-software/256f-tools/2026-09-15-github-asic-rs-pr-367-refactor-firmware-centralize-firmware.md)).
+- Vendor API specs live in the repo under `meta/` (ePIC PowerPlay OpenAPI for 1.30.0 and 1.38.3; VNish v1.2.7 and 1.3.4 schemas); maintainers suggest feeding these to coding agents when implementing a backend ([PR #167](../../raw/mining-software/256f-tools/2026-03-11-github-asic-rs-pr-167-docs-add-epic-1-30-0-powerplay-openapi.md); [PR #390](../../raw/mining-software/256f-tools/2026-09-23-github-asic-rs-pr-390-docs-add-epic-1-38-3-powerplay-openapi.md); [PR #243](../../raw/mining-software/256f-tools/2026-04-20-github-asic-rs-pr-243-docs-add-vnish-v1-2-7-api-schema.md); [PR #297](../../raw/mining-software/256f-tools/2026-06-24-github-asic-rs-pr-297-docs-add-vnish-v1-3-4-api-schema.md)).
+
+## Getting started
+
+The basic flow is the same in every language ([docs index](../../raw/mining-software/256f-tools/github-asic-rs-docs-index.md); [getting started](../../raw/mining-software/256f-tools/github-asic-rs-docs-getting-started.md)):
+
+1. **Build a `MinerFactory`.** For one known miner, call `get_miner(ip)`; the factory identifies the firmware and constructs the matching backend.
+2. **Or scan a range.** `from_subnet` (e.g. a /24), `from_octets` or `from_range`, then `scan()`. The README examples set `with_concurrent_limit(2500)`. `scan_stream` yields miners as they are found instead of waiting for the whole scan ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md)).
+3. **Set credentials if they are not the defaults.** Backends use built-in default credentials unless you call `set_auth`; do it before starting other operations on that miner ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md)).
+4. **Read telemetry.** `get_data()` returns a full `MinerData` snapshot; focused `get_*` calls fetch one field. Expensive fields such as `Hashboards` and `Chips` can be excluded from a snapshot ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md); [PR #252](../../raw/mining-software/256f-tools/2026-05-19-github-asic-rs-pr-252-feat-allow-selecting-data-for-the-get.md)).
+5. **Check `supports_*` before any control**, then apply pools, fan, tuning or other changes ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md)).
+
+Go specifics: Go 1.23+, Rust stable, a C toolchain and `CGO_ENABLED=1`; build the native library with `make -C go ffi`, because `go get` fetches Go sources but not `libasic_rs_ffi`; always `Close()` factory and miner handles. Streaming scans, `MinerListener` and `prepare_firmware` are not wrapped in Go yet ([Go README](../../raw/mining-software/256f-tools/github-asic-rs-go-readme.md)).
+
+Discovery tuning: connectivity retries are extra attempts after the first probe (default three; zero still probes once), and the identification timeout is an end-to-end deadline covering discovery and miner construction ([API guide](../../raw/mining-software/256f-tools/github-asic-rs-docs-api.md)).
+
+## API surface
+
+**Identity and telemetry.** Identity (IP, make, model, firmware, algorithm, hardware shape) is available without awaiting. Telemetry getters include MAC, serial, hostname, firmware version, hashboards, hashrate, fans, wattage, best share, session best share, messages, pools and mining state ([API guide](../../raw/mining-software/256f-tools/github-asic-rs-docs-api.md)).
+
+**Controls**, each gated by a `supports_*` check: restart, pause/resume, fault light, power limit, password change, read logs, factory reset, restore stock OS, prepare firmware and upgrade firmware. `revalidate()` re-runs firmware detection on an existing handle ([API guide](../../raw/mining-software/256f-tools/github-asic-rs-docs-api.md)). Runtime `supports_{x}` flags arrived in February 2026 ([PR #134](../../raw/mining-software/256f-tools/2026-02-02-github-asic-rs-pr-134-feature-add-supports-x-flag.md)).
+
+- `factory_reset()` restores settings only; `restore_stock_os()` uninstalls aftermarket firmware and may reboot the miner; `prepare_firmware()` is read-only and never starts an upload ([API guide](../../raw/mining-software/256f-tools/github-asic-rs-docs-api.md)).
+- Hashboard enable/disable (`set_hashboards_enabled`) exists for ePIC UMC and Braiins OS, so fleet tools can re-enable boards turned off by an operator or after a fault ([PR #394](../../raw/mining-software/256f-tools/2026-09-24-github-asic-rs-pr-394-feat-add-hashboard-enable-controls.md)).
+
+**Config objects.** `PoolGroupConfig`/`PoolConfig` (named groups with a quota), `FanConfig` (auto or manual), `TuningConfig` (targets: power, hashrate, mining mode, preset, or per-board manual frequency/voltage) and a scaling config ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md); [Go README](../../raw/mining-software/256f-tools/github-asic-rs-go-readme.md)). Worker-suffix helpers append a caller-supplied suffix to pool usernames or strip the worker name after the first dot; they do not touch any firmware's own unique-worker-ID setting ([PR #402](../../raw/mining-software/256f-tools/2026-10-01-github-asic-rs-pr-402-feat-pools-add-worker-suffix-helpers.md)).
+
+**`operating_state`** is an optional enum for firmware that reports a detailed runtime state: mining, stable, startup, tuning, frequency/voltage adjustment, idling, pause, degraded mining, errors and more. ePIC/UMC, VNish, Braiins REST (25.07+), MARA and Proto populate it. `Stable` is set only when the firmware says so, unrecognized labels keep their raw value in `Unknown.raw`, and `is_mining` is not derived from it ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md); [PR #357](../../raw/mining-software/256f-tools/2026-09-10-github-asic-rs-pr-357-feat-data-expose-detailed-firmware-ope.md)).
+
+**`devfee_connected`** reports developer-fee connection health where firmware exposes it: ePIC/UMC from `Last Devfee Error` in `/summary`, VNish from typed `DevFee` pool status, LuxOS from `FeeStatus`; `None` means no usable status ([README](../../raw/mining-software/256f-tools/github-256foundation-asic-rs.md); [PR #366](../../raw/mining-software/256f-tools/2026-09-15-github-asic-rs-pr-366-feat-data-expose-devfee-connection-sta.md)).
+
+Other data fields worth knowing:
+
+- `best_share` / `session_best_share` are wired only for AxeOS-family firmware (`bestDiff` / `bestSessionDiff`); parsing accepts numbers and suffix strings ([PR #351](../../raw/mining-software/256f-tools/2026-09-04-github-asic-rs-pr-351-feat-add-best-share-and-session-best-s.md)). On Braiins, `best_share` can overflow u64, so `best_share_str` is preferred on 26.04+ ([issue #350](../../raw/mining-software/256f-tools/2026-09-04-github-asic-rs-issue-350-expose-overall-best-and-session-sha.md)).
+- Pool `last_share_time` catches "frozen" miners that look like they are hashing while their last accepted share was hours ago ([PR #365](../../raw/mining-software/256f-tools/2026-09-15-github-asic-rs-pr-365-feat-data-expose-pool-last-share-time.md); [PR #132](../../raw/mining-software/256f-tools/2026-01-29-github-asic-rs-pr-132-fix-antminer-is-mining-to-return-false.md)).
+- `total_chips` sums only boards that report chip counts, so one dead board no longer blanks the total ([PR #125](../../raw/mining-software/256f-tools/2026-01-09-github-asic-rs-pr-125-fix-handle-optional-working-chips-in-t.md)).
+- `TuningCapabilities` exposes default/min/max power target; an S19k Pro on Braiins OS reported default 2760 W, min 771 W, max 6435 W ([PR #292](../../raw/mining-software/256f-tools/2026-06-23-github-asic-rs-pr-292-feat-power-expose-factory-default-min.md)).
+
+**Wire formats differ by binding.** Rust/C/Go JSON emits `"TeraHash"`, StratumV1, structured pool URLs and Power objects, while Python keeps `"TH/s"`, `stratum+tcp` and URL strings; Go accepts both input forms ([API guide](../../raw/mining-software/256f-tools/github-asic-rs-docs-api.md)).
+
+**Python semantics.** Mutating calls (pools, pause, resume, restart) raise on failure instead of returning `None`, while getters keep returning optional values because an absent reading is a real answer ([PR #332](../../raw/mining-software/256f-tools/2026-08-19-github-asic-rs-pr-332-fix-python-raise-when-a-pool-write-fai.md)). Duration fields such as `uptime` serialize as `datetime.timedelta`, a fix made after a Home Assistant sensor crashed on a Braiins OS S19k Pro ([PR #282](../../raw/mining-software/256f-tools/2026-06-17-github-asic-rs-pr-282-fix-pydantic-serialize-duration-as-tim.md)). `HashAlgorithm` and `HashRateUnit` compare equal to their string names ([PR #338](../../raw/mining-software/256f-tools/2026-08-24-github-asic-rs-pr-338-feat-core-let-hashalgorithm-and-hashra.md)).
+
+## Discovery and scanning at fleet scale
+
+- Identification is two-stage: determine the firmware first, then use that firmware's API to find the model ([PR #3](../../raw/mining-software/256f-tools/2025-04-04-github-asic-rs-pr-3-refactor-simplify-some-of-the-factory-mo.md)).
+- `get_miner` pre-checks TCP ports 80, 4028, 4029 and 8889; `get_miner_direct` skips that for pool software that already has a live Stratum session but cannot reach firewalled management ports ([PR #368](../../raw/mining-software/256f-tools/2026-09-15-github-asic-rs-pr-368-feat-add-get-miner-direct-to-skip-port.md)). Each firmware's probe now carries its own port, because WhatsMiners use 4028 for the V1/V2 API and 4433 for V3 ([issue #370](../../raw/mining-software/256f-tools/2026-09-15-github-asic-rs-issue-370-feat-make-rpc-and-http-management-p.md); [PR #382](../../raw/mining-software/256f-tools/2026-09-16-github-asic-rs-pr-382-feat-discovery-add-discoverycommand-wi.md)).
+- A UDP miner listener hears AntMiner on port 14235 and WhatsMiner on port 8888 ([PR #214](../../raw/mining-software/256f-tools/2026-04-02-github-asic-rs-pr-214-fix-eliminate-runtime-panics-and-add-r.md)).
+- Explicit non-stock firmware IDs beat stock results, because MaraFW's HTTP probe looks stock-like ([PR #122](../../raw/mining-software/256f-tools/2026-01-03-github-asic-rs-pr-122-fix-marafw-detection-priority-add-paus.md)); on timeout the best-known result is returned instead of dropping valid stock identifications such as Bitaxe ([PR #124](../../raw/mining-software/256f-tools/2026-01-08-github-asic-rs-pr-124-fix-improve-miner-discovery.md)).
+- Unknown models stay visible: miners reporting model "undefined" (an ePIC rig with all boards dead) or a board-less Antminer control board reporting `BHB42XXX` used to vanish from scans; `Unknown(String)` fallbacks now keep them, so a new model does not force a patch-release chain through every downstream crate ([issue #155](../../raw/mining-software/256f-tools/2026-03-02-github-asic-rs-issue-155-epic-miner-dropped-from-scan-when-c.md); [issue #191](../../raw/mining-software/256f-tools/2026-03-19-github-asic-rs-issue-191-minerfactory-drops-otherwise-identi.md); [PR #222](../../raw/mining-software/256f-tools/2026-04-07-github-asic-rs-pr-222-feat-add-unknown-string-fallback-to-al.md)). The fallback briefly reported a Braiins BMM100 as make "Antminer" until fixed ([PR #279](../../raw/mining-software/256f-tools/2026-06-17-github-asic-rs-pr-279-fix-makes-ensure-that-miner-models-mak.md)).
+- Large networks: on a /22, Nmap found 478 hosts with port 80 or 4028 open in 18 seconds while asic-rs found 461 miners but took 9 minutes ([issue #319](../../raw/mining-software/256f-tools/2026-07-29-github-asic-rs-issue-319-improve-large-network-scanning-with.md)). The fix probes ports concurrently and separates TCP from identification concurrency, with measured defaults "TCP 256/500 ms, identification 128/3 s, construction 5 s, no retries"; it reported 11.7s for a /22 with 441 target devices ([PR #320](../../raw/mining-software/256f-tools/2026-07-29-github-asic-rs-pr-320-fix-improve-large-subnet-scan-reliabil.md)).
+- Cold ARP caches cause misses: both maintainers saw consistent results only after a first run warmed the neighbour table, so TCP-probe results are not a hard exclusion by default ([PR #320](../../raw/mining-software/256f-tools/2026-07-29-github-asic-rs-pr-320-fix-improve-large-subnet-scan-reliabil.md)). An alternative production approach from Zetta was "2 stage scanning" (a fast low-timeout pass, then a slower rescan of dead hosts); asic-rs adopted factory retries instead ([PR #22](../../raw/mining-software/256f-tools/2025-08-01-github-asic-rs-pr-22-feat-factory-add-subnet-scanning-suppor.md)).
+- Port exhaustion: scanning 12 /22 ranges from macOS exhausted local ephemeral ports (one snapshot: 12,340 TIME_WAIT plus 3,800 established against 16,384 ports); zero-linger probes plus `Connection: close` fixed discovery, and raising file-descriptor limits does not help ([PR #397](../../raw/mining-software/256f-tools/2026-09-28-github-asic-rs-pr-397-fix-scanner-reduce-local-port-pressure.md)). The same pressure silently drops data-collection requests: one scan returned 2,528 rows without MACs ([issue #395](../../raw/mining-software/256f-tools/2026-09-28-github-asic-rs-issue-395-1-3-preserve-collection-failures-an.md)).
+- Non-default passwords remain a gap: stock Antminers with a changed password are not discoverable, and Braiins miners are found but return no useful data (open at capture) ([issue #403](../../raw/mining-software/256f-tools/2026-10-01-github-asic-rs-issue-403-when-stock-miner-has-a-non-default.md); [issue #404](../../raw/mining-software/256f-tools/2026-10-01-github-asic-rs-issue-404-when-braiins-miner-has-a-non-defaul.md)). Per-miner credentials (`MinerAuth`, redacted in debug output) and discovery-time auth exist for mixed fleets ([PR #204](../../raw/mining-software/256f-tools/2026-03-24-github-asic-rs-pr-204-feat-auth-add-per-miner-auth-credentia.md); [PR #224](../../raw/mining-software/256f-tools/2026-04-08-github-asic-rs-pr-224-feat-factory-support-auth-during-miner.md)).
+
+## Supported firmware and devices (As-Of 2026-10-07 capture)
+
+The supported-devices page is generated from the Rust source: the matrix comes from each backend's `supports_...` methods and the model lists from the make enums ([supported devices](../../raw/mining-software/256f-tools/github-asic-rs-docs-supported-devices.md)). ✓ = every backend subtype supports it; ◐ = mixed or conditional; – = none.
+
+| Firmware type | Pools | Scaling | Tuning | Fan | Light | Power limit | Restart | Pause/Resume | Upgrade FW | Change pwd | Factory reset | Restore stock OS | Read logs |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| AntMiner Stock | ✓ | – | ✓ | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | ✓ | – | ✓ |
+| Auradine Stock | ✓ | – | – | – | ✓ | ✓ | ✓ | ✓ | – | – | – | – | – |
+| AvalonMiner Stock | – | – | – | – | ✓ | ✓ | ◐ | ✓ | – | – | – | – | – |
+| Bitaxe Stock | – | – | – | – | – | – | – | ◐ | – | – | – | – | – |
+| Braiins | ✓ | – | – | – | ✓ | ✓ | ✓ | ✓ | – | ✓ | ◐ | ◐ | ✓ |
+| Elphapex Stock | ✓ | – | – | – | ✓ | – | ✓ | – | – | – | – | – | – |
+| FutureBit Stock | – | – | – | – | – | – | – | – | – | – | – | – | – |
+| LuxOS | ✓ | – | – | – | ✓ | – | ✓ | ✓ | – | – | – | ✓ | – |
+| Marathon | ✓ | – | – | – | – | – | – | ✓ | – | – | – | – | – |
+| Nerdaxe Stock | – | – | – | – | – | – | – | – | – | – | – | – | – |
+| Proto Stock | ✓ | – | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – | ✓ | – | – | ✓ |
+| SealMiner Stock | ✓ | – | ✓ | – | ✓ | ✓ | ✓ | ✓ | – | – | – | – | – |
+| UMC OS (ePIC) | ✓ | ✓ | ✓ | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – | ◐ | ✓ |
+| VNish | ✓ | – | ✓ | – | ✓ | ✓ | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ |
+| VolcMiner Stock | ✓ | – | – | – | – | – | ✓ | – | – | ✓ | – | – | – |
+| WhatsMiner Stock | ◐ | – | ◐ | – | ◐ | ◐ | ◐ | ◐ | – | – | – | – | – |
+
+Model counts by make: AntMiner 61 models across 24 families (D3 through the S23 hydro line, including S9, S19, S21, L-series and Z15); Auradine 5; AvalonMiner 21; Bitaxe 4 (BM1366, BM1368, BM1370, BM1397); Braiins BMM 100 and BMM 101; Elphapex 3 (DG1, DG1+, DG-Home1); ePIC 2 (BLOCKMINER 520i, ANTMINER S19J PRO DUAL); FutureBit Apollo1/Apollo2; Nerdaxe 4; Proto RIG; SealMiner A2; VolcMiner D1; WhatsMiner 499 models across 32 families ([supported devices](../../raw/mining-software/256f-tools/github-asic-rs-docs-supported-devices.md)).
+
+### When support landed
+
+| Make / firmware | Date | Source |
+|---|---|---|
+| WhatsMiner + Antminer stock model handling (PR #1) | 2025-03-19 | [PR #1](../../raw/mining-software/256f-tools/2025-03-19-github-asic-rs-pr-1-feature-add-miner-model-processing.md) |
+| LuxOS discovery | 2025-03-30 | [PR #2](../../raw/mining-software/256f-tools/2025-03-30-github-asic-rs-pr-2-refactor-change-to-factory-pattern-and-a.md) |
+| Braiins OS discovery (Braiins make and BOS firmware) | 2025-04-04 | [PR #3](../../raw/mining-software/256f-tools/2025-04-04-github-asic-rs-pr-3-refactor-simplify-some-of-the-factory-mo.md) |
+| WhatsMiner BTMiner V3 RPC | 2025-05-30 | [PR #6](../../raw/mining-software/256f-tools/2025-04-29-github-asic-rs-pr-6-feature-btminer-v3-rpc-backend.md) |
+| Bitaxe / ESP-Miner (2.0.0+ and 2.9.0+ backends) | 2025-07-28 | [PR #13](../../raw/mining-software/256f-tools/2025-07-28-github-asic-rs-pr-13-feature-separate-espminer-versions-in-2.md) |
+| WhatsMiner BTMiner V2 | 2025-08-06 | [PR #31](../../raw/mining-software/256f-tools/2025-08-06-github-asic-rs-pr-31-feature-add-btminer-v2.md) |
+| VnishOS | 2025-08-08 | [PR #32](../../raw/mining-software/256f-tools/2025-08-07-github-asic-rs-pr-32-initial-vnishos-backend.md) |
+| ePIC firmware and models; BTMiner V1 (M20S) | 2025-08-14 | [PR #44](../../raw/mining-software/256f-tools/2025-08-13-github-asic-rs-pr-44-feature-add-epic-fw-and-model-support.md); [PR #39](../../raw/mining-software/256f-tools/2025-08-11-github-asic-rs-pr-39-feature-add-btminer-v1-m20s.md) |
+| Avalon | 2025-08-18 | [PR #46](../../raw/mining-software/256f-tools/2025-08-18-github-asic-rs-pr-46-feat-implement-support-for-avalon-miner.md) |
+| Antminer modern stock backend | 2025-08-20 | [PR #51](../../raw/mining-software/256f-tools/2025-08-19-github-asic-rs-pr-51-feat-impl-antminer-modern-backend.md) |
+| MARA firmware | 2025-08-21 | [PR #57](../../raw/mining-software/256f-tools/2025-08-21-github-asic-rs-pr-57-feat-implement-mara-fw.md) |
+| LuxMiner data | 2025-09-22 | [PR #64](../../raw/mining-software/256f-tools/2025-09-15-github-asic-rs-pr-64-feat-luxminer-support.md) |
+| Braiins OS 25.07 | 2025-09-26 | [PR #72](../../raw/mining-software/256f-tools/2025-09-24-github-asic-rs-pr-72-feature-add-braiins-os-support-25-07.md) |
+| NerdAxe OS | 2026-01-26 | [PR #126](../../raw/mining-software/256f-tools/2026-01-23-github-asic-rs-pr-126-feature-add-nerdaxe-os.md) |
+| ePIC UMC on WhatsMiners | 2026-01-27 | [PR #128](../../raw/mining-software/256f-tools/2026-01-27-github-asic-rs-pr-128-feature-add-support-for-epic-umc-on-wh.md) |
+| Braiins OS 21.09 through 25.07 | 2026-02-23 | [PR #141](../../raw/mining-software/256f-tools/2026-02-19-github-asic-rs-pr-141-feat-add-support-for-braiinsos-from-21.md) |
+| Auradine | 2026-04-14 | [PR #230](../../raw/mining-software/256f-tools/2026-04-10-github-asic-rs-pr-230-feat-add-auradine-support.md) |
+| SealMiner | 2026-05-05 | [PR #186](../../raw/mining-software/256f-tools/2026-03-18-github-asic-rs-pr-186-feat-add-sealminer-support.md) |
+| Proto backend and RIG | 2026-06-09 | [PR #266](../../raw/mining-software/256f-tools/2026-06-01-github-asic-rs-pr-266-feat-add-proto-backend-and-rig-support.md) |
+| FutureBit (Apollo II, reported via sv2-apps) | 2026-06-18 | [PR #283](../../raw/mining-software/256f-tools/2026-06-18-github-asic-rs-pr-283-feat-futurebit-add-futurebit-support.md) |
+| VolcMiner stock | 2026-06-29 | [PR #298](../../raw/mining-software/256f-tools/2026-06-26-github-asic-rs-pr-298-feat-volcminer-add-stock-firmware-supp.md) |
+| Elphapex DG series | 2026-07-27 | [PR #311](../../raw/mining-software/256f-tools/2026-07-09-github-asic-rs-pr-311-feat-add-support-for-elphapex-dg-serie.md) |
+
+Antminer models added one by one: S21 XP ([PR #74](../../raw/mining-software/256f-tools/2025-09-28-github-asic-rs-pr-74-add-epic-umc-as-board-type-add-s21-xp-m.md)), S19j Pro+ via VNish ([PR #98](../../raw/mining-software/256f-tools/2025-10-30-github-asic-rs-pr-98-bug-vnish-model-parsing-feature-new-mod.md)), S19e XP Hydro ([PR #114](../../raw/mining-software/256f-tools/2025-12-01-github-asic-rs-pr-114-feature-add-s19e-xp-hydro-support.md)), S19 PRO (110TH) ([PR #118](../../raw/mining-software/256f-tools/2025-12-22-github-asic-rs-pr-118-feature-add-support-for-antminer-s19-p.md)), S21 Pro+ ([PR #263](../../raw/mining-software/256f-tools/2026-05-28-github-asic-rs-pr-263-fix-antminer-add-s21-pro-model-mapping.md)), L3++ ([PR #313](../../raw/mining-software/256f-tools/2026-07-13-github-asic-rs-pr-313-feat-antminer-add-l3-support.md)), L11 ([PR #323](../../raw/mining-software/256f-tools/2026-08-12-github-asic-rs-pr-323-feat-antminer-add-l11-support.md)), S21++ ([PR #341](../../raw/mining-software/256f-tools/2026-08-25-github-asic-rs-pr-341-feat-add-s21.md)), and S21 XP Hyd / S21j XP Hyd / S23 Hyd ([PR #409](../../raw/mining-software/256f-tools/2026-10-07-github-asic-rs-pr-409-feat-antminer-add-s21-s23-hydro-models.md)). Avalon gained the A15 ([PR #272](../../raw/mining-software/256f-tools/2026-06-09-github-asic-rs-pr-272-feat-add-support-for-the-avalon-a15-an.md)) and 15PRO, 1566HA and 1566HU hydro aliases ([PR #307](../../raw/mining-software/256f-tools/2026-06-30-github-asic-rs-pr-307-feat-avalonminer-add-litestats-telemet.md)).
+
+Not supported at capture: a GMiner backend ([issue #93](../../raw/mining-software/256f-tools/2025-10-20-github-asic-rs-issue-93-impl-gminer-backend.md)), FuFuMinerOS from BitFuFu, which a tester said broke one of their miners ([issue #70](../../raw/mining-software/256f-tools/2025-09-23-github-asic-rs-issue-70-validate-umminer-backend.md)), and ForgeOS on the BitForge Nano ([issue #406](../../raw/mining-software/256f-tools/2026-10-06-github-asic-rs-issue-406-detect-forgeos-bitforge-nano-as-a-b.md)).
+
+Hardware shapes learned from fleet telemetry: Antminer L11 has 3 boards × 88 chips and 4 fans, the same as the L9 ([PR #323](../../raw/mining-software/256f-tools/2026-08-12-github-asic-rs-pr-323-feat-antminer-add-l11-support.md)); S21 XP Hyd 3 × 160, S21j XP Hyd 3 × 42, S23 Hyd 3 × 84 ([PR #409](../../raw/mining-software/256f-tools/2026-10-07-github-asic-rs-pr-409-feat-antminer-add-s21-s23-hydro-models.md)); S21e XP Hydro reports minertype "Antminer S21e XP Hyd." with 160 chips per board ([issue #104](../../raw/mining-software/256f-tools/2025-11-21-github-asic-rs-issue-104-does-not-support-s21exp-hydro.md)); Avalon 1566HA has 4 boards and 1566HU 3, both hydro ([PR #307](../../raw/mining-software/256f-tools/2026-06-30-github-asic-rs-pr-307-feat-avalonminer-add-litestats-telemet.md)).
+
+## Per-vendor API quirks
+
+These are the behaviours the maintainers documented while building backends. They are useful to anyone scripting against these firmwares, with or without asic-rs.
+
+### Antminer stock firmware (Bitmain)
+
+- Web UI uses HTTP Digest auth; key CGI endpoints are `get_system_info.cgi` (`minertype`), `miner_type.cgi` (control-board `subtype`), `get_miner_conf.cgi` / `set_miner_conf.cgi`, `stats.cgi` and `upgrade.cgi` ([issue #191](../../raw/mining-software/256f-tools/2026-03-19-github-asic-rs-issue-191-minerfactory-drops-otherwise-identi.md); [PR #182](../../raw/mining-software/256f-tools/2026-03-17-github-asic-rs-pr-182-feat-add-firmware-upgrade-for-antminer.md)). Older firmware returns 404 for `miner_type.cgi`, so asic-rs falls back to `get_system_info.cgi`; that also fixed Z15 detection ([PR #321](../../raw/mining-software/256f-tools/2026-07-31-github-asic-rs-pr-321-fix-fallback-to-get-system-info-cgi-wh.md)).
+- **Control-board detection:** `BBCTRL` means BeagleBone Black, subtype `zynq7007` means Xilinx, and `AMLCtrl_*` subtypes mean Amlogic ([PR #184](../../raw/mining-software/256f-tools/2026-03-17-github-asic-rs-pr-184-fix-antminer-recognize-bbctrl-control.md); [PR #216](../../raw/mining-software/256f-tools/2026-04-06-github-asic-rs-pr-216-fix-antminer-map-zynq7007-subtype-to-x.md)). A control board with no hashboards reports the generic `BHB42XXX`; a suggestion that `:6060/productName` gives the real model on all firmware back to 2020 was raised but questioned ([PR #192](../../raw/mining-software/256f-tools/2026-03-19-github-asic-rs-pr-192-fix-antminer-allow-bhb42xxx-to-be-foun.md)).
+- Serial number: 2025 S21 firmware exposes `serinum`, XP firmware `serial_no`; both are read ([PR #106](../../raw/mining-software/256f-tools/2025-11-22-github-asic-rs-pr-106-add-antminer-serial-serinum.md)).
+- **Sleep/pause by era:** newer firmware uses `bitmain-work-mode`, older uses `miner-mode`. On S19j Pro firmware from Dec 2022, writing `bitmain-work-mode` returns OK but does nothing, and `set_miner_conf.cgi` can take around 21s ([PR #249](../../raw/mining-software/256f-tools/2026-05-11-github-asic-rs-pr-249-fix-antminer-make-v2020-sleep-mode-wri.md)). S21e XP Hydro firmware moved curtailment to `set_miner_conf`, which broke Foreman with "get bitmain-work-mode failed" ([issue #104](../../raw/mining-software/256f-tools/2025-11-21-github-asic-rs-issue-104-does-not-support-s21exp-hydro.md)). An S21+ accepted pause but never slept; asic-rs now sends both keys, and the issue was still open at capture ([issue #310](../../raw/mining-software/256f-tools/2026-07-09-github-asic-rs-issue-310-antminer-s21plus-found-during-scan.md); [PR #312](../../raw/mining-software/256f-tools/2026-07-09-github-asic-rs-pr-312-fix-antminer-send-both-keys-when-setti.md)). The backend is split by firmware era rather than piling special cases into one ([PR #324](../../raw/mining-software/256f-tools/2026-08-12-github-asic-rs-pr-324-fix-antminer-read-chain-rate-and-board.md)).
+- `bitmain-work-mode` can read normal even when an overheated miner shows 0 hashrate ([PR #132](../../raw/mining-software/256f-tools/2026-01-29-github-asic-rs-pr-132-fix-antminer-is-mining-to-return-false.md)).
+- Pools: stock `set_miner_conf.cgi` overwrites only the slots it receives, so pushing 2 pools onto a miner holding 3 left the old third one; asic-rs now always sends three entries with blanks ([PR #407](../../raw/mining-software/256f-tools/2026-10-06-github-asic-rs-pr-407-fix-antminer-clear-unused-pool-slots-w.md)).
+- cgminer `new_api` must be a top-level flag next to `command`; nested inside `parameter`, the firmware silently returns the legacy payload ([PR #328](../../raw/mining-software/256f-tools/2026-08-13-github-asic-rs-pr-328-fix-antminer-send-new-api-as-a-top-lev.md)). On firmware `86.48-2.0.0` (L9/L11) power draw appears only in the `new_api` stats payload; T21, S21 Hydro and S21+ Hydro expose no power draw on any transport ([PR #325](../../raw/mining-software/256f-tools/2026-08-12-github-asic-rs-pr-325-fix-antminer-read-power-draw-from-the.md)).
+- Stock firmware omits per-board inlet/outlet chip temps, board voltage, per-board expected hashrate and per-chip arrays that VNish reports on the same T21 hardware ([issue #326](../../raw/mining-software/256f-tools/2026-08-13-github-asic-rs-issue-326-inconsistent-minerdata-fields-when.md)).
+- Firmware upgrades accept merged BMU bundles and single `.bmu` images, pick the payload matching the control-board subtype, and need a Digest challenge fetched first because streaming multipart bodies cannot be replayed ([PR #182](../../raw/mining-software/256f-tools/2026-03-17-github-asic-rs-pr-182-feat-add-firmware-upgrade-for-antminer.md); [PR #343](../../raw/mining-software/256f-tools/2026-08-26-github-asic-rs-pr-343-fix-antminer-update-stock-firmware-bun.md)). `prepare_firmware` validates headers, CRC and model/subtype compatibility using only a GET ([PR #360](../../raw/mining-software/256f-tools/2026-09-10-github-asic-rs-pr-360-feat-firmware-add-non-mutating-preflig.md)).
+
+### WhatsMiner (MicroBT)
+
+- The only make using HTTPS on its web interface ([PR #4](../../raw/mining-software/256f-tools/2025-04-08-github-asic-rs-pr-4-refactor-remove-https-root.md)). asic-rs ships the reference implementation of the V3 RPC and unlocks the API automatically [#4895 · 2026-05-26 · Brett Rowan] [#4897 · 2026-05-26 · Brett Rowan].
+- Mining-state flags are inverted: V1 `btmineroff` and V2 `mineroff` mean mining is OFF when "true"; V3 reports `working` ([PR #187](../../raw/mining-software/256f-tools/2026-03-18-github-asic-rs-pr-187-fix-whatsminer-correct-inverted-is-min.md)).
+- Power modes (low/normal/high) are separate from wattage limits. Some V3 miners reject `set.miner.mode` but accept V2 per-mode commands on port 4028, so asic-rs falls back ([PR #194](../../raw/mining-software/256f-tools/2026-03-19-github-asic-rs-pr-194-feat-whatsminer-implement-supportstuni.md)). V2 mode commands and `power_off` never reply, but read-back confirms them; some V2 units do not support custom power limits at all ([PR #200](../../raw/mining-software/256f-tools/2026-03-23-github-asic-rs-pr-200-fix-whatsminer-treat-v2-mining-mode-wr.md)).
+- V3 sometimes reports power as the 32-bit integer limit ([PR #127](../../raw/mining-software/256f-tools/2026-01-27-github-asic-rs-pr-127-bug-fix-whatsminer-32-bit-int-limit-po.md)). Numeric error codes are translated with pyasic's lookup table, e.g. "Power input voltage is lower than 230V for high power mode." ([PR #211](../../raw/mining-software/256f-tools/2026-04-01-github-asic-rs-pr-211-feat-whatsminer-add-error-code-lookup.md)).
+- WhatsMiners reboot on every power-limit change, per a contributor ([PR #284](../../raw/mining-software/256f-tools/2026-06-18-github-asic-rs-pr-284-feat-vnish-implement-setpowerlimit-pre.md)).
+
+### ePIC / UMC OS (PowerPlay)
+
+- HTTP API on port 4028 (`/summary`, `/capabilities`) with published OpenAPI specs; summary reports software such as "PowerPlay-BMS v1.14.0" ([issue #155](../../raw/mining-software/256f-tools/2026-03-02-github-asic-rs-issue-155-epic-miner-dropped-from-scan-when-c.md)). The display name changed from ePIC to UMC OS to match the product ([PR #250](../../raw/mining-software/256f-tools/2026-05-12-github-asic-rs-pr-250-chore-epic-update-firmware-name-to-umc.md)).
+- Runs on Antminers and WhatsMiners and on several control boards (UMC, BeagleBone `GENERIC AM33XX`, Xilinx, Amlogic) ([PR #128](../../raw/mining-software/256f-tools/2026-01-27-github-asic-rs-pr-128-feature-add-support-for-epic-umc-on-wh.md); [PR #207](../../raw/mining-software/256f-tools/2026-03-27-github-asic-rs-pr-207-refactor-epic-map-generic-am33xx-contr.md); [PR #247](../../raw/mining-software/256f-tools/2026-05-01-github-asic-rs-pr-247-fix-epic-detect-xilinx-control-boards.md)).
+- Perpetual tuning is set via `POST /perpetualtune/algo`, with scaling values in the same call because scaling has no endpoint of its own ([PR #210](../../raw/mining-software/256f-tools/2026-04-01-github-asic-rs-pr-210-feat-epic-add-powerplay-tuning-setter.md); [PR #333](../../raw/mining-software/256f-tools/2026-08-19-github-asic-rs-pr-333-fix-epic-implement-set-scaling-config.md)). Pools use a single group via `coin` or several via quota-based `hashratesplit` ([PR #166](../../raw/mining-software/256f-tools/2026-03-11-github-asic-rs-pr-166-feat-implement-epic-pool-and-hashrate.md)).
+- An ePIC developer said a newer power-tune feature works only on S21 miners and holds power within 50W of target ([PR #289](../../raw/mining-software/256f-tools/2026-06-22-github-asic-rs-pr-289-feat-throttle-native-manual-throttle-s.md)).
+- Serials: `cpuSerial` is the control-board serial; in a survey of 438 units the manufacturer serial was usually null, populated on 67 ([PR #327](../../raw/mining-software/256f-tools/2026-08-13-github-asic-rs-pr-327-fix-epic-report-the-miner-serial-rathe.md)).
+- Firmware upload uses multipart `/systemupdate` with a SHA-256 checksum ([PR #228](../../raw/mining-software/256f-tools/2026-04-09-github-asic-rs-pr-228-feat-firmware-add-upgrade-options-and.md)).
+
+### LuxOS, MARA firmware and Auradine
+
+- **LuxOS:** events surface as miner messages ([PR #229](../../raw/mining-software/256f-tools/2026-04-09-github-asic-rs-pr-229-feat-add-support-for-luxos-events-as-m.md)); chips can report status "Unknown", which broke chip counts ([PR #226](../../raw/mining-software/256f-tools/2026-04-09-github-asic-rs-pr-226-fix-fix-luxos-chip-count-parsing-when.md)).
+- **MARA firmware (MaraFW, Kaonsu web API):** reports hashrate in GH/s, not TH/s ([PR #117](../../raw/mining-software/256f-tools/2025-12-15-github-asic-rs-pr-117-bug-change-marathon-hashrate-unit-from.md)). Pause/resume uses `/kaonsu/v1/miner_config` (`work-mode-selector`) and restores the previous mode from the config-history log, the same endpoints the web UI uses ([PR #122](../../raw/mining-software/256f-tools/2026-01-03-github-asic-rs-pr-122-fix-marafw-detection-priority-add-paus.md)).
+- **Auradine (TeraFlux API):** pool updates submit only the first 3 pools, need explicit passwords to avoid blanking secrets, and use 1-based indexing ([PR #230](../../raw/mining-software/256f-tools/2026-04-10-github-asic-rs-pr-230-feat-add-auradine-support.md)).
+
+### VNish
+
+- No arbitrary wattage control, only named autotune presets plus a throttle. asic-rs maps a power limit to the highest tuned preset at or below it: tested, 3700 W became preset 3635 and 3500 W became 3495. Tuned presets switch almost instantly; an un-tuned one triggers a tuning cycle ([PR #284](../../raw/mining-software/256f-tools/2026-06-18-github-asic-rs-pr-284-feat-vnish-implement-setpowerlimit-pre.md)).
+- Manual throttle is `POST /mining/throttle` (percent 20–100), an instant, reversible de-rate documented in the 1.3.4 OpenAPI ([PR #297](../../raw/mining-software/256f-tools/2026-06-24-github-asic-rs-pr-297-docs-add-vnish-v1-3-4-api-schema.md)).
+- Hydro units on VNish 1.3.3 report the spelled-out "ANTMINER S19 PRO HYDRO" and per-chain water temps (≈31–32 °C in / 44–46 °C out, per-board hashrates ≈35–37 TH/s) ([PR #277](../../raw/mining-software/256f-tools/2026-06-17-github-asic-rs-pr-277-fix-vnish-recognize-spelled-out-hydro.md)). VNish 1.3.x slimmed `/summary`, so thermal limits come from authenticated `/settings` (`restart_temp = 78`, `min_startup_water_temp = 17` on a live unit) ([PR #299](../../raw/mining-software/256f-tools/2026-06-26-github-asic-rs-pr-299-fix-vnish-read-1-3-x-thermal-limits-fr.md)).
+- Timezone is a fixed UTC offset with no DST, so a controller must re-apply it at each change ([PR #295](../../raw/mining-software/256f-tools/2026-06-23-github-asic-rs-pr-295-feat-timezone-get-set-list-miner-timez.md)). Cached bearer tokens expire server-side (e.g. after reboot), so clients re-authenticate on 401 ([PR #255](../../raw/mining-software/256f-tools/2026-05-20-github-asic-rs-pr-255-fix-braiins-vnish-refresh-expired-bear.md)).
+
+### Braiins OS
+
+- Five backends: GraphQL `v21_09`, `v25_03`, `v25_05` and REST `v25_07`, `v26_04`; BOS+ 26.01 and 25.11 map to `v25_07`, 26.07 and 26.08 to `v26_04` ([PR #334](../../raw/mining-software/256f-tools/2026-08-21-github-asic-rs-pr-334-fix-braiins-report-why-a-power-target.md)).
+- BOS+ rejects a pool group with an empty name while UMC OS and Antminer stock accept it, so writes looked successful but did nothing until errors were surfaced ([PR #331](../../raw/mining-software/256f-tools/2026-08-19-github-asic-rs-pr-331-fix-braiins-report-why-a-pool-write-wa.md)). Power-target writes are refused outside the tuner envelope; GraphQL can return errors with HTTP 200; tested at 3200 W on an S19 XP ([PR #334](../../raw/mining-software/256f-tools/2026-08-21-github-asic-rs-pr-334-fix-braiins-report-why-a-power-target.md)).
+- Pool hosts beginning `stratum.` (e.g. `stratum.braiins.com`) were mis-parsed until early 2026 ([PR #129](../../raw/mining-software/256f-tools/2026-01-27-github-asic-rs-pr-129-bug-fix-issue-with-some-pools-not-bein.md)). Board activity is inferred from per-board frequency ([PR #399](../../raw/mining-software/256f-tools/2026-09-29-github-asic-rs-pr-399-fix-braiins-derive-board-activity-from.md)).
+
+### AxeOS family and Avalon
+
+- The project is "Bitaxe", never "BitAxe", per its maintainer ([PR #73](../../raw/mining-software/256f-tools/2025-09-25-github-asic-rs-pr-73-bitaxe-has-never-been-called-bitaxe.md)). AxeOS reports `temp` (ASIC) and `vrTemp` (regulator) ([PR #315](../../raw/mining-software/256f-tools/2026-07-17-github-asic-rs-pr-315-fix-map-axeos-vr-temp-to-board-chip-te.md)); Bitaxe firmware 2.14.0 added pause/resume ([PR #361](../../raw/mining-software/256f-tools/2026-09-10-github-asic-rs-pr-361-feat-add-bitaxe-2-14-0-and-update-bita.md)). Detection looks for "AxeOS" or "Nerd" on the web root, so ForgeOS (a GPL fork) is missed even though its API matches ([issue #406](../../raw/mining-software/256f-tools/2026-10-06-github-asic-rs-issue-406-detect-forgeos-bitforge-nano-as-a-b.md)).
+- Avalon CGMiner `ascset` needs `parameter` as a comma-separated string; `softon` closes the connection without replying ([PR #223](../../raw/mining-software/256f-tools/2026-04-07-github-asic-rs-pr-223-fix-avalonminer-serialize-ascset-param.md)). Avalon Q may return empty `stats` while mining, with data only in `litestats` ([PR #307](../../raw/mining-software/256f-tools/2026-06-30-github-asic-rs-pr-307-feat-avalonminer-add-litestats-telemet.md)).
+
+## Hashrate units and algorithms
+
+- Until August 2026 every Antminer, Scrypt L-series included, was reported as SHA-256 with hashrate assumed in GH/s; the fix takes the algorithm from the model and the unit from the miner (VNish `hr_measure`, stock cgminer `rate_unit`) ([PR #335](../../raw/mining-software/256f-tools/2026-08-24-github-asic-rs-pr-335-fix-hashrate-read-algorithm-and-unit-f.md)). L9 and L11 report "Algorithm": "Scrypt" ([PR #323](../../raw/mining-software/256f-tools/2026-08-12-github-asic-rs-pr-323-feat-antminer-add-l11-support.md)).
+- Default display units by algorithm: TH/s for SHA-256 (and several others), GH/s for Scrypt and for X11; MH/s for EtHash, KH/s for Equihash ([PR #362](../../raw/mining-software/256f-tools/2026-09-10-github-asic-rs-pr-362-fix-core-use-algorithm-specific-hashra.md)).
+- AntMiner is the only mixed-algorithm make; Elphapex and VolcMiner are all Scrypt; the other makes are all SHA-256 ([PR #337](../../raw/mining-software/256f-tools/2026-08-24-github-asic-rs-pr-337-feat-core-name-the-algorithms-this-cra.md)).
+
+## Restore stock OS
+
+`restore_stock_os()` was added in September 2026, kept separate from `factory_reset()`; success means the request was accepted, not that the reboot finished ([PR #378](../../raw/mining-software/256f-tools/2026-09-15-github-asic-rs-pr-378-feat-core-add-stock-os-restore-abstrac.md)). Per firmware:
+
+| Firmware | Mechanism | Source |
+|---|---|---|
+| LuxOS | Privileged TCP RPC `uninstallluxos` on port 4028 with a session ID | [PR #379](../../raw/mining-software/256f-tools/2026-09-16-github-asic-rs-pr-379-feat-luxos-restore-stock-os.md) |
+| UMC OS (ePIC) | Authenticated `POST :4028/uninstall`, only on stock-controller builds; support read from `/capabilities` `UninstallSupported` | [PR #380](../../raw/mining-software/256f-tools/2026-09-16-github-asic-rs-pr-380-feat-epic-restore-stock-os.md); [PR #387](../../raw/mining-software/256f-tools/2026-09-17-github-asic-rs-pr-387-fix-epic-detect-restore-support-from-c.md) |
+| Braiins OS | `POST /api/v1/upgrade/restore-stock` on 26.04 only (204 started, 409 conflict, 501 on BMM and SD-card installs) | [PR #381](../../raw/mining-software/256f-tools/2026-09-16-github-asic-rs-pr-381-feat-braiins-restore-stock-os.md) |
+| VNish | `POST /api/v1/firmware/remove`; HTTP 400 signals model incompatibility | [PR #383](../../raw/mining-software/256f-tools/2026-09-16-github-asic-rs-pr-383-feat-vnish-restore-manufacturer-stock.md) |
+
+A restore-and-wait helper was withdrawn because the Miner trait should not know about the factory ([PR #389](../../raw/mining-software/256f-tools/2026-09-23-github-asic-rs-pr-389-feat-factory-wait-for-stock-os-restore.md)).
+
+## Data-model decisions and debates
+
+- **`is_mining` (resolved).** One contributor wanted it false whenever hashrate is zero (e.g. an overheated miner still in normal mode); the maintainer argued it should mean whether the miner *should* be mining. Final decision: `is_mining` represents whether the miner was paused via software, so a watchdog does not restart a user-paused miner ([PR #132](../../raw/mining-software/256f-tools/2026-01-29-github-asic-rs-pr-132-fix-antminer-is-mining-to-return-false.md); [issue #303](../../raw/mining-software/256f-tools/2026-06-29-github-asic-rs-issue-303-discussion-is-mining-representation.md); [PR #301](../../raw/mining-software/256f-tools/2026-06-29-github-asic-rs-pr-301-fix-is-mining-ensure-is-mining-represe.md)).
+- **Temperature model (resolved).** Four fields: per-board inlet (coolest) and outlet (hottest) chip temperature, plus miner-level coolant inlet and outlet. A contributor argued hydro coolant sensors are physically separate from chip sensors and the chip-to-water gap widens with load (the coolant delta under load runs ~8–15 °C); chip and coolant readings were kept as distinct fields ([PR #285](../../raw/mining-software/256f-tools/2026-06-18-github-asic-rs-pr-285-feat-board-add-boarddata-chip-temperat.md); [PR #286](../../raw/mining-software/256f-tools/2026-06-19-github-asic-rs-pr-286-feat-temp-4-field-temperature-model-pe.md)). Thermal limits are modelled as config (`TemperatureConfig`), mirroring Braiins OS and pyasic ([PR #290](../../raw/mining-software/256f-tools/2026-06-22-github-asic-rs-pr-290-feat-temp-configured-thermal-limits-mi.md)).
+- **Tuning target vs scaled target.** `wattage_limit` became `tuning_target` in March 2026 ([PR #168](../../raw/mining-software/256f-tools/2026-03-12-github-asic-rs-pr-168-feat-replace-wattage-limit-with-tuning.md)). The requested target is kept apart from `scaled_tuning_target`: a limit set to 3kw that scaling backed off to 2.4kw should not display as a 2.4kw target ([PR #273](../../raw/mining-software/256f-tools/2026-06-10-github-asic-rs-pr-273-feat-implement-scaled-tuning-target-fo.md)).
+
+> **Status: Disputed** — manual throttle
+> A contributor wanted a VNish throttle setter for fast solar/PV power-following and said throttling to ~90% lowered his W/TH; the maintainer preferred power-target tuning and saw it as firmware's job. They settled on a `tuning_percent` concept that stacks with scaling and tuning target ([PR #289](../../raw/mining-software/256f-tools/2026-06-22-github-asic-rs-pr-289-feat-throttle-native-manual-throttle-s.md)). Best assessment: the API compromise exists, but whether throttling beats power targets for efficiency rests on one operator's report.
+
+> **Status: Disputed** — token auth and firmware-update checks
+> A contributor asked for token-based auth on VNish/Braiins so Home Assistant gets scoped, revocable access; the maintainer questioned the need and the shape ([PR #293](../../raw/mining-software/256f-tools/2026-06-23-github-asic-rs-pr-293-feat-auth-support-custom-credentials-f.md)). The same contributor argued semver cannot compare miner firmware versions (Braiins uses CalVer, stock builds use arbitrary strings), so update checks should return plain version strings and a release URL ([PR #294](../../raw/mining-software/256f-tools/2026-06-23-github-asic-rs-pr-294-feat-firmware-on-demand-firmware-updat.md)). Best assessment: unresolved design questions as of 2026-10-09.
+
+## Release timeline
+
+| Version | Date | Highlights | Source |
+|---|---|---|---|
+| v0.1.1 | 2025-08-18 | First version bump | [PR #50](../../raw/mining-software/256f-tools/2025-08-18-github-asic-rs-pr-50-version-bump-to-v0-1-1.md) |
+| — | 2025-09-19 | Python bindings (`pyasic_rs`, PyO3/maturin) added | [PR #65](../../raw/mining-software/256f-tools/2025-09-19-github-asic-rs-pr-65-feature-add-python-bindings.md) |
+| v0.2.0 | 2026-02-25 | WhatsMiner V2 auto-unlock, Braiins OS 21.09 to 25.07, `SetPools` and pool groups | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.3.0 | 2026-03-12 | VNish controls, ePIC pool/hashrate-split, workspace split, parallel data collection | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.4.0 | 2026-04-01 | `tuning_target` replaces `wattage_limit`; pool/fan/tuning config; Antminer stock upgrade; per-miner auth | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.4.1 / v0.4.2 | 2026-04-07 / 2026-04-08 | ePIC PowerPlay tuning, WhatsMiner error codes, full control API in Python, `Unknown` fallbacks | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.5.0 | 2026-04-17 | Auradine, ePIC firmware upload, LuxOS events, Pydantic models from Rust (breaking) | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.5.1 / v0.5.2 | 2026-05-05 / 2026-05-21 | SealMiner, WhatsMiner v3 unlock, password/logs/factory reset for Braiins/ePIC/VNish, ePIC renamed UMC OS | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.5.3 / v0.5.4 | 2026-05-25 / 2026-06-02 | Selectable `get_data` fields, S21 Pro+, unified Zensical docs and supported-devices list | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.6.0 / v0.6.2 | 2026-06-09 / 2026-06-18 | Proto backend and RIG, Avalon A15, scaled tuning targets, FutureBit | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.7.0 – v0.7.3 | 2026-06-22 – 2026-07-29 | 4-field temperature model, VNish presets, thermal limits, VolcMiner, Elphapex DG, L3++, `is_mining` reflects pause | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.8.0 | 2026-08-25 | L11, S21++, TypeScript types, algorithm/unit read from the miner | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.8.1 | 2026-09-10 | Presets, firmware-update checks, timezone, best share, operating state, Bitaxe 2.14.0 | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| v0.8.5 | 2026-09-29 | Hashboard enable controls, Braiins v26_04 token refresh, less port pressure in discovery | [releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md) |
+| — | 2026-09-15 | Go bindings ported in-tree from adamdecaf/asic-rs-go (used by hasherdash) | [PR #364](../../raw/mining-software/256f-tools/2026-09-11-github-asic-rs-pr-364-feat-add-go-bindings-as-a-supported-la.md) |
+
+Release mechanics: tags `v{x}.{y}.{z}` publish crates and `python-v{x}.{y}.{z}` Python, later unified ([PR #76](../../raw/mining-software/256f-tools/2025-09-29-github-asic-rs-pr-76-ci-add-python-release-and-run-rust-rele.md); [PR #143](../../raw/mining-software/256f-tools/2026-02-23-github-asic-rs-pr-143-ci-unify-rust-and-python-release-workf.md)); each release also tags `go/vX.Y.Z` so Go consumers can pin a version ([Go README](../../raw/mining-software/256f-tools/github-asic-rs-go-readme.md)). Conventional Commits drive the changelog ([PR #138](../../raw/mining-software/256f-tools/2026-02-11-github-asic-rs-pr-138-refactor-use-conventional-commits-comm.md)). The v0.8.4 release initially failed to publish because of a circular dev-dependency between two crates ([PR #400](../../raw/mining-software/256f-tools/2026-09-29-github-asic-rs-pr-400-fix-release-break-publish-cycle-and-re.md)).
+
+> **Status: Disputed** — v0.5.0 date
+> The GitHub release is dated 2026-04-17 ([releases](../../raw/mining-software/256f-tools/github-asic-rs-releases.md)); the Telegram announcement came on 2026-04-22 [#4694 · 2026-04-22 · Brett Rowan]. Best assessment: 2026-04-17 is the release date and the Telegram post is a later announcement.
+
+## Contributing: review guidelines
+
+The repo documents what reviewers expect from new miner or firmware support ([review guidelines](../../raw/mining-software/256f-tools/github-asic-rs-docs-development-miner-support-review-guideli.md); [PR #305](../../raw/mining-software/256f-tools/2026-06-29-github-asic-rs-pr-305-docs-add-miner-support-review-guidelin.md)):
+
+- Follow mature backends (compare to Antminer); keep command constants inside `get_locations` / `get_configs_locations`; prefer early exits over chained iterator parsing.
+- Drive fan, board and chip counts from model hardware metadata, not fixed ranges such as four fans or boards `1..=9`.
+- Validate controls on live hardware instead of assuming vendor behaviour, e.g. a reboot endpoint that only works with GET while POST returns `411 Length Required`, or a success response that is not JSON.
+- Password changes target web-interface auth, not SSH/root; verify a protected endpoint with the new credentials and restore the old auth in memory if that fails.
+- Destructive or hardware-dependent tests are ignored, environment-gated live tests (e.g. `MINER_IP`), alongside fixture-based parser tests.
+- Docs build to three targets: a Zensical site, Rust crate docs/README generated from a shared guide, and the PyPI README; Python stubs come from `maturin generate-stubs` ([documentation guide](../../raw/mining-software/256f-tools/github-asic-rs-docs-development-documentation.md)).
+
+## Downstream users and BTC Toolkit
+
+Downstream users visible in the repo history include Stratum V2 apps (sv2-apps, sv2-ui), a Home Assistant integration migrated from pyasic, hasherdash (Go), ePIC's umc-utils and Proto fleet ([PR #283](../../raw/mining-software/256f-tools/2026-06-18-github-asic-rs-pr-283-feat-futurebit-add-futurebit-support.md); [PR #364](../../raw/mining-software/256f-tools/2026-09-11-github-asic-rs-pr-364-feat-add-go-bindings-as-a-supported-la.md); [PR #254](../../raw/mining-software/256f-tools/2026-05-20-github-asic-rs-pr-254-feat-add-control-functionality-needed.md)).
+
+**BTC Toolkit** is the 256 Foundation's Rust desktop GUI for managing mining farms: scan networks, discover miners and view device details, built on iced.rs v0.14 and asic-rs; run it with `cargo run` ([btc-toolkit README](../../raw/mining-software/256f-tools/github-256foundation-btc-toolkit.md)). It uses iced's Elm-style state/message/update/view loop, an async network scanner run as an iced subscription, JSON config in `btc_toolkit_config.json`, and a health module scoring chips, hashrate, temperature and fans. Gotcha for contributors: it runs on iced's internal tokio runtime, so `#[tokio::main]` causes nested-runtime panics. It cross-compiles for Linux and Windows ([btc-toolkit CLAUDE.md](../../raw/mining-software/256f-tools/github-btc-toolkit-claude.md)).
+
+## Community history (Telegram)
+
+### pyasic origins (2024)
 
 - hass-miner integrates pyasic into Home Assistant (Brett Rowan co-maintains it); pyasic showed ~6.7k downloads/month in February 2024, largely via hass-miner pulling it in [#148 · 2024-02-25 · Michael Schmid @Schnitzel] [#149 · 2024-02-25 · econoalchemist] [#154 · 2024-02-25 · Michael Schmid @Schnitzel]
 - pyasic is a unified Python SDK across vendors/firmwares — e.g. 'stop mining' maps to the right call per firmware; features the firmware itself lacks (power limiting on Antminer stock FW) surface as clean errors [#317 · 2024-03-03 · Michael Schmid @Schnitzel]
@@ -19,17 +278,17 @@ The management layer above firmware: pyasic (the Python SDK that unified vendor 
 - Upstream Data's Foreman praised for depth but criticized for its level of data/control access; a FOSS fleet manager is seen as needed [#152 · 2024-02-25 · Barnminer Barnmyna]
 - Gridless committed to open-sourcing their Whatsminer headless control interface (March 2024) and offered hashrate donations to 256F [#416 · 2024-03-05 · Erik Gridless] [#419 · 2024-03-05 · Erik Gridless]
 
-## asic-rs (2026)
+### asic-rs in the 256F group (2025-2026)
 
+- The first asic-rs PR (model handling for WhatsMiner and Antminer stock firmware) dates to 2025-03-19, and the early design borrowed pyasic's per-field traits so API calls stay decoupled from parsing ([PR #1](../../raw/mining-software/256f-tools/2025-03-19-github-asic-rs-pr-1-feature-add-miner-model-processing.md); [PR #6](../../raw/mining-software/256f-tools/2025-04-29-github-asic-rs-pr-6-feature-btminer-v3-rpc-backend.md)).
 - asic-rs topic created in the 256F group; repo github.com/256foundation/asic-rs (2026-03-23) [#4633 · 2026-03-23 · econoalchemist] [#4634 · 2026-03-23 · econoalchemist]
-- v0.5.0 shipped 2026-04-22: many bug fixes + a rewrite of the Python bindings for stability [#4694 · 2026-04-22 · Brett Rowan]
-- Maintainership: Brett Rowan maintains both pyasic and asic-rs — pyasic is being dropped in favor of asic-rs ('asic-rs is just better'); Python bindings published as pyasic-rs on PyPI; migration help offered (2026-05-26) [#4898 · 2026-05-26 · Brett Rowan] [#4899 · 2026-05-26 · Brett Rowan] [#4902 · 2026-05-26 · Brett Rowan] [#4908 · 2026-05-26 · Brett Rowan]
-- Whatsminer V3 API: asic-rs ships the reference implementation of the V3 RPC and unlocks the API automatically [#4895 · 2026-05-26 · Brett Rowan] [#4897 · 2026-05-26 · Brett Rowan]
+- v0.5.0 announced 2026-04-22: many bug fixes + a rewrite of the Python bindings for stability [#4694 · 2026-04-22 · Brett Rowan] (see the date note above)
+- Maintainership: Brett Rowan maintains both pyasic and asic-rs — pyasic is being dropped in favor of asic-rs ('asic-rs is just better'); Python bindings published on PyPI; migration help offered (2026-05-26) [#4898 · 2026-05-26 · Brett Rowan] [#4899 · 2026-05-26 · Brett Rowan] [#4902 · 2026-05-26 · Brett Rowan] [#4908 · 2026-05-26 · Brett Rowan]
 - Adoption: Proto's proto-fleet, their open-source farm-management tool released 2026-04-24, uses asic-rs for alternate miner types/firmwares without re-implementing them [#4699 · 2026-04-24 · Brett Rowan]
 - Ecosystem integration idea: use asic-rs inside sv2-ui (stratum-mining/sv2-ui issue #70) [#4681 · 2026-04-20 · plebhash]
 - hass-miner roadmap: swap the backend to asic-rs bindings; plus an auto-report protocol idea where miners push themselves to a metrics server [#3123 · 2025-10-15 · Brett Rowan] [#3129 · 2025-10-15 · Brett Rowan]
 
-## Home-automation & gateway tools (2025-2026)
+### Home-automation & gateway tools (2025-2026)
 
 - csh2000's RPi+small-screen miner gateway: Wi-Fi→Ethernet internet sharing for the miner, on-screen stats (hashrate/temp/BTC price), Telegram-based remote control, and Home Assistant preinstalled (enter the miner IP, build dashboards); LibreBoard integration groundwork; first beta promised for November 2025 [#3115 · 2025-10-15 · csh2000]
 - Variable-rate automations: ComEd hourly-pricing API for hourly-rate markets [#3126 · 2025-10-15 · Blizzabler]; Spanish OMIE market on/off integration exists, landing after the first beta [#3128 · 2025-10-15 · csh2000]
@@ -37,16 +296,28 @@ The management layer above firmware: pyasic (the Python SDK that unified vendor 
 - Field report: hashprice + solar-generation automation — 'I get paid to heat my home (or just mine) at +$0.13/kWh', auto switching off or to a lower mode when solar stops or the furnace is cheaper (explained on POD256) [#3130 · 2025-10-15 · Dylan Seib]
 - Home-Assistant mining help: tronsington (Dylan Seib) runs weekly HA office hours Wednesdays at 10:00 Mountain Time; docs in progress [#5026 · 2026-07-03 · Tyler Stevens] [#5027 · 2026-07-03 · Dylan Seib]
 
-## Interim Mujina paths (2025)
+### Interim Mujina paths (2025)
 
 - Rollout timeline (May 2025): control board ~October 2025, Mujina initial release ~December 2025; hashboards can be driven from a laptop meanwhile; feature-incomplete prereleases and open dev branches well before December [#2227 · 2025-05-22 · econoalchemist] [#2234 · 2025-05-22 · Ryan]
 - Interim hardware: the control board is essentially a modified Raspberry Pi CM5 IO board — a CM5 + IO board gets you something very close today; Mujina runs on nearly any Linux machine [#2236 · 2025-05-22 · Michael Schmid @Schnitzel] [#2235 · 2025-05-22 · Ryan]
 - Day-one asks from the community: pyasic support for emberOne at release [#2233 · 2025-05-22 · Reckless Apotheosis]
 - Libre Board end-state: USB to all your hashboards, running Mujina OS, with an integrated node and pool — an all-in-one [#2343 · 2025-06-05 · Ryan]
 
+## Contradictions & Open Questions
+
+- Release date of v0.5.0: GitHub release 2026-04-17 vs Telegram announcement 2026-04-22 (see above).
+- Python package name: Telegram says pyasic-rs, the README says `pyasic_rs` (PyPI normalizes both).
+- Open at capture: S21+ stock firmware accepting pause without sleeping ([issue #310](../../raw/mining-software/256f-tools/2026-07-09-github-asic-rs-issue-310-antminer-s21plus-found-during-scan.md)); miners with non-default passwords ([issue #403](../../raw/mining-software/256f-tools/2026-10-01-github-asic-rs-issue-403-when-stock-miner-has-a-non-default.md)); collection failures dropped silently under port pressure ([issue #395](../../raw/mining-software/256f-tools/2026-09-28-github-asic-rs-issue-395-1-3-preserve-collection-failures-an.md)).
+
 ## See Also
 
+- Same topic: [HashScope](hashscope.md)
+- Same topic: [Home Assistant Heater Control](home-assistant-heater-control.md)
 - [Mujina](../firmware/mujina.md)
+- [Heater Firmware and Power Control](../firmware/heater-firmware-and-power-control.md)
+- [Mining Firmware Security](../industry/mining-firmware-security.md)
+- [Libre Board and Control Boards](../hardware/libre-board-and-control-boards.md)
+- [Bitmain ASIC Reference](../hardware/bitmain-asic-reference.md)
+- [Hydronic Heat Reuse](../hardware/hydronic-heat-reuse.md)
 - [On-Demand Hashrate](../hashrate-market/on-demand-hashrate.md)
 - [Hydrapool](../pools/hydrapool.md)
-- Same topic: [Home Assistant Heater Control](home-assistant-heater-control.md)

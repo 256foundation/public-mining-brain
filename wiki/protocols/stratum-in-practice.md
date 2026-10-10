@@ -1,0 +1,203 @@
+# Stratum V1 & V2 in Practice
+
+> Sources: BIP 310 and BIP 320 (bitcoin/bips, captured 2026-10-07); bitaxeorg/ESP-Miner GitHub issues and release notes, 2023-10 → 2026-09; 256foundation/mujina source docs and PRs, 2025-12 → 2026-09; 256foundation/hydrapool GitHub issues, 2025-11 → 2026-03; 256 Foundation / Public Pool posts on X, 2025-03 → 2026-08; Assembling Freedom newsletter, 2025-06 → 2026-05
+> Raw: [BIP 310](../../raw/protocols/harvest/bip-310.md); [BIP 320](../../raw/protocols/harvest/bip-320.md); [Mujina STRATUM_QUIRKS](../../raw/firmware/mujina/github-mujina-mujina-miner-src-stratum-v1-stratum-quirks.md); [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md); [Hydrapool #41: SV2 support](../../raw/pools/hydrapool/2026-02-17-github-hydrapool-issue-41-feat-stratum-v2-mining-protocol-su.md); [Mujina PR #65: SV2](../../raw/firmware/mujina/2026-06-05-github-mujina-pr-65-feat-stratum-v2-add-sv2-support.md)
+> Updated: 2026-10-09
+> As-Of: 2026-10-09
+> Status: Draft
+
+## Overview
+
+Stratum is the protocol a miner uses to get work from a pool and hand back shares. **Stratum V1** is plaintext JSON-RPC over TCP with no formal spec: its real behavior is defined by what ckpool, Public Pool, Braiins, OCEAN, NiceHash, Miningcore and the firmware that talks to them actually do, and most open-source miner bugs in this area come from those differences (message order, number formats, error shapes). BIP 310 bolted on extension negotiation and version rolling, and BIP 320 set aside 16 nVersion bits for it. **Stratum V2** is a binary, Noise-encrypted successor with miner-selected templates. By 2026 it had reached open-source home mining: ESP-Miner shipped SV2 in v2.14.0, Public Pool accepted SV2 the next day, and Mujina and Hydrapool had SV2 work in progress. This article covers what implementers and operators run into in practice. For pool design beyond the wire protocol, see [Decentralized Pool Designs](decentralized-pool-designs.md).
+
+## Stratum V1: the session
+
+### Message order
+
+A typical V1 session goes `mining.configure` → `mining.subscribe` → `mining.authorize`, then the pool pushes `mining.set_difficulty` and `mining.notify` and the miner sends `mining.submit`.
+
+- **`mining.configure` goes first.** BIP 310 says a miner should send it as its first message, to advertise and negotiate extensions; each requested extension gets an explicit true/false/error result ([BIP 310](../../raw/protocols/harvest/bip-310.md)). ESP-Miner originally sent it after subscribe. That was reported as a spec violation that can break ASICBoost shares, and the firmware also threw away the pool's reply and assumed the 1fffe000 mask ([ESP-Miner #50](../../raw/firmware/esp-miner/2023-10-22-github-esp-miner-issue-50-stratum-v1-mining-configure-sent-o.md)).
+- **Pools enforce it differently.** Braiins Pool answered an out-of-order configure with error 21 `ConfigurationOutOfOrder`. With the order fixed, Braiins sent an unsolicited `mining.set_version_mask` where the parser expected the subscribe result ([ESP-Miner #80](../../raw/firmware/esp-miner/2024-01-09-github-esp-miner-issue-80-braiins-pool-not-working-with-v2-0.md); [ESP-Miner #84](../../raw/firmware/esp-miner/2024-01-10-github-esp-miner-issue-84-stratum-messages-out-of-order-for.md)). ESP-Miner v2.0.6 (2024-01-10) reverted the order change because some pools complained ([ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md)).
+- **Don't assume reply order.** OCEAN sends `mining.set_difficulty` *before* its reply to `mining.configure`, and ESP-Miner dropped it, so it kept testing against 8192 while OCEAN's minimum was 16384 and its shares were rejected as high-hash. skot found that OCEAN, Luxor, Braiins and CKPool all order messages this way. The fix handles each message whenever it arrives and shipped in 2.1.7 ([ESP-Miner #190](../../raw/firmware/esp-miner/2024-05-29-github-esp-miner-issue-190-pool-difficulty-is-not-respected.md)).
+- **Always send both `result` and `error`.** A Miningcore pool omitted the `error` field from its configure reply, and ESP-Miner's parser only accepted `error: null`. pool2win made the same mistake in hydra/p2pool and switched to always sending both fields as null, as JSON-RPC 1.0 expects ([ESP-Miner #916](../../raw/firmware/esp-miner/2025-05-12-github-esp-miner-issue-916-incompatibility-with-miningcore-b.md)).
+- **Keep the user agent simple.** ESP-Miner's subscribe user agent format (with a space and parentheses) is dropped by yiimp-based pools that strictly clean strings ([ESP-Miner #273](../../raw/firmware/esp-miner/2024-08-07-github-esp-miner-issue-273-mining-subscribe-submits-characte.md)).
+- **Results can be null.** Some pools reply to a rejected submit with `result: null` instead of `false`, and ESP-Miner did not count those as rejects until it was fixed ([ESP-Miner #95](../../raw/firmware/esp-miner/2024-01-22-github-esp-miner-issue-95-when-the-mining-pool-rejects-a-sub.md)).
+
+A real exchange between a Bitaxe on esp-miner v2.11.0b5 and Hydrapool (p2poolv2 stratum) shows the negotiated pieces. The configure reply was version-rolling true with mask `1fffe000`, and the subscribe reply carried a 4-byte extranonce1 (`a77e2d7f`) and an extranonce2 size of 8 ([Hydrapool #35](../../raw/pools/hydrapool/2025-11-16-github-hydrapool-issue-35-mining-authorize-with-an-invalid-b.md)).
+
+### Version rolling: BIP 310 and BIP 320
+
+| Item | Behavior | Source |
+|---|---|---|
+| Extensions | version-rolling, minimum-difficulty, subscribe-extranonce, info | [BIP 310](../../raw/protocols/harvest/bip-310.md) |
+| Mask negotiation | Miner sends the mask it can roll (default `ffffffff`) plus min-bit-count; the server returns the intersection with its own mask, as large as it can | [BIP 310](../../raw/protocols/harvest/bip-310.md) |
+| Too few bits | The miner may run in degraded mode; the server should not drop it | [BIP 310](../../raw/protocols/harvest/bip-310.md) |
+| Submitting | `mining.submit` gains a 6th parameter, version_bits; the pool rebuilds nVersion = (job_version & ~last_mask) \| (version_bits & last_mask) | [BIP 310](../../raw/protocols/harvest/bip-310.md) |
+| Mask changes | `mining.set_version_mask` takes effect immediately, not at the next job | [BIP 310](../../raw/protocols/harvest/bip-310.md) |
+| Legacy | `mining.configure` is deliberately incompatible with the older `mining.capabilities`, which has no response | [BIP 310](../../raw/protocols/harvest/bip-310.md) |
+| Rollable bits | BIP 320 reserves bits 13–28 (mask 0x1fffe000) for general use; nodes should mask with 0xe0001fff so these bits don't trigger unknown-soft-fork warnings | [BIP 320](../../raw/protocols/harvest/bip-320.md) |
+| Why | Hardware can exhaust the 32-bit nonce in under 200ms; rolling nTime instead would distort timestamps. The draft BIP323 widens the rollable room to 24 bits | [BIP 320](../../raw/protocols/harvest/bip-320.md); [Mujina BM13xx reference](../../raw/firmware/mujina/github-mujina-mujina-miner-src-asic-bm13xx-reference.md) |
+
+What happens on real devices:
+
+- ESP-Miner hardcodes `0xFFFFFFFF` in its configure request, which can be more than the chip can roll. adammwest gives the BM13xx limit as 65536/midstates, with a version mask of 65536<<13. vortexopenclaw found that the BM1366/BM1368/BM1370 setters shift the mask right by 13, so the supported mask is 1fffe000 ([ESP-Miner #1169](../../raw/firmware/esp-miner/2025-07-25-github-esp-miner-issue-1169-hardcoded-version-rolling-mask-m.md)).
+- Early BM1366 code always used 0x1fffe000 instead of the negotiated mask ([ESP-Miner #54](../../raw/firmware/esp-miner/2023-11-03-github-esp-miner-issue-54-fix-hardcoded-version-mask-on-bm13.md)). v2.0.7 (2024-01-21) made version rolling configured by the stratum server, and v2.3.0 (2024-10-16) based the version mask on the stratum message ([ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md)).
+- Mujina negotiates version rolling automatically when it connects ([Mujina: connect to a pool](../../raw/firmware/mujina/mujina-org-howto-connect-to-a-pool.md)).
+
+### Extranonce and nonce-space math
+
+In V1, **extranonce1** is assigned by the pool and identifies the connection. **extranonce2** is chosen by the miner, within the byte length the pool sets at subscribe, so varying extranonce2 between submits is correct ([ESP-Miner #1587](../../raw/firmware/esp-miner/2026-03-02-github-esp-miner-issue-1587-esp-miner-is-unable-to-handle-di.md)). The miner builds the coinbase as coinbase1 + extranonce1 + extranonce2 + coinbase2, so each extranonce2 value gives a new merkle root ([ESP-Miner #1011](../../raw/firmware/esp-miner/2025-06-06-github-esp-miner-issue-1011-show-block-header-information-in.md)).
+
+**Per-job search space.** A version-rolling BM13xx chip searches 2^32 nonces × 2^16 rolled versions = 2^48 headers per job. A BM1370 at 600 MHz hashes about 1.2 TH/s. On the nonce alone it would run out in under 4 ms. With version rolling, the full 2^48 lasts about four minutes ([Mujina BM13xx reference](../../raw/firmware/mujina/github-mujina-mujina-miner-src-asic-bm13xx-reference.md)). In practice, ESP-Miner's mutatrum says the in-chip nonce sweep wraps in about 1 or 2 seconds, so only a few dozen extranonce2 values are used before the pool sends new work ([ESP-Miner #939](../../raw/firmware/esp-miner/2025-05-20-github-esp-miner-issue-939-custom-nonce-and-extra-nonce-rang.md)). On solo.ckpool.org the job changes every 30 seconds ([ESP-Miner #824](../../raw/firmware/esp-miner/2025-04-06-github-esp-miner-issue-824-refining-the-algorithm-for-extran.md)).
+
+**Sizing pitfalls seen in the field:**
+
+- ESP-Miner stored extranonce2 as `uint32_t`, so the common 8-byte size produced random high bytes. skot says that did not affect mining, and it was fixed with `uint64_t` ([ESP-Miner #1167](../../raw/firmware/esp-miner/2025-07-25-github-esp-miner-issue-1167-8-byte-extranonce-2-are-overflow.md)). A pool using size 3 (powerpool.io) received 4-byte extranonce2 values ([ESP-Miner #658](../../raw/firmware/esp-miner/2025-01-16-github-esp-miner-issue-658-extranonce2-length-from-pool-is-i.md)). Variable-length extranonce2 shipped in v2.10.0 ([ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md)).
+- Mujina accepted whatever `extranonce2_size` the pool sent. A value of 0 or above 8 made every job fail, and 264 wrapped to 8 so every share was invalid. PR #90 rejects sizes outside 1–8 bytes at subscribe ([Mujina PR #90](../../raw/firmware/mujina/2026-08-07-github-mujina-pr-90-fix-validate-pool-controlled-extranonce2.md)). When a 1-byte space (256 values) was split across more threads than values, the scheduler panicked. PR #116 now leaves the extra threads idle ([Mujina #114](../../raw/firmware/mujina/2026-09-28-github-mujina-issue-114-bug-scheduler-panic-when-the-extrano.md); [Mujina PR #116](../../raw/firmware/mujina/2026-09-28-github-mujina-pr-116-fix-scheduler-leave-excess-threads-idle.md)).
+- Multi-chain hosts must avoid duplicate work. Options are disjoint extranonce2 slices, ntime offsets, a separate upstream connection per chain (each gets its own extranonce1), extending nonce division across chains, or fixing version bits per chain. Proxies that subdivide the extranonce can leave little room ([Mujina BM13xx reference](../../raw/firmware/mujina/github-mujina-mujina-miner-src-asic-bm13xx-reference.md)).
+- Duplicate shares: ESP-Miner v2.15.0 ignores duplicate stratum jobIds ([ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md)). Maintainers also agreed to drop exact-repeat results keyed on (job_id, extranonce2, rolled_version, nonce) before submitting ([ESP-Miner #1820](../../raw/firmware/esp-miner/2026-07-19-github-esp-miner-issue-1820-asic-results-duplicated-200x-eac.md)).
+
+### Difficulty: set_difficulty, suggest_difficulty, fractions
+
+- **The pool decides.** `mining.set_difficulty` comes from the pool and the device adjusts to it ([ESP-Miner #760](../../raw/firmware/esp-miner/2025-03-11-github-esp-miner-issue-760-no-automatic-adjustment-of-the-po.md)). ESP-Miner sends `mining.suggest_difficulty` with a fixed 1000. Pools may ignore it: users saw ckpool start at 8k–10k and settle to 400–600 after 2-3min ([ESP-Miner #98](../../raw/firmware/esp-miner/2024-01-28-github-esp-miner-issue-98-add-suggest-difficultly-to-ui.md)). v2.3.0 moved suggest-difficulty after authorization to fix a ckpool issue, and v2.11.0 added an option to disable it ([ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md)). OCEAN rejects `mining.suggest_difficulty` and `mining.extranonce.subscribe` with Method not found, which ESP-Miner wrongly counted as rejected shares ([ESP-Miner #1383](../../raw/firmware/esp-miner/2025-11-24-github-esp-miner-issue-1383-filter-out-method-not-found-on-f.md)).
+- **Password hints.** For TELEHASH #4, Hydrapool combined suggest-difficulty with password parameters (`d=` for starting difficulty, `h=` for a hashrate hint) so that a 1 TH/s Bitaxe and a 1 EH/s fleet could both connect without manual tuning ([Assembling Freedom #27](../../raw/history/256f-newsletter/2026-05-28-assembling-freedom-27.md)).
+- **Ramp-down rejects.** ckpool starts at 10000. When it lowers the difficulty, a batch of shares comes back as Above target, because the pool applies the new difficulty only at the next `mining.notify`. skot calls this a ckpool bug, and the observed impact was small ([ESP-Miner #212](../../raw/firmware/esp-miner/2024-06-10-github-esp-miner-issue-212-rejected-shares-after-difficulty.md)).
+- **Fractional difficulty.** Pools may send fractions such as `0.001` for low vardiff. Mujina parsed difficulty as an integer and failed with difficulty not a number against the SRI translator, and PR #24 switched to `f64` ([Mujina PR #24](../../raw/firmware/mujina/2026-01-23-github-mujina-pr-24-fix-stratum-v1-support-float-difficulty.md)). ESP-Miner used `valueint` through v2.13.0, which truncated 0.001 to 0. Fractional support shipped in v2.14.0, and v2.15.0 kept fractional SV2 pool difficulty to avoid difficulty-too-low rejects ([ESP-Miner #1592](../../raw/firmware/esp-miner/2026-03-04-github-esp-miner-issue-1592-mining-set-difficulty-with-fract.md); [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md)).
+
+> **Status: Disputed** — does fractional difficulty matter on ASIC miners?
+> mutatrum: the ASICs are hardcoded to a minimum diff of 256 (roughly one share per second), so fractions are insignificant. scottwalter: truncating 4096.123 to 4096 occasionally sends shares that miss the pool's true target, and many pools and CGMiner-based ASICs use fractional difficulty ([ESP-Miner #1592](../../raw/firmware/esp-miner/2026-03-04-github-esp-miner-issue-1592-mining-set-difficulty-with-fract.md)). Best assessment: parse difficulty as a float. It costs nothing, ESP-Miner and Mujina both now do, and translators and Miningcore send fractions.
+
+> **Status: Disputed** — `mining.suggest_difficulty` parameter format
+> ESP-Miner sends the difficulty as an array (`[1000]`), and Miningcore pools threw InvalidCastException and disconnected. The reporter asked for a bare number. eandersson and benjamin-wilson cited bmminer, bitcointalk and public-pool to show the array is the consensus and said Miningcore should change ([ESP-Miner #686](../../raw/firmware/esp-miner/2025-02-02-github-esp-miner-issue-686-mining-suggest-difficulty-sends-i.md)). Best assessment as of 2026-10-09: the array form is the de facto standard, and pools should accept both forms.
+
+### clean_jobs and stale work
+
+- When `mining.notify` arrives with clean_jobs=true, swap the ASIC's work at once. On public-pool, about 10% of shares were rejected as Job not found because a miner kept submitting old work after a clean_jobs notify ([ESP-Miner #203](../../raw/firmware/esp-miner/2024-06-05-github-esp-miner-issue-203-roughly-10-of-shares-are-rejected.md); [ESP-Miner #229](../../raw/firmware/esp-miner/2024-06-18-github-esp-miner-issue-229-change-work-immeadiately-on-clean.md)).
+- Firmware that only switches jobs on clean_jobs=true keeps rolling extranonce2 on an older job, so it is slow to pick up newer, higher-fee transactions. The proposal was to clear the work queue on every `mining.notify` ([ESP-Miner #999](../../raw/firmware/esp-miner/2025-06-02-github-esp-miner-issue-999-feature-asic-work-should-be-made.md)). ESP-Miner v2.13.0 shipped a queueless job pipeline ([ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md)).
+
+### Reject reasons and error taxonomy
+
+The V1 spec defines no reject format, so every pool does it differently ([ESP-Miner #264](../../raw/firmware/esp-miner/2024-07-30-github-esp-miner-issue-264-handle-share-reject-reasons.md)):
+
+| Pool family | Reject shape | Most common reasons |
+|---|---|---|
+| ckpool | `reject-reason` field; newer form `{"result":false,"error":"Stale","id":618}` | Above target, Stale |
+| Public Pool | error array, e.g. code 21 Job not found, 23 Difficulty too low | Job not found (stale), Difficulty too low |
+| yiimp | `[26,"Low difficulty share",null]` | low difficulty |
+| Miningcore, blitzpool | own formats, parsed since ESP-Miner v2.14.0 | n/a |
+
+Sources: [ESP-Miner #264](../../raw/firmware/esp-miner/2024-07-30-github-esp-miner-issue-264-handle-share-reject-reasons.md); [ESP-Miner #765](../../raw/firmware/esp-miner/2025-03-12-github-esp-miner-issue-765-add-reject-reason-tooltips.md); [ESP-Miner #1585](../../raw/firmware/esp-miner/2026-03-02-github-esp-miner-issue-1585-unknown-share-reject-reason-on-c.md); [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md).
+
+**Authorization errors.** Given an invalid address, Public Pool returns error 20 (Authorization validation error), ckpool returns result false, and early Hydrapool just closed the socket. Hydrapool adopted ckpool's two-strike policy: the first failure returns code -401 with a reason, and the second disconnects ([Hydrapool #35](../../raw/pools/hydrapool/2025-11-16-github-hydrapool-issue-35-mining-authorize-with-an-invalid-b.md)). AxeOS did not show Public Pool's auth error to the user ([ESP-Miner #1358](../../raw/firmware/esp-miner/2025-11-16-github-esp-miner-issue-1358-show-pool-stratum-auth-error-on.md)).
+
+**Counting only real share replies.** After ESP-Miner added `mining.ping`, a pool's `result: true` acknowledgment of the pong was counted as an accepted share (reported against GoSlimStratum). v2.14.0 counts only replies to `mining.submit` ([ESP-Miner #1590](../../raw/firmware/esp-miner/2026-03-04-github-esp-miner-issue-1590-mining-pong-stratum-server-respo.md)).
+
+**Upstream error classes (Mujina proposal).** Issue #113 sorts upstream errors into three classes. Transient errors reconnect forever with capped backoff. Deterministic errors latch a fault and retest every 10–30 minutes. Per-message errors are dropped and counted. Source status is exposed Kubernetes-style ([Mujina #113](../../raw/firmware/mujina/2026-09-28-github-mujina-issue-113-feat-job-source-report-upstream-erro.md)). Design advice from the ESP-Miner side: don't auto-reboot a miner after many rejects, because auto-exchange pools produce stale job_id errors even at 1ms RTT ([ESP-Miner #264](../../raw/firmware/esp-miner/2024-07-30-github-esp-miner-issue-264-handle-share-reject-reasons.md)).
+
+### client.reconnect, zombie pools and failover
+
+- **client.reconnect.** MiningRigRentals uses it to move a miner from the advertised port (e.g. 3311) to one assigned on the fly (e.g. 52211), and miners that ignore it are disconnected ([ESP-Miner #41](../../raw/firmware/esp-miner/2023-10-08-github-esp-miner-issue-41-stratum-method-client-reconnect-no.md)). skot considers it a sketchy command over an unencrypted connection ([ESP-Miner #517](../../raw/firmware/esp-miner/2024-11-26-github-esp-miner-issue-517-feat-implemented-stratum-client-r.md)).
+- **Zombie pools.** A pool behind a load balancer can keep TCP open but stop sending work. skot proposed reconnecting if no stratum packets arrive in 10 minutes. Timing out on unanswered shares was rejected, because with DATUM solo the pool difficulty can equal network difficulty ([ESP-Miner #689](../../raw/firmware/esp-miner/2025-02-03-github-esp-miner-issue-689-not-disconnecting-from-zombie-poo.md)). As of 2026-09 a V1 failover gap was still open: a read that times out returns 0, the loop only exits on negative results, and in testing 154 requests went unanswered over 180 seconds without failover ([ESP-Miner #1964](../../raw/firmware/esp-miner/2026-09-11-github-esp-miner-issue-1964-sv1-does-not-fail-over-when-the.md)).
+- Mujina expects jobs no more than two minutes apart and disconnects when a pool stops answering share submissions ([Mujina PR #89](../../raw/firmware/mujina/2026-08-07-github-mujina-pr-89-fix-stratum-v1-bound-pool-reads-by-lengt.md)).
+
+### Byte order: the word-swap trap
+
+V1 `prev_blockhash` in `mining.notify` is word-swapped: eight 4-byte words, each little-endian inside but hex-encoded big-endian. To convert it, reverse the bytes within each 4-byte chunk. This is a historical accident from 32-bit implementations around 2012. Merkle branches are *not* word-swapped. Version, nbits and ntime are big-endian hex, and extranonce2 and nonce are submitted as little-endian hex. Mujina validates its parser against a real ESP-Miner capture whose share was accepted at difficulty 29588. The lesson: test parsing against known-good round trips ([Mujina STRATUM_QUIRKS](../../raw/firmware/mujina/github-mujina-mujina-miner-src-stratum-v1-stratum-quirks.md)). A related hardware trap: the S19XP's chips return nonces with a different endianness than the S19j Pro's, which produced very low-difficulty shares until it was fixed ([Mujina forum: hacking other miners](../../raw/firmware/mujina/2026-05-18-forum-best-practices-for-hacking-mujina-onto-other-miners.md)). To read the block height from a job, decode the coinbase. The BIP34 height is the first push in the scriptSig, as 3 little-endian bytes ([ESP-Miner #1166](../../raw/firmware/esp-miner/2025-07-25-github-esp-miner-issue-1166-add-bip-34-block-height-parsing.md)).
+
+### Plaintext attack surface
+
+V1 is cleartext, so a malicious pool or anyone in the middle can inject oversized lines, bad extranonce2 sizes, unparseable coinbases or forged authorize errors ([Mujina PR #89](../../raw/firmware/mujina/2026-08-07-github-mujina-pr-89-fix-stratum-v1-bound-pool-reads-by-lengt.md); [Mujina PR #99](../../raw/firmware/mujina/2026-08-14-github-mujina-pr-99-fix-stratum-v1-retry-authorization-failu.md)). Mujina's hardening:
+
+- PR #89 caps a line at 64 KiB.
+- PR #98 rejects coinbases that don't parse instead of sitting looks-alive-but-idle ([Mujina PR #98](../../raw/firmware/mujina/2026-08-14-github-mujina-pr-98-fix-reject-unparseable-job-coinbases-ins.md)).
+- PR #99 retries authorization failures with backoff, so one forged error can't stop the miner for good.
+
+Braiins estimates that 1% to 2% of hashrate is stolen by hijacking unencrypted Stratum connections ([Assembling Freedom, 2025-07](../../raw/history/256f-newsletter/2025-07-15-the-bigger-they-are-the-harder-they-fall.md)). Mitigations short of SV2:
+
+- **TLS stratum** shipped in ESP-Miner v2.13.0. Certificate expiry is not checked because the Bitaxe has no time source ([ESP-Miner #1563](../../raw/firmware/esp-miner/2026-02-20-github-esp-miner-issue-1563-bitaxe-does-not-check-certificat.md)).
+- **Coinbase decoding** (v2.13.0) lets users check the payout address against scam pools that substitute work ([ESP-Miner #1540](../../raw/firmware/esp-miner/2026-02-05-github-esp-miner-issue-1540-handle-coinbase-tx-parser-for-ot.md)).
+
+## Stratum V2
+
+### What it changes
+
+SV2 is a binary protocol with Noise end-to-end encryption and push-based templates ([Assembling Freedom #11](../../raw/history/256f-newsletter/2025-11-24-assembling-freedom-11.md)). With Job Declaration, miners propose templates that the pool validates but cannot censor. The pool still controls coinbase payout and share accounting ([Assembling Freedom #24](../../raw/history/256f-newsletter/2026-04-15-assembling-freedom-24-bitcoin-mining-renaissance-stratum-v2.md)). An SRI/Hashlabs/DMND case study claimed at least 7.4% profit gain over SV1, block propagation falling from 96.3ms to 3.44ms, and job latency falling from 228ms to 2.44ms with Job Declaration. These are vendor case-study figures ([Assembling Freedom, 2025-07](../../raw/history/256f-newsletter/2025-07-15-the-bigger-they-are-the-harder-they-fall.md)).
+
+### Channels and header-only mining
+
+| Channel | What the device rolls | Limits / notes |
+|---|---|---|
+| Standard (header-only mining, HOM) | Nonce + BIP320 version bits only, with no extranonce or merkle recalculation | Per-nTime search space of about 280 TH ([Assembling Freedom #24](../../raw/history/256f-newsletter/2026-04-15-assembling-freedom-24-bitcoin-mining-renaissance-stratum-v2.md)); Mujina cites a theoretical limit of 280TH/s ([Mujina PR #65](../../raw/firmware/mujina/2026-06-05-github-mujina-pr-65-feat-stratum-v2-add-sv2-support.md)). No extranonce, so multi-chain hosts must split work another way ([Mujina BM13xx reference](../../raw/firmware/mujina/github-mujina-mujina-miner-src-asic-bm13xx-reference.md)) |
+| Extended | Adds extranonce bits, giving each device a guaranteed slice | Required for SRI translator compatibility ([Hydrapool #41](../../raw/pools/hydrapool/2026-02-17-github-hydrapool-issue-41-feat-stratum-v2-mining-protocol-su.md)); Mujina starts here because it targets high-hashrate devices ([Mujina PR #65](../../raw/firmware/mujina/2026-06-05-github-mujina-pr-65-feat-stratum-v2-add-sv2-support.md)) |
+
+**Extranonce sizing on extended channels.** ESP-Miner v2.15.0 cut its minimum extranonce request from 6 to 2 bytes. 2 bytes gives 65,536 distinct coinbases per job, enough that the counter can't wrap within a job. A 0-byte grant would make every self-rolled job identical, because ntime isn't rolled on extended channels. The SRI pool grants 16 bytes regardless (`CLIENT_SEARCH_SPACE_BYTES`) ([ESP-Miner #1780](../../raw/firmware/esp-miner/2026-06-21-github-esp-miner-issue-1780-reduce-sv2-minimum-extranonce-si.md)).
+
+### Noise_NX and authentication
+
+The Noise_NX handshake always encrypts the session. What the spec makes optional on a LAN, and mandatory remotely, is checking the server certificate against the pool's authority public key ([ESP-Miner #1781](../../raw/firmware/esp-miner/2026-06-21-github-esp-miner-issue-1781-support-unencrypted-sv2.md)). ESP-Miner verifies the certificate's BIP-340 signature against `stratumV2AuthorityPubkey` and fails closed on a bad signature. With no key set, it connects **unauthenticated**. v2.15.0 added a per-pool require-authentication option. Certificate validity windows are parsed but not enforced, because the device has no clock ([ESP-Miner #1786](../../raw/firmware/esp-miner/2026-06-23-github-esp-miner-issue-1786-sv2-connects-unauthenticated-by.md)). Mujina's SV2 URLs use the `stratum2+tcp://` scheme with the pool's authority key appended ([Mujina PR #65](../../raw/firmware/mujina/2026-06-05-github-mujina-pr-65-feat-stratum-v2-add-sv2-support.md)).
+
+### Translator / SRI interop lessons
+
+Hydrapool's SV2 prototype ran Bitaxe → SRI Translator Proxy (SV1→SV2) → Hydrapool on testnet4 on 2026-03-04. It had 100+ shares accepted with zero rejections, over Noise NX on port 3334. The translator needed three things beyond spec compliance ([Hydrapool #41](../../raw/pools/hydrapool/2026-02-17-github-hydrapool-issue-41-feat-stratum-v2-mining-protocol-su.md)):
+
+1. Send every job as a future job and activate it with `SetNewPrevHash`.
+2. In a batch, send all `NewMiningJob`/`NewExtendedMiningJob` messages before any `SetNewPrevHash`.
+3. Don't send standard-channel broadcasts to connections that have only extended channels.
+
+Other pitfalls found in the field:
+
+- **Byte order of the target.** A pool sent the channel target big-endian instead of little-endian (spec §5.3.1). ESP-Miner then computed an absurd difficulty and silently filtered every share. The pool fixed it on 2026-06-08 ([ESP-Miner #1758](../../raw/firmware/esp-miner/2026-06-07-github-esp-miner-issue-1758-sv2-no-submitsharesextended-fram.md)).
+- **Missing coinbase fields.** A translator that sent no coinbaseOutputs crashed the AxeOS dashboard until #1634 ([ESP-Miner #1639](../../raw/firmware/esp-miner/2026-03-30-github-esp-miner-issue-1639-broken-dashboard-on-missing-coin.md)).
+- **Swallowed errors.** SetupConnection.Error is not parsed, so the UI shows only SV2: Pool rejected config. Because the 60-second heartbeat probe is TCP-only, a pool that accepts TCP but rejects setup makes the miner flap between primary and fallback ([ESP-Miner #1812](../../raw/firmware/esp-miner/2026-07-11-github-esp-miner-issue-1812-sv2-setupconnection-error-is-nev.md)).
+- **Buffered submits.** When a pool buffers share submits, it looks as if shares are being ignored. v2.15.0 added a pending-shares indicator derived from sequence numbers ([ESP-Miner #1728](../../raw/firmware/esp-miner/2026-05-29-github-esp-miner-issue-1728-add-an-indicator-for-submitted-s.md)).
+- **Payout matching.** AxeOS matches payouts using the V1 address.worker convention, so SRI's donation username syntax triggers a misleading no-share banner ([ESP-Miner #1993](../../raw/firmware/esp-miner/2026-09-23-github-esp-miner-issue-1993-bug-failed-to-parse-sri-donation.md)). On standard channels the coinbase outputs can't be decoded at all ([ESP-Miner #1703](../../raw/firmware/esp-miner/2026-05-21-github-esp-miner-issue-1703-axeos-ui-mistakenly-warns-agains.md)).
+- **Duplicate shares.** Mujina's SV2 client saw duplicate shares in debug logs against the SRI pool, suspected to be the same search-space partitioning problem as ESP-Miner PR #420. A pool that answers REQUIRES_FIXED_VERSION is a fatal error for Mujina ([Mujina PR #65](../../raw/firmware/mujina/2026-06-05-github-mujina-pr-65-feat-stratum-v2-add-sv2-support.md)).
+
+### Support matrix (As-Of 2026-10-09)
+
+| Project | Role | SV2 status | Source |
+|---|---|---|---|
+| ESP-Miner / AxeOS | client (on device) | Shipped in v2.14.0 (2026-06-04, #1553); v2.15.0 (2026-08-21) added require-authentication and the 2-byte extranonce | [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md) |
+| Public Pool (web.public-pool.io) | pool | SV2 enabled 2026-06-05, following ESP-Miner v2.14.0; miners configure SV2 in advanced pool options with the pool's public key | [Public Pool on X](../../raw/history/256f-research/2026-10-07-x-notable-open-source-mining.md) |
+| Mujina | client (Linux firmware) | PR #65 (opened 2026-06-05) is still open; it reuses SRI crates (channels_sv2, sv2-apps) and has extended channels first | [Mujina PR #65](../../raw/firmware/mujina/2026-06-05-github-mujina-pr-65-feat-stratum-v2-add-sv2-support.md) |
+| Hydrapool | pool | Issue #41 (Mining Protocol only, no Job Declaration or Template Distribution; SV1 on 3333, SV2 on 3334, built on `stratum-core`) is still open; the maintainer had declined the full SRI `*_sv2` crates, citing technical debt and tight coupling | [Hydrapool #41](../../raw/pools/hydrapool/2026-02-17-github-hydrapool-issue-41-feat-stratum-v2-mining-protocol-su.md); [Hydrapool #37](../../raw/pools/hydrapool/2025-12-10-github-hydrapool-issue-37-use-rust-sv2-crates.md) |
+| GridPool | pool network | Beta packages are SV2 only | [GridPool packages](../../raw/pools/hydrapool/2026-09-15-forum-gridpool-1-click-packages-are-released.md) |
+| BlitzPool | pool | Runs an SV2 solo pool (April 2026) | [Assembling Freedom #25](../../raw/history/256f-newsletter/2026-04-22-assembling-freedom-25.md) |
+
+> **Status: Disputed** — Mujina and Hydrapool SV2 status
+> The 256 Foundation projects page lists Mujina with Stratum V1/V2 with DATUM compatibility ([256F projects](../../raw/history/256f-org/256foundation-org-projects.md)). When the foundation joined the Stratum V2 Working Group on 2026-08-24, it cited client-side support in Mujina and server-side support in Hydrapool ([256F on X](../../raw/history/256f-research/2026-10-07-x-256foundation-2026.md)). But mujina.org's status page says the daemon connects to one pool at a time, only over Stratum v1 ([Mujina status](../../raw/firmware/mujina/mujina-org-explanation-status.md)), and both SV2 code paths (Mujina PR #65, Hydrapool #41) were still open when captured 2026-10-07. Best assessment: SV2 exists as working prototypes for both projects but is not in their main release lines. Treat the foundation's claims as roadmap.
+
+### SV2 on the device vs a proxy
+
+> **Status: Disputed** — native SV2 on small miners vs a translator proxy (2024 → 2026)
+> benjamin-wilson (Public Pool) argued that a translation proxy outside the LAN delivers the security and efficiency gains, and that a pool can still censor proposed templates. TheBlueMatt countered that under the reference design, a miner whose template is rejected automatically falls back to another pool or solo. That turns censorship from a passive act into an active one. Sjors laid out three options: a translator plus Job Declarator Client next to the node, native SV2 with Noise on the ESP32, or the JDC on the ESP32. The last was judged too heavy ([ESP-Miner #168](../../raw/firmware/esp-miner/2024-04-23-github-esp-miner-issue-168-adding-support-for-stratumv2-prot.md)). Outcome: ESP-Miner chose option two (native SV2, no on-device Job Declaration), shipped in v2.14.0. Running a translator in front of SV1 devices remains a valid path, and it is what Hydrapool's interop test used ([Hydrapool #41](../../raw/pools/hydrapool/2026-02-17-github-hydrapool-issue-41-feat-stratum-v2-mining-protocol-su.md)).
+
+The 256 Foundation's newsletter takes a skeptical editorial line on SV2's decentralization benefit. It argues that template control is overblown while centralized pools still do share accounting and coinbase payouts ([Assembling Freedom, 2025-07](../../raw/history/256f-newsletter/2025-07-15-the-bigger-they-are-the-harder-they-fall.md)). Average Gary favored SV2 over DATUM for its open specs, Rust tooling and non-custodial coinbase control, and packaged SV2 for Start9 with NAT hole punching for meetup pools ([Assembling Freedom #11](../../raw/history/256f-newsletter/2025-11-24-assembling-freedom-11.md)).
+
+## Timeline
+
+| Date | Event | Source |
+|---|---|---|
+| 2018-03 | BIP 320 (assigned 2018-03-01) and BIP 310 (assigned 2018-03-10), both still Draft | [BIP 320](../../raw/protocols/harvest/bip-320.md); [BIP 310](../../raw/protocols/harvest/bip-310.md) |
+| 2024-01-10 | ESP-Miner v2.0.6 reverts the configure/subscribe order change after pool complaints | [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md) |
+| 2024-06-02 | ESP-Miner v2.1.7 fixes OCEAN minimum-difficulty rejects | [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md) |
+| 2024-10-16 | ESP-Miner v2.3.0: stratum fallback, version mask from the stratum message | [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md) |
+| 2026-02-20 | ESP-Miner v2.13.0: TLS stratum, coinbase parser, `mining.ping` | [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md) |
+| 2026-03-04 | Hydrapool SV2 prototype passes end to end through the SRI translator on testnet4 | [Hydrapool #41](../../raw/pools/hydrapool/2026-02-17-github-hydrapool-issue-41-feat-stratum-v2-mining-protocol-su.md) |
+| 2026-06-04 | ESP-Miner v2.14.0: SV2, fractional difficulty | [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md) |
+| 2026-06-05 | Public Pool enables SV2; Mujina SV2 PR #65 opened | [Public Pool on X](../../raw/history/256f-research/2026-10-07-x-notable-open-source-mining.md); [Mujina PR #65](../../raw/firmware/mujina/2026-06-05-github-mujina-pr-65-feat-stratum-v2-add-sv2-support.md) |
+| 2026-08-21 | ESP-Miner v2.15.0: SV2 require-authentication, 2-byte extranonce, duplicate jobId filter | [ESP-Miner release notes](../../raw/firmware/esp-miner/github-esp-miner-releases.md) |
+| 2026-08-24 | 256 Foundation joins the Stratum V2 Working Group | [256F on X](../../raw/history/256f-research/2026-10-07-x-256foundation-2026.md) |
+
+## See Also
+
+- [Decentralized Pool Designs](decentralized-pool-designs.md)
+- [RHAP](rhap.md)
+- [ESP-Miner / AxeOS](../firmware/esp-miner-axeos.md)
+- [Mujina](../firmware/mujina.md)
+- [Hydrapool](../pools/hydrapool.md)
+- [Public Pool](../pools/public-pool.md)
+- [Bitaxe Troubleshooting](../getting-started/bitaxe-troubleshooting.md)
+- [HashScope](../mining-software/hashscope.md)
+- [Mining Firmware Security](../industry/mining-firmware-security.md)
+- [Pool Choice for Heat Miners](../pools/pool-choice-for-heat-miners.md)
