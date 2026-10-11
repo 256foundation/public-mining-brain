@@ -98,4 +98,4 @@ Luxor's Lookback publishes the electricity price each efficiency class can susta
 - [Hashrate Heating Economics](hashrate-heating-economics.md) — the heat-first corollary of everything above
 - [Pool Payout Schemes](../pools/pool-payout-schemes.md) — how pools actually pay the hashprice formula
 - [Network State 2022–2026](../industry/network-state-2022-2026.md) — dated hashrate/difficulty/price snapshots (A10 extends)
-- Public Miner Economics — filings-level view (article pending, A10 phase)
+- [Public Miner Economics](../industry/public-miner-economics.md) — filings-level view (A10)

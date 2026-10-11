@@ -2,8 +2,8 @@
 
 > Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07
 > Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md)
-> Updated: 2026-10-08
-> As-Of: 2026-10-08
+> Updated: 2026-10-10
+> As-Of: 2026-10-10
 > Status: Stub
 
 ## Overview
@@ -26,6 +26,7 @@ Point-in-time price points and mechanics for buying, renting, and donating hashr
 
 - Heat-arbitrage: a hashprice+solar-aware controller can make home mining-heat net positive on price (see [Open Mining Economics](../economics/open-mining-economics.md))
 - Wilson Mining offered to cost-effectively host 2 PH/s of Intel BZM2 rigs (May 2025) [#2079 · 2025-05-05 · Reckless Apotheosis context]
+- The public miners are exiting hosting-as-mining: CORZ hosted mining "expected to conclude by December 31, 2026", CLSK's Sandersville mining "will cease" under its AI lease — conversion to colocation shrinks the hosted-capacity pool these rental markets draw from ([CORZ 10-Q](../../raw/industry/sec-edgar/2026-10-10-edgar-CORZ-10Q-extract.md), [CLSK 10-Q](../../raw/industry/sec-edgar/2026-10-10-edgar-CLSK-10Q-extract.md); see [Public Miner Economics](../industry/public-miner-economics.md))
 
 ## See Also
 
