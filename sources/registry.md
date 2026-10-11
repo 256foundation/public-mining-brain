@@ -131,7 +131,8 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | `mara-pool` | MARA Pool | https://marapool.com | site | monthly | verbatim | agent | active |
 | `poolin` | Poolin | https://www.poolin.me | site | monthly | verbatim | agent | active |
 | `btccom-pool` | BTC.com Pool | https://pool.btc.com | site | monthly | verbatim | agent | active |
-| `spiderpool` | SpiderPool | https://www.spiderpool.com | site | monthly | extract | agent | proposed |
+| `spiderpool` | SpiderPool | https://www.spiderpool.com | site | monthly | extract | agent | active |
+| `secpool` | SECPOOL | https://www.secpool.com | site | monthly | extract | agent | active |
 | `luxor-pool` | Luxor Pool | https://luxor.tech/mining | site | monthly | verbatim | agent | active |
 | `public-pool` | Public Pool (solo/hobbyist) | https://web.public-pool.io | site | monthly | verbatim | agent | active |
 | `ckpool` | ckpool / solo.ckpool.org | https://github.com/ckolivas/ckpool | repo | static | verbatim | agent | active |

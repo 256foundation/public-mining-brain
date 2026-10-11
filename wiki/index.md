@@ -43,6 +43,16 @@ Per-pool pages, payout schemes, fees, decentralization.
 |---------|---------|---------|
 | [Hydrapool](pools/hydrapool.md) | 256F's Rust stratum server: direct-coinbase payouts, solo/PPLNS semantics, auditable shares, ops quirks. | 2026-10-10 |
 | [Pool Payout Schemes](pools/pool-payout-schemes.md) | FPPS vs PPLNS vs solo, SPPLNS proposal, pool centralization taxonomy, censorship vs 51% debate. | 2026-10-10 |
+| [Foundry USA Pool](pools/foundry.md) | #1 pool: FPPS-only daily to whitelisted KYC addresses; quarterly fee tiers, no % published; SOC-audited custody. | 2026-10-10 |
+| [AntPool](pools/antpool.md) | Bitmain's pool: selectable PPS/PPLNS/FPPS; fee table image-only; sanctions gate; default 0.005 BTC daily payouts. | 2026-10-10 |
+| [F2Pool](pools/f2pool.md) | FPPS 4% / PPLNS 2% published per-coin; selectable thresholds; covers network fees; rank 3. | 2026-10-10 |
+| [ViaBTC](pools/viabtc.md) | PPS+ itemized (4% block + 2% tx-fee) or PPLNS 2%; hourly settlement; wallet/trading/loans ecosystem. | 2026-10-10 |
+| [OCEAN](pools/ocean.md) | TIDES-only, non-custodial coinbase-direct, "No KYC, only payout address"; 2%/1%-DATUM in binding ToS; DATUM origin. | 2026-10-10 |
+| [SECPOOL](pools/secpool.md) | Top-8 pool with unpublished rates, unnamed operator, closed help center; multi-mode bundle disclosures. | 2026-10-10 |
+| [Luxor Pool](pools/luxor-pool.md) | FPPS formula published (144-block lookback, p5-p95 trim); fee as "discount to spot", no %; US, SOC 2. | 2026-10-10 |
+| [MARA Pool](pools/mara-pool.md) | Self-owned public-miner pool, "no fees to external operators" — while its public site is dead (As-Of 2026-10-10). | 2026-10-10 |
+| [SpiderPool](pools/spiderpool.md) | PPLNS 1% / FPPS 4% published; client-rendered site; no custody/SV2 statements; rank 5. | 2026-10-10 |
+| [Braiins Pool](pools/braiins-pool.md) | 2.5% FPPS (0% via Braiins OS), Lightning payouts, ex-Slush Pool since 2010, "Secure & Non-KYC", SV2 port 3336. | 2026-10-10 |
 
 ## protocols
 
