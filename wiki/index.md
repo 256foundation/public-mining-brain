@@ -42,7 +42,7 @@ Per-pool pages, payout schemes, fees, decentralization.
 | Article | Summary | Updated |
 |---------|---------|---------|
 | [Hydrapool](pools/hydrapool.md) | 256F's Rust stratum server: direct-coinbase payouts, solo/PPLNS semantics, auditable shares, ops quirks. | 2026-10-10 |
-| [Pool Payout Schemes](pools/pool-payout-schemes.md) | FPPS vs PPLNS vs solo, SPPLNS proposal, pool centralization taxonomy, censorship vs 51% debate. | 2026-10-08 |
+| [Pool Payout Schemes](pools/pool-payout-schemes.md) | FPPS vs PPLNS vs solo, SPPLNS proposal, pool centralization taxonomy, censorship vs 51% debate. | 2026-10-10 |
 
 ## protocols
 
@@ -66,7 +66,7 @@ Mining eras, key events, companies, geographic shifts.
 
 | Article | Summary | Updated |
 |---------|---------|---------|
-| [256F Community Timeline](history/256f-community-timeline.md) | Message-anchored milestones 2024→2026: incorporation, grants, hardware, Telehash, forum migration. | 2026-10-09 |
+| [256F Community Timeline](history/256f-community-timeline.md) | Message-anchored milestones 2024→2026: incorporation, grants, hardware, Telehash, forum migration. | 2026-10-10 |
 
 ## industry
 
@@ -91,21 +91,21 @@ How the brain works, data dictionary.
 
 | Article | Summary | Updated |
 |---------|---------|---------|
-| [Air-Cooled Hashrate Heating](hardware/air-cooled-hashrate-heating.md) | Air-cooled ASIC space heating: HVAC return/furnace ducting, inline fans, CFM/static pressure, shrouds, quiet mods, VOCs, field data. | 2026-10-09 |
+| [Air-Cooled Hashrate Heating](hardware/air-cooled-hashrate-heating.md) | Air-cooled ASIC space heating: HVAC return/furnace ducting, inline fans, CFM/static pressure, shrouds, quiet mods, VOCs, field data. | 2026-10-10 |
 | [Heater Electrical & 120V Builds](hardware/heater-electrical-and-120v-builds.md) | Electrical rules for hashrate heaters: 80% rule, circuits/receptacles, contactors, 120V S19 builds (Loki/APW12), 208V, solar. | 2026-10-09 |
 | [Hydronic Heat Reuse](hardware/hydronic-heat-reuse.md) | Water-side heat reuse: loop isolation, plate HX sizing, radiant floors, DHW, pools, dry coolers, glycol/corrosion, buffer tanks. | 2026-10-09 |
 | [Immersion Heat Reuse](hardware/immersion-heat-reuse.md) | Immersion for heat: canola vs mineral vs engineered fluids, tanks, cable wicking, fan sims, Vnish limits, DIY hot-water builds. | 2026-10-09 |
 | [Whatsminer M64-Family Hydro Heaters](hardware/whatsminer-m64-hydro-heaters.md) | M64/M64S/M74 hydro as heating cores: specs, coolant and fittings, power-control limits, HS05/RY3T/Aqueon, dated prices and MOQ. | 2026-10-09 |
-| [Heater Firmware & Power Control](firmware/heater-firmware-and-power-control.md) | Braiins DPS vs LuxOS ATM vs Vnish vs Whatsminer modes for heaters: retune latency, temp offsets, sleep draw, drain:// fallback. | 2026-10-09 |
+| [Heater Firmware & Power Control](firmware/heater-firmware-and-power-control.md) | Braiins DPS vs LuxOS ATM vs Vnish vs Whatsminer modes for heaters: retune latency, temp offsets, sleep draw, drain:// fallback. | 2026-10-10 |
 | [Home Assistant Heater Control](mining-software/home-assistant-heater-control.md) | Firmware → pyasic → hass-miner → Home Assistant stack: thermostats/deadband, sensors/plugs, miner APIs, outage fallbacks. | 2026-10-09 |
-| [Pool Choice for Heat Miners](pools/pool-choice-for-heat-miners.md) | FPPS vs PPLNS vs OCEAN TIDES for on/off heaters (disputed; S9 side-by-side data), payout lag, DATUM setup, failover, solo. | 2026-10-09 |
+| [Pool Choice for Heat Miners](pools/pool-choice-for-heat-miners.md) | FPPS vs PPLNS vs OCEAN TIDES for on/off heaters (disputed; S9 side-by-side data), payout lag, DATUM setup, failover, solo. | 2026-10-10 |
 | [Hashrate Heating Economics](economics/hashrate-heating-economics.md) | When hash heating pays vs gas, propane, oil, resistive and heat pumps: break-even/payback math, sizing, dated prices, tax. | 2026-10-10 |
 | [Hashrate Heatpunks Community Timeline](history/heatpunks-community-timeline.md) | Dated Heatpunks milestones 2024-08 → 2026-10: heatpunks.org, Manifesto, Undermine/2026 summits, forum launch + backfilled threads (builds, TIDES-vs-FPPS experiment, The Space demo), Telehash, HA office hours. | 2026-10-10 |
-| [Hashrate Heating Products & Installs](industry/hashrate-heating-products-and-installs.md) | Heating vendors (Heat Core, RY3T, Superheat, Softwarm, Ecobit…), commercial installs, UL/permits/insurance, barriers, scams. | 2026-10-09 |
+| [Hashrate Heating Products & Installs](industry/hashrate-heating-products-and-installs.md) | Heating vendors (Heat Core, RY3T, Superheat, Softwarm, Ecobit…), commercial installs, UL/permits/insurance, barriers, scams. | 2026-10-10 |
 | [Bitaxe Troubleshooting](getting-started/bitaxe-troubleshooting.md) | Symptom → cause → fix for Bitaxe: power faults, 0 GH/s, overheat, Wi-Fi/router, failed OTA, dead-subscription "hashing for nothing", rejects, duplicate shares, Flatline of Death, 2.14.0-era error-rate/upgrade reports (OSMU forum). | 2026-10-10 |
 | [Bitaxe Models & Open-Source Miner Family](hardware/bitaxe-models.md) | Bitaxe lineage BM1387 → Max → Ultra → Hex → Supra → Gamma → GT/Naja: specs, board numbers, BM1370 primer, ESP32 module, derivatives, clones, legitlist; field reports from the OSMU forum. | 2026-10-10 |
 | [Bitaxe Board Design, Power & Errata](hardware/bitaxe-board-design-and-errata.md) | Bitaxe power design (TPS40305 → TPS546, series domains, PMBus faults, 5V window), EMC2101 thermals, per-board errata, DFM, reflow, BAP. | 2026-10-10 |
-| [Bitmain BM13xx ASIC Reference](hardware/bitmain-asic-reference.md) | BM1387–BM1370 (+BM1340/72/73) specs with disputed figures, pinouts, UART frames, CRC5, registers, PLL, nonce math, temp sensing. | 2026-10-09 |
+| [Bitmain BM13xx ASIC Reference](hardware/bitmain-asic-reference.md) | BM1387–BM1370 (+BM1340/72/73) specs with disputed figures, pinouts, UART frames, CRC5, registers, PLL, nonce math, temp sensing. | 2026-10-10 |
 | [Libre Board & Mining Control Boards](hardware/libre-board-and-control-boards.md) | Libre Board (CM5, CERN-OHL-S, errata) vs Braiins BCB100 and stock Antminer Amlogic/Zynq boards; emberone-usbserial firmware. | 2026-10-10 |
 | [OSMU Open Miners](hardware/osmu-open-miners.md) | Open miners beside the Bitaxe: NerdMiner ESP32 line and display hybrids (NerdNOS, NerdAxe, NerdQAxe+/++), PiAxe/QAxe build paths, BitForge Nano, WarpAxe, firmware forks, OSMU-forum pool/tool ecosystem (dvb-WarpPool, Pogolo, BTC PoW Lab, Bitaxe Monitor). | 2026-10-10 |
 | [ESP-Miner / AxeOS](firmware/esp-miner-axeos.md) | Bitaxe's open firmware: architecture, flashing/recovery, AxeOS API, mDNS, security posture, stratum/SV2 behavior, releases 1.0 → 2.15.3; OSMU-forum feature requests and independent API reimplementations. | 2026-10-10 |
