@@ -188,6 +188,7 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 |---|---|---|---|---|---|---|---|
 | `bitcoin-wiki` | Bitcoin wiki (Mining, hardware comparison) | https://en.bitcoin.it/wiki/Mining | wiki | static | verbatim | agent | active |
 | `bitcoinbook` | Mastering Bitcoin (open source, mining ch.) | https://github.com/bitcoinbook/bitcoinbook | book | static | extract | agent | active |
+| `braiins-books` | Braiins Publishing mining books (Handbook, Economics, Glossary, Ultimate Guide, Heat Reuse) — free PDFs; Glossary/Ultimate/Heat-Reuse PDFs are email-gated at braiins.com | https://braiins.com/books | book | static | extract | agent | active |
 | `learnmeabitcoin` | Learn Me A Bitcoin — technical mining pages | https://learnmeabitcoin.com/technical/mining/ | docs | static | verbatim | agent | proposed |
 | `bitcointalk-mining` | Bitcointalk mining boards | https://bitcointalk.org | forum | weekly | extract | agent | active |
 | `bitcoin-se` | Bitcoin Stack Exchange (mining tags) | https://bitcoin.stackexchange.com | forum | weekly | extract | agent | active |
