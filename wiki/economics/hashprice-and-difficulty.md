@@ -99,3 +99,4 @@ Luxor's Lookback publishes the electricity price each efficiency class can susta
 - [Pool Payout Schemes](../pools/pool-payout-schemes.md) — how pools actually pay the hashprice formula
 - [Network State 2022–2026](../industry/network-state-2022-2026.md) — dated hashrate/difficulty/price snapshots (A10 extends)
 - [Public Miner Economics](../industry/public-miner-economics.md) — filings-level view (A10)
+- [Data Resources](../meta/data-resources.md) — the live-endpoint layer (hashrate index, CBECI) vs the frozen captures cited here

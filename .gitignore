@@ -14,3 +14,6 @@ export/
 
 # Local agent scratch
 .agent/
+
+# Phase B local materials (originals stay on Tyler's machine; triaged into raw/, never committed)
+/local/

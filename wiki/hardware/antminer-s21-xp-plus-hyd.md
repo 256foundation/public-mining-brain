@@ -44,3 +44,4 @@ From the API spec table, numbers verbatim ([Bitmain spec table](../../raw/hardwa
 - [Antminer S23e U2H](antminer-s23e-u2h.md)
 - [Antminer S21 XP Hyd](antminer-s21-xp-hyd.md)
 - [Antminer S21 XP](antminer-s21-xp.md)
+- [Antminer S21j XP Hyd](antminer-s21j-xp-hyd.md) — compact-hydro sibling at the same efficiency tier

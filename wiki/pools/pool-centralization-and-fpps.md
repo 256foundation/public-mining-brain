@@ -179,6 +179,7 @@ Other dated notes: scam pools and coinbase-checking tools were discussed on POD2
 - [Decentralized Pool Designs](../protocols/decentralized-pool-designs.md)
 - [Stratum in Practice](../protocols/stratum-in-practice.md)
 - [Mining Nodes & Templates](../protocols/mining-nodes-and-templates.md)
+- [Data Resources](../meta/data-resources.md) — mempool.space / stratum.work / pool-Prometheus query conventions
 - [Mining Firmware Security](../industry/mining-firmware-security.md)
 - [Network State 2022–2026](../industry/network-state-2022-2026.md)
 - [HashScope](../mining-software/hashscope.md)

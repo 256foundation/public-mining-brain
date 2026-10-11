@@ -88,3 +88,4 @@ The filings show energy as 54.9–77% of mining revenue at industrial scale; Gig
 - [Network State 2022–2026](network-state-2022-2026.md) — dated corporate-event ledger (this phase extends the 2026 rows)
 - [On-Demand Hashrate](../hashrate-market/on-demand-hashrate.md) — the rental market converting miners into hosts
 - [Hashrate Heating Economics](../economics/hashrate-heating-economics.md) — the home-scale version of the same cost math
+- [Data Resources](../meta/data-resources.md) — live-endpoint pointer table complementing the frozen EDGAR/PR citations here

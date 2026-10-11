@@ -44,3 +44,4 @@ From the API spec table, numbers verbatim ([Bitmain spec table](../../raw/hardwa
 - [Antminer S21 XP Hyd](antminer-s21-xp-hyd.md)
 - [Antminer U3S21EXPH](antminer-u3s21exph.md)
 - [Antminer S21e Hyd](antminer-s21e-hyd.md)
+- [Antminer S21j XP Hyd](antminer-s21j-xp-hyd.md)
