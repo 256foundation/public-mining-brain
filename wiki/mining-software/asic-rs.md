@@ -317,6 +317,7 @@ Downstream users visible in the repo history include Stratum V2 apps (sv2-apps, 
 - Same topic: [HashScope](hashscope.md)
 - Same topic: [Home Assistant Heater Control](home-assistant-heater-control.md)
 - [Mujina](../firmware/mujina.md)
+- [Farm Management Overview](farm-management-overview.md) — the SaaS layer above this stack (Foreman, Commander, Braiins Manager)
 - [Heater Firmware and Power Control](../firmware/heater-firmware-and-power-control.md)
 - [Mining Firmware Security](../industry/mining-firmware-security.md)
 - [Libre Board and Control Boards](../hardware/libre-board-and-control-boards.md)

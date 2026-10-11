@@ -69,6 +69,7 @@ Farm management, monitoring, node tooling, marketplaces.
 | Article | Summary | Updated |
 |---------|---------|---------|
 | [asic-rs and the Fleet-Tooling Stack](mining-software/asic-rs.md) | pyasic → asic-rs succession, Home Assistant integrations, gateway tooling, proto-fleet adoption. | 2026-10-10 |
+| [Farm Management Overview](mining-software/farm-management-overview.md) | Six-product MMS landscape (Foreman/OBM 92-path API, Braiins Manager 1+ GW, Commander Lite/Pro pricing, Awesome Miner, SimpleMining, NiceHash) + asic-rs as the open layer. | 2026-10-10 |
 
 ## pools
 

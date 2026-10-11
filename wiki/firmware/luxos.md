@@ -57,5 +57,6 @@ LuxOS is Luxor's ASIC firmware for Bitmain and MicroBT machines: "LuxOS is the f
 
 - [Braiins OS](braiins-os.md) — the DPS rival; fee 2.8% vs 2-2.5%
 - [Vnish → HashCore](vnish-hashcore.md) — the third closed firmware
+- [Farm Management Overview](../mining-software/farm-management-overview.md) — Commander plans/pricing and the MMS landscape (A11)
 - [Heater Firmware & Power Control](heater-firmware-and-power-control.md) — field comparisons (ATM vs DPS for heaters)
 - [Mining Firmware Security](../industry/mining-firmware-security.md)
