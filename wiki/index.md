@@ -74,7 +74,7 @@ Farms, public miners, hosting, colocation, energy interplay.
 
 | Article | Summary | Updated |
 |---------|---------|---------|
-| [Repair, Supply & Vendors](industry/repair-supply-and-vendors.md) | Repair grey market (ZeusBTC), schematics peer review, JLCPCB economics, GekkoScience dispute, hosting, Canaan. | 2026-10-09 |
+| [Repair, Supply & Vendors](industry/repair-supply-and-vendors.md) | Repair grey market (ZeusBTC), schematics peer review, JLCPCB economics, GekkoScience dispute, hosting, Canaan. | 2026-10-10 |
 | [Mining Policy and Legal](industry/mining-policy-and-legal.md) | Samourai prosecution and money-transmitter theory, operation Red Sunset, Bitaxe USPTO trademark fight, tariffs/customs, UL-FCC-CE, net metering. | 2026-10-10 |
 
 ## hashrate-market
@@ -104,7 +104,7 @@ How the brain works, data dictionary.
 | [Hashrate Heating Products & Installs](industry/hashrate-heating-products-and-installs.md) | Heating vendors (Heat Core, RY3T, Superheat, Softwarm, Ecobit…), commercial installs, UL/permits/insurance, barriers, scams. | 2026-10-09 |
 | [Bitaxe Troubleshooting](getting-started/bitaxe-troubleshooting.md) | Symptom → cause → fix for Bitaxe: power faults, 0 GH/s, overheat, Wi-Fi/router, failed OTA, dead-subscription "hashing for nothing", rejects, duplicate shares, Flatline of Death, 2.14.0-era error-rate/upgrade reports (OSMU forum). | 2026-10-10 |
 | [Bitaxe Models & Open-Source Miner Family](hardware/bitaxe-models.md) | Bitaxe lineage BM1387 → Max → Ultra → Hex → Supra → Gamma → GT/Naja: specs, board numbers, BM1370 primer, ESP32 module, derivatives, clones, legitlist; field reports from the OSMU forum. | 2026-10-10 |
-| [Bitaxe Board Design, Power & Errata](hardware/bitaxe-board-design-and-errata.md) | Bitaxe power design (TPS40305 → TPS546, series domains, PMBus faults, 5V window), EMC2101 thermals, per-board errata, DFM, reflow, BAP. | 2026-10-09 |
+| [Bitaxe Board Design, Power & Errata](hardware/bitaxe-board-design-and-errata.md) | Bitaxe power design (TPS40305 → TPS546, series domains, PMBus faults, 5V window), EMC2101 thermals, per-board errata, DFM, reflow, BAP. | 2026-10-10 |
 | [Bitmain BM13xx ASIC Reference](hardware/bitmain-asic-reference.md) | BM1387–BM1370 (+BM1340/72/73) specs with disputed figures, pinouts, UART frames, CRC5, registers, PLL, nonce math, temp sensing. | 2026-10-09 |
 | [Libre Board & Mining Control Boards](hardware/libre-board-and-control-boards.md) | Libre Board (CM5, CERN-OHL-S, errata) vs Braiins BCB100 and stock Antminer Amlogic/Zynq boards; emberone-usbserial firmware. | 2026-10-10 |
 | [OSMU Open Miners](hardware/osmu-open-miners.md) | Open miners beside the Bitaxe: NerdMiner ESP32 line and display hybrids (NerdNOS, NerdAxe, NerdQAxe+/++), PiAxe/QAxe build paths, BitForge Nano, WarpAxe, firmware forks, OSMU-forum pool/tool ecosystem (dvb-WarpPool, Pogolo, BTC PoW Lab, Bitaxe Monitor). | 2026-10-10 |
