@@ -152,7 +152,7 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | `braidpool` | Braidpool — P2P pool with hashrate futures (dev branch daily; pre-testnet) | https://github.com/braidpool/braidpool | repo | monthly | verbatim | agent | active |
 | `p2pool-v2` | P2Poolv2 — P2P pool reboot (pool2win; live public testnet4 pool; Hydrapool deployment mode in README) | https://github.com/pool2win/p2pool-v2 | repo | monthly | verbatim | agent | active |
 | `blitz-pool` | Blitz Pool — non-custodial SV1+SV2 solo/PPLNS pool (multi-output coinbase; hobbyist scale) | https://blitzpool.yourdevice.ch | site | monthly | extract | agent | active |
-| `stratum-work` | stratum.work — live stratum visualizer + source | https://stratum.work · https://github.com/bboerst/stratum-work | site | monthly | extract | agent | proposed |
+| `stratum-work` | stratum.work — live stratum visualizer + source | https://stratum.work · https://github.com/bboerst/stratum-work | site | monthly | extract | agent | active |
 
 ## Economics, Data & Research
 
@@ -168,7 +168,7 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | `whattomine` | WhatToMine profitability calc | https://whattomine.com | data | weekly | extract | agent | active |
 | `galaxy-research` | Galaxy mining research | https://www.galaxy.com/research/ | report | monthly | extract | agent | active |
 | `coinshares-research` | CoinShares mining reports | https://www.coinshares.com/research | report | monthly | extract | agent | active |
-| `elektronics-dev` | Rapha Zagury's curated mining data (dataset "coming soon") | https://elektronics.dev/about | data | event | link-only | agent | proposed |
+| `elektronics-dev` | Rapha Zagury's curated mining data (dataset "coming soon") | https://elektronics.dev/about | data | event | link-only | agent | active |
 
 ## Industry & Public Miners
 
@@ -190,7 +190,7 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | `bitcoin-wiki` | Bitcoin wiki (Mining, hardware comparison) | https://en.bitcoin.it/wiki/Mining | wiki | static | verbatim | agent | active |
 | `bitcoinbook` | Mastering Bitcoin (open source, mining ch.) | https://github.com/bitcoinbook/bitcoinbook | book | static | extract | agent | active |
 | `braiins-books` | Braiins Publishing mining books (Handbook, Economics, Glossary, Ultimate Guide, Heat Reuse) — free PDFs; Glossary/Ultimate/Heat-Reuse PDFs are email-gated at braiins.com | https://braiins.com/books | book | static | extract | agent | active |
-| `learnmeabitcoin` | Learn Me A Bitcoin — technical mining pages | https://learnmeabitcoin.com/technical/mining/ | docs | static | verbatim | agent | proposed |
+| `learnmeabitcoin` | Learn Me A Bitcoin — technical mining pages | https://learnmeabitcoin.com/technical/mining/ | docs | static | verbatim | agent | active |
 | `bitcointalk-mining` | Bitcointalk mining boards | https://bitcointalk.org | forum | weekly | extract | agent | active |
 | `bitcoin-se` | Bitcoin Stack Exchange (mining tags) | https://bitcoin.stackexchange.com | forum | weekly | extract | agent | active |
 

@@ -139,6 +139,7 @@ How the brain works, data dictionary.
 
 | Article | Summary | Updated |
 |---------|---------|---------|
+| [Data Resources](meta/data-resources.md) | Pointer table for live endpoints: pool Prometheus API, stratum.work, mempool.space, ASIC Miner Value, Hashrate Index, CBECI, elektronics.dev (link-only), dash.256f.org. | 2026-10-10 |
 | [Air-Cooled Hashrate Heating](hardware/air-cooled-hashrate-heating.md) | Air-cooled ASIC space heating: HVAC return/furnace ducting, inline fans, CFM/static pressure, shrouds, quiet mods, VOCs, field data. | 2026-10-10 |
 | [Heater Electrical & 120V Builds](hardware/heater-electrical-and-120v-builds.md) | Electrical rules for hashrate heaters: 80% rule, circuits/receptacles, contactors, 120V S19 builds (Loki/APW12), 208V, solar. | 2026-10-09 |
 | [Hydronic Heat Reuse](hardware/hydronic-heat-reuse.md) | Water-side heat reuse: loop isolation, plate HX sizing, radiant floors, DHW, pools, dry coolers, glycol/corrosion, buffer tanks. | 2026-10-09 |

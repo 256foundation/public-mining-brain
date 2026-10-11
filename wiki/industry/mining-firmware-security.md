@@ -32,6 +32,8 @@ The RY3T Nova announcement adds a practical complaint. Manufacturer firmware fro
 
 Sources for the table rows are cited in the sections below.
 
+**Independent academic corroboration (May 2026).** Pouliquen, Barral, Naccache, Heckmann and Houssais' "Firmware Distribution as Attack Surface: A Security Study of ASIC Cryptocurrency Miners" (arXiv 2605.03770, v1 2026-05-05, "20 pages, 7 figures") analyzes "134 firmware images spanning manufacturers that account for over 99% of deployed miners (Bitmain, MicroBT, Canaan, Iceriver)" and studies exploitation of "Stratum V1" via firmware-distribution attack paths — independent academic confirmation of this article's threat model from outside the community ([abstract, verbatim](../../raw/industry/arxiv/2605.03770-firmware-distribution-attack-surface--abstract-verbatim.md)).
+
 ## The 256 Red Team
 
 ### What it is
@@ -184,6 +186,7 @@ These are not firmware bugs, but they belong to the same trust problem:
 - Operator-side risks: agent "skill" files from public hubs have carried hidden lines that exfiltrate environment variables and API keys ([POD256 e104](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-02-11-e104.md)). Agents that read email can be prompt-injected, and in a home-mining future attackers could try to redirect hashrate ([POD256 e105](../../raw/history/pod256/transcripts/2026-10-07/transcripts/2026/2026-02-18-e105.md)).
 
 ## Incumbents going open source
+
 
 | Vendor / project | What opened | Notes | Source |
 |---|---|---|---|
