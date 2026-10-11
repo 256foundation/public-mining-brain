@@ -56,6 +56,12 @@ Chat and social sources are captured by dedicated bots/watchers (run on the auto
 - **SEC EDGAR**: declare a User-Agent with contact; rate-limit to ≤10 req/s.
 - **dash.256f.org is NOT a data source** — dashboard only, do not scrape; pull live numbers from the
   pool Prometheus endpoint above.
+- **Hardware specs, not prices** (Tyler, 2026-10-11): miners trade like commodities — price
+  tracking is out of scope. Machine articles carry the full manufacturer spec sheet (verbatim
+  rows, As-Of); storefront prices ride along only as dated As-Of sheet rows / Disputed evidence,
+  never as wiki claims. Completeness goal: every current-gen SKU in each live manufacturer
+  catalog gets a spec article; prior-gen SKUs stay out unless load-bearing.
+  See `sources/registry.md` → Specs-not-prices rule.
 
 
 ## Freshness scan SOP

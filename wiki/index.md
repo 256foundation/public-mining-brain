@@ -24,6 +24,13 @@ ASIC manufacturers and models, components, cooling, repair, DIY builds.
 | [Antminer S21 XP+ Hyd](hardware/antminer-s21-xp-plus-hyd.md) | 480 T / 5280 W / 11 J/T live sheet; DBs still carry older 500 Th / 5500 W rows — Disputed. | 2026-10-10 |
 | [Antminer S21 XP Hyd](hardware/antminer-s21-xp-hyd.md) | 473 TH/s / 5676 W / 12 J/T @35℃, $8,041 on sale; specs agree, price Disputed. | 2026-10-10 |
 | [Antminer S21 XP](hardware/antminer-s21-xp.md) | Air flagship 270 TH/s / 13.5 J/T @25℃, 76 dBA, single-phase; @25℃ vs @35℃ band convention. | 2026-10-10 |
+| [Antminer S21j XP Hyd](hardware/antminer-s21j-xp-hyd.md) | Hydro 495 TH/s / 5940 W / 12 J/T @35℃, 430×176×208 mm, 8–10 L/min; specs agree with AMV. | 2026-10-11 |
+| [Antminer U3S21EXPH](hardware/antminer-u3s21exph.md) | 3U rack bundle 860 TH/s / 11,180 W / 13 J/T, 24 A LP34 port, OD14, 16–20 L/min; AMV names it "S21e XP Hyd 3U". | 2026-10-11 |
+| [Antminer S21e XP Hyd](hardware/antminer-s21e-xp-hyd.md) | Hydro 430 TH/s / 5590 W / 13 J/T @35℃, 13.8 kg; specs agree across maker/AMV/MiningNow. | 2026-10-11 |
+| [Antminer S21 XP Imm](hardware/antminer-s21-xp-imm.md) | Oil immersion dual-mode: NEM 300 T/4050 W/13.5 + HEM 380 T/5700 W/15.0 @30℃ oil; DBs carry NEM only. | 2026-10-11 |
+| [Antminer S21+ Hyd](hardware/antminer-s21-plus-hyd.md) | Hydro 358 TH/s / 5370 W / 15 J/T; AMV/MN carry 319/358/395 Th revisions, 15 J/T constant. | 2026-10-11 |
+| [Antminer S21 Imm](hardware/antminer-s21-imm.md) | Oil immersion dual-mode: NEM 215 T/3440 W/16.0 + HEM 301 T/5569 W/18.5, 30–55 ℃ inlet band. | 2026-10-11 |
+| [Antminer S21e Hyd](hardware/antminer-s21e-hyd.md) | Hydro ladder bottom 288 TH/s / 4896 W / 17 J/T; AMV 310 Th revision; unique USDT/BTC Payment section. | 2026-10-11 |
 | [Whatsminer overview](hardware/whatsminer-overview.md) | MicroBT lineup ladder M70S→M73, 17-row catalog, image-only-PDF gap, M7B/M6B paper launch, family Disputed table. | 2026-10-10 |
 | [Whatsminer M66S](hardware/whatsminer-m66s.md) | 270–298 T ±10%, 18.5 J/T; AMV 298 vs MN 310 TH/s Disputed with $/kWh caveat; heater-fit immersion. | 2026-10-10 |
 | [Whatsminer M66S+](hardware/whatsminer-m66s-plus.md) | 280–318 T, 17 J/T manual-only SKU (image-only performance gap); release-month dispute. | 2026-10-10 |
@@ -32,6 +39,31 @@ ASIC manufacturers and models, components, cooling, repair, DIY builds.
 | [Whatsminer M65S](hardware/whatsminer-m65s.md) | 2U rack hydro 370–400 T / 18.5 J/T; absent from both spec DBs (omission Disputed). | 2026-10-10 |
 | [Whatsminer M70S](hardware/whatsminer-m70s.md) | Shop card 248TH @13.5 J/TH; DBs agree on 226 @ 3140 W — bin-mismatch Disputed. | 2026-10-10 |
 | [Whatsminer M73](hardware/whatsminer-m73.md) | 512TH @14.5 J/TH, 7424 W, 3-phase 10 kW input; DBs 470 @ 7200 W — Disputed. | 2026-10-10 |
+| [Whatsminer M60](hardware/whatsminer-m60.md) | Air 150–172 T @19.9 J/T, 2985–3422 W, AC220–240 V, 350 CFM; shop/manual weight discrepancy preserved. | 2026-10-11 |
+| [Whatsminer M60S](hardware/whatsminer-m60s.md) | Air 170–186 T @18.5 J/T, three banner options 184/186/188T; 350 CFM, single-phase. | 2026-10-11 |
+| [Whatsminer M60S+](hardware/whatsminer-m60s-plus.md) | Air 190–210 T @17 J/T, 3230–3570 W; spec file from official index (no page attachment). | 2026-10-11 |
+| [Whatsminer M60S++](hardware/whatsminer-m60s-plus-plus.md) | Air efficiency flagship 200–226 T @15.5 J/T, 3230–3570 W; single-phase 220–240 V. | 2026-10-11 |
+| [Whatsminer M63](hardware/whatsminer-m63.md) | Hydro 70 °C-outlet 334–366 T @19.9 J/T, ≥10 L/min, inlet 25–55 ℃; manual has no wall-power row. | 2026-10-11 |
+| [Whatsminer M63S](hardware/whatsminer-m63s.md) | Hydro 408 T @18 J/T, 7344 W banner; no page attachment — shop tab is the spec record. | 2026-10-11 |
+| [Whatsminer M63S++](hardware/whatsminer-m63s-plus-plus.md) | Hydro flagship 434–478 T @15.5 J/T, 29.5 kg class; spec file from official index. | 2026-10-11 |
+| [Whatsminer M66](hardware/whatsminer-m66.md) | Immersion 240–276 T @19.9 J/T, ≥24 L/min S5X/S3X dielectric; MiningNow "hydro" tag vs maker sheet noted. | 2026-10-11 |
+| [Whatsminer M70](hardware/whatsminer-m70.md) | Air M7x base 214–236 T @14.5 J/T, 3140–3500 W (Dec 2025 manual); not retail-listed. | 2026-10-11 |
+| [Whatsminer M70S+](hardware/whatsminer-m70s-plus.md) | Air best-in-class 244–280 T @12.5 J/T, 3140–3500 W; distinct SKU from retail M70S. | 2026-10-11 |
+| [Whatsminer M73S](hardware/whatsminer-m73s.md) | Hydro 70 °C 500–552 T @13.5 J/T; dual-mode 7200 W normal / 10 kW high-performance. | 2026-10-11 |
+| [Whatsminer M73S+](hardware/whatsminer-m73s-plus.md) | Hydro hero product 540–600 T @12.5 J/T; 70 °C outlet; AMV range-floor row only. | 2026-10-11 |
+| [Whatsminer M7B](hardware/whatsminer-m7b.md) | Next-gen hydro 90 °C outlet: 470–526 T @14.5 J/T, inlet 25–60 ℃, no flow row (gap). | 2026-10-11 |
+| [Whatsminer M7BS](hardware/whatsminer-m7bs.md) | 90 °C outlet 500–552 T @13.5 J/T, Feb 2026 manual; 1.3 L coolant. | 2026-10-11 |
+| [Whatsminer M7BS+](hardware/whatsminer-m7bs-plus.md) | 90 °C outlet flagship 540–600 T @12.5 J/T; inlet 25–60 ℃, outlet ≤90 ℃, ΔT 40 ℃. | 2026-10-11 |
+| [Whatsminer M7A](hardware/whatsminer-m7a.md) | 70 °C outlet twin of M7B ratings (470–526 T @14.5 J/T) with ≥10 L/min flow row present. | 2026-10-11 |
+| [Whatsminer M7AS](hardware/whatsminer-m7as.md) | 70 °C outlet 500–552 T @13.5 J/T; AMV 7500 W vs sheet 7200 W mode ambiguity noted. | 2026-10-11 |
+| [Whatsminer M7AS+](hardware/whatsminer-m7as-plus.md) | 70 °C flagship 540–600 T @12.5 J/T; AS/BS twin distinction documented. | 2026-10-11 |
+| [Whatsminer M6AS+](hardware/whatsminer-m6as-plus.md) | 70 °C outlet 390–450 T @17 J/T; no wall-power row (10 kW input only). | 2026-10-11 |
+| [Whatsminer M6AS++](hardware/whatsminer-m6as-plus-plus.md) | 70 °C outlet 434–478 T @15.5 J/T; no wall-power row (gap). | 2026-10-11 |
+| [Whatsminer M6BS+](hardware/whatsminer-m6bs-plus.md) | 90 °C outlet 390–450 T @17 J/T value bin; no flow row (gap). | 2026-10-11 |
+| [Whatsminer M6BS++](hardware/whatsminer-m6bs-plus-plus.md) | 90 °C outlet 434–478 T @15.5 J/T; Feb 2026 manual. | 2026-10-11 |
+| [Whatsminer M76](hardware/whatsminer-m76.md) | Oil-cooled 336–374 T @14.5 J/T; dual-mode 5200/7000 W, S5X/S3X dielectric. | 2026-10-11 |
+| [Whatsminer M76S](hardware/whatsminer-m76s.md) | Oil-cooled 362–406 T @13.5 J/T, same 5200/7000 W dual mode. | 2026-10-11 |
+| [Whatsminer M76S+](hardware/whatsminer-m76s-plus.md) | Oil-cooled top bin 390–440 T @12.5 J/T; 12.5 tier now in all three cooling classes. | 2026-10-11 |
 | [Avalon overview](hardware/avalon-overview.md) | Canaan lineup ladder A16XP→A15→A14, Wayback park note (live 403), lab-results disclaimer, A4 attribution confusion. | 2026-10-10 |
 | [Avalon A16XP](hardware/avalon-a16xp.md) | 300 TH/s / 12.8 J/TH flagship launched Dubai Oct 2025; release-date Disputed; no hydro variant. | 2026-10-10 |
 | [Avalon A15Pro](hardware/avalon-a15pro.md) | 221T / 16.8 J/TH; 5,000+ sold via Luxor financing, 6,840 to Cipher — IR-corroborated field scale. | 2026-10-10 |
