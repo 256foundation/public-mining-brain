@@ -1,0 +1,15 @@
+# Capture report: asic-rs PRs #410–415 (256foundation/asic-rs)
+
+Collected: 2026-10-10 via `gh api repos/256foundation/asic-rs/pulls/<n>` (+ `/files`).
+6 PR capture files in this directory, one per PR.
+
+Counts: 6 PRs — 2 open (#410, #415), 3 merged (#411, #412, #414), 1 closed-unmerged (#413). Authors: b-rowan (1), cfilipescu (2), dtyg0d (3). All created 2026-10-08/09.
+
+Signal per PR:
+
+- **#410** (feat, open, +1495/-1, b-rowan): New `Forgeaxe` make + ForgeOS Stock firmware. Model: BitForge Nano (`BITFORGE_NANO` / ASIC `BM1370`, SHA256), 1 fan / 1 board / 2 chips (per ForgeOS `BITFORGE_NANO_ASIC_COUNT`), B800 control board. Telemetry all from `/api/system/info` (keys: hashRate, fanrpm, temp, power, uptimeSeconds, bestDiff, boardVersion…); identified by web-root "ForgeOS" (not AxeOS).
+- **#411** (fix, merged 10-08, cfilipescu): Antminer v2020-backend control-board detection now reads `get_system_info.cgi` `system_kernel_version` when `miner_type.cgi` `/subtype` is missing (404 on older stock FW); `-xilinx` kernel marker → Xilinx board. Driven by a stock Antminer Z15 (`Linux 4.6.0-xilinx-g0387054-dirty`). Subtype still wins when present.
+- **#412** (fix, merged 10-08, cfilipescu): Follow-up to #411 — when `summary.cgi` also 404s (old Z15 stock), backend selection falls back to `get_system_info.cgi` `system_filesystem_version` build date (e.g. `Fri Jul 3 11:39:06 CST 2020` → v2020.7.3 → v2020 backend). Without it the v2023.07 backend was wrongly chosen and the Xilinx fallback never ran.
+- **#413** (feat, closed, +8999/-978, dtyg0d): Big read-only telemetry expansion. New identities: Antminer KS7 (KHeavyHash), S19NoPIC (`S19NOPIC`/`S19X88`/`S19X88 HIVEON`), Hiveon FW (S19/S19jPro aliases), Marathon/KaonSu FW (`/kaonsu/v1/brief`, marafw markers), IceRiver AL3 (Blake3, via `/user/userpanel` login flow), Goldshell SC5Pro (Blake2b). Stock Antminer parsing rewritten into shared telemetry module: rate-unit strings, legacy-Z15 contract (`CGMiner 4.9.0` / `CompileTime Fri Jul 3 11:39:06 CST 2020`), S21-hydro model matching, wattage cross-key validation (`chain_power`/`total_power`/`power`/`Power`/`watt`) with source attribution. Not merged as-written; Goldshell part superseded by #415.
+- **#414** (fix, merged 10-09, dtyg0d): Custom per-firmware discovery credentials (`with_firmware_discovery_auth_by_name`, Rust + Python factory) so stock miners with non-default passwords authenticate; Braiins LuCI login now `.form()`-encodes credentials (passwords with `&`,`+`,`=`,spaces/unicode previously broke auth); session cookie reuse. Fixes #403, #404.
+- **#415** (feat, open, +1336/-1, dtyg0d): Standalone Goldshell stock telemetry (read-only, mappings adapted from pyasic): SC5Pro (Blake2b) identified via web `status` `model`/`firmware`; RPC `version`/`summary`/`devs`/`stats`/`pools` + web `status`/`setting`; discovery markers `goldshell`/`kdaminer`/`intchains_qomo`/`cloud-box`; unknown models (ARI31) stay Unknown. Fixtures: sanitized SC5Pro 2.2.0 (4×84 chips) and ARI31 2.2.3.

@@ -2,8 +2,8 @@
 
 > Sources: 256foundation/rhap and rhapd-bitaxe-gamma READMEs (captured 2026-10-07); bitaxeorg/bitaxe-raw README, issues and PRs, 2025-04 → 2026-09; 256foundation/emberone-usbserial-fw README and PRs, 2025-03 → 2026-03; 256foundation/mujina docs and PRs, 2026-08 → 2026-10; Assembling Freedom newsletter, 2025-05-05
 > Raw: [256foundation/rhap README](../../raw/protocols/harvest/github-256foundation-rhap.md); [rhapd-bitaxe-gamma README](../../raw/protocols/harvest/github-256foundation-rhapd-bitaxe-gamma.md); [bitaxe-raw README](../../raw/hardware/bitaxe-osmu/github-bitaxeorg-bitaxe-raw.md); [emberone-usbserial-fw README](../../raw/hardware/256f-hardware/github-256foundation-emberone-usbserial-fw.md); [Mujina: bitaxe-raw PROTOCOL.md](../../raw/firmware/mujina/github-mujina-mujina-miner-src-mgmt-protocol-bitaxe-raw-prot.md); [Mujina PR #107](../../raw/firmware/mujina/2026-08-30-github-mujina-pr-107-feat-bitaxe-support-the-rhap-d-firmware.md)
-> Updated: 2026-10-09
-> As-Of: 2026-10-09
+> Updated: 2026-10-10
+> As-Of: 2026-10-10
 > Status: Draft
 
 ## Overview
