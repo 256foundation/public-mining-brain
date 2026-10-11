@@ -82,6 +82,8 @@ ASIC manufacturers and models, components, cooling, repair, DIY builds.
 | [Auradine AT2880](hardware/auradine-at2880.md) | Air flagship 0–270 TH/s, 16–18 J/TH modes, 5000 W; AMV-only cross-check. | 2026-10-10 |
 | [Auradine AH3880](hardware/auradine-ah3880.md) | Hydro 600 TH/s, 10 kW 3-phase — commercial heater-class; efficiency Disputed across PRs. | 2026-10-10 |
 | [Auradine AI3680](hardware/auradine-ai3680.md) | Single-phase immersion 365 TH/s / 7500 W; fluid-locked warranty flagged as deployment risk. | 2026-10-10 |
+| [Hashrate Heater Comparison](hardware/hashrate-heater-comparison.md) | Consumer/light-commercial matrix: Heatbit lineup, Superheat H1C, Constellation 200-600T, Hotmine, RY3T, DIY baseline; 3,412 BTU/hr-per-kW conversion. | 2026-10-11 |
+| [Immersion Fluids](hardware/immersion-fluids.md) | Dielectric-oil physics and trade-offs (thermal mass vs viscosity, thermal-paste erosion, hydronic incompatibility), Liquid21, glycol hydro side. | 2026-10-11 |
 
 ## firmware
 
@@ -157,6 +159,7 @@ Farms, public miners, hosting, colocation, energy interplay.
 | [Mining Policy and Legal](industry/mining-policy-and-legal.md) | Samourai prosecution and money-transmitter theory, operation Red Sunset, Bitaxe USPTO trademark fight, tariffs/customs, UL-FCC-CE, net metering. | 2026-10-10 |
 | [Public Miner Economics](industry/public-miner-economics.md) | 8-ticker EDGAR snapshot (FY25 10-Ks + H1'26 10-Qs): margin stress, BTC treasury divergence, AI/HPC pivot contract values, demand-charge economics, Crusoe/NYDIG exit. | 2026-10-10 |
 | [Hashrate Heating & Mining Infrastructure Companies](industry/hashrate-heating-companies.md) | Bot-facing company tracker: 18 vetted vendors (appliance, liquid-cooling, DIY, infra) + Gridless/GRIID, vetting bar, skip list, registry mapping. | 2026-10-11 |
+| [Mining Hotels & Hosting](industry/mining-hotels-and-hosting.md) | Mining-hotel landscape (Abundant Mines, Hotmine hotel, Freedomtech), seasonal heat-vs-hosting trade, community view, no dated rates yet. | 2026-10-11 |
 
 ## hashrate-market
 

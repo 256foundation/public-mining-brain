@@ -59,6 +59,8 @@ A company is tracked only with: (1) a live official site, and (2) independent co
 
 **Nakamoto Mining LTD.** — Schnitzel's store ("FREE shipping over $99 for Canadians! 🇨🇦"), 120V Home Mining category + FILE DEPOT — [capture](../../raw/industry/nakamoto-mining/2026-10-11-nakamoto-home.md). HashTub builder profiled in the book.
 
+**Solo Satoshi** — "Your Trusted Bitcoin Hardware source. Fast Shipping!" — home-miner retail with a dedicated Heaters subcategory (Bitaxe, Nerdaxe, Avalon, solo miners; Learning Center, podcast, firmware flasher) — [capture](../../raw/industry/solosatoshi/2026-10-11-solosatoshi-home.md). Broke the Superheat CES 2026 unveiling.
+
 ## Shut down
 
 **Unbound Networks** (active ~2023–2025) — Zack Bomsta ("the guy behind Unbound", previously of the Njord Cloudline and Loki board work) with business partner Clay (Missoula/Montana deployment); sold ASIC-based heating systems pre-modified from industrial hashboards. Book ch. 4: "reuses industrial miner hashboards, pre-modifying the machines for easy home use and quiet operation." (p. 57) — [book extract](../../raw/books/braiins-heat-reuse/04-successful-case-studies.md). At Undermine 2025 the team showed beta units — "My business partner Clay is out there building that network." — [summit panel transcript](../../raw/history/heatpunks-summit/20251111-undermine-2025-small-scale-bitcoin-mining-panel.md) — a little over a petahash deployed in Montana homes. Provenance: Braiins donated its experimental aluminum-PCB Marathon/S17 rigs to Unbound [#549 · 2024-03-22 · Zack Bomsta] — see [ASIC Thermals & Heat Reuse](../hardware/asic-thermals-and-heat-reuse.md). Press: ABC4/NerdWallet profile (Provo, Utah; radiant-floor pilot; bot-walled, pointer only). End state: employment records end 2025-08; unboundnetworks.com parked (registrar lander) with no bitcoin-era Wayback capture; Tyler confirms shut down (2026-10-11) — [shutdown record](../../raw/industry/unbound-networks/2026-10-11-unbound-networks-shutdown.md). Registry: `unbound-networks` (`dormant`, static).
@@ -70,6 +72,8 @@ A company is tracked only with: (1) a live official site, and (2) independent co
 **GRIID Infrastructure** — *absorbed*. NASDAQ GRDI; CleanSpark "announced today the completed acquisition of GRIID Infrastructure Inc. (Nasdaq: GRDI)" effective 2024-10-30, ~0.06959 CLSK per GRDI share, 400 MW Tennessee/TVA buildout planned — [capture](../../raw/industry/griid/2026-10-11-cleanspark-griid-acquisition.md). Registry row kept `dormant` for history; successor coverage lives under `sec-edgar-miners` (CLSK).
 
 **Flare-gas / field-gas infra** — Crusoe (AI pivot, NYDIG acquired its mining op), Upstream Data (BlackBox), Giga Energy (AI data-center pivot) — already tracked under Industry rows since A10; see [Public Miner Economics](public-miner-economics.md) for the AI/HPC pivot economics.
+
+**Hosting / mining hotels** — Abundant Mines, Hotmine's hotel, Freedomtech — see [Mining Hotels & Hosting](mining-hotels-and-hosting.md).
 
 ## Research & consulting (no registry row)
 
@@ -102,6 +106,8 @@ A company is tracked only with: (1) a live official site, and (2) independent co
 | CryptoCloaks | `cryptocloaks` | monthly |
 | Altair Technology | `altair-tech` | monthly |
 | Nakamoto Mining | `nakamoto-mining` | monthly |
+| Solo Satoshi | `solosatoshi` | monthly |
+| Abundant Mines (hosting) | `abundant-mines` | monthly |
 | Unbound Networks (shut down) | `unbound-networks` | static |
 | Gridless | `gridless` | monthly |
 | GRIID (dormant) | `griid` | static |

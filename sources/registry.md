@@ -153,6 +153,8 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | `p2pool-v2` | P2Poolv2 — P2P pool reboot (pool2win; live public testnet4 pool; Hydrapool deployment mode in README) | https://github.com/pool2win/p2pool-v2 | repo | monthly | verbatim | agent | active |
 | `blitz-pool` | Blitz Pool — non-custodial SV1+SV2 solo/PPLNS pool (multi-output coinbase; hobbyist scale) | https://blitzpool.yourdevice.ch | site | monthly | extract | agent | active |
 | `stratum-work` | stratum.work — live stratum visualizer + source | https://stratum.work · https://github.com/bboerst/stratum-work | site | monthly | extract | agent | active |
+| `delving-bitcoin` | Delving Bitcoin — mining/mining-pools/stratum-v2 tags (Discourse JSON; no /c/mining/ category, tag-organized) | https://delvingbitcoin.org | forum | monthly | extract | agent | active |
+| `optech` | Bitcoin Optech — mining topic pages + newsletter (pooled-mining, selfish-mining) | https://bitcoinoptech.info | docs | monthly | extract | agent | active |
 
 ## Economics, Data & Research
 
@@ -207,6 +209,8 @@ The tracked-company list (A15, 2026-10-11): every row below passed the notabilit
 | `cryptocloaks` | CryptoCloaks (S9 ASIC space-heater STLs + testing data, 3D-printed mining parts) | https://www.cryptocloaks.com | site | monthly | extract | agent | active |
 | `altair-tech` | Altair Technology (miner/parts reseller: Loki Rigs, home-miner lines, consulting) | https://altairtech.io | site | monthly | extract | agent | active |
 | `nakamoto-mining` | Nakamoto Mining LTD. — Schnitzel's 120V home-mining store + HashTub builds | https://nakamotomining.com | site | monthly | extract | agent | active |
+| `solosatoshi` | Solo Satoshi — home-mining hardware store (Bitaxe/Nerdaxe/Avalon/Heaters; Learning Center, podcast, flasher tools) | https://solosatoshi.com | site | monthly | extract | agent | active |
+| `abundant-mines` | Abundant Mines — full-service mining hosting, hydro-powered Oregon ("mining hotel" operator) | https://abundantmines.com | site | monthly | extract | agent | active |
 | `unbound-networks` | Unbound Networks (ASIC home-heater startup — Zack Bomsta + Clay; book profile p. 57; ~1 PH of beta heaters in Montana homes per Undermine 2025; shut down — Tyler-confirmed 2026-10-11; domain parked, live site unrecoverable) | *site defunct — see raw/industry/unbound-networks/* | site | static | extract | agent | dormant |
 | `gridless` | Gridless (bitcoin mining as energy infrastructure beside renewables, Africa) | https://gridlesscompute.com | site | monthly | extract | agent | active |
 
@@ -255,4 +259,6 @@ The 2026-10-11 pass (A15 company deep-dive) resolved the remaining seed-list que
 - NDA'd silicon datasheets: verify redistribution rights per document; NDA'd ones stay `link-only` or out of the public repo.
 - **Book-source rule** (Tyler, 2026-10-10): books → `extract` posture. Key information and learnings with chapter attribution + link to the freely distributed PDF. No full-text dumps; extract files in raw/ must carry the exact literals the article cites (grounding invariant still applies). Flip a specific book to verbatim only if load-bearing.
 - **No-massive-data rule** (Tyler, 2026-10-10): the wiki holds key information and pointers, not massive datasets or thousands of lines of source code. Live data endpoints get `link-only` registry rows + a pointer cite in affected articles + one row in `meta/data-resources.md`.
+- **Dormant-row liveness** (Tyler, 2026-10-11): `dormant`/`dead` rows get an annual liveness recheck — confirm the surface is still dead (or has come back) and record it in the affected article's status-change history. The bot never silently resurrects or deletes rows; a revival is a new dated claim.
+- **Tombstone captures** (Tyler, 2026-10-11): for shut-down companies, capture the evidence chain (domain probe → registrar stub; Wayback CDX for last-live snapshots; already-captured print/summit/press anchors). First worked example: `unbound-networks` (raw/industry/unbound-networks/). Wayback CDX (`web.archive.org/cdx/search/cdx?url=<domain>&from=<year>`) is the first-resort dead-site evidence route.
 - **Specs-not-prices rule** (Tyler, 2026-10-11): ASIC miners trade like commodities — machine prices churn constantly and are not wiki knowledge. Machine articles exist for the detailed spec sheet (hashrate, power on wall, efficiency, electrical, thermal, acoustic, form factor, cooling-class measurement conventions); the completeness goal is **every current-gen SKU in each manufacturer's live catalog**. Prices appear only as dated As-Of evidence inside a captured sheet row or a Disputed block — never as a wiki claim or headline, and never refreshed as a maintenance task. Prior-gen SKUs stay out unless load-bearing.
