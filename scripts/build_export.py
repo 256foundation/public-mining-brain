@@ -326,9 +326,19 @@ def main() -> None:
 
     if args.check:
         existing = out_dir / "knowledge-pack.json"
-        if existing.exists() and existing.read_text(encoding="utf-8") == rendered:
-            print(f"pack is fresh: {pack['meta']['contentHash']}")
-            return
+        if existing.exists():
+            try:
+                old = json.loads(existing.read_text(encoding="utf-8"))
+                fresh = (
+                    old.get("meta", {}).get("contentHash") == pack["meta"]["contentHash"]
+                    and old.get("meta", {}).get("version") == pack["meta"]["version"]
+                    and len(old.get("pages", [])) == pack["meta"]["pageCount"]
+                )
+            except json.JSONDecodeError:
+                fresh = False
+            if fresh:
+                print(f"pack is fresh: {pack['meta']['contentHash']}")
+                return
         print("pack is stale or missing — run scripts/build_export.py")
         raise SystemExit(1)
 
