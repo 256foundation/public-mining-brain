@@ -1,0 +1,162 @@
+# Braidpool — README (repo braidpool/braidpool, verbatim)
+
+> Source: https://github.com/braidpool/braidpool (README.md, main branch)
+> Collected: 2026-10-10
+> Published: Unknown (repo created 2021-02-09)
+> Registry ID: braidpool
+
+Repo metadata (gh api repos/braidpool/braidpool, 2026-10-10):
+- Description: "Braidpool - a scalable peer to peer bitcoin mining pool with support for hashrate futures."
+- License: AGPL-3.0 | Stars: 148 | Forks: 109 | Open issues: 91
+- Created 2021-02-09; default branch `main`; repo pushed_at 2026-10-09T22:25:09Z
+- Topics: bitcoin, bitcoin-mining, frost, p2pool
+- No GitHub releases ("NO RELEASES" via gh api repos/braidpool/braidpool/releases)
+
+Activity snapshot (2026-10-10):
+- `main` (default branch) last commit: 2025-06-02 "Update general_considerations.md (#173)" — main is stale.
+- Development happens on the `dev` branch: last commits 2026-10-09 "Removed unnecessary files, cleaned up the functions, and normalized the hashrate values. (#572)", 2026-09-30 "feat: add functional testing framework (#566)", 2026-09-28 "Replace simulator with live node WebSocket RPC (#519)".
+- Recent PRs (Oct 2026): #588 fix GBP bitcoin prices, #587 Bead DAG table layout, #586 rpc getworkbybead, #584/#583 bead wire-protocol hardening — multiple contributors (priyashuu, zaidmstrr, Dhirenderchoudhary, Atishyy27, Mayank Yadav, Bob McElrath).
+- Repo events show pushes/PRs on 2026-10-09/10 — project is under daily development, pre-release.
+
+---
+
+![Build status](https://github.com/wholooks/braidpool/actions/workflows/rust-node.yml/badge.svg)
+
+# Proposal
+
+Read the
+[Overview](https://github.com/braidpool/braidpool/blob/master/docs/overview.md)
+for [General Considerations for Decentralized Mining Pools](https://github.com/braidpool/braidpool/blob/master/docs/general_considerations.md), or [Braidpool Spec](https://github.com/braidpool/braidpool/blob/master/docs/braidpool_spec.md) in increasing levels of complexity. You may also be interested in our [Roadmap](https://github.com/braidpool/braidpool/blob/master/docs/roadmap.md)
+
+The goals of the pool are:
+
+1. Lower variance for independent miners, even when large miners join the pool.
+2. Miners build their own blocks, just like in p2pool.
+3. Payouts require a constant size blockspace, independent of the number of
+   miners on the pool.
+4. Provide building blocks for enabling a futures market of hash rates.
+
+# Running the node
+
+Braidpool nodes need to connect to a bitcoin RPC node. The bitcoin node also needs to have the `hashblock` [ZMQ notification](https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md) enabled.
+
+Let's assume there is a `bitcoind` running on `0.0.0.0:8332` with username `xxxx`, password `yyyy`, and `zmqpubhashblock` enabled on port `28332`:
+
+```
+$ bitcoind -rpcport=8332 -rpcuser=xxxx -rpcpassword=yyyy -zmqpubhashblock=tcp://localhost:28332
+```
+
+For the moment, the braidpool node runs a simple p2p broadcast. To run it you need to do
+the usual cargo things
+
+```
+cd node
+cargo build
+
+# run the first seed node on port 8989
+cargo run -- --bind=localhost:8989 --bitcoin=0.0.0.0 --rpcport=8332 --rpcuser=xxxx --rpcpass=yyyy --zmqhashblockport=28332
+
+# run other nodes pointing to the seeding node and specify their own port as 9899
+cargo run -- --bind=localhost:9899 --addnode=localhost:8989 --bitcoin=0.0.0.0 --rpcport=8332 --rpcuser=xxxx --rpcpass=yyyy --zmqhashblockport=28332
+```
+
+# Running the CPUnet testing node using nix-script
+
+Setting up `nix` locally for utilizing it from the specific releases check - [Nix setup](https://github.com/DeterminateSystems/nix-installer/releases)
+
+```
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
+  sh -s -- install
+```
+
+The `.nix` script present in the root directory `/braidpool/cpunet_node.nix` contains the CPUnet patched
+bitcoin-node , can be set up locally as testnet for Braidpool.
+
+```
+# Path to the parent directory
+cd /braidpool
+
+# Run the nix-script
+nix-build cpunet_node.nix
+
+# Path to the result directory created after successful build
+cd result
+
+# Running the CPUnet node
+./bin/bitcoind -cpunet -zmqpubsequence=tcp://127.0.0.1:28338
+
+# Creating/loading a corresponding wallet
+./bin/bitcoin-cli -cpunet createwallet cpunet
+
+# Load an  wallet created previously
+./bin/bitcoin-cli -cpunet loadwallet cpunet
+
+# Generate blocks
+./contrib/cpunet/miner --cli=./bin/bitcoin-cli --ongoing --address `./bin/bitcoin-cli -cpunet getnewaddress` --grind-cmd="./bin/bitcoin-util -cpunet -ntasks=1 grind"
+
+
+```
+
+# Documentation
+
+The documentation is in the `docs/` directory and contains a bunch of math. To
+view it locally rendered in your browser including the math, use
+[MkDocs](https://www.mkdocs.org/):
+
+```
+cd braidpool
+mkdocs serve
+xdg-open http://localhost:8000
+```
+
+Or you can just click on the docs directory in the code and Github will render the math in these markdown docs.
+
+# Braidpool Dashboard
+
+A visualization dashboard for the Braidpool decentralized mining pool, and Bitcoin related data.
+
+## How to Run
+
+```bash
+# Navigate to the dashboard directory 
+cd dashboard
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The dashboard will open automatically at [http://localhost:3000](http://localhost:3000).
+
+## Build for Production
+
+```bash
+# Navigate to the dashboard directory 
+cd dashboard
+
+# Create optimized build
+npm run build
+
+# Preview production build locally
+npm run preview
+```
+For more details on the Dashboard, [checkout its readme file](./dashboard/README.md).
+
+# Progress
+
+A list with TODO's:
+
+- [x] Global simulator for Braids (`tests/simulator.py`)
+- [x] Python braid `cohorts()` implementation and tests
+- [x] Rust braid object handling
+- [ ] Connect braid algorithms to blocks on CPUNet
+- [ ] P2P gossip based broadcast of miner blocks and shares.
+- [ ] Use FROST rust implementation for providing threshold schnorr
+      signatures. Use mock clock for identifying rounds.
+- [ ] Validate received blocks and shares.
+- [ ] Single script installer (limited to Linux variants, potentially using
+      docker).
+
+[Discord chat](https://discord.gg/pZYUDwkpPv)

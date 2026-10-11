@@ -1,0 +1,321 @@
+# P2Poolv2 — README (repo p2poolv2/p2poolv2, verbatim; AsciiDoc)
+
+> Source: https://github.com/p2poolv2/p2poolv2 (README.adoc, main branch; redirects from pool2win/p2pool-v2)
+> Collected: 2026-10-10
+> Published: Unknown (repo created 2024-12-08)
+> Registry ID: p2pool-v2
+
+Repo metadata (gh api repos/pool2win/p2pool-v2 → resolves to p2poolv2/p2poolv2, 2026-10-10):
+- Description: "P2Poolv2 - Rebooting P2Pool for Bitcoin"
+- License: MIT OR Apache-2.0 | Stars: 82 | Forks: 43 | Open issues: 82
+- Created 2024-12-08; default branch `main`; pushed_at 2026-10-09T12:37:39Z
+- Topics: bitcoin, mining-pool, p2p, stratum
+- NOTE: the repo has been renamed/moved into the `p2poolv2` org (pool2win/p2pool-v2 → p2poolv2/p2poolv2).
+
+Activity snapshot (2026-10-10):
+- Very active: last commits 2026-10-09 (pool2win: "Show 1h avg on public pool dashboard", "Remove difficulty multiplier for share chain PPLNS window").
+- Releases: v0.15.3 (2026-09-21), v0.15.2, v0.15.1 (2026-09-06) — prebuilt installers for Apple Silicon macOS, ARM64 + x64 Linux via cargo-dist installer script; dashboard assets shipped separately (dashboard.tar.gz).
+- README documents a live signet workflow (docker signet bitcoind + p2poolv2 node), testnet4/mainnet systemd units, and a `mode = "hydrapool"` config that "builds no share chain" — a dedicated Hydrapool mode.
+
+---
+
+image:https://github.com/p2poolv2/p2poolv2/actions/workflows/rust.yml/badge.svg[Rust CI, link=https://github.com/p2poolv2/p2poolv2/actions/workflows/rust.yml]
+image:https://codecov.io/gh/p2poolv2/p2poolv2/graph/badge.svg?token=Xeu4GFdASS[Codecov, link=https://codecov.io/gh/p2poolv2/p2poolv2]
+image:https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg[License: MIT OR Apache-2.0, link=#license]
+
+== P2Poolv2
+
+****
+**Mission:** ##Replace pool operators with miners##
+****
+
+P2Poolv2 is a peer-to-peer Bitcoin mining pool where miners coordinate
+directly and verify their rewards without centralized operators.
+
+1. Share chain with uncles - all your work is accounted for.
+2. Pay large miners in coinbase - non custodial solution for top N miners.
+3. Support transactions - pay all miners with atomic swaps by market makers.
+4. Market makers buy shares from smaller miners - earning virgin coins.
+
+--
+We chat on https://matrix.to/#/#p2poolv2:matrix.org[Matrix].
+
+We use https://github.com/p2poolv2/p2poolv2/wiki[github wiki] for most design documents and tools for developers.
+
+We are tracking progress using our https://github.com/orgs/p2poolv2/projects/1[Github project: Reboot P2Pool].
+
+See detailed https://github.com/p2poolv2/p2poolv2/wiki/Developer-Setup-Notes[Developer Setup Notes] on the wiki.
+--
+
+== Running P2Poolv2
+
+=== Setup Bitcoin Node
+
+To run your local p2pool node you need to run a bitcoin node and then
+a p2poolv2 node configured to talk to your bitcoind node to fetch
+blocktemplates and submit blocks.
+
+For signet we provide a `docker/bitcoin-signet.conf` that you can use
+as your bitcoin.conf. We also provide a docker compose service that
+will start signet bitcoind with enough blocks to start mining. If you
+just want to run a signet network run bitcoin as
+
+[,shell]
+----
+cd docker
+docker compose up -d bitcoind
+----
+
+The important details you want from your bitcoin.conf are:
+
+. rpcuser
+. rpcpassword
+
+Another important detail is to set your bitcoin config file to allow
+for 500 coinbase outputs. This is required before we ship our atomic
+swap based payout mechanism. With space to accomodate 500 miners, we
+can start running P2Poolv2 with direct payments from coinbase.
+
+For 500 P2WPKH outputs use `blockmaxweight` to 3930000.
+
+[,config]
+----
+blockmaxweight=3930000
+----
+
+Finally, you need to mine 32 blocks before you can run p2poolv2 node
+to talk to bitcoind. This is because BIP34 requires coinbase to
+include height using varint format, which conflicts with how these
+first 32 heights are encoded. The bitcoind docker service takes care
+of this by bootstrapping the signet with first 32 blocks.
+
+=== Install P2Poolv2
+
+[,shell]
+----
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/p2poolv2/p2poolv2/releases/latest/download/p2poolv2_node-installer.sh | sh
+curl --proto '=https' --tlsv1.2 -LsSf -o config.toml https://github.com/p2poolv2/p2poolv2/releases/latest/download/config.sample.toml
+----
+
+The above will install `p2poolv2` and `p2poolv2_cli` in your PATH and download a `config.toml` for you to edit as required.
+
+The location where the binaries are installed will be echoed by the installer.
+
+[,shell]
+----
+p2poolv2 --help
+p2poolv2_cli --help
+----
+
+=== Run P2Poolv2
+
+. Edit the `config.toml` as required.
+.. At the very least you need to provide the bitcoind rpc details under the `[bitcoinrpc]` section.
+.. Replace `[stratum] miner_address` with your own share chain address. The
+sample ships an unspendable placeholder, so shares mined against it are lost.
+. Run P2Poolv2 `p2poolv2 config.toml`
+. Point your miners to `<yourhost>:<your stratum port in config.toml>`
+. Decide where the share chain address comes from. Every share needs an owner
+on the share chain, and that owner is a different address, on a different
+chain, from the bitcoin address that receives the payout.
++
+--
+The stratum *username* stays the bitcoin payout address, exactly as before.
+
+The share address comes from one of two places:
+
+* *The node's address.* Set `[stratum] miner_address` in `config.toml` and no
+miner needs to change anything -- every share the pool mines is owned by that
+address, while bitcoin PPLNS payouts still go per miner from the username. Use
+this if your miner firmware caps the password field, or if you intend to
+accumulate the tradable shares yourself.
+* *Per miner.* Set the stratum password to `p2p=<address>`, combinable with the
+existing difficulty hints as a comma-separated list, for example
+`p2p=sp2pool1...,d=1000`. A miner that sends a *different* address from the
+node's configured one is rejected rather than silently overridden.
+
+If neither is set, authorize is rejected with `This pool needs a share chain
+address. Set the stratum password to p2p=<address>...`.
+
+Hydrapool mode (`mode = "hydrapool"`) builds no share chain and needs none of
+this; setting `miner_address` there fails at startup.
+--
+
+==== Getting a share chain address
+
+Take the key from a wallet that will custody and back it up. The recommended
+source is a Bitcoin Core wallet:
+
+[,shell]
+----
+ADDR=$(bitcoin-cli -signet getnewaddress "p2pool share owner" bech32m)
+bitcoin-cli -signet getaddressinfo "$ADDR"    # check "ismine" and "solvable"
+bitcoin-cli -signet getaddressinfo "$ADDR" | jq -r .witness_program \
+  | p2poolv2_cli address --network signet
+----
+
+`witness_program` is the 32 byte taproot output key; `p2poolv2_cli address`
+encodes it under the share chain prefix for the network you name (`main`,
+`testnet4`, `signet` or `regtest`, as Bitcoin Core names them). Check
+`"ismine": true` and `"solvable": true` in the `getaddressinfo` output, or you
+are assigning shares to a key you cannot sign with.
+
+Use the address either on the node, as `[stratum] miner_address` in
+`config.toml`, or from the miner, as the stratum password:
+
+[,shell]
+----
+p2p=sp2pool1p504yc8zlqs4w077ss6787v8z5zxgke6nc333md75k87t82u5ryqqd9033x,d=1000
+----
+
+The `p2p=` key is case insensitive and the fields may be in any order, comma,
+space, tab or semicolon separated. The stratum *username* stays your bitcoin
+payout address. Note that `p2p=<address>` alone is 71 characters, so check your
+firmware does not truncate the password field; a truncated address fails its
+checksum rather than sending your shares elsewhere.
+
+P2Poolv2 does not generate private keys and ships no tool to do so, by design.
+The encoder takes a public output key only, never a private key.
+
+NOTE: A taproot address is not a share chain address. `tb1p...` and
+`sp2pool1p...` encode the same 32 bytes, but the prefix is covered by the
+checksum, so neither parser accepts the other's form.
+
+=== Enable Dashboard
+
+P2Poolv2 includes a web dashboard for monitoring your node. The static
+assets are distributed as a separate `dashboard.tar.gz` archive.
+
+. Download and extract the dashboard assets:
++
+[,shell]
+----
+curl --proto '=https' --tlsv1.2 -LsSf -o dashboard.tar.gz https://github.com/p2poolv2/p2poolv2/releases/latest/download/dashboard.tar.gz
+tar xzf dashboard.tar.gz
+----
+
+. Set the `P2POOL_STATIC_DIR` environment variable to point to the extracted directory:
++
+[,shell]
+----
+export P2POOL_STATIC_DIR=/path/to/static
+----
+
+. Access the dashboard at `http://<your api hostname>:<your api port>/dashboard`
+
+If `P2POOL_STATIC_DIR` is not set, the dashboard is not available when
+running from a release binary.
+
+=== Grafana dashboards
+
+Prometheus + Grafana dashboards for a P2Poolv2 node's `/metrics`.
+
+==== Run the metrics stack (Docker)
+
+[,shell]
+----
+cd docker
+docker compose -f docker-compose.metrics.yml up -d
+----
+
+Grafana at http://localhost:3000 (admin/admin). The `*-provision.json` files in
+`dashboards/` are auto-provisioned; Prometheus scrapes the node on `:46884`.
+
+=== Use in your own Grafana
+
+Import the JSON from link:./prometheus/grafana/dashboards-public/[`dashboards-public/`] (choose your
+Prometheus datasource at the prompt). These variable-free copies can also be
+shared read-only via Grafana's *Share externally*.
+
+Full guide: link:https://github.com/wiki/Dashboards.adoc[`Dashboards.adoc`].
+
+
+=== Setup Systemd Service
+
+To setup as a systemd service, use the systemd service file provided
+link:./p2poolv2@.service[p2poolv2@.service]. You can edit that service
+file to require your bitcoind service, if you use one.
+
+. Update the service file to point to where you installed your binaries. Use `which p2poolv2` to find where it is installed.
+. Setup `p2poolv2` user/group.
+. `/var/lib/p2poolv2`, `/var/log/p2poolv2`, `/etc/p2poolv2/` directories with permissions for p2poolv2 user.
+
+The above service file can be used for different networks, like so:
+
+[,shell]
+----
+sudo systemctl daemon-reload
+sudo systemctl enable --now p2poolv2@testnet4
+sudo systemctl enable --now p2poolv2@mainnet
+----
+
+=== Build From Source
+
+==== MSRV and Edition
+
+MSRV 1.88 with 2024 edition is required to build p2poolv2.
+
+==== Build
+
+. Install rust from link:https://rustup.rs/[rustup]
+. Install link:https://github.com/casey/just?tab=readme-ov-file#installation[just]
+. Build P2Poolv2
+.. Get latest source `git clone git@github.com:p2poolv2/p2poolv2.git`
+.. Build `just build-release`
+
+==== Tests
+
+To run CI tests locally run `just test`. To run tests, lint, and format checks use `just preflight`.
+
+=== Docker Support
+
+We also provide dockerfiles and a docker compose to run the node as a
+docker service.
+
+Our recommended way to run a node is using the provided installer and
+using the systemd service.
+
+If you still want to run a node using docker services, see
+link:docker/README.adoc[docker/README.adoc] for details.
+
+== API and CLI READMEs
+
+Both the API and CLI crates provide detailed documentation on how to
+use them in their individual crates.
+
+link:p2poolv2_api/README.md[API Documentation]
+
+link:p2poolv2_cli/README.md[CLI Documentation]
+
+== Run Nightly Script
+
+We have a script that runs a number of nodes for a period of time with
+simulated hashrate. This helps us continuously validate the p2p
+networking, with sync, and maintaining of the DAG is working
+correctly.
+
+[,shell]
+----
+DIAL_FANOUT=3 IDEAL_BLOCK_TIME=1 SHARES_PER_BLOCK=5 NODE_COUNT=10 CONVERGENCE_WAIT_SECONDS=100 LATENCY_MS=100 ./load-tests/sim/nightly.sh
+----
+
+See the link:docs/simulation/[docs/simulation] directory for detailed
+documentation on how to run the script and interpret the results.
+
+== License
+
+Licensed under either of
+
+* Apache License, Version 2.0 (link:LICENSE-APACHE[LICENSE-APACHE] or
+  https://www.apache.org/licenses/LICENSE-2.0)
+* MIT license (link:LICENSE-MIT[LICENSE-MIT] or
+  https://opensource.org/licenses/MIT)
+
+at your option.
+
+=== Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally
+submitted for inclusion in P2Poolv2 by you, as defined in the Apache-2.0
+license, shall be dual licensed as above, without any additional terms or
+conditions.

@@ -148,6 +148,9 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | `bitcoin-core` | Bitcoin Core (node/template source) | https://github.com/bitcoin/bitcoin | repo | monthly | extract | agent | active |
 | `mempool-space` | Mempool.space network/pool stats | https://mempool.space | data | weekly | extract | agent | active |
 | `betterhash` | BetterHash — Matt Corallo's draft BIP (absorbed into Stratum V2; the "(Fromknecht)" attribution is wrong, no Fromknecht whitepaper found; canonical text in TheBlueMatt/bips — locate exact branch/path via GitHub API at capture) | https://github.com/TheBlueMatt/bips | report | static | verbatim | agent | active |
+| `braidpool` | Braidpool — P2P pool with hashrate futures (dev branch daily; pre-testnet) | https://github.com/braidpool/braidpool | repo | monthly | verbatim | agent | active |
+| `p2pool-v2` | P2Poolv2 — P2P pool reboot (pool2win; live public testnet4 pool; Hydrapool deployment mode in README) | https://github.com/pool2win/p2pool-v2 | repo | monthly | verbatim | agent | active |
+| `blitz-pool` | Blitz Pool — non-custodial SV1+SV2 solo/PPLNS pool (multi-output coinbase; hobbyist scale) | https://blitzpool.yourdevice.ch | site | monthly | extract | agent | active |
 | `stratum-work` | stratum.work — live stratum visualizer + source | https://stratum.work · https://github.com/bboerst/stratum-work | site | monthly | extract | agent | proposed |
 
 ## Economics, Data & Research
