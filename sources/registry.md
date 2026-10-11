@@ -207,6 +207,7 @@ The tracked-company list (A15, 2026-10-11): every row below passed the notabilit
 | `cryptocloaks` | CryptoCloaks (S9 ASIC space-heater STLs + testing data, 3D-printed mining parts) | https://www.cryptocloaks.com | site | monthly | extract | agent | active |
 | `altair-tech` | Altair Technology (miner/parts reseller: Loki Rigs, home-miner lines, consulting) | https://altairtech.io | site | monthly | extract | agent | active |
 | `nakamoto-mining` | Nakamoto Mining LTD. — Schnitzel's 120V home-mining store + HashTub builds | https://nakamotomining.com | site | monthly | extract | agent | active |
+| `unbound-networks` | Unbound Networks (ASIC home-heater startup — Zack Bomsta + Clay; book profile p. 57; ~1 PH of beta heaters in Montana homes per Undermine 2025; shut down — Tyler-confirmed 2026-10-11; domain parked, live site unrecoverable) | *site defunct — see raw/industry/unbound-networks/* | site | static | extract | agent | dormant |
 | `gridless` | Gridless (bitcoin mining as energy infrastructure beside renewables, Africa) | https://gridlesscompute.com | site | monthly | extract | agent | active |
 
 ## History & Reference
