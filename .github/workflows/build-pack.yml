@@ -1,0 +1,85 @@
+name: Build knowledge pack
+
+Builds `export/knowledge-pack.json` (the machine-readable knowledge pack — the
+single interface between this repo and external consumers, e.g. the 256-wiki
+front end) and, on merges to `main`, publishes it as a tagged GitHub release:
+`pack-v<date>.<shorthash>`.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "wiki/**"
+      - "raw/**"
+      - "sources/**"
+      - "scripts/build_export.py"
+      - ".github/workflows/build-pack.yml"
+  pull_request:
+    paths:
+      - "wiki/**"
+      - "raw/**"
+      - "sources/**"
+      - "scripts/build_export.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build pack
+        run: python3 scripts/build_export.py
+
+      - name: Pack summary
+        run: |
+          python3 - <<'EOF' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          p = json.load(open("export/knowledge-pack.json"))
+          m = p["meta"]
+          print("## Knowledge pack")
+          print()
+          print(f"- Pages: **{m['pageCount']}** across {m['topicCount']} topics")
+          print(f"- Content hash: `{m['contentHash']}`")
+          print(f"- Source commit: `{m['sourceCommit']}`")
+          disputed = sum(1 for x in p["pages"] if "disputed" in x["statuses"])
+          outdated = sum(1 for x in p["pages"] if "outdated" in x["statuses"])
+          print(f"- Disputed pages: {disputed} · Outdated pages: {outdated}")
+          EOF
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: knowledge-pack
+          path: export/
+          if-no-files-found: error
+
+      - name: Release pack (main only)
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DATE=$(date -u +%F)
+          SHA=$(git rev-parse --short HEAD)
+          TAG="pack-v${DATE}.${SHA}"
+          if git ls-remote --tags origin "refs/tags/${TAG}" | grep -q .; then
+            echo "Release ${TAG} already exists — skipping"
+            exit 0
+          fi
+          gh release create "${TAG}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --target "${GITHUB_SHA}" \
+            --title "knowledge pack ${DATE} (${SHA})" \
+            --notes "Automated knowledge pack build.
+
+          - Content hash: \`$(python3 -c 'import json;print(json.load(open("export/knowledge-pack.json"))["meta"]["contentHash"])')\`
+          - Attachments: \`knowledge-pack.json\` (schema v1), \`MANIFEST.md\`
+          - Regenerate locally: \`python3 scripts/build_export.py\`" \
+          export/knowledge-pack.json export/MANIFEST.md
+          echo "Published release ${TAG}"
