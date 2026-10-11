@@ -58,6 +58,9 @@ Stock, open-source, and commercial ASIC firmware; feature matrices; tuning.
 | Article | Summary | Updated |
 |---------|---------|---------|
 | [Mujina](firmware/mujina.md) | 256F's open Rust mining firmware: architecture, ports (Gamma, S19j Pro, Amlogic, BCB100, Zynq, Canaan), internals. | 2026-10-10 |
+| [Braiins OS](firmware/braiins-os.md) | Dev fee + license-server mechanics, autotuning (10 min vs 1-9 h dispute), DPS triggers/defaults (26.01 flip), 39 supported models, academy docs llms route. | 2026-10-10 |
+| [LuxOS](firmware/luxos.md) | Luxor firmware: ATM vs Bitmain LPM, power targeting, temp defaults/sensor honesty, 21 profiles, S19/S21/M5x coverage, Commander deployment, walkthrough transcript. | 2026-10-10 |
+| [Vnish → HashCore](firmware/vnish-hashcore.md) | The umbrella rebrand (no migration, no redirect), device-count claims verified (1.5M tile vs 600k vs 400k), versions 1.3.7/Toolkit 1.7.5, coverage + devfee. | 2026-10-10 |
 
 ## mining-software
 

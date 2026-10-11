@@ -1,0 +1,4456 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:04.000 --> 00:00:06.230 align:start position:0%
+ 
+Hi,<00:00:04.480><c> I'm</c><00:00:04.720><c> Trey,</c><00:00:05.440><c> one</c><00:00:05.600><c> of</c><00:00:05.680><c> the</c><00:00:05.839><c> firmware</c>
+
+00:00:06.230 --> 00:00:06.240 align:start position:0%
+Hi, I'm Trey, one of the firmware
+ 
+
+00:00:06.240 --> 00:00:08.470 align:start position:0%
+Hi, I'm Trey, one of the firmware
+deployment<00:00:06.720><c> engineers.</c><00:00:07.600><c> I</c><00:00:07.839><c> typically</c><00:00:08.240><c> help</c>
+
+00:00:08.470 --> 00:00:08.480 align:start position:0%
+deployment engineers. I typically help
+ 
+
+00:00:08.480 --> 00:00:10.549 align:start position:0%
+deployment engineers. I typically help
+out<00:00:08.880><c> with</c><00:00:09.120><c> remote</c><00:00:09.440><c> installations</c><00:00:10.240><c> and</c>
+
+00:00:10.549 --> 00:00:10.559 align:start position:0%
+out with remote installations and
+ 
+
+00:00:10.559 --> 00:00:12.790 align:start position:0%
+out with remote installations and
+occasionally<00:00:11.120><c> do</c><00:00:11.360><c> a</c><00:00:11.599><c> few</c><00:00:11.759><c> site</c><00:00:12.080><c> visits.</c><00:00:12.559><c> It's</c>
+
+00:00:12.790 --> 00:00:12.800 align:start position:0%
+occasionally do a few site visits. It's
+ 
+
+00:00:12.800 --> 00:00:14.629 align:start position:0%
+occasionally do a few site visits. It's
+time<00:00:12.880><c> for</c><00:00:13.040><c> the</c><00:00:13.120><c> Luxos</c><00:00:13.679><c> demo</c><00:00:14.080><c> everyone</c><00:00:14.480><c> has</c>
+
+00:00:14.629 --> 00:00:14.639 align:start position:0%
+time for the Luxos demo everyone has
+ 
+
+00:00:14.639 --> 00:00:16.870 align:start position:0%
+time for the Luxos demo everyone has
+been<00:00:14.799><c> waiting</c><00:00:15.040><c> for.</c><00:00:16.000><c> First,</c><00:00:16.480><c> let's</c><00:00:16.720><c> talk</c>
+
+00:00:16.870 --> 00:00:16.880 align:start position:0%
+been waiting for. First, let's talk
+ 
+
+00:00:16.880 --> 00:00:19.670 align:start position:0%
+been waiting for. First, let's talk
+about<00:00:17.039><c> getting</c><00:00:17.279><c> Lux</c><00:00:17.680><c> OS</c><00:00:18.000><c> onto</c><00:00:18.400><c> your</c><00:00:18.640><c> machine.</c>
+
+00:00:19.670 --> 00:00:19.680 align:start position:0%
+about getting Lux OS onto your machine.
+ 
+
+00:00:19.680 --> 00:00:21.189 align:start position:0%
+about getting Lux OS onto your machine.
+You're<00:00:19.840><c> going</c><00:00:19.920><c> to</c><00:00:20.080><c> download</c><00:00:20.480><c> Commander.</c><00:00:21.039><c> It's</c>
+
+00:00:21.189 --> 00:00:21.199 align:start position:0%
+You're going to download Commander. It's
+ 
+
+00:00:21.199 --> 00:00:23.670 align:start position:0%
+You're going to download Commander. It's
+our<00:00:21.359><c> installation</c><00:00:21.840><c> and</c><00:00:22.160><c> configuration</c><00:00:22.720><c> tool.</c>
+
+00:00:23.670 --> 00:00:23.680 align:start position:0%
+our installation and configuration tool.
+ 
+
+00:00:23.680 --> 00:00:25.029 align:start position:0%
+our installation and configuration tool.
+It'll<00:00:24.000><c> look</c><00:00:24.160><c> like</c><00:00:24.320><c> this</c><00:00:24.480><c> when</c><00:00:24.640><c> you</c><00:00:24.800><c> first</c>
+
+00:00:25.029 --> 00:00:25.039 align:start position:0%
+It'll look like this when you first
+ 
+
+00:00:25.039 --> 00:00:27.189 align:start position:0%
+It'll look like this when you first
+download<00:00:25.359><c> it.</c><00:00:26.000><c> What</c><00:00:26.240><c> you'll</c><00:00:26.400><c> want</c><00:00:26.560><c> to</c><00:00:26.640><c> do</c><00:00:26.960><c> is</c>
+
+00:00:27.189 --> 00:00:27.199 align:start position:0%
+download it. What you'll want to do is
+ 
+
+00:00:27.199 --> 00:00:29.029 align:start position:0%
+download it. What you'll want to do is
+put<00:00:27.359><c> in</c><00:00:27.519><c> your</c><00:00:27.760><c> network,</c><00:00:28.320><c> which</c><00:00:28.640><c> generally</c>
+
+00:00:29.029 --> 00:00:29.039 align:start position:0%
+put in your network, which generally
+ 
+
+00:00:29.039 --> 00:00:31.830 align:start position:0%
+put in your network, which generally
+consists<00:00:29.279><c> of</c><00:00:29.439><c> either</c><00:00:29.679><c> a</c><00:00:29.920><c> range,</c><00:00:30.560><c> single</c><00:00:30.960><c> IP,</c>
+
+00:00:31.830 --> 00:00:31.840 align:start position:0%
+consists of either a range, single IP,
+ 
+
+00:00:31.840 --> 00:00:34.389 align:start position:0%
+consists of either a range, single IP,
+or<00:00:32.079><c> a</c><00:00:32.399><c> cider</c><00:00:32.880><c> subnet</c><00:00:33.440><c> for</c><00:00:33.680><c> the</c><00:00:33.840><c> miners</c><00:00:34.239><c> that</c>
+
+00:00:34.389 --> 00:00:34.399 align:start position:0%
+or a cider subnet for the miners that
+ 
+
+00:00:34.399 --> 00:00:36.389 align:start position:0%
+or a cider subnet for the miners that
+you<00:00:34.559><c> want</c><00:00:34.640><c> to</c><00:00:34.719><c> install.</c><00:00:35.840><c> So,</c><00:00:36.000><c> you</c><00:00:36.239><c> hit</c>
+
+00:00:36.389 --> 00:00:36.399 align:start position:0%
+you want to install. So, you hit
+ 
+
+00:00:36.399 --> 00:00:38.229 align:start position:0%
+you want to install. So, you hit
+configure<00:00:36.800><c> networks.</c><00:00:37.440><c> You'll</c><00:00:37.680><c> see</c><00:00:37.840><c> I</c><00:00:38.079><c> already</c>
+
+00:00:38.229 --> 00:00:38.239 align:start position:0%
+configure networks. You'll see I already
+ 
+
+00:00:38.239 --> 00:00:40.630 align:start position:0%
+configure networks. You'll see I already
+have<00:00:38.320><c> a</c><00:00:38.559><c> number</c><00:00:38.800><c> here.</c>
+
+00:00:40.630 --> 00:00:40.640 align:start position:0%
+have a number here.
+ 
+
+00:00:40.640 --> 00:00:42.150 align:start position:0%
+have a number here.
+Mine's<00:00:41.120><c> already</c><00:00:41.440><c> selected,</c><00:00:41.760><c> but</c><00:00:42.000><c> if</c><00:00:42.079><c> you</c>
+
+00:00:42.150 --> 00:00:42.160 align:start position:0%
+Mine's already selected, but if you
+ 
+
+00:00:42.160 --> 00:00:43.430 align:start position:0%
+Mine's already selected, but if you
+needed<00:00:42.399><c> to</c><00:00:42.559><c> select</c><00:00:42.800><c> one,</c><00:00:42.960><c> you</c><00:00:43.120><c> would</c><00:00:43.280><c> just</c>
+
+00:00:43.430 --> 00:00:43.440 align:start position:0%
+needed to select one, you would just
+ 
+
+00:00:43.440 --> 00:00:46.790 align:start position:0%
+needed to select one, you would just
+select<00:00:44.399><c> a</c><00:00:44.640><c> network</c><00:00:44.960><c> that</c><00:00:45.120><c> you</c><00:00:45.280><c> have</c><00:00:45.440><c> added</c><00:00:45.680><c> in.</c>
+
+00:00:46.790 --> 00:00:46.800 align:start position:0%
+select a network that you have added in.
+ 
+
+00:00:46.800 --> 00:00:48.150 align:start position:0%
+select a network that you have added in.
+I'm<00:00:46.879><c> going</c><00:00:47.039><c> to</c><00:00:47.120><c> deselect</c><00:00:47.520><c> that</c><00:00:47.760><c> because</c><00:00:47.920><c> I</c>
+
+00:00:48.150 --> 00:00:48.160 align:start position:0%
+I'm going to deselect that because I
+ 
+
+00:00:48.160 --> 00:00:50.549 align:start position:0%
+I'm going to deselect that because I
+already<00:00:48.320><c> have</c><00:00:48.480><c> my</c><00:00:48.640><c> other</c><00:00:48.800><c> network</c><00:00:49.200><c> selected.</c>
+
+00:00:50.549 --> 00:00:50.559 align:start position:0%
+already have my other network selected.
+ 
+
+00:00:50.559 --> 00:00:53.029 align:start position:0%
+already have my other network selected.
+And<00:00:50.719><c> then</c><00:00:50.879><c> you'll</c><00:00:51.039><c> hit</c><00:00:51.280><c> scan</c><00:00:51.600><c> networks.</c><00:00:52.719><c> It'll</c>
+
+00:00:53.029 --> 00:00:53.039 align:start position:0%
+And then you'll hit scan networks. It'll
+ 
+
+00:00:53.039 --> 00:00:54.790 align:start position:0%
+And then you'll hit scan networks. It'll
+go<00:00:53.120><c> out</c><00:00:53.280><c> and</c><00:00:53.440><c> it'll</c><00:00:53.760><c> try</c><00:00:53.840><c> to</c><00:00:54.000><c> get</c><00:00:54.160><c> every</c><00:00:54.399><c> IP</c>
+
+00:00:54.790 --> 00:00:54.800 align:start position:0%
+go out and it'll try to get every IP
+ 
+
+00:00:54.800 --> 00:00:57.590 align:start position:0%
+go out and it'll try to get every IP
+address<00:00:55.440><c> in</c><00:00:55.680><c> either</c><00:00:55.920><c> the</c><00:00:56.160><c> range</c><00:00:56.399><c> or</c><00:00:56.640><c> the</c><00:00:56.800><c> cider</c>
+
+00:00:57.590 --> 00:00:57.600 align:start position:0%
+address in either the range or the cider
+ 
+
+00:00:57.600 --> 00:00:59.750 align:start position:0%
+address in either the range or the cider
+or<00:00:58.000><c> uh</c><00:00:58.160><c> the</c><00:00:58.320><c> single</c><00:00:58.559><c> IP</c><00:00:58.879><c> that</c><00:00:59.039><c> you</c><00:00:59.199><c> put</c><00:00:59.280><c> in.</c>
+
+00:00:59.750 --> 00:00:59.760 align:start position:0%
+or uh the single IP that you put in.
+ 
+
+00:00:59.760 --> 00:01:02.150 align:start position:0%
+or uh the single IP that you put in.
+It'll<00:01:00.079><c> try</c><00:01:00.239><c> to</c><00:01:00.320><c> reach</c><00:01:00.559><c> those</c><00:01:00.719><c> miners</c><00:01:01.440><c> and</c><00:01:01.920><c> come</c>
+
+00:01:02.150 --> 00:01:02.160 align:start position:0%
+It'll try to reach those miners and come
+ 
+
+00:01:02.160 --> 00:01:03.750 align:start position:0%
+It'll try to reach those miners and come
+back<00:01:02.320><c> and</c><00:01:02.559><c> give</c><00:01:02.640><c> you</c><00:01:02.800><c> some</c><00:01:02.960><c> basic</c><00:01:03.280><c> information</c>
+
+00:01:03.750 --> 00:01:03.760 align:start position:0%
+back and give you some basic information
+ 
+
+00:01:03.760 --> 00:01:06.469 align:start position:0%
+back and give you some basic information
+on<00:01:04.640><c> the</c><00:01:04.799><c> minor</c><00:01:05.199><c> available</c><00:01:05.519><c> for</c><00:01:05.760><c> install.</c>
+
+00:01:06.469 --> 00:01:06.479 align:start position:0%
+on the minor available for install.
+ 
+
+00:01:06.479 --> 00:01:08.710 align:start position:0%
+on the minor available for install.
+You'll<00:01:06.720><c> be</c><00:01:06.799><c> able</c><00:01:06.960><c> to</c><00:01:07.040><c> select</c><00:01:07.280><c> the</c><00:01:07.439><c> minor</c><00:01:08.400><c> and</c>
+
+00:01:08.710 --> 00:01:08.720 align:start position:0%
+You'll be able to select the minor and
+ 
+
+00:01:08.720 --> 00:01:09.990 align:start position:0%
+You'll be able to select the minor and
+then<00:01:08.799><c> a</c><00:01:08.960><c> new</c><00:01:09.119><c> button</c><00:01:09.360><c> will</c><00:01:09.520><c> show</c><00:01:09.600><c> up</c><00:01:09.760><c> here</c><00:01:09.840><c> and</c>
+
+00:01:09.990 --> 00:01:10.000 align:start position:0%
+then a new button will show up here and
+ 
+
+00:01:10.000 --> 00:01:12.070 align:start position:0%
+then a new button will show up here and
+it'll<00:01:10.159><c> say</c><00:01:10.400><c> install</c><00:01:10.720><c> minor</c><00:01:11.119><c> or</c><00:01:11.360><c> install</c><00:01:11.760><c> Lux</c>
+
+00:01:12.070 --> 00:01:12.080 align:start position:0%
+it'll say install minor or install Lux
+ 
+
+00:01:12.080 --> 00:01:15.910 align:start position:0%
+it'll say install minor or install Lux
+OS.<00:01:12.880><c> So</c><00:01:13.040><c> you'll</c><00:01:13.280><c> hit</c><00:01:13.439><c> that</c><00:01:14.080><c> install</c><00:01:14.560><c> Lux</c><00:01:14.880><c> OS</c>
+
+00:01:15.910 --> 00:01:15.920 align:start position:0%
+OS. So you'll hit that install Lux OS
+ 
+
+00:01:15.920 --> 00:01:18.149 align:start position:0%
+OS. So you'll hit that install Lux OS
+and<00:01:16.080><c> once</c><00:01:16.479><c> complete</c>
+
+00:01:18.149 --> 00:01:18.159 align:start position:0%
+and once complete
+ 
+
+00:01:18.159 --> 00:01:19.590 align:start position:0%
+and once complete
+you<00:01:18.400><c> end</c><00:01:18.560><c> up</c><00:01:18.640><c> at</c><00:01:18.799><c> a</c><00:01:18.960><c> screen</c><00:01:19.040><c> that</c><00:01:19.280><c> looks</c><00:01:19.439><c> like</c>
+
+00:01:19.590 --> 00:01:19.600 align:start position:0%
+you end up at a screen that looks like
+ 
+
+00:01:19.600 --> 00:01:22.149 align:start position:0%
+you end up at a screen that looks like
+this.<00:01:20.400><c> This</c><00:01:20.640><c> will</c><00:01:20.799><c> be</c><00:01:21.040><c> what</c><00:01:21.280><c> your</c><00:01:21.520><c> minor</c><00:01:21.920><c> looks</c>
+
+00:01:22.149 --> 00:01:22.159 align:start position:0%
+this. This will be what your minor looks
+ 
+
+00:01:22.159 --> 00:01:25.030 align:start position:0%
+this. This will be what your minor looks
+like<00:01:22.320><c> after</c><00:01:23.040><c> Lux</c><00:01:23.439><c> OS</c><00:01:23.680><c> install.</c><00:01:24.799><c> Now,</c>
+
+00:01:25.030 --> 00:01:25.040 align:start position:0%
+like after Lux OS install. Now,
+ 
+
+00:01:25.040 --> 00:01:26.550 align:start position:0%
+like after Lux OS install. Now,
+obviously,<00:01:25.360><c> mine's</c><00:01:25.680><c> been</c><00:01:25.840><c> up</c><00:01:26.000><c> for</c><00:01:26.080><c> a</c><00:01:26.240><c> day</c><00:01:26.400><c> or</c>
+
+00:01:26.550 --> 00:01:26.560 align:start position:0%
+obviously, mine's been up for a day or
+ 
+
+00:01:26.560 --> 00:01:29.190 align:start position:0%
+obviously, mine's been up for a day or
+so,<00:01:27.280><c> so</c><00:01:27.680><c> yours</c><00:01:28.080><c> will</c><00:01:28.320><c> be</c><00:01:28.560><c> ramping</c><00:01:28.960><c> when</c><00:01:29.119><c> you</c>
+
+00:01:29.190 --> 00:01:29.200 align:start position:0%
+so, so yours will be ramping when you
+ 
+
+00:01:29.200 --> 00:01:31.270 align:start position:0%
+so, so yours will be ramping when you
+see<00:01:29.360><c> it</c><00:01:29.520><c> the</c><00:01:29.680><c> first</c><00:01:29.840><c> time,</c><00:01:30.560><c> but</c><00:01:30.799><c> you'll</c><00:01:31.040><c> end</c><00:01:31.119><c> up</c>
+
+00:01:31.270 --> 00:01:31.280 align:start position:0%
+see it the first time, but you'll end up
+ 
+
+00:01:31.280 --> 00:01:33.030 align:start position:0%
+see it the first time, but you'll end up
+at<00:01:31.439><c> a</c><00:01:31.600><c> screen</c><00:01:31.840><c> that</c><00:01:32.079><c> looks</c><00:01:32.320><c> very</c><00:01:32.560><c> similar</c><00:01:32.799><c> to</c>
+
+00:01:33.030 --> 00:01:33.040 align:start position:0%
+at a screen that looks very similar to
+ 
+
+00:01:33.040 --> 00:01:34.630 align:start position:0%
+at a screen that looks very similar to
+this.
+
+00:01:34.630 --> 00:01:34.640 align:start position:0%
+this.
+ 
+
+00:01:34.640 --> 00:01:37.030 align:start position:0%
+this.
+On<00:01:34.799><c> the</c><00:01:34.960><c> dashboard,</c><00:01:35.840><c> you</c><00:01:36.079><c> pretty</c><00:01:36.320><c> much</c><00:01:36.479><c> get</c><00:01:36.880><c> uh</c>
+
+00:01:37.030 --> 00:01:37.040 align:start position:0%
+On the dashboard, you pretty much get uh
+ 
+
+00:01:37.040 --> 00:01:39.429 align:start position:0%
+On the dashboard, you pretty much get uh
+all<00:01:37.200><c> of</c><00:01:37.360><c> your</c><00:01:37.520><c> basic</c><00:01:37.840><c> information,</c><00:01:39.119><c> hash</c>
+
+00:01:39.429 --> 00:01:39.439 align:start position:0%
+all of your basic information, hash
+ 
+
+00:01:39.439 --> 00:01:41.429 align:start position:0%
+all of your basic information, hash
+rate,<00:01:39.920><c> power</c><00:01:40.240><c> consumption,</c><00:01:40.880><c> estimated</c>
+
+00:01:41.429 --> 00:01:41.439 align:start position:0%
+rate, power consumption, estimated
+ 
+
+00:01:41.439 --> 00:01:44.230 align:start position:0%
+rate, power consumption, estimated
+efficiency,<00:01:42.079><c> uptime.</c><00:01:43.439><c> Uh</c><00:01:43.680><c> you</c><00:01:43.840><c> do</c><00:01:44.000><c> get</c><00:01:44.079><c> a</c>
+
+00:01:44.230 --> 00:01:44.240 align:start position:0%
+efficiency, uptime. Uh you do get a
+ 
+
+00:01:44.240 --> 00:01:45.510 align:start position:0%
+efficiency, uptime. Uh you do get a
+little<00:01:44.400><c> graph</c><00:01:44.640><c> here</c><00:01:44.799><c> that</c><00:01:44.960><c> shows</c><00:01:45.200><c> you</c><00:01:45.360><c> some</c>
+
+00:01:45.510 --> 00:01:45.520 align:start position:0%
+little graph here that shows you some
+ 
+
+00:01:45.520 --> 00:01:46.950 align:start position:0%
+little graph here that shows you some
+temperatures<00:01:45.920><c> and</c><00:01:46.159><c> your</c><00:01:46.240><c> hash</c><00:01:46.560><c> rate</c><00:01:46.720><c> over</c>
+
+00:01:46.950 --> 00:01:46.960 align:start position:0%
+temperatures and your hash rate over
+ 
+
+00:01:46.960 --> 00:01:48.710 align:start position:0%
+temperatures and your hash rate over
+time,
+
+00:01:48.710 --> 00:01:48.720 align:start position:0%
+time,
+ 
+
+00:01:48.720 --> 00:01:51.749 align:start position:0%
+time,
+your<00:01:48.960><c> fan</c><00:01:49.280><c> output</c><00:01:50.479><c> and</c><00:01:50.799><c> various</c><00:01:51.119><c> metrics</c><00:01:51.600><c> here</c>
+
+00:01:51.749 --> 00:01:51.759 align:start position:0%
+your fan output and various metrics here
+ 
+
+00:01:51.759 --> 00:01:53.910 align:start position:0%
+your fan output and various metrics here
+for<00:01:52.240><c> different</c><00:01:52.799><c> ways</c><00:01:53.040><c> to</c><00:01:53.360><c> uh</c><00:01:53.520><c> look</c><00:01:53.600><c> at</c><00:01:53.759><c> your</c>
+
+00:01:53.910 --> 00:01:53.920 align:start position:0%
+for different ways to uh look at your
+ 
+
+00:01:53.920 --> 00:01:56.550 align:start position:0%
+for different ways to uh look at your
+hash<00:01:54.079><c> rate</c><00:01:54.320><c> averages.</c><00:01:54.799><c> So</c><00:01:55.040><c> 24</c><00:01:55.439><c> hours,</c><00:01:56.159><c> 15</c>
+
+00:01:56.550 --> 00:01:56.560 align:start position:0%
+hash rate averages. So 24 hours, 15
+ 
+
+00:01:56.560 --> 00:01:59.590 align:start position:0%
+hash rate averages. So 24 hours, 15
+minutes,<00:01:57.280><c> and</c><00:01:57.520><c> 1</c><00:01:57.759><c> minute.</c><00:01:59.040><c> Some</c><00:01:59.280><c> pool</c>
+
+00:01:59.590 --> 00:01:59.600 align:start position:0%
+minutes, and 1 minute. Some pool
+ 
+
+00:01:59.600 --> 00:02:02.310 align:start position:0%
+minutes, and 1 minute. Some pool
+information<00:02:00.560><c> and</c><00:02:00.799><c> your</c><00:02:01.040><c> tuner</c><00:02:01.360><c> status.</c><00:02:02.000><c> Note</c>
+
+00:02:02.310 --> 00:02:02.320 align:start position:0%
+information and your tuner status. Note
+ 
+
+00:02:02.320 --> 00:02:04.469 align:start position:0%
+information and your tuner status. Note
+that<00:02:02.479><c> this</c><00:02:02.640><c> is</c><00:02:02.799><c> not</c><00:02:02.960><c> a</c><00:02:03.119><c> button.</c><00:02:04.000><c> This</c><00:02:04.240><c> doesn't</c>
+
+00:02:04.469 --> 00:02:04.479 align:start position:0%
+that this is not a button. This doesn't
+ 
+
+00:02:04.479 --> 00:02:06.709 align:start position:0%
+that this is not a button. This doesn't
+do<00:02:04.640><c> anything.</c><00:02:05.119><c> It</c><00:02:05.360><c> is</c><00:02:05.520><c> just</c><00:02:06.079><c> there</c><00:02:06.240><c> to</c><00:02:06.479><c> let</c><00:02:06.560><c> you</c>
+
+00:02:06.709 --> 00:02:06.719 align:start position:0%
+do anything. It is just there to let you
+ 
+
+00:02:06.719 --> 00:02:09.669 align:start position:0%
+do anything. It is just there to let you
+know<00:02:06.799><c> if</c><00:02:06.880><c> the</c><00:02:07.040><c> tuner</c><00:02:07.360><c> is</c><00:02:07.520><c> on</c><00:02:07.759><c> or</c><00:02:08.080><c> off.</c><00:02:09.360><c> And</c><00:02:09.520><c> then</c>
+
+00:02:09.669 --> 00:02:09.679 align:start position:0%
+know if the tuner is on or off. And then
+ 
+
+00:02:09.679 --> 00:02:12.309 align:start position:0%
+know if the tuner is on or off. And then
+your<00:02:09.840><c> pool</c><00:02:10.080><c> status.</c><00:02:11.440><c> Up</c><00:02:11.599><c> at</c><00:02:11.680><c> the</c><00:02:11.840><c> top</c><00:02:12.000><c> here,</c><00:02:12.160><c> we</c>
+
+00:02:12.309 --> 00:02:12.319 align:start position:0%
+your pool status. Up at the top here, we
+ 
+
+00:02:12.319 --> 00:02:14.550 align:start position:0%
+your pool status. Up at the top here, we
+have<00:02:12.480><c> this</c><00:02:12.720><c> little</c><00:02:12.959><c> drop</c><00:02:13.200><c> down</c><00:02:13.440><c> menu</c><00:02:14.160><c> in</c><00:02:14.400><c> the</c>
+
+00:02:14.550 --> 00:02:14.560 align:start position:0%
+have this little drop down menu in the
+ 
+
+00:02:14.560 --> 00:02:16.710 align:start position:0%
+have this little drop down menu in the
+corner.<00:02:15.360><c> And</c><00:02:15.599><c> here</c><00:02:15.760><c> is</c><00:02:15.920><c> where</c><00:02:16.080><c> you</c><00:02:16.160><c> can</c><00:02:16.319><c> turn</c>
+
+00:02:16.710 --> 00:02:16.720 align:start position:0%
+corner. And here is where you can turn
+ 
+
+00:02:16.720 --> 00:02:19.510 align:start position:0%
+corner. And here is where you can turn
+uh<00:02:16.879><c> autotuner</c><00:02:17.599><c> on</c><00:02:17.760><c> or</c><00:02:18.000><c> off.</c><00:02:18.720><c> You</c><00:02:18.879><c> can</c><00:02:19.040><c> also</c><00:02:19.280><c> do</c>
+
+00:02:19.510 --> 00:02:19.520 align:start position:0%
+uh autotuner on or off. You can also do
+ 
+
+00:02:19.520 --> 00:02:21.589 align:start position:0%
+uh autotuner on or off. You can also do
+things<00:02:19.680><c> like</c><00:02:19.920><c> blink</c><00:02:20.239><c> your</c><00:02:20.400><c> LEDs,</c><00:02:21.360><c> put</c><00:02:21.520><c> the</c>
+
+00:02:21.589 --> 00:02:21.599 align:start position:0%
+things like blink your LEDs, put the
+ 
+
+00:02:21.599 --> 00:02:23.670 align:start position:0%
+things like blink your LEDs, put the
+minor<00:02:21.920><c> to</c><00:02:22.080><c> sleep,</c><00:02:22.560><c> reboot</c><00:02:22.879><c> the</c><00:02:23.040><c> minor,</c><00:02:23.440><c> or</c>
+
+00:02:23.670 --> 00:02:23.680 align:start position:0%
+minor to sleep, reboot the minor, or
+ 
+
+00:02:23.680 --> 00:02:27.990 align:start position:0%
+minor to sleep, reboot the minor, or
+restart<00:02:24.000><c> the</c><00:02:24.160><c> mining</c><00:02:24.480><c> process.</c>
+
+00:02:27.990 --> 00:02:28.000 align:start position:0%
+ 
+ 
+
+00:02:28.000 --> 00:02:29.430 align:start position:0%
+ 
+Down<00:02:28.239><c> below</c><00:02:28.480><c> that,</c><00:02:28.720><c> you</c><00:02:28.959><c> have</c><00:02:29.040><c> your</c><00:02:29.200><c> three</c>
+
+00:02:29.430 --> 00:02:29.440 align:start position:0%
+Down below that, you have your three
+ 
+
+00:02:29.440 --> 00:02:32.150 align:start position:0%
+Down below that, you have your three
+hashboards.<00:02:30.640><c> Uh</c><00:02:30.959><c> each</c><00:02:31.120><c> one</c><00:02:31.280><c> of</c><00:02:31.360><c> these</c><00:02:31.840><c> shows</c>
+
+00:02:32.150 --> 00:02:32.160 align:start position:0%
+hashboards. Uh each one of these shows
+ 
+
+00:02:32.160 --> 00:02:35.670 align:start position:0%
+hashboards. Uh each one of these shows
+you<00:02:32.319><c> your</c><00:02:32.560><c> voltage,</c><00:02:33.840><c> your</c><00:02:34.080><c> frequency,</c><00:02:35.440><c> hash</c>
+
+00:02:35.670 --> 00:02:35.680 align:start position:0%
+you your voltage, your frequency, hash
+ 
+
+00:02:35.680 --> 00:02:38.229 align:start position:0%
+you your voltage, your frequency, hash
+rates,<00:02:37.120><c> chip</c><00:02:37.440><c> health.</c><00:02:37.760><c> We</c><00:02:37.840><c> have</c><00:02:38.000><c> three</c>
+
+00:02:38.229 --> 00:02:38.239 align:start position:0%
+rates, chip health. We have three
+ 
+
+00:02:38.239 --> 00:02:40.790 align:start position:0%
+rates, chip health. We have three
+statuses<00:02:38.720><c> for</c><00:02:38.879><c> chip</c><00:02:39.200><c> health.</c><00:02:39.920><c> Uh</c><00:02:40.319><c> healthy</c>
+
+00:02:40.790 --> 00:02:40.800 align:start position:0%
+statuses for chip health. Uh healthy
+ 
+
+00:02:40.800 --> 00:02:43.270 align:start position:0%
+statuses for chip health. Uh healthy
+means<00:02:41.040><c> that</c><00:02:41.760><c> all</c><00:02:42.000><c> chips</c><00:02:42.319><c> are</c><00:02:42.480><c> are</c><00:02:42.800><c> reading</c><00:02:43.040><c> and</c>
+
+00:02:43.270 --> 00:02:43.280 align:start position:0%
+means that all chips are are reading and
+ 
+
+00:02:43.280 --> 00:02:45.910 align:start position:0%
+means that all chips are are reading and
+acting<00:02:43.599><c> appropriately.</c><00:02:44.879><c> Unknown</c><00:02:45.519><c> typically</c>
+
+00:02:45.910 --> 00:02:45.920 align:start position:0%
+acting appropriately. Unknown typically
+ 
+
+00:02:45.920 --> 00:02:48.630 align:start position:0%
+acting appropriately. Unknown typically
+means<00:02:46.160><c> that</c><00:02:46.480><c> the</c><00:02:46.800><c> minor</c><00:02:47.120><c> is</c><00:02:47.280><c> in</c><00:02:47.440><c> transit.</c><00:02:48.400><c> So</c>
+
+00:02:48.630 --> 00:02:48.640 align:start position:0%
+means that the minor is in transit. So
+ 
+
+00:02:48.640 --> 00:02:51.110 align:start position:0%
+means that the minor is in transit. So
+it<00:02:48.879><c> is</c><00:02:49.120><c> going</c><00:02:49.440><c> from</c><00:02:49.920><c> one</c><00:02:50.160><c> profile</c><00:02:50.640><c> to</c><00:02:50.800><c> another</c>
+
+00:02:51.110 --> 00:02:51.120 align:start position:0%
+it is going from one profile to another
+ 
+
+00:02:51.120 --> 00:02:52.869 align:start position:0%
+it is going from one profile to another
+or<00:02:51.280><c> it's</c><00:02:51.519><c> adjusting</c><00:02:51.920><c> voltage</c><00:02:52.319><c> or</c><00:02:52.560><c> it's</c><00:02:52.720><c> doing</c>
+
+00:02:52.869 --> 00:02:52.879 align:start position:0%
+or it's adjusting voltage or it's doing
+ 
+
+00:02:52.879 --> 00:02:54.710 align:start position:0%
+or it's adjusting voltage or it's doing
+a<00:02:53.040><c> health</c><00:02:53.280><c> check.</c><00:02:54.080><c> Something</c><00:02:54.319><c> about</c><00:02:54.560><c> the</c>
+
+00:02:54.710 --> 00:02:54.720 align:start position:0%
+a health check. Something about the
+ 
+
+00:02:54.720 --> 00:02:56.630 align:start position:0%
+a health check. Something about the
+chips<00:02:55.040><c> are</c><00:02:55.280><c> in</c><00:02:55.440><c> transition</c><00:02:55.920><c> from</c><00:02:56.160><c> one</c><00:02:56.400><c> state</c>
+
+00:02:56.630 --> 00:02:56.640 align:start position:0%
+chips are in transition from one state
+ 
+
+00:02:56.640 --> 00:02:59.430 align:start position:0%
+chips are in transition from one state
+to<00:02:56.879><c> another.</c>
+
+00:02:59.430 --> 00:02:59.440 align:start position:0%
+to another.
+ 
+
+00:02:59.440 --> 00:03:01.670 align:start position:0%
+to another.
+Uh<00:02:59.599><c> and</c><00:02:59.760><c> then</c><00:03:00.000><c> unhealthy.</c><00:03:00.879><c> Unhealthy</c><00:03:01.440><c> means</c>
+
+00:03:01.670 --> 00:03:01.680 align:start position:0%
+Uh and then unhealthy. Unhealthy means
+ 
+
+00:03:01.680 --> 00:03:04.309 align:start position:0%
+Uh and then unhealthy. Unhealthy means
+that<00:03:01.840><c> we</c><00:03:02.000><c> can</c><00:03:02.080><c> read</c><00:03:02.319><c> the</c><00:03:02.480><c> chip</c><00:03:03.120><c> but</c><00:03:03.440><c> it</c><00:03:03.680><c> is</c><00:03:04.080><c> not</c>
+
+00:03:04.309 --> 00:03:04.319 align:start position:0%
+that we can read the chip but it is not
+ 
+
+00:03:04.319 --> 00:03:06.470 align:start position:0%
+that we can read the chip but it is not
+hashing<00:03:04.800><c> at</c><00:03:05.040><c> a</c><00:03:05.280><c> rate</c><00:03:05.360><c> that</c><00:03:05.519><c> we</c><00:03:05.680><c> would</c><00:03:05.920><c> expect</c>
+
+00:03:06.470 --> 00:03:06.480 align:start position:0%
+hashing at a rate that we would expect
+ 
+
+00:03:06.480 --> 00:03:08.949 align:start position:0%
+hashing at a rate that we would expect
+or<00:03:06.800><c> it's</c><00:03:07.040><c> not</c><00:03:07.200><c> accepting</c><00:03:07.599><c> the</c><00:03:07.760><c> new</c><00:03:07.920><c> frequency.</c>
+
+00:03:08.949 --> 00:03:08.959 align:start position:0%
+or it's not accepting the new frequency.
+ 
+
+00:03:08.959 --> 00:03:10.710 align:start position:0%
+or it's not accepting the new frequency.
+Um,<00:03:09.280><c> but</c><00:03:09.519><c> you</c><00:03:09.680><c> can</c><00:03:09.840><c> end</c><00:03:10.000><c> up</c><00:03:10.080><c> with</c><00:03:10.239><c> chips</c><00:03:10.480><c> in</c><00:03:10.640><c> the</c>
+
+00:03:10.710 --> 00:03:10.720 align:start position:0%
+Um, but you can end up with chips in the
+ 
+
+00:03:10.720 --> 00:03:12.550 align:start position:0%
+Um, but you can end up with chips in the
+unhealthy<00:03:11.200><c> state</c><00:03:11.599><c> while</c><00:03:11.840><c> the</c><00:03:12.000><c> miner</c><00:03:12.319><c> is</c><00:03:12.400><c> still</c>
+
+00:03:12.550 --> 00:03:12.560 align:start position:0%
+unhealthy state while the miner is still
+ 
+
+00:03:12.560 --> 00:03:15.030 align:start position:0%
+unhealthy state while the miner is still
+hashing.<00:03:14.000><c> And</c><00:03:14.159><c> then</c><00:03:14.319><c> you</c><00:03:14.480><c> get</c><00:03:14.560><c> your</c><00:03:14.800><c> four</c>
+
+00:03:15.030 --> 00:03:15.040 align:start position:0%
+hashing. And then you get your four
+ 
+
+00:03:15.040 --> 00:03:16.550 align:start position:0%
+hashing. And then you get your four
+temperatures,
+
+00:03:16.550 --> 00:03:16.560 align:start position:0%
+temperatures,
+ 
+
+00:03:16.560 --> 00:03:19.509 align:start position:0%
+temperatures,
+one<00:03:16.800><c> or</c><00:03:17.040><c> four</c><00:03:17.280><c> for</c><00:03:17.519><c> each</c><00:03:18.000><c> hash</c><00:03:18.400><c> board.</c><00:03:19.200><c> Note</c>
+
+00:03:19.509 --> 00:03:19.519 align:start position:0%
+one or four for each hash board. Note
+ 
+
+00:03:19.519 --> 00:03:21.910 align:start position:0%
+one or four for each hash board. Note
+that<00:03:19.680><c> these</c><00:03:20.080><c> probably</c><00:03:20.400><c> do</c><00:03:20.640><c> look</c><00:03:20.879><c> cooler</c><00:03:21.680><c> or</c>
+
+00:03:21.910 --> 00:03:21.920 align:start position:0%
+that these probably do look cooler or
+ 
+
+00:03:21.920 --> 00:03:23.509 align:start position:0%
+that these probably do look cooler or
+lower<00:03:22.239><c> than</c><00:03:22.480><c> what</c><00:03:22.640><c> you're</c><00:03:22.879><c> used</c><00:03:23.040><c> to</c><00:03:23.120><c> seeing</c><00:03:23.360><c> on</c>
+
+00:03:23.509 --> 00:03:23.519 align:start position:0%
+lower than what you're used to seeing on
+ 
+
+00:03:23.519 --> 00:03:26.070 align:start position:0%
+lower than what you're used to seeing on
+Bitmain,<00:03:24.159><c> but</c><00:03:24.400><c> Bitmain</c><00:03:25.519><c> gives</c><00:03:25.760><c> you</c><00:03:25.920><c> an</c>
+
+00:03:26.070 --> 00:03:26.080 align:start position:0%
+Bitmain, but Bitmain gives you an
+ 
+
+00:03:26.080 --> 00:03:28.309 align:start position:0%
+Bitmain, but Bitmain gives you an
+estimated<00:03:26.640><c> temperature</c><00:03:26.959><c> at</c><00:03:27.120><c> the</c><00:03:27.280><c> chip</c><00:03:27.519><c> level.</c>
+
+00:03:28.309 --> 00:03:28.319 align:start position:0%
+estimated temperature at the chip level.
+ 
+
+00:03:28.319 --> 00:03:31.830 align:start position:0%
+estimated temperature at the chip level.
+We<00:03:28.640><c> give</c><00:03:28.800><c> you</c><00:03:29.040><c> from</c><00:03:29.360><c> this</c><00:03:29.519><c> view</c><00:03:30.239><c> a</c><00:03:30.640><c> actual</c>
+
+00:03:31.830 --> 00:03:31.840 align:start position:0%
+We give you from this view a actual
+ 
+
+00:03:31.840 --> 00:03:34.149 align:start position:0%
+We give you from this view a actual
+board<00:03:32.159><c> level</c><00:03:32.879><c> chip</c><00:03:33.200><c> temp</c><00:03:33.440><c> or</c><00:03:33.599><c> board</c><00:03:33.840><c> level</c>
+
+00:03:34.149 --> 00:03:34.159 align:start position:0%
+board level chip temp or board level
+ 
+
+00:03:34.159 --> 00:03:36.229 align:start position:0%
+board level chip temp or board level
+temperature<00:03:35.360><c> because</c><00:03:35.680><c> we</c><00:03:35.840><c> don't</c><00:03:36.000><c> want</c><00:03:36.080><c> to</c>
+
+00:03:36.229 --> 00:03:36.239 align:start position:0%
+temperature because we don't want to
+ 
+
+00:03:36.239 --> 00:03:38.309 align:start position:0%
+temperature because we don't want to
+estimate<00:03:36.640><c> the</c><00:03:36.799><c> chip</c><00:03:37.120><c> temperature.</c><00:03:38.080><c> um</c><00:03:38.159><c> we</c>
+
+00:03:38.309 --> 00:03:38.319 align:start position:0%
+estimate the chip temperature. um we
+ 
+
+00:03:38.319 --> 00:03:39.750 align:start position:0%
+estimate the chip temperature. um we
+would<00:03:38.480><c> just</c><00:03:38.640><c> rather</c><00:03:38.879><c> give</c><00:03:38.959><c> you</c><00:03:39.120><c> the</c><00:03:39.280><c> data</c><00:03:39.519><c> that</c>
+
+00:03:39.750 --> 00:03:39.760 align:start position:0%
+would just rather give you the data that
+ 
+
+00:03:39.760 --> 00:03:42.789 align:start position:0%
+would just rather give you the data that
+we<00:03:39.920><c> can</c><00:03:40.080><c> actually</c><00:03:40.319><c> verify.</c><00:03:41.680><c> So</c><00:03:42.159><c> down</c><00:03:42.400><c> here</c><00:03:42.560><c> you</c>
+
+00:03:42.789 --> 00:03:42.799 align:start position:0%
+we can actually verify. So down here you
+ 
+
+00:03:42.799 --> 00:03:45.670 align:start position:0%
+we can actually verify. So down here you
+get<00:03:42.959><c> the</c><00:03:43.440><c> uh</c><00:03:43.760><c> exhaust</c><00:03:44.400><c> top</c><00:03:44.720><c> and</c><00:03:44.879><c> bottom</c><00:03:45.280><c> and</c>
+
+00:03:45.670 --> 00:03:45.680 align:start position:0%
+get the uh exhaust top and bottom and
+ 
+
+00:03:45.680 --> 00:03:48.550 align:start position:0%
+get the uh exhaust top and bottom and
+intake<00:03:46.239><c> top</c><00:03:46.480><c> and</c><00:03:46.640><c> bottom.</c>
+
+00:03:48.550 --> 00:03:48.560 align:start position:0%
+intake top and bottom.
+ 
+
+00:03:48.560 --> 00:03:51.030 align:start position:0%
+intake top and bottom.
+Same<00:03:48.799><c> for</c><00:03:48.959><c> each</c><00:03:49.120><c> other</c><00:03:49.360><c> hashboard.</c><00:03:50.720><c> And</c><00:03:50.879><c> then</c>
+
+00:03:51.030 --> 00:03:51.040 align:start position:0%
+Same for each other hashboard. And then
+ 
+
+00:03:51.040 --> 00:03:53.830 align:start position:0%
+Same for each other hashboard. And then
+you<00:03:51.280><c> get</c><00:03:51.440><c> your</c><00:03:51.760><c> basic</c><00:03:52.000><c> pool</c><00:03:52.319><c> information</c>
+
+00:03:53.830 --> 00:03:53.840 align:start position:0%
+you get your basic pool information
+ 
+
+00:03:53.840 --> 00:03:56.630 align:start position:0%
+you get your basic pool information
+down<00:03:54.159><c> here.</c><00:03:55.280><c> We</c><00:03:55.519><c> do</c><00:03:55.680><c> have</c><00:03:55.840><c> the</c><00:03:56.080><c> ability</c><00:03:56.400><c> to</c>
+
+00:03:56.630 --> 00:03:56.640 align:start position:0%
+down here. We do have the ability to
+ 
+
+00:03:56.640 --> 00:03:59.190 align:start position:0%
+down here. We do have the ability to
+restart<00:03:57.040><c> and</c><00:03:57.360><c> shut</c><00:03:57.599><c> down</c><00:03:58.080><c> hashboards</c><00:03:58.720><c> here.</c>
+
+00:03:59.190 --> 00:03:59.200 align:start position:0%
+restart and shut down hashboards here.
+ 
+
+00:03:59.200 --> 00:04:01.350 align:start position:0%
+restart and shut down hashboards here.
+So<00:03:59.680><c> if</c><00:04:00.000><c> depending</c><00:04:00.400><c> on</c><00:04:00.560><c> your</c><00:04:00.720><c> configuration,</c>
+
+00:04:01.350 --> 00:04:01.360 align:start position:0%
+So if depending on your configuration,
+ 
+
+00:04:01.360 --> 00:04:03.270 align:start position:0%
+So if depending on your configuration,
+you'll<00:04:01.680><c> be</c><00:04:01.760><c> able</c><00:04:02.000><c> to</c><00:04:02.319><c> restart</c><00:04:02.720><c> the</c><00:04:02.879><c> hashboard</c>
+
+00:04:03.270 --> 00:04:03.280 align:start position:0%
+you'll be able to restart the hashboard
+ 
+
+00:04:03.280 --> 00:04:06.149 align:start position:0%
+you'll be able to restart the hashboard
+or<00:04:03.599><c> shut</c><00:04:03.760><c> it</c><00:04:03.920><c> down</c><00:04:04.159><c> completely.</c><00:04:04.959><c> Uh</c><00:04:05.360><c> typically</c>
+
+00:04:06.149 --> 00:04:06.159 align:start position:0%
+or shut it down completely. Uh typically
+ 
+
+00:04:06.159 --> 00:04:08.229 align:start position:0%
+or shut it down completely. Uh typically
+you'll<00:04:06.560><c> use</c><00:04:06.799><c> that</c><00:04:07.040><c> for</c><00:04:07.519><c> uh</c><00:04:07.680><c> reboots</c><00:04:08.159><c> of</c>
+
+00:04:08.229 --> 00:04:08.239 align:start position:0%
+you'll use that for uh reboots of
+ 
+
+00:04:08.239 --> 00:04:10.630 align:start position:0%
+you'll use that for uh reboots of
+hashboards.<00:04:09.200><c> It's</c><00:04:09.439><c> unlikely</c><00:04:09.920><c> that</c><00:04:10.080><c> you'll</c>
+
+00:04:10.630 --> 00:04:10.640 align:start position:0%
+hashboards. It's unlikely that you'll
+ 
+
+00:04:10.640 --> 00:04:12.309 align:start position:0%
+hashboards. It's unlikely that you'll
+very<00:04:10.879><c> often</c><00:04:11.200><c> at</c><00:04:11.280><c> least</c><00:04:11.680><c> shut</c><00:04:11.920><c> down</c><00:04:12.080><c> a</c>
+
+00:04:12.309 --> 00:04:12.319 align:start position:0%
+very often at least shut down a
+ 
+
+00:04:12.319 --> 00:04:14.789 align:start position:0%
+very often at least shut down a
+hashboard.<00:04:13.120><c> Uh</c><00:04:13.360><c> but</c><00:04:13.599><c> if</c><00:04:13.760><c> you</c><00:04:13.840><c> need</c><00:04:14.000><c> to,</c><00:04:14.560><c> the</c>
+
+00:04:14.789 --> 00:04:14.799 align:start position:0%
+hashboard. Uh but if you need to, the
+ 
+
+00:04:14.799 --> 00:04:18.390 align:start position:0%
+hashboard. Uh but if you need to, the
+capability<00:04:15.280><c> is</c><00:04:15.519><c> there.</c>
+
+00:04:18.390 --> 00:04:18.400 align:start position:0%
+capability is there.
+ 
+
+00:04:18.400 --> 00:04:20.949 align:start position:0%
+capability is there.
+So<00:04:18.799><c> under</c><00:04:19.120><c> preset</c><00:04:19.519><c> profiles,</c><00:04:20.400><c> what</c><00:04:20.639><c> you</c><00:04:20.799><c> get</c>
+
+00:04:20.949 --> 00:04:20.959 align:start position:0%
+So under preset profiles, what you get
+ 
+
+00:04:20.959 --> 00:04:23.749 align:start position:0%
+So under preset profiles, what you get
+here<00:04:21.040><c> is</c><00:04:21.199><c> a</c><00:04:21.440><c> drop</c><00:04:21.680><c> down</c><00:04:22.639><c> starting</c><00:04:22.960><c> at</c><00:04:23.199><c> zero</c><00:04:23.520><c> or</c>
+
+00:04:23.749 --> 00:04:23.759 align:start position:0%
+here is a drop down starting at zero or
+ 
+
+00:04:23.759 --> 00:04:26.390 align:start position:0%
+here is a drop down starting at zero or
+default<00:04:25.120><c> uh</c><00:04:25.199><c> of</c><00:04:25.440><c> the</c><00:04:25.680><c> different</c><00:04:25.840><c> preset</c>
+
+00:04:26.390 --> 00:04:26.400 align:start position:0%
+default uh of the different preset
+ 
+
+00:04:26.400 --> 00:04:29.590 align:start position:0%
+default uh of the different preset
+profiles<00:04:27.040><c> that</c><00:04:27.280><c> you</c><00:04:27.440><c> can</c><00:04:27.680><c> use</c><00:04:28.000><c> with</c><00:04:28.320><c> Lux</c><00:04:28.639><c> OS.</c>
+
+00:04:29.590 --> 00:04:29.600 align:start position:0%
+profiles that you can use with Lux OS.
+ 
+
+00:04:29.600 --> 00:04:34.629 align:start position:0%
+profiles that you can use with Lux OS.
+We<00:04:29.919><c> pre-built</c><00:04:30.479><c> out</c><00:04:31.440><c> 16</c><00:04:31.919><c> underclock</c><00:04:32.560><c> profiles</c>
+
+00:04:34.629 --> 00:04:34.639 align:start position:0%
+We pre-built out 16 underclock profiles
+ 
+
+00:04:34.639 --> 00:04:38.790 align:start position:0%
+We pre-built out 16 underclock profiles
+and<00:04:35.840><c> eight</c><00:04:36.960><c> overclock</c><00:04:37.520><c> profiles.</c><00:04:38.479><c> You'll</c>
+
+00:04:38.790 --> 00:04:38.800 align:start position:0%
+and eight overclock profiles. You'll
+ 
+
+00:04:38.800 --> 00:04:41.510 align:start position:0%
+and eight overclock profiles. You'll
+notice<00:04:39.040><c> that</c><00:04:39.360><c> each</c><00:04:39.600><c> profile</c><00:04:40.160><c> is</c><00:04:40.639><c> effectively</c>
+
+00:04:41.510 --> 00:04:41.520 align:start position:0%
+notice that each profile is effectively
+ 
+
+00:04:41.520 --> 00:04:45.830 align:start position:0%
+notice that each profile is effectively
+25<00:04:41.919><c> MHz</c><00:04:42.560><c> down</c><00:04:42.880><c> or</c><00:04:43.199><c> up.</c><00:04:43.680><c> So</c><00:04:43.919><c> from</c><00:04:44.160><c> 590</c><00:04:44.639><c> to</c><00:04:44.800><c> 565</c><00:04:45.520><c> or</c>
+
+00:04:45.830 --> 00:04:45.840 align:start position:0%
+25 MHz down or up. So from 590 to 565 or
+ 
+
+00:04:45.840 --> 00:04:50.390 align:start position:0%
+25 MHz down or up. So from 590 to 565 or
+from<00:04:46.080><c> 590</c><00:04:46.800><c> to</c><00:04:47.040><c> 615,</c><00:04:48.000><c> 25</c><00:04:48.400><c> MHz</c><00:04:49.040><c> either</c><00:04:49.360><c> way.</c><00:04:50.080><c> And</c>
+
+00:04:50.390 --> 00:04:50.400 align:start position:0%
+from 590 to 615, 25 MHz either way. And
+ 
+
+00:04:50.400 --> 00:04:52.550 align:start position:0%
+from 590 to 615, 25 MHz either way. And
+we<00:04:50.639><c> have</c><00:04:50.800><c> a</c><00:04:51.199><c> uh</c><00:04:51.280><c> predetermined</c><00:04:51.919><c> voltage</c><00:04:52.320><c> based</c>
+
+00:04:52.550 --> 00:04:52.560 align:start position:0%
+we have a uh predetermined voltage based
+ 
+
+00:04:52.560 --> 00:04:54.469 align:start position:0%
+we have a uh predetermined voltage based
+on<00:04:52.800><c> some</c><00:04:52.960><c> internal</c><00:04:53.360><c> algorithms</c><00:04:53.840><c> as</c><00:04:54.080><c> to</c><00:04:54.240><c> where</c>
+
+00:04:54.469 --> 00:04:54.479 align:start position:0%
+on some internal algorithms as to where
+ 
+
+00:04:54.479 --> 00:04:56.390 align:start position:0%
+on some internal algorithms as to where
+we'll<00:04:54.720><c> start</c><00:04:55.040><c> on</c><00:04:55.280><c> that</c><00:04:55.600><c> that</c><00:04:56.000><c> particular</c>
+
+00:04:56.390 --> 00:04:56.400 align:start position:0%
+we'll start on that that particular
+ 
+
+00:04:56.400 --> 00:04:59.110 align:start position:0%
+we'll start on that that particular
+frequency<00:04:56.880><c> and</c><00:04:57.120><c> profile</c><00:04:57.919><c> before</c><00:04:58.320><c> autotuner</c>
+
+00:04:59.110 --> 00:04:59.120 align:start position:0%
+frequency and profile before autotuner
+ 
+
+00:04:59.120 --> 00:05:01.749 align:start position:0%
+frequency and profile before autotuner
+begins<00:04:59.520><c> to</c><00:04:59.759><c> uh</c><00:04:59.919><c> adjust</c><00:05:00.320><c> things.</c><00:05:01.280><c> But</c><00:05:01.520><c> out</c><00:05:01.680><c> of</c>
+
+00:05:01.749 --> 00:05:01.759 align:start position:0%
+begins to uh adjust things. But out of
+ 
+
+00:05:01.759 --> 00:05:03.990 align:start position:0%
+begins to uh adjust things. But out of
+the<00:05:01.919><c> box,</c><00:05:02.320><c> these</c><00:05:02.560><c> are</c><00:05:02.720><c> there</c><00:05:02.880><c> for</c><00:05:03.040><c> you</c><00:05:03.199><c> to</c><00:05:03.360><c> use.</c>
+
+00:05:03.990 --> 00:05:04.000 align:start position:0%
+the box, these are there for you to use.
+ 
+
+00:05:04.000 --> 00:05:05.749 align:start position:0%
+the box, these are there for you to use.
+We<00:05:04.240><c> typically</c><00:05:04.639><c> recommend</c><00:05:04.960><c> that</c><00:05:05.199><c> people</c><00:05:05.520><c> use</c>
+
+00:05:05.749 --> 00:05:05.759 align:start position:0%
+We typically recommend that people use
+ 
+
+00:05:05.759 --> 00:05:08.150 align:start position:0%
+We typically recommend that people use
+things<00:05:06.560><c> uh</c><00:05:06.720><c> for</c><00:05:06.880><c> testing</c><00:05:07.280><c> purposes</c><00:05:07.759><c> between</c>
+
+00:05:08.150 --> 00:05:08.160 align:start position:0%
+things uh for testing purposes between
+ 
+
+00:05:08.160 --> 00:05:11.350 align:start position:0%
+things uh for testing purposes between
+minus<00:05:08.639><c> 6</c><00:05:09.440><c> and</c><00:05:09.759><c> plus</c><00:05:10.160><c> two.</c><00:05:10.720><c> That's</c><00:05:10.960><c> a</c><00:05:11.199><c> pretty</c>
+
+00:05:11.350 --> 00:05:11.360 align:start position:0%
+minus 6 and plus two. That's a pretty
+ 
+
+00:05:11.360 --> 00:05:14.230 align:start position:0%
+minus 6 and plus two. That's a pretty
+good<00:05:11.520><c> range</c><00:05:12.080><c> to</c><00:05:12.400><c> see</c><00:05:12.639><c> a</c><00:05:13.039><c> variety</c><00:05:13.520><c> of</c><00:05:13.759><c> profiles</c>
+
+00:05:14.230 --> 00:05:14.240 align:start position:0%
+good range to see a variety of profiles
+ 
+
+00:05:14.240 --> 00:05:16.710 align:start position:0%
+good range to see a variety of profiles
+and<00:05:14.479><c> efficiency</c><00:05:14.960><c> ranges</c><00:05:16.000><c> uh</c><00:05:16.160><c> before</c><00:05:16.400><c> you</c><00:05:16.639><c> get</c>
+
+00:05:16.710 --> 00:05:16.720 align:start position:0%
+and efficiency ranges uh before you get
+ 
+
+00:05:16.720 --> 00:05:19.350 align:start position:0%
+and efficiency ranges uh before you get
+into<00:05:17.680><c> uh</c><00:05:17.759><c> really</c><00:05:18.000><c> low</c><00:05:18.240><c> underclocks</c><00:05:18.880><c> or</c><00:05:19.120><c> really</c>
+
+00:05:19.350 --> 00:05:19.360 align:start position:0%
+into uh really low underclocks or really
+ 
+
+00:05:19.360 --> 00:05:21.430 align:start position:0%
+into uh really low underclocks or really
+heavy<00:05:19.759><c> overclocks.</c>
+
+00:05:21.430 --> 00:05:21.440 align:start position:0%
+heavy overclocks.
+ 
+
+00:05:21.440 --> 00:05:23.990 align:start position:0%
+heavy overclocks.
+But<00:05:22.639><c> you'll</c><00:05:22.880><c> start</c><00:05:23.039><c> at</c><00:05:23.199><c> the</c><00:05:23.360><c> the</c><00:05:23.680><c> default</c>
+
+00:05:23.990 --> 00:05:24.000 align:start position:0%
+But you'll start at the the default
+ 
+
+00:05:24.000 --> 00:05:25.909 align:start position:0%
+But you'll start at the the default
+profile.<00:05:24.800><c> And</c><00:05:25.120><c> uh</c><00:05:25.280><c> that's</c><00:05:25.440><c> where</c><00:05:25.600><c> we're</c><00:05:25.759><c> at</c>
+
+00:05:25.909 --> 00:05:25.919 align:start position:0%
+profile. And uh that's where we're at
+ 
+
+00:05:25.919 --> 00:05:27.830 align:start position:0%
+profile. And uh that's where we're at
+right<00:05:26.080><c> now,</c><00:05:26.320><c> I</c><00:05:26.479><c> believe.</c><00:05:26.880><c> Check.</c><00:05:27.199><c> Yep,</c>
+
+00:05:27.830 --> 00:05:27.840 align:start position:0%
+right now, I believe. Check. Yep,
+ 
+
+00:05:27.840 --> 00:05:31.590 align:start position:0%
+right now, I believe. Check. Yep,
+default<00:05:28.320><c> profile</c><00:05:28.720><c> right</c><00:05:28.960><c> now.</c>
+
+00:05:31.590 --> 00:05:31.600 align:start position:0%
+default profile right now.
+ 
+
+00:05:31.600 --> 00:05:34.070 align:start position:0%
+default profile right now.
+Down<00:05:31.840><c> below,</c><00:05:33.039><c> you'll</c><00:05:33.360><c> get</c><00:05:33.520><c> a</c><00:05:33.759><c> couple</c><00:05:33.919><c> of</c>
+
+00:05:34.070 --> 00:05:34.080 align:start position:0%
+Down below, you'll get a couple of
+ 
+
+00:05:34.080 --> 00:05:36.870 align:start position:0%
+Down below, you'll get a couple of
+different<00:05:34.320><c> visual</c><00:05:34.720><c> outputs.</c><00:05:35.919><c> These</c><00:05:36.320><c> are</c><00:05:36.560><c> the</c>
+
+00:05:36.870 --> 00:05:36.880 align:start position:0%
+different visual outputs. These are the
+ 
+
+00:05:36.880 --> 00:05:39.350 align:start position:0%
+different visual outputs. These are the
+health<00:05:37.120><c> scores</c><00:05:37.600><c> of</c><00:05:37.840><c> the</c><00:05:38.000><c> chips.</c><00:05:38.720><c> Uh,</c><00:05:39.039><c> higher</c>
+
+00:05:39.350 --> 00:05:39.360 align:start position:0%
+health scores of the chips. Uh, higher
+ 
+
+00:05:39.360 --> 00:05:41.270 align:start position:0%
+health scores of the chips. Uh, higher
+number<00:05:39.600><c> means</c><00:05:39.919><c> healthier</c><00:05:40.320><c> chips.</c><00:05:40.960><c> Lower</c>
+
+00:05:41.270 --> 00:05:41.280 align:start position:0%
+number means healthier chips. Lower
+ 
+
+00:05:41.280 --> 00:05:43.270 align:start position:0%
+number means healthier chips. Lower
+number<00:05:41.520><c> means</c><00:05:41.759><c> unhealthier</c><00:05:42.320><c> chips.</c><00:05:43.039><c> No</c>
+
+00:05:43.270 --> 00:05:43.280 align:start position:0%
+number means unhealthier chips. No
+ 
+
+00:05:43.280 --> 00:05:45.749 align:start position:0%
+number means unhealthier chips. No
+number<00:05:43.520><c> means</c><00:05:43.840><c> either</c><00:05:44.479><c> the</c><00:05:44.720><c> the</c><00:05:45.039><c> chips</c><00:05:45.360><c> are,</c>
+
+00:05:45.749 --> 00:05:45.759 align:start position:0%
+number means either the the chips are,
+ 
+
+00:05:45.759 --> 00:05:47.909 align:start position:0%
+number means either the the chips are,
+like<00:05:45.919><c> I</c><00:05:46.160><c> said</c><00:05:46.320><c> before,</c><00:05:46.880><c> transitioning</c><00:05:47.520><c> from</c>
+
+00:05:47.909 --> 00:05:47.919 align:start position:0%
+like I said before, transitioning from
+ 
+
+00:05:47.919 --> 00:05:49.670 align:start position:0%
+like I said before, transitioning from
+one<00:05:48.240><c> thing</c><00:05:48.479><c> to</c><00:05:48.639><c> another.</c><00:05:49.039><c> Maybe</c><00:05:49.280><c> it's</c><00:05:49.520><c> one</c>
+
+00:05:49.670 --> 00:05:49.680 align:start position:0%
+one thing to another. Maybe it's one
+ 
+
+00:05:49.680 --> 00:05:52.629 align:start position:0%
+one thing to another. Maybe it's one
+profile<00:05:50.320><c> or</c><00:05:50.560><c> a</c><00:05:50.720><c> different</c><00:05:50.880><c> voltage.</c>
+
+00:05:52.629 --> 00:05:52.639 align:start position:0%
+profile or a different voltage.
+ 
+
+00:05:52.639 --> 00:05:54.710 align:start position:0%
+profile or a different voltage.
+If<00:05:52.800><c> the</c><00:05:53.039><c> chip</c><00:05:53.280><c> is</c><00:05:53.600><c> unreadable,</c><00:05:54.240><c> then</c><00:05:54.479><c> it</c><00:05:54.560><c> just</c>
+
+00:05:54.710 --> 00:05:54.720 align:start position:0%
+If the chip is unreadable, then it just
+ 
+
+00:05:54.720 --> 00:05:57.270 align:start position:0%
+If the chip is unreadable, then it just
+won't<00:05:54.880><c> show</c><00:05:55.039><c> up</c><00:05:55.199><c> here.</c><00:05:55.440><c> It'll</c><00:05:55.680><c> be</c><00:05:55.759><c> grayed</c><00:05:56.080><c> out.</c>
+
+00:05:57.270 --> 00:05:57.280 align:start position:0%
+won't show up here. It'll be grayed out.
+ 
+
+00:05:57.280 --> 00:05:59.590 align:start position:0%
+won't show up here. It'll be grayed out.
+Uh,<00:05:57.520><c> you</c><00:05:57.680><c> see</c><00:05:57.840><c> here</c><00:05:58.000><c> the</c><00:05:58.240><c> the</c><00:05:58.400><c> little</c><00:05:58.560><c> unknown</c>
+
+00:05:59.590 --> 00:05:59.600 align:start position:0%
+Uh, you see here the the little unknown
+ 
+
+00:05:59.600 --> 00:06:02.469 align:start position:0%
+Uh, you see here the the little unknown
+color.<00:06:00.880><c> You</c><00:06:01.039><c> can</c><00:06:01.199><c> also</c><00:06:01.440><c> adjust</c><00:06:01.919><c> uh</c><00:06:02.080><c> this</c><00:06:02.240><c> to</c>
+
+00:06:02.469 --> 00:06:02.479 align:start position:0%
+color. You can also adjust uh this to
+ 
+
+00:06:02.479 --> 00:06:04.309 align:start position:0%
+color. You can also adjust uh this to
+see<00:06:02.720><c> frequency</c>
+
+00:06:04.309 --> 00:06:04.319 align:start position:0%
+see frequency
+ 
+
+00:06:04.319 --> 00:06:08.469 align:start position:0%
+see frequency
+or<00:06:04.960><c> hash</c><00:06:05.280><c> rate</c><00:06:06.479><c> on</c><00:06:06.880><c> miners</c><00:06:07.360><c> that</c><00:06:07.520><c> support</c><00:06:08.080><c> chip</c>
+
+00:06:08.469 --> 00:06:08.479 align:start position:0%
+or hash rate on miners that support chip
+ 
+
+00:06:08.479 --> 00:06:10.550 align:start position:0%
+or hash rate on miners that support chip
+temperature.<00:06:09.440><c> You'll</c><00:06:09.759><c> see</c><00:06:09.919><c> another</c><00:06:10.400><c> uh</c>
+
+00:06:10.550 --> 00:06:10.560 align:start position:0%
+temperature. You'll see another uh
+ 
+
+00:06:10.560 --> 00:06:13.029 align:start position:0%
+temperature. You'll see another uh
+option<00:06:10.800><c> here</c><00:06:11.039><c> for</c><00:06:11.199><c> chip</c><00:06:11.520><c> temperature.</c>
+
+00:06:13.029 --> 00:06:13.039 align:start position:0%
+option here for chip temperature.
+ 
+
+00:06:13.039 --> 00:06:14.710 align:start position:0%
+option here for chip temperature.
+No<00:06:13.280><c> action</c><00:06:13.600><c> to</c><00:06:13.759><c> be</c><00:06:13.840><c> taken</c><00:06:14.160><c> here</c><00:06:14.319><c> on</c><00:06:14.560><c> this</c>
+
+00:06:14.710 --> 00:06:14.720 align:start position:0%
+No action to be taken here on this
+ 
+
+00:06:14.720 --> 00:06:17.029 align:start position:0%
+No action to be taken here on this
+particular<00:06:15.120><c> screen.</c><00:06:15.680><c> This</c><00:06:16.000><c> is</c><00:06:16.080><c> help</c><00:06:16.240><c> you</c><00:06:16.720><c> just</c>
+
+00:06:17.029 --> 00:06:17.039 align:start position:0%
+particular screen. This is help you just
+ 
+
+00:06:17.039 --> 00:06:19.270 align:start position:0%
+particular screen. This is help you just
+this<00:06:17.280><c> just</c><00:06:17.520><c> helps</c><00:06:17.680><c> you</c><00:06:17.919><c> figure</c><00:06:18.160><c> out</c><00:06:18.639><c> what</c><00:06:18.960><c> your</c>
+
+00:06:19.270 --> 00:06:19.280 align:start position:0%
+this just helps you figure out what your
+ 
+
+00:06:19.280 --> 00:06:21.430 align:start position:0%
+this just helps you figure out what your
+particular<00:06:20.240><c> what</c><00:06:20.479><c> a</c><00:06:20.639><c> particular</c><00:06:20.960><c> board</c><00:06:21.199><c> is</c>
+
+00:06:21.430 --> 00:06:21.440 align:start position:0%
+particular what a particular board is
+ 
+
+00:06:21.440 --> 00:06:23.990 align:start position:0%
+particular what a particular board is
+doing<00:06:21.759><c> or</c><00:06:22.000><c> a</c><00:06:22.160><c> particular</c><00:06:22.560><c> chip.</c><00:06:23.440><c> You</c><00:06:23.680><c> also</c><00:06:23.840><c> get</c>
+
+00:06:23.990 --> 00:06:24.000 align:start position:0%
+doing or a particular chip. You also get
+ 
+
+00:06:24.000 --> 00:06:25.510 align:start position:0%
+doing or a particular chip. You also get
+some<00:06:24.240><c> indication</c><00:06:24.560><c> as</c><00:06:24.720><c> to</c><00:06:24.960><c> the</c><00:06:25.120><c> placement</c><00:06:25.360><c> of</c>
+
+00:06:25.510 --> 00:06:25.520 align:start position:0%
+some indication as to the placement of
+ 
+
+00:06:25.520 --> 00:06:27.909 align:start position:0%
+some indication as to the placement of
+the<00:06:25.680><c> chip</c><00:06:25.919><c> based</c><00:06:26.160><c> on</c><00:06:26.720><c> your</c><00:06:26.960><c> air</c><00:06:27.199><c> exhaust.</c><00:06:27.759><c> So,</c>
+
+00:06:27.909 --> 00:06:27.919 align:start position:0%
+the chip based on your air exhaust. So,
+ 
+
+00:06:27.919 --> 00:06:30.230 align:start position:0%
+the chip based on your air exhaust. So,
+if<00:06:28.080><c> I'm</c><00:06:28.240><c> looking</c><00:06:28.400><c> at</c><00:06:28.560><c> the</c><00:06:28.720><c> hashboard</c><00:06:29.919><c> uh</c><00:06:30.080><c> with</c>
+
+00:06:30.230 --> 00:06:30.240 align:start position:0%
+if I'm looking at the hashboard uh with
+ 
+
+00:06:30.240 --> 00:06:31.749 align:start position:0%
+if I'm looking at the hashboard uh with
+it<00:06:30.560><c> laying</c><00:06:30.639><c> down</c><00:06:30.800><c> on</c><00:06:30.960><c> a</c><00:06:31.120><c> table</c><00:06:31.280><c> in</c><00:06:31.520><c> front</c><00:06:31.680><c> of</c>
+
+00:06:31.749 --> 00:06:31.759 align:start position:0%
+it laying down on a table in front of
+ 
+
+00:06:31.759 --> 00:06:34.150 align:start position:0%
+it laying down on a table in front of
+me,<00:06:32.160><c> I</c><00:06:32.319><c> know</c><00:06:32.400><c> that</c><00:06:32.639><c> the</c><00:06:32.800><c> left</c><00:06:32.960><c> side</c><00:06:33.600><c> is</c><00:06:33.840><c> my</c>
+
+00:06:34.150 --> 00:06:34.160 align:start position:0%
+me, I know that the left side is my
+ 
+
+00:06:34.160 --> 00:06:36.230 align:start position:0%
+me, I know that the left side is my
+exhaust<00:06:34.560><c> side</c><00:06:34.800><c> and</c><00:06:35.120><c> the</c><00:06:35.360><c> right</c><00:06:35.600><c> side</c><00:06:35.840><c> is</c><00:06:36.080><c> my</c>
+
+00:06:36.230 --> 00:06:36.240 align:start position:0%
+exhaust side and the right side is my
+ 
+
+00:06:36.240 --> 00:06:38.469 align:start position:0%
+exhaust side and the right side is my
+air<00:06:36.560><c> intake</c><00:06:36.960><c> side.</c><00:06:37.520><c> And</c><00:06:37.680><c> I</c><00:06:37.840><c> can</c><00:06:38.080><c> tell</c><00:06:38.240><c> a</c>
+
+00:06:38.469 --> 00:06:38.479 align:start position:0%
+air intake side. And I can tell a
+ 
+
+00:06:38.479 --> 00:06:41.590 align:start position:0%
+air intake side. And I can tell a
+technician,<00:06:39.280><c> hey,</c><00:06:39.520><c> I</c><00:06:39.759><c> saw</c><00:06:39.919><c> a</c><00:06:40.160><c> chip</c><00:06:41.120><c> bottom</c>
+
+00:06:41.590 --> 00:06:41.600 align:start position:0%
+technician, hey, I saw a chip bottom
+ 
+
+00:06:41.600 --> 00:06:44.230 align:start position:0%
+technician, hey, I saw a chip bottom
+corner<00:06:42.000><c> of</c><00:06:42.160><c> the</c><00:06:42.400><c> exhaust</c><00:06:42.800><c> side</c><00:06:43.759><c> was</c><00:06:44.000><c> not</c>
+
+00:06:44.230 --> 00:06:44.240 align:start position:0%
+corner of the exhaust side was not
+ 
+
+00:06:44.240 --> 00:06:45.990 align:start position:0%
+corner of the exhaust side was not
+hashing<00:06:44.639><c> appropriately</c><00:06:45.120><c> or</c><00:06:45.440><c> had</c><00:06:45.600><c> gone</c><00:06:45.759><c> into</c>
+
+00:06:45.990 --> 00:06:46.000 align:start position:0%
+hashing appropriately or had gone into
+ 
+
+00:06:46.000 --> 00:06:48.710 align:start position:0%
+hashing appropriately or had gone into
+an<00:06:46.160><c> unknown</c><00:06:46.560><c> state.</c><00:06:48.000><c> You</c><00:06:48.160><c> get</c><00:06:48.319><c> the</c><00:06:48.479><c> same</c><00:06:48.639><c> thing</c>
+
+00:06:48.710 --> 00:06:48.720 align:start position:0%
+an unknown state. You get the same thing
+ 
+
+00:06:48.720 --> 00:06:51.590 align:start position:0%
+an unknown state. You get the same thing
+for<00:06:48.880><c> the</c><00:06:49.039><c> other</c><00:06:49.199><c> two</c><00:06:49.360><c> hash</c><00:06:49.680><c> boards.</c>
+
+00:06:51.590 --> 00:06:51.600 align:start position:0%
+for the other two hash boards.
+ 
+
+00:06:51.600 --> 00:06:53.510 align:start position:0%
+for the other two hash boards.
+But<00:06:51.840><c> like</c><00:06:51.919><c> I</c><00:06:52.080><c> said,</c><00:06:52.319><c> no</c><00:06:52.479><c> action</c><00:06:52.720><c> to</c><00:06:52.960><c> take</c><00:06:53.120><c> here.</c>
+
+00:06:53.510 --> 00:06:53.520 align:start position:0%
+But like I said, no action to take here.
+ 
+
+00:06:53.520 --> 00:06:56.070 align:start position:0%
+But like I said, no action to take here.
+No<00:06:53.680><c> buttons</c><00:06:54.000><c> to</c><00:06:54.240><c> click.</c><00:06:54.960><c> Uh</c><00:06:55.440><c> just</c><00:06:55.680><c> this</c>
+
+00:06:56.070 --> 00:06:56.080 align:start position:0%
+No buttons to click. Uh just this
+ 
+
+00:06:56.080 --> 00:06:58.309 align:start position:0%
+No buttons to click. Uh just this
+visual.<00:06:57.199><c> And</c><00:06:57.360><c> then</c><00:06:57.520><c> you</c><00:06:57.680><c> have</c><00:06:57.759><c> the</c><00:06:57.919><c> profile</c>
+
+00:06:58.309 --> 00:06:58.319 align:start position:0%
+visual. And then you have the profile
+ 
+
+00:06:58.319 --> 00:07:01.270 align:start position:0%
+visual. And then you have the profile
+change<00:06:58.880><c> options</c><00:06:59.360><c> up</c><00:06:59.520><c> above.</c><00:07:00.639><c> One</c><00:07:00.880><c> quick</c><00:07:01.120><c> note</c>
+
+00:07:01.270 --> 00:07:01.280 align:start position:0%
+change options up above. One quick note
+ 
+
+00:07:01.280 --> 00:07:03.189 align:start position:0%
+change options up above. One quick note
+on<00:07:01.440><c> profiles.</c><00:07:02.160><c> You</c><00:07:02.319><c> can</c><00:07:02.560><c> create</c><00:07:02.800><c> custom</c>
+
+00:07:03.189 --> 00:07:03.199 align:start position:0%
+on profiles. You can create custom
+ 
+
+00:07:03.199 --> 00:07:05.350 align:start position:0%
+on profiles. You can create custom
+profiles.<00:07:04.080><c> I</c><00:07:04.240><c> don't</c><00:07:04.400><c> have</c><00:07:04.479><c> any</c><00:07:04.800><c> created</c><00:07:05.199><c> right</c>
+
+00:07:05.350 --> 00:07:05.360 align:start position:0%
+profiles. I don't have any created right
+ 
+
+00:07:05.360 --> 00:07:07.029 align:start position:0%
+profiles. I don't have any created right
+now,<00:07:05.759><c> but</c><00:07:06.000><c> to</c><00:07:06.240><c> create</c><00:07:06.400><c> one,</c><00:07:06.639><c> you</c><00:07:06.800><c> would</c><00:07:06.880><c> just</c>
+
+00:07:07.029 --> 00:07:07.039 align:start position:0%
+now, but to create one, you would just
+ 
+
+00:07:07.039 --> 00:07:10.230 align:start position:0%
+now, but to create one, you would just
+give<00:07:07.120><c> it</c><00:07:07.280><c> a</c><00:07:07.520><c> name</c><00:07:08.160><c> and</c><00:07:08.400><c> then</c><00:07:08.639><c> a</c><00:07:08.960><c> voltage</c><00:07:09.840><c> and</c>
+
+00:07:10.230 --> 00:07:10.240 align:start position:0%
+give it a name and then a voltage and
+ 
+
+00:07:10.240 --> 00:07:13.110 align:start position:0%
+give it a name and then a voltage and
+frequency<00:07:10.800><c> combo.</c><00:07:12.080><c> One</c><00:07:12.319><c> note</c><00:07:12.560><c> on</c><00:07:12.720><c> that</c><00:07:12.960><c> though</c>
+
+00:07:13.110 --> 00:07:13.120 align:start position:0%
+frequency combo. One note on that though
+ 
+
+00:07:13.120 --> 00:07:15.350 align:start position:0%
+frequency combo. One note on that though
+is<00:07:13.280><c> that</c><00:07:13.599><c> autotuner</c><00:07:14.319><c> does</c><00:07:14.479><c> not</c><00:07:14.720><c> work</c><00:07:14.960><c> on</c>
+
+00:07:15.350 --> 00:07:15.360 align:start position:0%
+is that autotuner does not work on
+ 
+
+00:07:15.360 --> 00:07:17.189 align:start position:0%
+is that autotuner does not work on
+custom<00:07:15.840><c> profiles</c><00:07:16.560><c> because</c><00:07:16.880><c> you've</c>
+
+00:07:17.189 --> 00:07:17.199 align:start position:0%
+custom profiles because you've
+ 
+
+00:07:17.199 --> 00:07:19.189 align:start position:0%
+custom profiles because you've
+explicitly<00:07:17.759><c> stated</c><00:07:18.319><c> what</c><00:07:18.560><c> frequency</c><00:07:18.960><c> and</c>
+
+00:07:19.189 --> 00:07:19.199 align:start position:0%
+explicitly stated what frequency and
+ 
+
+00:07:19.199 --> 00:07:21.189 align:start position:0%
+explicitly stated what frequency and
+voltage<00:07:19.520><c> you</c><00:07:19.680><c> want.</c><00:07:20.240><c> And</c><00:07:20.479><c> there</c><00:07:20.720><c> may</c><00:07:20.880><c> be</c><00:07:20.960><c> a</c>
+
+00:07:21.189 --> 00:07:21.199 align:start position:0%
+voltage you want. And there may be a
+ 
+
+00:07:21.199 --> 00:07:22.550 align:start position:0%
+voltage you want. And there may be a
+reason<00:07:21.280><c> that</c><00:07:21.520><c> you</c><00:07:21.680><c> want</c><00:07:21.840><c> that</c><00:07:22.000><c> frequency</c><00:07:22.400><c> and</c>
+
+00:07:22.550 --> 00:07:22.560 align:start position:0%
+reason that you want that frequency and
+ 
+
+00:07:22.560 --> 00:07:24.230 align:start position:0%
+reason that you want that frequency and
+voltage.<00:07:23.120><c> So</c><00:07:23.280><c> we're</c><00:07:23.520><c> not</c><00:07:23.680><c> going</c><00:07:23.759><c> to</c><00:07:23.919><c> adjust</c>
+
+00:07:24.230 --> 00:07:24.240 align:start position:0%
+voltage. So we're not going to adjust
+ 
+
+00:07:24.240 --> 00:07:28.629 align:start position:0%
+voltage. So we're not going to adjust
+it.
+
+00:07:28.629 --> 00:07:28.639 align:start position:0%
+ 
+ 
+
+00:07:28.639 --> 00:07:31.589 align:start position:0%
+ 
+Now<00:07:30.080><c> we</c><00:07:30.400><c> know</c><00:07:30.560><c> about</c><00:07:30.720><c> profiles.</c><00:07:31.280><c> We</c><00:07:31.360><c> know</c><00:07:31.440><c> what</c>
+
+00:07:31.589 --> 00:07:31.599 align:start position:0%
+Now we know about profiles. We know what
+ 
+
+00:07:31.599 --> 00:07:33.670 align:start position:0%
+Now we know about profiles. We know what
+profiles<00:07:32.080><c> are.</c><00:07:32.400><c> A</c><00:07:32.639><c> combination</c><00:07:33.039><c> of</c><00:07:33.280><c> frequency</c>
+
+00:07:33.670 --> 00:07:33.680 align:start position:0%
+profiles are. A combination of frequency
+ 
+
+00:07:33.680 --> 00:07:35.830 align:start position:0%
+profiles are. A combination of frequency
+and<00:07:33.919><c> voltage.</c>
+
+00:07:35.830 --> 00:07:35.840 align:start position:0%
+and voltage.
+ 
+
+00:07:35.840 --> 00:07:38.150 align:start position:0%
+and voltage.
+Now<00:07:36.080><c> we</c><00:07:36.240><c> can</c><00:07:36.400><c> use</c><00:07:36.639><c> profiles</c>
+
+00:07:38.150 --> 00:07:38.160 align:start position:0%
+Now we can use profiles
+ 
+
+00:07:38.160 --> 00:07:39.670 align:start position:0%
+Now we can use profiles
+to<00:07:38.560><c> help</c><00:07:38.720><c> us</c><00:07:38.960><c> manage</c><00:07:39.280><c> things</c><00:07:39.440><c> like</c>
+
+00:07:39.670 --> 00:07:39.680 align:start position:0%
+to help us manage things like
+ 
+
+00:07:39.680 --> 00:07:42.469 align:start position:0%
+to help us manage things like
+temperature.<00:07:40.800><c> And</c><00:07:41.039><c> how</c><00:07:41.199><c> we</c><00:07:41.440><c> do</c><00:07:41.599><c> that</c><00:07:42.160><c> depends</c>
+
+00:07:42.469 --> 00:07:42.479 align:start position:0%
+temperature. And how we do that depends
+ 
+
+00:07:42.479 --> 00:07:44.550 align:start position:0%
+temperature. And how we do that depends
+on<00:07:42.720><c> thresholds</c><00:07:43.360><c> and</c><00:07:43.599><c> a</c><00:07:43.759><c> few</c><00:07:43.919><c> configuration</c>
+
+00:07:44.550 --> 00:07:44.560 align:start position:0%
+on thresholds and a few configuration
+ 
+
+00:07:44.560 --> 00:07:46.790 align:start position:0%
+on thresholds and a few configuration
+settings.<00:07:45.840><c> To</c><00:07:46.080><c> start</c><00:07:46.240><c> with,</c><00:07:46.479><c> let's</c><00:07:46.720><c> talk</c>
+
+00:07:46.790 --> 00:07:46.800 align:start position:0%
+settings. To start with, let's talk
+ 
+
+00:07:46.800 --> 00:07:48.950 align:start position:0%
+settings. To start with, let's talk
+about<00:07:46.960><c> the</c><00:07:47.120><c> thresholds.</c>
+
+00:07:48.950 --> 00:07:48.960 align:start position:0%
+about the thresholds.
+ 
+
+00:07:48.960 --> 00:07:51.270 align:start position:0%
+about the thresholds.
+target<00:07:49.360><c> temperature.</c><00:07:50.560><c> This</c><00:07:50.800><c> temperature</c>
+
+00:07:51.270 --> 00:07:51.280 align:start position:0%
+target temperature. This temperature
+ 
+
+00:07:51.280 --> 00:07:52.950 align:start position:0%
+target temperature. This temperature
+defines
+
+00:07:52.950 --> 00:07:52.960 align:start position:0%
+defines
+ 
+
+00:07:52.960 --> 00:07:55.749 align:start position:0%
+defines
+at<00:07:53.199><c> what</c><00:07:53.440><c> point,</c><00:07:54.160><c> what</c><00:07:54.560><c> threshold</c><00:07:55.120><c> or</c><00:07:55.360><c> what</c>
+
+00:07:55.749 --> 00:07:55.759 align:start position:0%
+at what point, what threshold or what
+ 
+
+00:07:55.759 --> 00:07:58.070 align:start position:0%
+at what point, what threshold or what
+temperature<00:07:56.720><c> the</c><00:07:56.960><c> minor</c><00:07:57.280><c> will</c><00:07:57.520><c> kick</c><00:07:57.680><c> the</c><00:07:57.840><c> fans</c>
+
+00:07:58.070 --> 00:07:58.080 align:start position:0%
+temperature the minor will kick the fans
+ 
+
+00:07:58.080 --> 00:08:00.790 align:start position:0%
+temperature the minor will kick the fans
+up<00:07:58.240><c> to</c><00:07:58.479><c> 100%</c><00:07:59.120><c> and</c><00:07:59.360><c> keep</c><00:07:59.599><c> them</c><00:07:59.759><c> there.</c><00:08:00.479><c> Anything</c>
+
+00:08:00.790 --> 00:08:00.800 align:start position:0%
+up to 100% and keep them there. Anything
+ 
+
+00:08:00.800 --> 00:08:02.869 align:start position:0%
+up to 100% and keep them there. Anything
+under<00:08:01.120><c> this</c><00:08:01.360><c> temperature,</c><00:08:01.919><c> the</c><00:08:02.160><c> minor's</c><00:08:02.560><c> fans</c>
+
+00:08:02.869 --> 00:08:02.879 align:start position:0%
+under this temperature, the minor's fans
+ 
+
+00:08:02.879 --> 00:08:05.670 align:start position:0%
+under this temperature, the minor's fans
+will<00:08:03.039><c> modulate</c><00:08:04.080><c> based</c><00:08:04.400><c> on</c><00:08:04.560><c> on</c><00:08:05.120><c> what</c><00:08:05.360><c> we</c><00:08:05.520><c> think</c>
+
+00:08:05.670 --> 00:08:05.680 align:start position:0%
+will modulate based on on what we think
+ 
+
+00:08:05.680 --> 00:08:08.469 align:start position:0%
+will modulate based on on what we think
+is<00:08:05.919><c> needed.</c><00:08:06.879><c> But</c><00:08:07.039><c> at</c><00:08:07.360><c> 45°</c><00:08:08.080><c> in</c><00:08:08.319><c> my</c>
+
+00:08:08.469 --> 00:08:08.479 align:start position:0%
+is needed. But at 45° in my
+ 
+
+00:08:08.479 --> 00:08:11.270 align:start position:0%
+is needed. But at 45° in my
+configuration,<00:08:09.199><c> the</c><00:08:09.440><c> fans</c><00:08:09.680><c> go</c><00:08:09.840><c> to</c><00:08:10.000><c> 100%.</c><00:08:11.039><c> You</c>
+
+00:08:11.270 --> 00:08:11.280 align:start position:0%
+configuration, the fans go to 100%. You
+ 
+
+00:08:11.280 --> 00:08:13.430 align:start position:0%
+configuration, the fans go to 100%. You
+can<00:08:11.360><c> verify</c><00:08:11.759><c> that</c><00:08:12.000><c> here.</c><00:08:12.639><c> My</c><00:08:12.800><c> fans</c><00:08:13.120><c> are</c><00:08:13.280><c> at</c>
+
+00:08:13.430 --> 00:08:13.440 align:start position:0%
+can verify that here. My fans are at
+ 
+
+00:08:13.440 --> 00:08:17.029 align:start position:0%
+can verify that here. My fans are at
+100%.<00:08:14.800><c> And</c><00:08:15.199><c> my</c><00:08:15.440><c> highest</c><00:08:15.919><c> temperature</c><00:08:16.800><c> is</c>
+
+00:08:17.029 --> 00:08:17.039 align:start position:0%
+100%. And my highest temperature is
+ 
+
+00:08:17.039 --> 00:08:20.230 align:start position:0%
+100%. And my highest temperature is
+above<00:08:17.520><c> 45.</c><00:08:18.560><c> So,</c><00:08:19.120><c> a</c><00:08:19.360><c> board</c><00:08:19.599><c> sensor</c><00:08:19.840><c> has</c><00:08:20.080><c> gone</c>
+
+00:08:20.230 --> 00:08:20.240 align:start position:0%
+above 45. So, a board sensor has gone
+ 
+
+00:08:20.240 --> 00:08:22.309 align:start position:0%
+above 45. So, a board sensor has gone
+above<00:08:20.560><c> 45</c>
+
+00:08:22.309 --> 00:08:22.319 align:start position:0%
+above 45
+ 
+
+00:08:22.319 --> 00:08:24.950 align:start position:0%
+above 45
+and<00:08:22.560><c> my</c><00:08:22.800><c> target</c><00:08:23.120><c> temperature</c><00:08:23.759><c> is</c><00:08:24.080><c> 45.</c>
+
+00:08:24.950 --> 00:08:24.960 align:start position:0%
+and my target temperature is 45.
+ 
+
+00:08:24.960 --> 00:08:28.710 align:start position:0%
+and my target temperature is 45.
+Therefore,<00:08:25.360><c> fans</c><00:08:25.599><c> kick</c><00:08:25.840><c> to</c><00:08:26.080><c> 100%.</c>
+
+00:08:28.710 --> 00:08:28.720 align:start position:0%
+Therefore, fans kick to 100%.
+ 
+
+00:08:28.720 --> 00:08:31.670 align:start position:0%
+Therefore, fans kick to 100%.
+Hot<00:08:29.120><c> temperature</c><00:08:30.240><c> is</c><00:08:30.560><c> when</c><00:08:30.879><c> the</c><00:08:31.120><c> minor</c><00:08:31.520><c> will</c>
+
+00:08:31.670 --> 00:08:31.680 align:start position:0%
+Hot temperature is when the minor will
+ 
+
+00:08:31.680 --> 00:08:34.949 align:start position:0%
+Hot temperature is when the minor will
+underclock<00:08:32.560><c> one</c><00:08:32.880><c> profile.</c><00:08:34.159><c> So,</c><00:08:34.320><c> if</c><00:08:34.479><c> any</c><00:08:34.719><c> board</c>
+
+00:08:34.949 --> 00:08:34.959 align:start position:0%
+underclock one profile. So, if any board
+ 
+
+00:08:34.959 --> 00:08:37.269 align:start position:0%
+underclock one profile. So, if any board
+sensor<00:08:35.360><c> hits</c><00:08:35.680><c> 65°,</c>
+
+00:08:37.269 --> 00:08:37.279 align:start position:0%
+sensor hits 65°,
+ 
+
+00:08:37.279 --> 00:08:39.190 align:start position:0%
+sensor hits 65°,
+the<00:08:37.440><c> minor</c><00:08:37.839><c> is</c><00:08:38.000><c> going</c><00:08:38.159><c> to</c><00:08:38.320><c> underclock</c><00:08:38.959><c> one</c>
+
+00:08:39.190 --> 00:08:39.200 align:start position:0%
+the minor is going to underclock one
+ 
+
+00:08:39.200 --> 00:08:42.230 align:start position:0%
+the minor is going to underclock one
+profile<00:08:40.320><c> and</c><00:08:40.560><c> then</c><00:08:40.880><c> wait</c><00:08:41.120><c> for</c><00:08:41.279><c> a</c><00:08:41.440><c> minute</c><00:08:41.680><c> or</c><00:08:41.839><c> so</c>
+
+00:08:42.230 --> 00:08:42.240 align:start position:0%
+profile and then wait for a minute or so
+ 
+
+00:08:42.240 --> 00:08:44.389 align:start position:0%
+profile and then wait for a minute or so
+and<00:08:42.479><c> then</c><00:08:42.640><c> re-evaluate</c><00:08:43.360><c> temperature</c><00:08:43.760><c> again.</c>
+
+00:08:44.389 --> 00:08:44.399 align:start position:0%
+and then re-evaluate temperature again.
+ 
+
+00:08:44.399 --> 00:08:46.389 align:start position:0%
+and then re-evaluate temperature again.
+If<00:08:44.560><c> the</c><00:08:44.720><c> minor</c><00:08:45.040><c> is</c><00:08:45.200><c> still</c><00:08:45.440><c> too</c><00:08:45.680><c> warm,</c><00:08:46.000><c> still</c><00:08:46.160><c> at</c>
+
+00:08:46.389 --> 00:08:46.399 align:start position:0%
+If the minor is still too warm, still at
+ 
+
+00:08:46.399 --> 00:08:48.389 align:start position:0%
+If the minor is still too warm, still at
+65<00:08:47.040><c> on</c><00:08:47.200><c> the</c><00:08:47.360><c> hottest</c><00:08:47.680><c> sensor,</c><00:08:48.080><c> it</c><00:08:48.240><c> may</c>
+
+00:08:48.389 --> 00:08:48.399 align:start position:0%
+65 on the hottest sensor, it may
+ 
+
+00:08:48.399 --> 00:08:51.110 align:start position:0%
+65 on the hottest sensor, it may
+underclock<00:08:48.959><c> again.</c>
+
+00:08:51.110 --> 00:08:51.120 align:start position:0%
+underclock again.
+ 
+
+00:08:51.120 --> 00:08:52.790 align:start position:0%
+underclock again.
+So<00:08:51.360><c> this</c><00:08:51.519><c> is</c><00:08:51.600><c> your</c><00:08:51.839><c> threshold</c><00:08:52.240><c> for</c>
+
+00:08:52.790 --> 00:08:52.800 align:start position:0%
+So this is your threshold for
+ 
+
+00:08:52.800 --> 00:08:54.790 align:start position:0%
+So this is your threshold for
+underclocking.
+
+00:08:54.790 --> 00:08:54.800 align:start position:0%
+underclocking.
+ 
+
+00:08:54.800 --> 00:08:56.070 align:start position:0%
+underclocking.
+And<00:08:54.959><c> then</c><00:08:55.120><c> dangerous</c><00:08:55.519><c> temperature.</c><00:08:55.920><c> This</c><00:08:56.000><c> is</c>
+
+00:08:56.070 --> 00:08:56.080 align:start position:0%
+And then dangerous temperature. This is
+ 
+
+00:08:56.080 --> 00:08:57.829 align:start position:0%
+And then dangerous temperature. This is
+when<00:08:56.240><c> the</c><00:08:56.320><c> minor</c><00:08:56.640><c> is</c><00:08:56.720><c> going</c><00:08:56.800><c> to</c><00:08:56.880><c> shut</c><00:08:57.040><c> down.</c>
+
+00:08:57.829 --> 00:08:57.839 align:start position:0%
+when the minor is going to shut down.
+ 
+
+00:08:57.839 --> 00:08:59.750 align:start position:0%
+when the minor is going to shut down.
+Again,<00:08:58.160><c> this</c><00:08:58.320><c> is</c><00:08:58.399><c> a</c><00:08:58.560><c> board</c><00:08:58.880><c> temperature.</c><00:08:59.519><c> So</c>
+
+00:08:59.750 --> 00:08:59.760 align:start position:0%
+Again, this is a board temperature. So
+ 
+
+00:08:59.760 --> 00:09:01.509 align:start position:0%
+Again, this is a board temperature. So
+what<00:08:59.920><c> we're</c><00:09:00.080><c> stating</c><00:09:00.399><c> is</c><00:09:00.640><c> that</c><00:09:00.800><c> if</c><00:09:01.040><c> a</c><00:09:01.200><c> board</c>
+
+00:09:01.509 --> 00:09:01.519 align:start position:0%
+what we're stating is that if a board
+ 
+
+00:09:01.519 --> 00:09:04.630 align:start position:0%
+what we're stating is that if a board
+sensor<00:09:02.320><c> gets</c><00:09:02.560><c> to</c><00:09:02.800><c> 70°,</c><00:09:03.920><c> that</c><00:09:04.160><c> means</c><00:09:04.320><c> that</c><00:09:04.480><c> the</c>
+
+00:09:04.630 --> 00:09:04.640 align:start position:0%
+sensor gets to 70°, that means that the
+ 
+
+00:09:04.640 --> 00:09:06.949 align:start position:0%
+sensor gets to 70°, that means that the
+chips<00:09:05.040><c> are</c><00:09:05.360><c> significantly</c><00:09:06.000><c> hotter</c><00:09:06.640><c> and</c>
+
+00:09:06.949 --> 00:09:06.959 align:start position:0%
+chips are significantly hotter and
+ 
+
+00:09:06.959 --> 00:09:11.190 align:start position:0%
+chips are significantly hotter and
+likely<00:09:07.360><c> getting</c><00:09:07.760><c> close</c><00:09:08.000><c> to</c><00:09:08.320><c> 90</c><00:09:08.959><c> 95°.</c><00:09:10.320><c> So</c><00:09:10.959><c> at</c>
+
+00:09:11.190 --> 00:09:11.200 align:start position:0%
+likely getting close to 90 95°. So at
+ 
+
+00:09:11.200 --> 00:09:13.829 align:start position:0%
+likely getting close to 90 95°. So at
+70,<00:09:12.080><c> we're</c><00:09:12.399><c> going</c><00:09:12.480><c> to</c><00:09:12.560><c> turn</c><00:09:12.720><c> off</c><00:09:12.880><c> by</c><00:09:13.120><c> default.</c>
+
+00:09:13.829 --> 00:09:13.839 align:start position:0%
+70, we're going to turn off by default.
+ 
+
+00:09:13.839 --> 00:09:16.310 align:start position:0%
+70, we're going to turn off by default.
+You<00:09:14.000><c> can</c><00:09:14.240><c> increase</c><00:09:14.399><c> that</c><00:09:14.560><c> to</c><00:09:14.800><c> 75,</c>
+
+00:09:16.310 --> 00:09:16.320 align:start position:0%
+You can increase that to 75,
+ 
+
+00:09:16.320 --> 00:09:20.310 align:start position:0%
+You can increase that to 75,
+but<00:09:16.640><c> most</c><00:09:16.800><c> of</c><00:09:16.880><c> the</c><00:09:17.040><c> time</c><00:09:17.440><c> 70</c><00:09:17.760><c> works</c><00:09:18.000><c> just</c><00:09:18.160><c> fine.</c>
+
+00:09:20.310 --> 00:09:20.320 align:start position:0%
+but most of the time 70 works just fine.
+ 
+
+00:09:20.320 --> 00:09:21.990 align:start position:0%
+but most of the time 70 works just fine.
+Now,<00:09:20.560><c> knowing</c><00:09:20.800><c> these</c><00:09:21.120><c> three</c><00:09:21.279><c> thresholds,</c>
+
+00:09:21.990 --> 00:09:22.000 align:start position:0%
+Now, knowing these three thresholds,
+ 
+
+00:09:22.000 --> 00:09:24.550 align:start position:0%
+Now, knowing these three thresholds,
+when<00:09:22.240><c> our</c><00:09:22.399><c> fans</c><00:09:22.640><c> go</c><00:09:22.800><c> to</c><00:09:23.040><c> 100%,</c><00:09:24.160><c> when</c><00:09:24.399><c> we</c>
+
+00:09:24.550 --> 00:09:24.560 align:start position:0%
+when our fans go to 100%, when we
+ 
+
+00:09:24.560 --> 00:09:27.670 align:start position:0%
+when our fans go to 100%, when we
+underclock,<00:09:25.760><c> and</c><00:09:26.000><c> when</c><00:09:26.160><c> we</c><00:09:26.320><c> turn</c><00:09:26.560><c> off,</c><00:09:27.360><c> we</c><00:09:27.600><c> can</c>
+
+00:09:27.670 --> 00:09:27.680 align:start position:0%
+underclock, and when we turn off, we can
+ 
+
+00:09:27.680 --> 00:09:30.070 align:start position:0%
+underclock, and when we turn off, we can
+use<00:09:28.000><c> one</c><00:09:28.240><c> of</c><00:09:28.320><c> the</c><00:09:28.480><c> Luxos</c><00:09:29.120><c> flagship</c><00:09:29.600><c> features,</c>
+
+00:09:30.070 --> 00:09:30.080 align:start position:0%
+use one of the Luxos flagship features,
+ 
+
+00:09:30.080 --> 00:09:31.430 align:start position:0%
+use one of the Luxos flagship features,
+feature<00:09:30.399><c> called</c><00:09:30.640><c> advanced</c><00:09:31.120><c> thermal</c>
+
+00:09:31.430 --> 00:09:31.440 align:start position:0%
+feature called advanced thermal
+ 
+
+00:09:31.440 --> 00:09:36.630 align:start position:0%
+feature called advanced thermal
+management,<00:09:32.480><c> or</c><00:09:32.800><c> ATM</c><00:09:33.360><c> for</c><00:09:33.519><c> short,</c><00:09:34.399><c> to</c><00:09:34.720><c> manage</c>
+
+00:09:36.630 --> 00:09:36.640 align:start position:0%
+management, or ATM for short, to manage
+ 
+
+00:09:36.640 --> 00:09:39.750 align:start position:0%
+management, or ATM for short, to manage
+how<00:09:36.959><c> we</c><00:09:37.120><c> we</c><00:09:37.519><c> operate</c><00:09:37.920><c> with</c><00:09:38.160><c> these</c><00:09:38.399><c> thresholds.</c>
+
+00:09:39.750 --> 00:09:39.760 align:start position:0%
+how we we operate with these thresholds.
+ 
+
+00:09:39.760 --> 00:09:43.030 align:start position:0%
+how we we operate with these thresholds.
+Effectively,<00:09:41.120><c> ATM</c><00:09:41.760><c> wants</c><00:09:42.000><c> to</c><00:09:42.399><c> underclock</c><00:09:42.880><c> the</c>
+
+00:09:43.030 --> 00:09:43.040 align:start position:0%
+Effectively, ATM wants to underclock the
+ 
+
+00:09:43.040 --> 00:09:45.110 align:start position:0%
+Effectively, ATM wants to underclock the
+minor<00:09:43.360><c> when</c><00:09:43.440><c> it</c><00:09:43.600><c> gets</c><00:09:43.760><c> too</c><00:09:44.000><c> warm</c><00:09:44.720><c> and</c><00:09:44.959><c> then</c>
+
+00:09:45.110 --> 00:09:45.120 align:start position:0%
+minor when it gets too warm and then
+ 
+
+00:09:45.120 --> 00:09:47.269 align:start position:0%
+minor when it gets too warm and then
+bring<00:09:45.279><c> the</c><00:09:45.440><c> minor</c><00:09:45.839><c> back</c><00:09:46.000><c> up</c><00:09:46.160><c> to</c><00:09:46.880><c> uh</c><00:09:47.040><c> a</c>
+
+00:09:47.269 --> 00:09:47.279 align:start position:0%
+bring the minor back up to uh a
+ 
+
+00:09:47.279 --> 00:09:50.150 align:start position:0%
+bring the minor back up to uh a
+predefined<00:09:48.399><c> uh</c><00:09:48.560><c> limit</c><00:09:49.120><c> when</c><00:09:49.360><c> the</c><00:09:49.519><c> minor</c><00:09:49.839><c> cools</c>
+
+00:09:50.150 --> 00:09:50.160 align:start position:0%
+predefined uh limit when the minor cools
+ 
+
+00:09:50.160 --> 00:09:52.310 align:start position:0%
+predefined uh limit when the minor cools
+off.<00:09:50.480><c> So,</c><00:09:50.720><c> imagine</c><00:09:51.120><c> during</c><00:09:51.440><c> the</c><00:09:51.600><c> day</c><00:09:52.080><c> when</c>
+
+00:09:52.310 --> 00:09:52.320 align:start position:0%
+off. So, imagine during the day when
+ 
+
+00:09:52.320 --> 00:09:54.310 align:start position:0%
+off. So, imagine during the day when
+temperatures<00:09:52.720><c> are</c><00:09:52.880><c> warm,</c><00:09:53.360><c> your</c><00:09:53.600><c> miners</c><00:09:54.000><c> all</c>
+
+00:09:54.310 --> 00:09:54.320 align:start position:0%
+temperatures are warm, your miners all
+ 
+
+00:09:54.320 --> 00:09:56.550 align:start position:0%
+temperatures are warm, your miners all
+underclock<00:09:55.120><c> just</c><00:09:55.440><c> enough</c><00:09:56.000><c> in</c><00:09:56.240><c> order</c><00:09:56.399><c> to</c>
+
+00:09:56.550 --> 00:09:56.560 align:start position:0%
+underclock just enough in order to
+ 
+
+00:09:56.560 --> 00:09:58.470 align:start position:0%
+underclock just enough in order to
+maintain<00:09:56.959><c> temperature.</c><00:09:57.519><c> And</c><00:09:57.680><c> then</c><00:09:57.839><c> at</c><00:09:58.080><c> night</c>
+
+00:09:58.470 --> 00:09:58.480 align:start position:0%
+maintain temperature. And then at night
+ 
+
+00:09:58.480 --> 00:10:00.710 align:start position:0%
+maintain temperature. And then at night
+when<00:09:58.720><c> temperatures</c><00:09:59.200><c> cool</c><00:09:59.440><c> off,</c><00:09:59.839><c> the</c><00:10:00.080><c> miners</c>
+
+00:10:00.710 --> 00:10:00.720 align:start position:0%
+when temperatures cool off, the miners
+ 
+
+00:10:00.720 --> 00:10:02.630 align:start position:0%
+when temperatures cool off, the miners
+come<00:10:00.959><c> back</c><00:10:01.120><c> up</c><00:10:01.279><c> to</c><00:10:01.519><c> their</c><00:10:01.760><c> original</c><00:10:02.080><c> hash</c><00:10:02.399><c> rate</c>
+
+00:10:02.630 --> 00:10:02.640 align:start position:0%
+come back up to their original hash rate
+ 
+
+00:10:02.640 --> 00:10:04.550 align:start position:0%
+come back up to their original hash rate
+levels<00:10:03.200><c> and</c><00:10:03.440><c> stay</c><00:10:03.680><c> there</c><00:10:03.920><c> until</c><00:10:04.160><c> the</c><00:10:04.399><c> day</c>
+
+00:10:04.550 --> 00:10:04.560 align:start position:0%
+levels and stay there until the day
+ 
+
+00:10:04.560 --> 00:10:06.470 align:start position:0%
+levels and stay there until the day
+comes<00:10:04.800><c> and</c><00:10:04.959><c> they</c><00:10:05.200><c> get</c><00:10:05.360><c> warm</c><00:10:05.600><c> again.</c><00:10:06.080><c> Then</c><00:10:06.240><c> we</c>
+
+00:10:06.470 --> 00:10:06.480 align:start position:0%
+comes and they get warm again. Then we
+ 
+
+00:10:06.480 --> 00:10:08.310 align:start position:0%
+comes and they get warm again. Then we
+repeat<00:10:06.800><c> the</c><00:10:06.959><c> process.</c><00:10:07.519><c> It's</c><00:10:07.760><c> almost</c><00:10:08.000><c> if</c><00:10:08.160><c> you</c>
+
+00:10:08.310 --> 00:10:08.320 align:start position:0%
+repeat the process. It's almost if you
+ 
+
+00:10:08.320 --> 00:10:10.790 align:start position:0%
+repeat the process. It's almost if you
+watch<00:10:08.480><c> your</c><00:10:08.640><c> fleet</c><00:10:09.279><c> breathe</c><00:10:10.080><c> as</c><00:10:10.320><c> time</c><00:10:10.560><c> goes</c>
+
+00:10:10.790 --> 00:10:10.800 align:start position:0%
+watch your fleet breathe as time goes
+ 
+
+00:10:10.800 --> 00:10:12.870 align:start position:0%
+watch your fleet breathe as time goes
+on.
+
+00:10:12.870 --> 00:10:12.880 align:start position:0%
+on.
+ 
+
+00:10:12.880 --> 00:10:15.670 align:start position:0%
+on.
+Knowing<00:10:13.200><c> that</c><00:10:14.160><c> the</c><00:10:14.399><c> way</c><00:10:14.560><c> ATM</c><00:10:15.040><c> functions</c><00:10:15.360><c> is</c>
+
+00:10:15.670 --> 00:10:15.680 align:start position:0%
+Knowing that the way ATM functions is
+ 
+
+00:10:15.680 --> 00:10:17.269 align:start position:0%
+Knowing that the way ATM functions is
+you<00:10:15.839><c> end</c><00:10:15.920><c> up</c><00:10:16.079><c> with</c><00:10:16.160><c> a</c><00:10:16.399><c> window.</c><00:10:16.800><c> You</c><00:10:16.959><c> end</c><00:10:17.120><c> up</c>
+
+00:10:17.269 --> 00:10:17.279 align:start position:0%
+you end up with a window. You end up
+ 
+
+00:10:17.279 --> 00:10:18.630 align:start position:0%
+you end up with a window. You end up
+with<00:10:17.360><c> a</c><00:10:17.519><c> minimum</c><00:10:17.920><c> profile</c><00:10:18.240><c> that</c><00:10:18.480><c> you're</c>
+
+00:10:18.630 --> 00:10:18.640 align:start position:0%
+with a minimum profile that you're
+ 
+
+00:10:18.640 --> 00:10:20.550 align:start position:0%
+with a minimum profile that you're
+willing<00:10:18.880><c> to</c><00:10:18.959><c> accept</c><00:10:19.279><c> the</c><00:10:19.440><c> minor</c><00:10:19.760><c> to</c><00:10:20.000><c> run</c><00:10:20.160><c> at</c>
+
+00:10:20.550 --> 00:10:20.560 align:start position:0%
+willing to accept the minor to run at
+ 
+
+00:10:20.560 --> 00:10:22.069 align:start position:0%
+willing to accept the minor to run at
+and<00:10:20.800><c> a</c><00:10:20.959><c> maximum</c><00:10:21.440><c> profile</c><00:10:21.760><c> that</c><00:10:21.920><c> you're</c>
+
+00:10:22.069 --> 00:10:22.079 align:start position:0%
+and a maximum profile that you're
+ 
+
+00:10:22.079 --> 00:10:24.550 align:start position:0%
+and a maximum profile that you're
+willing<00:10:22.240><c> to</c><00:10:22.399><c> run</c><00:10:22.560><c> at.</c><00:10:23.200><c> The</c><00:10:23.440><c> minimum</c><00:10:23.839><c> profile</c>
+
+00:10:24.550 --> 00:10:24.560 align:start position:0%
+willing to run at. The minimum profile
+ 
+
+00:10:24.560 --> 00:10:27.190 align:start position:0%
+willing to run at. The minimum profile
+states<00:10:24.880><c> that</c><00:10:25.279><c> this</c><00:10:25.519><c> is</c><00:10:25.680><c> as</c><00:10:25.920><c> low</c><00:10:26.160><c> as</c><00:10:26.560><c> the</c><00:10:26.880><c> minor</c>
+
+00:10:27.190 --> 00:10:27.200 align:start position:0%
+states that this is as low as the minor
+ 
+
+00:10:27.200 --> 00:10:29.509 align:start position:0%
+states that this is as low as the minor
+will<00:10:27.360><c> go</c><00:10:28.160><c> to</c><00:10:28.399><c> try</c><00:10:28.560><c> to</c><00:10:28.720><c> maintain</c><00:10:29.120><c> temperature</c>
+
+00:10:29.509 --> 00:10:29.519 align:start position:0%
+will go to try to maintain temperature
+ 
+
+00:10:29.519 --> 00:10:31.590 align:start position:0%
+will go to try to maintain temperature
+while<00:10:29.760><c> still</c><00:10:30.000><c> generating</c><00:10:30.399><c> hash</c><00:10:30.720><c> rate.</c><00:10:31.440><c> We</c>
+
+00:10:31.590 --> 00:10:31.600 align:start position:0%
+while still generating hash rate. We
+ 
+
+00:10:31.600 --> 00:10:33.110 align:start position:0%
+while still generating hash rate. We
+typically<00:10:32.000><c> recommend</c><00:10:32.240><c> you</c><00:10:32.480><c> set</c><00:10:32.640><c> that</c><00:10:32.720><c> to</c><00:10:32.880><c> no</c>
+
+00:10:33.110 --> 00:10:33.120 align:start position:0%
+typically recommend you set that to no
+ 
+
+00:10:33.120 --> 00:10:34.710 align:start position:0%
+typically recommend you set that to no
+profile.
+
+00:10:34.710 --> 00:10:34.720 align:start position:0%
+profile.
+ 
+
+00:10:34.720 --> 00:10:37.030 align:start position:0%
+profile.
+The<00:10:34.959><c> max</c><00:10:35.279><c> profile</c><00:10:35.600><c> is</c><00:10:35.760><c> the</c><00:10:36.000><c> opposite.</c><00:10:36.800><c> Max</c>
+
+00:10:37.030 --> 00:10:37.040 align:start position:0%
+The max profile is the opposite. Max
+ 
+
+00:10:37.040 --> 00:10:38.389 align:start position:0%
+The max profile is the opposite. Max
+profile<00:10:37.440><c> said,</c><00:10:37.600><c> "What's</c><00:10:37.839><c> the</c><00:10:38.079><c> highest</c>
+
+00:10:38.389 --> 00:10:38.399 align:start position:0%
+profile said, "What's the highest
+ 
+
+00:10:38.399 --> 00:10:40.230 align:start position:0%
+profile said, "What's the highest
+profile<00:10:38.800><c> you're</c><00:10:39.040><c> willing</c><00:10:39.200><c> to</c><00:10:39.360><c> go</c><00:10:39.440><c> to</c><00:10:39.760><c> if</c><00:10:40.079><c> the</c>
+
+00:10:40.230 --> 00:10:40.240 align:start position:0%
+profile you're willing to go to if the
+ 
+
+00:10:40.240 --> 00:10:43.509 align:start position:0%
+profile you're willing to go to if the
+minor<00:10:40.720><c> is</c><00:10:41.040><c> underneath</c><00:10:41.600><c> its</c><00:10:41.920><c> cool</c><00:10:42.240><c> range?"</c><00:10:43.279><c> And</c>
+
+00:10:43.509 --> 00:10:43.519 align:start position:0%
+minor is underneath its cool range?" And
+ 
+
+00:10:43.519 --> 00:10:45.590 align:start position:0%
+minor is underneath its cool range?" And
+in<00:10:43.760><c> most</c><00:10:43.920><c> cases,</c><00:10:44.320><c> default</c><00:10:44.720><c> is</c><00:10:44.880><c> fine.</c><00:10:45.440><c> You</c>
+
+00:10:45.590 --> 00:10:45.600 align:start position:0%
+in most cases, default is fine. You
+ 
+
+00:10:45.600 --> 00:10:46.949 align:start position:0%
+in most cases, default is fine. You
+could<00:10:45.760><c> very</c><00:10:46.000><c> easily</c><00:10:46.320><c> set</c><00:10:46.480><c> this</c><00:10:46.640><c> to</c><00:10:46.800><c> an</c>
+
+00:10:46.949 --> 00:10:46.959 align:start position:0%
+could very easily set this to an
+ 
+
+00:10:46.959 --> 00:10:49.350 align:start position:0%
+could very easily set this to an
+overclock.<00:10:47.760><c> You</c><00:10:47.920><c> could</c><00:10:48.079><c> set</c><00:10:48.240><c> this</c><00:10:48.480><c> to</c><00:10:49.040><c> plus</c>
+
+00:10:49.350 --> 00:10:49.360 align:start position:0%
+overclock. You could set this to plus
+ 
+
+00:10:49.360 --> 00:10:51.350 align:start position:0%
+overclock. You could set this to plus
+two<00:10:49.519><c> overclock.</c><00:10:50.240><c> And</c><00:10:50.399><c> if</c><00:10:50.560><c> the</c><00:10:50.720><c> minor</c><00:10:51.040><c> is</c><00:10:51.120><c> cool</c>
+
+00:10:51.350 --> 00:10:51.360 align:start position:0%
+two overclock. And if the minor is cool
+ 
+
+00:10:51.360 --> 00:10:53.430 align:start position:0%
+two overclock. And if the minor is cool
+enough,<00:10:51.839><c> it</c><00:10:52.079><c> will</c><00:10:52.399><c> get</c><00:10:52.560><c> up</c><00:10:52.800><c> into</c><00:10:53.040><c> that</c><00:10:53.200><c> plus</c>
+
+00:10:53.430 --> 00:10:53.440 align:start position:0%
+enough, it will get up into that plus
+ 
+
+00:10:53.440 --> 00:10:55.350 align:start position:0%
+enough, it will get up into that plus
+two<00:10:53.680><c> range.</c>
+
+00:10:55.350 --> 00:10:55.360 align:start position:0%
+two range.
+ 
+
+00:10:55.360 --> 00:10:57.269 align:start position:0%
+two range.
+And<00:10:55.519><c> one</c><00:10:55.680><c> thing</c><00:10:55.839><c> we</c><00:10:56.079><c> want</c><00:10:56.160><c> to</c><00:10:56.240><c> avoid</c><00:10:56.880><c> is</c><00:10:57.040><c> the</c>
+
+00:10:57.269 --> 00:10:57.279 align:start position:0%
+And one thing we want to avoid is the
+ 
+
+00:10:57.279 --> 00:10:59.910 align:start position:0%
+And one thing we want to avoid is the
+minor<00:10:57.760><c> getting</c><00:10:58.079><c> too</c><00:10:58.320><c> warm,</c><00:10:58.880><c> cooling</c><00:10:59.279><c> off,</c>
+
+00:10:59.910 --> 00:10:59.920 align:start position:0%
+minor getting too warm, cooling off,
+ 
+
+00:10:59.920 --> 00:11:01.990 align:start position:0%
+minor getting too warm, cooling off,
+dropping<00:11:00.240><c> down</c><00:11:00.480><c> one</c><00:11:00.720><c> profile,</c><00:11:01.440><c> and</c><00:11:01.600><c> then</c><00:11:01.839><c> one</c>
+
+00:11:01.990 --> 00:11:02.000 align:start position:0%
+dropping down one profile, and then one
+ 
+
+00:11:02.000 --> 00:11:03.829 align:start position:0%
+dropping down one profile, and then one
+minute<00:11:02.240><c> later</c><00:11:02.480><c> when</c><00:11:02.640><c> it</c><00:11:02.800><c> checks</c><00:11:03.120><c> again,</c><00:11:03.600><c> oh,</c>
+
+00:11:03.829 --> 00:11:03.839 align:start position:0%
+minute later when it checks again, oh,
+ 
+
+00:11:03.839 --> 00:11:05.509 align:start position:0%
+minute later when it checks again, oh,
+the<00:11:03.920><c> minor's</c><00:11:04.320><c> cooled</c><00:11:04.560><c> off.</c><00:11:04.880><c> let</c><00:11:05.120><c> me</c><00:11:05.279><c> go</c><00:11:05.440><c> back</c>
+
+00:11:05.509 --> 00:11:05.519 align:start position:0%
+the minor's cooled off. let me go back
+ 
+
+00:11:05.519 --> 00:11:07.910 align:start position:0%
+the minor's cooled off. let me go back
+up<00:11:05.680><c> a</c><00:11:05.920><c> profile</c><00:11:06.320><c> and</c><00:11:06.480><c> then</c><00:11:06.720><c> come</c><00:11:06.880><c> back</c><00:11:07.040><c> up.</c><00:11:07.680><c> That</c>
+
+00:11:07.910 --> 00:11:07.920 align:start position:0%
+up a profile and then come back up. That
+ 
+
+00:11:07.920 --> 00:11:09.509 align:start position:0%
+up a profile and then come back up. That
+would<00:11:08.079><c> create</c><00:11:08.320><c> this</c><00:11:08.480><c> bouncing</c><00:11:08.959><c> effect</c><00:11:09.279><c> and</c>
+
+00:11:09.509 --> 00:11:09.519 align:start position:0%
+would create this bouncing effect and
+ 
+
+00:11:09.519 --> 00:11:11.509 align:start position:0%
+would create this bouncing effect and
+and<00:11:09.760><c> you</c><00:11:09.920><c> don't</c><00:11:10.079><c> want</c><00:11:10.160><c> that.</c><00:11:10.480><c> We</c><00:11:10.640><c> don't</c><00:11:10.800><c> want</c>
+
+00:11:11.509 --> 00:11:11.519 align:start position:0%
+and you don't want that. We don't want
+ 
+
+00:11:11.519 --> 00:11:13.750 align:start position:0%
+and you don't want that. We don't want
+uh<00:11:11.680><c> a</c><00:11:11.920><c> lot</c><00:11:12.079><c> of</c><00:11:12.240><c> changes</c><00:11:12.560><c> on</c><00:11:12.720><c> the</c><00:11:12.959><c> minor</c><00:11:13.440><c> if</c><00:11:13.600><c> we</c>
+
+00:11:13.750 --> 00:11:13.760 align:start position:0%
+uh a lot of changes on the minor if we
+ 
+
+00:11:13.760 --> 00:11:15.670 align:start position:0%
+uh a lot of changes on the minor if we
+can<00:11:13.920><c> prevent</c><00:11:14.160><c> it.</c><00:11:14.880><c> So,</c><00:11:15.040><c> we</c><00:11:15.200><c> give</c><00:11:15.360><c> you</c><00:11:15.440><c> a</c>
+
+00:11:15.670 --> 00:11:15.680 align:start position:0%
+can prevent it. So, we give you a
+ 
+
+00:11:15.680 --> 00:11:18.310 align:start position:0%
+can prevent it. So, we give you a
+buffer.<00:11:16.480><c> Uh</c><00:11:16.720><c> what</c><00:11:16.880><c> this</c><00:11:17.040><c> buffer</c><00:11:17.519><c> says</c><00:11:17.760><c> is</c><00:11:18.079><c> that</c>
+
+00:11:18.310 --> 00:11:18.320 align:start position:0%
+buffer. Uh what this buffer says is that
+ 
+
+00:11:18.320 --> 00:11:21.590 align:start position:0%
+buffer. Uh what this buffer says is that
+if<00:11:18.480><c> the</c><00:11:18.640><c> minor</c><00:11:19.040><c> is</c><00:11:19.600><c> within</c><00:11:20.079><c> 5°</c>
+
+00:11:21.590 --> 00:11:21.600 align:start position:0%
+if the minor is within 5°
+ 
+
+00:11:21.600 --> 00:11:24.150 align:start position:0%
+if the minor is within 5°
+of<00:11:21.920><c> our</c><00:11:22.160><c> underclock</c><00:11:22.720><c> temperature,</c><00:11:23.600><c> oops,</c><00:11:23.920><c> our</c>
+
+00:11:24.150 --> 00:11:24.160 align:start position:0%
+of our underclock temperature, oops, our
+ 
+
+00:11:24.160 --> 00:11:26.710 align:start position:0%
+of our underclock temperature, oops, our
+underclock<00:11:24.640><c> temperature,</c><00:11:25.920><c> do</c><00:11:26.160><c> nothing.</c>
+
+00:11:26.710 --> 00:11:26.720 align:start position:0%
+underclock temperature, do nothing.
+ 
+
+00:11:26.720 --> 00:11:29.750 align:start position:0%
+underclock temperature, do nothing.
+Don't<00:11:26.959><c> underclock.</c><00:11:27.920><c> Don't</c><00:11:28.160><c> overclock.</c><00:11:29.519><c> So,</c>
+
+00:11:29.750 --> 00:11:29.760 align:start position:0%
+Don't underclock. Don't overclock. So,
+ 
+
+00:11:29.760 --> 00:11:31.509 align:start position:0%
+Don't underclock. Don't overclock. So,
+this<00:11:29.920><c> is</c><00:11:30.000><c> our</c><00:11:30.240><c> safe</c><00:11:30.560><c> buffer.</c><00:11:30.959><c> This</c><00:11:31.120><c> is</c><00:11:31.200><c> when</c><00:11:31.360><c> we</c>
+
+00:11:31.509 --> 00:11:31.519 align:start position:0%
+this is our safe buffer. This is when we
+ 
+
+00:11:31.519 --> 00:11:34.550 align:start position:0%
+this is our safe buffer. This is when we
+feel<00:11:31.680><c> that</c><00:11:31.839><c> the</c><00:11:32.000><c> minor</c><00:11:32.320><c> is</c><00:11:32.800><c> happy</c><00:11:33.600><c> and</c><00:11:34.000><c> safe</c><00:11:34.320><c> at</c>
+
+00:11:34.550 --> 00:11:34.560 align:start position:0%
+feel that the minor is happy and safe at
+ 
+
+00:11:34.560 --> 00:11:36.389 align:start position:0%
+feel that the minor is happy and safe at
+its<00:11:34.800><c> current</c><00:11:35.040><c> temperature.</c><00:11:36.000><c> Don't</c><00:11:36.240><c> do</c>
+
+00:11:36.389 --> 00:11:36.399 align:start position:0%
+its current temperature. Don't do
+ 
+
+00:11:36.399 --> 00:11:37.910 align:start position:0%
+its current temperature. Don't do
+anything<00:11:36.640><c> if</c><00:11:36.800><c> you're</c><00:11:36.959><c> within</c><00:11:37.200><c> that</c><00:11:37.440><c> buffer.</c>
+
+00:11:37.910 --> 00:11:37.920 align:start position:0%
+anything if you're within that buffer.
+ 
+
+00:11:37.920 --> 00:11:41.590 align:start position:0%
+anything if you're within that buffer.
+So<00:11:38.160><c> for</c><00:11:38.399><c> me,</c><00:11:39.120><c> anything</c><00:11:39.440><c> between</c><00:11:39.839><c> 59</c><00:11:40.320><c> and</c><00:11:40.640><c> 64,</c>
+
+00:11:41.590 --> 00:11:41.600 align:start position:0%
+So for me, anything between 59 and 64,
+ 
+
+00:11:41.600 --> 00:11:43.829 align:start position:0%
+So for me, anything between 59 and 64,
+the<00:11:41.839><c> minor</c><00:11:42.240><c> won't</c><00:11:42.480><c> turn</c><00:11:42.720><c> off</c><00:11:43.040><c> if</c><00:11:43.279><c> that's</c><00:11:43.600><c> the</c>
+
+00:11:43.829 --> 00:11:43.839 align:start position:0%
+the minor won't turn off if that's the
+ 
+
+00:11:43.839 --> 00:11:45.269 align:start position:0%
+the minor won't turn off if that's the
+highest<00:11:44.160><c> reading</c><00:11:44.399><c> on</c><00:11:44.640><c> all</c><00:11:44.800><c> of</c><00:11:44.880><c> my</c><00:11:45.040><c> board</c>
+
+00:11:45.269 --> 00:11:45.279 align:start position:0%
+highest reading on all of my board
+ 
+
+00:11:45.279 --> 00:11:46.630 align:start position:0%
+highest reading on all of my board
+sensors,<00:11:45.600><c> or</c><00:11:45.760><c> excuse</c><00:11:45.920><c> me,</c><00:11:46.079><c> the</c><00:11:46.240><c> minor</c><00:11:46.480><c> won't</c>
+
+00:11:46.630 --> 00:11:46.640 align:start position:0%
+sensors, or excuse me, the minor won't
+ 
+
+00:11:46.640 --> 00:11:48.790 align:start position:0%
+sensors, or excuse me, the minor won't
+underclock<00:11:47.519><c> if</c><00:11:47.839><c> that's</c><00:11:48.000><c> the</c><00:11:48.160><c> highest</c><00:11:48.480><c> reading</c>
+
+00:11:48.790 --> 00:11:48.800 align:start position:0%
+underclock if that's the highest reading
+ 
+
+00:11:48.800 --> 00:11:51.590 align:start position:0%
+underclock if that's the highest reading
+between<00:11:49.279><c> all</c><00:11:49.519><c> of</c><00:11:49.600><c> my</c><00:11:49.760><c> board</c><00:11:50.000><c> sensors.</c><00:11:51.279><c> You</c><00:11:51.440><c> can</c>
+
+00:11:51.590 --> 00:11:51.600 align:start position:0%
+between all of my board sensors. You can
+ 
+
+00:11:51.600 --> 00:11:53.590 align:start position:0%
+between all of my board sensors. You can
+change<00:11:51.839><c> this</c><00:11:52.000><c> to</c><00:11:52.320><c> plus</c><00:11:52.640><c> seven</c><00:11:52.880><c> or</c><00:11:53.120><c> excuse</c><00:11:53.360><c> me,</c>
+
+00:11:53.590 --> 00:11:53.600 align:start position:0%
+change this to plus seven or excuse me,
+ 
+
+00:11:53.600 --> 00:11:57.509 align:start position:0%
+change this to plus seven or excuse me,
+to<00:11:53.760><c> 7,</c><00:11:54.399><c> 8,</c><00:11:55.440><c> uh,</c><00:11:55.680><c> three.</c><00:11:56.880><c> Depends</c><00:11:57.200><c> on</c><00:11:57.360><c> your</c>
+
+00:11:57.509 --> 00:11:57.519 align:start position:0%
+to 7, 8, uh, three. Depends on your
+ 
+
+00:11:57.519 --> 00:11:58.630 align:start position:0%
+to 7, 8, uh, three. Depends on your
+goals.<00:11:57.839><c> There's</c><00:11:58.079><c> some</c><00:11:58.240><c> performance</c>
+
+00:11:58.630 --> 00:11:58.640 align:start position:0%
+goals. There's some performance
+ 
+
+00:11:58.640 --> 00:12:00.550 align:start position:0%
+goals. There's some performance
+characteristics<00:11:59.680><c> depending</c><00:12:00.079><c> on</c><00:12:00.160><c> how</c><00:12:00.320><c> you</c>
+
+00:12:00.550 --> 00:12:00.560 align:start position:0%
+characteristics depending on how you
+ 
+
+00:12:00.560 --> 00:12:02.470 align:start position:0%
+characteristics depending on how you
+change<00:12:00.720><c> this,</c><00:12:01.600><c> but</c><00:12:01.839><c> you</c><00:12:02.000><c> can</c><00:12:02.160><c> definitely</c>
+
+00:12:02.470 --> 00:12:02.480 align:start position:0%
+change this, but you can definitely
+ 
+
+00:12:02.480 --> 00:12:04.550 align:start position:0%
+change this, but you can definitely
+change<00:12:02.640><c> it</c><00:12:02.880><c> and</c><00:12:03.120><c> experiment</c><00:12:03.920><c> within</c><00:12:04.399><c> your</c>
+
+00:12:04.550 --> 00:12:04.560 align:start position:0%
+change it and experiment within your
+ 
+
+00:12:04.560 --> 00:12:06.470 align:start position:0%
+change it and experiment within your
+fleet<00:12:04.800><c> to</c><00:12:05.040><c> see</c><00:12:05.680><c> what</c><00:12:05.839><c> gets</c><00:12:06.000><c> you</c><00:12:06.160><c> the</c><00:12:06.320><c> best</c>
+
+00:12:06.470 --> 00:12:06.480 align:start position:0%
+fleet to see what gets you the best
+ 
+
+00:12:06.480 --> 00:12:09.350 align:start position:0%
+fleet to see what gets you the best
+results.<00:12:07.760><c> But</c><00:12:07.920><c> we</c><00:12:08.079><c> have</c><00:12:08.160><c> the</c><00:12:08.399><c> top</c><00:12:08.720><c> or</c><00:12:08.959><c> the</c><00:12:09.120><c> high</c>
+
+00:12:09.350 --> 00:12:09.360 align:start position:0%
+results. But we have the top or the high
+ 
+
+00:12:09.360 --> 00:12:12.470 align:start position:0%
+results. But we have the top or the high
+side,<00:12:10.079><c> the</c><00:12:10.320><c> max</c><00:12:10.639><c> profile,</c><00:12:11.360><c> the</c><00:12:11.680><c> bottom</c><00:12:12.079><c> or</c><00:12:12.320><c> the</c>
+
+00:12:12.470 --> 00:12:12.480 align:start position:0%
+side, the max profile, the bottom or the
+ 
+
+00:12:12.480 --> 00:12:14.710 align:start position:0%
+side, the max profile, the bottom or the
+low<00:12:12.720><c> side,</c><00:12:13.279><c> the</c><00:12:13.519><c> min</c><00:12:13.760><c> profile,</c><00:12:14.320><c> and</c><00:12:14.560><c> the</c>
+
+00:12:14.710 --> 00:12:14.720 align:start position:0%
+low side, the min profile, and the
+ 
+
+00:12:14.720 --> 00:12:16.230 align:start position:0%
+low side, the min profile, and the
+buffer<00:12:15.040><c> that</c><00:12:15.200><c> keeps</c><00:12:15.360><c> you</c><00:12:15.519><c> from</c><00:12:15.680><c> bouncing</c><00:12:16.000><c> too</c>
+
+00:12:16.230 --> 00:12:16.240 align:start position:0%
+buffer that keeps you from bouncing too
+ 
+
+00:12:16.240 --> 00:12:17.990 align:start position:0%
+buffer that keeps you from bouncing too
+much<00:12:16.480><c> if</c><00:12:16.720><c> you're</c><00:12:16.880><c> at</c><00:12:17.040><c> a</c><00:12:17.200><c> place</c><00:12:17.360><c> where</c><00:12:17.760><c> the</c>
+
+00:12:17.990 --> 00:12:18.000 align:start position:0%
+much if you're at a place where the
+ 
+
+00:12:18.000 --> 00:12:19.430 align:start position:0%
+much if you're at a place where the
+miner's<00:12:18.399><c> warming</c><00:12:18.639><c> up</c><00:12:18.720><c> and</c><00:12:18.959><c> cooling</c><00:12:19.200><c> off</c>
+
+00:12:19.430 --> 00:12:19.440 align:start position:0%
+miner's warming up and cooling off
+ 
+
+00:12:19.440 --> 00:12:23.350 align:start position:0%
+miner's warming up and cooling off
+quickly<00:12:19.920><c> during</c><00:12:20.639><c> profile</c><00:12:21.040><c> changes.</c>
+
+00:12:23.350 --> 00:12:23.360 align:start position:0%
+quickly during profile changes.
+ 
+
+00:12:23.360 --> 00:12:26.470 align:start position:0%
+quickly during profile changes.
+Startup<00:12:23.760><c> time.</c><00:12:24.560><c> This</c><00:12:24.800><c> defines</c><00:12:25.360><c> after</c><00:12:25.760><c> boot.</c>
+
+00:12:26.470 --> 00:12:26.480 align:start position:0%
+Startup time. This defines after boot.
+ 
+
+00:12:26.480 --> 00:12:28.069 align:start position:0%
+Startup time. This defines after boot.
+How<00:12:26.720><c> soon</c><00:12:26.880><c> do</c><00:12:27.040><c> you</c><00:12:27.120><c> want</c><00:12:27.360><c> advanced</c><00:12:27.760><c> thermal</c>
+
+00:12:28.069 --> 00:12:28.079 align:start position:0%
+How soon do you want advanced thermal
+ 
+
+00:12:28.079 --> 00:12:29.430 align:start position:0%
+How soon do you want advanced thermal
+management<00:12:28.480><c> to</c><00:12:28.639><c> start</c><00:12:28.880><c> evaluating</c>
+
+00:12:29.430 --> 00:12:29.440 align:start position:0%
+management to start evaluating
+ 
+
+00:12:29.440 --> 00:12:33.590 align:start position:0%
+management to start evaluating
+temperature<00:12:29.920><c> again?</c><00:12:31.279><c> So</c><00:12:31.920><c> after</c><00:12:32.240><c> boot</c><00:12:33.200><c> within</c>
+
+00:12:33.590 --> 00:12:33.600 align:start position:0%
+temperature again? So after boot within
+ 
+
+00:12:33.600 --> 00:12:35.910 align:start position:0%
+temperature again? So after boot within
+one<00:12:33.839><c> minute</c><00:12:34.240><c> or</c><00:12:34.480><c> right</c><00:12:34.639><c> after</c><00:12:34.880><c> the</c><00:12:35.040><c> one</c><00:12:35.279><c> minute</c>
+
+00:12:35.910 --> 00:12:35.920 align:start position:0%
+one minute or right after the one minute
+ 
+
+00:12:35.920 --> 00:12:37.670 align:start position:0%
+one minute or right after the one minute
+mark<00:12:36.240><c> the</c><00:12:36.399><c> minor</c><00:12:36.639><c> is</c><00:12:36.800><c> going</c><00:12:36.880><c> to</c><00:12:36.959><c> start</c><00:12:37.200><c> or</c><00:12:37.279><c> ATM</c>
+
+00:12:37.670 --> 00:12:37.680 align:start position:0%
+mark the minor is going to start or ATM
+ 
+
+00:12:37.680 --> 00:12:38.870 align:start position:0%
+mark the minor is going to start or ATM
+is<00:12:37.839><c> going</c><00:12:37.920><c> to</c><00:12:38.000><c> start</c><00:12:38.240><c> evaluating</c>
+
+00:12:38.870 --> 00:12:38.880 align:start position:0%
+is going to start evaluating
+ 
+
+00:12:38.880 --> 00:12:40.870 align:start position:0%
+is going to start evaluating
+temperature.
+
+00:12:40.870 --> 00:12:40.880 align:start position:0%
+temperature.
+ 
+
+00:12:40.880 --> 00:12:42.790 align:start position:0%
+temperature.
+Same<00:12:41.120><c> thing</c><00:12:41.279><c> for</c><00:12:41.519><c> post</c><00:12:41.760><c> ramping</c><00:12:42.160><c> time</c><00:12:42.480><c> except</c>
+
+00:12:42.790 --> 00:12:42.800 align:start position:0%
+Same thing for post ramping time except
+ 
+
+00:12:42.800 --> 00:12:45.509 align:start position:0%
+Same thing for post ramping time except
+this<00:12:43.040><c> is</c><00:12:43.360><c> after</c><00:12:44.160><c> we've</c><00:12:44.560><c> already</c><00:12:44.800><c> done</c><00:12:45.200><c> some</c>
+
+00:12:45.509 --> 00:12:45.519 align:start position:0%
+this is after we've already done some
+ 
+
+00:12:45.519 --> 00:12:46.629 align:start position:0%
+this is after we've already done some
+type<00:12:45.680><c> of</c><00:12:45.839><c> change.</c><00:12:46.079><c> It</c><00:12:46.240><c> could</c><00:12:46.320><c> have</c><00:12:46.399><c> been</c><00:12:46.560><c> a</c>
+
+00:12:46.629 --> 00:12:46.639 align:start position:0%
+type of change. It could have been a
+ 
+
+00:12:46.639 --> 00:12:48.310 align:start position:0%
+type of change. It could have been a
+voltage<00:12:47.040><c> change.</c><00:12:47.600><c> It</c><00:12:47.760><c> could</c><00:12:47.920><c> have</c><00:12:48.000><c> been</c><00:12:48.160><c> a</c>
+
+00:12:48.310 --> 00:12:48.320 align:start position:0%
+voltage change. It could have been a
+ 
+
+00:12:48.320 --> 00:12:49.910 align:start position:0%
+voltage change. It could have been a
+profile<00:12:48.720><c> change.</c><00:12:49.279><c> It</c><00:12:49.440><c> could</c><00:12:49.519><c> have</c><00:12:49.680><c> been</c><00:12:49.760><c> a</c>
+
+00:12:49.910 --> 00:12:49.920 align:start position:0%
+profile change. It could have been a
+ 
+
+00:12:49.920 --> 00:12:52.150 align:start position:0%
+profile change. It could have been a
+frequency<00:12:50.320><c> change.</c><00:12:51.120><c> How</c><00:12:51.360><c> soon</c><00:12:51.680><c> after</c><00:12:51.920><c> a</c>
+
+00:12:52.150 --> 00:12:52.160 align:start position:0%
+frequency change. How soon after a
+ 
+
+00:12:52.160 --> 00:12:54.150 align:start position:0%
+frequency change. How soon after a
+change<00:12:52.639><c> do</c><00:12:52.880><c> you</c><00:12:52.959><c> want</c><00:12:53.200><c> ATM</c><00:12:53.600><c> to</c><00:12:53.760><c> come</c><00:12:53.839><c> back</c><00:12:54.000><c> in</c>
+
+00:12:54.150 --> 00:12:54.160 align:start position:0%
+change do you want ATM to come back in
+ 
+
+00:12:54.160 --> 00:12:56.230 align:start position:0%
+change do you want ATM to come back in
+and<00:12:54.320><c> reread</c><00:12:55.200><c> uh</c><00:12:55.360><c> the</c><00:12:55.519><c> temperatures</c><00:12:55.920><c> to</c><00:12:56.160><c> make</c>
+
+00:12:56.230 --> 00:12:56.240 align:start position:0%
+and reread uh the temperatures to make
+ 
+
+00:12:56.240 --> 00:12:58.710 align:start position:0%
+and reread uh the temperatures to make
+adjustments?<00:12:57.279><c> Typically</c><00:12:57.760><c> 1</c><00:12:58.000><c> minute</c><00:12:58.320><c> is</c><00:12:58.480><c> where</c>
+
+00:12:58.710 --> 00:12:58.720 align:start position:0%
+adjustments? Typically 1 minute is where
+ 
+
+00:12:58.720 --> 00:13:00.470 align:start position:0%
+adjustments? Typically 1 minute is where
+you<00:12:58.880><c> want</c><00:12:58.959><c> it.</c><00:12:59.519><c> But</c><00:12:59.680><c> if</c><00:12:59.839><c> you</c><00:12:59.920><c> want</c><00:13:00.160><c> less</c>
+
+00:13:00.470 --> 00:13:00.480 align:start position:0%
+you want it. But if you want less
+ 
+
+00:13:00.480 --> 00:13:02.389 align:start position:0%
+you want it. But if you want less
+variation<00:13:00.880><c> or</c><00:13:01.120><c> less</c><00:13:01.440><c> changes</c><00:13:02.000><c> between</c>
+
+00:13:02.389 --> 00:13:02.399 align:start position:0%
+variation or less changes between
+ 
+
+00:13:02.399 --> 00:13:04.150 align:start position:0%
+variation or less changes between
+profiles<00:13:02.880><c> throughout</c><00:13:03.120><c> the</c><00:13:03.279><c> day,</c><00:13:03.839><c> you</c><00:13:04.000><c> could</c>
+
+00:13:04.150 --> 00:13:04.160 align:start position:0%
+profiles throughout the day, you could
+ 
+
+00:13:04.160 --> 00:13:06.310 align:start position:0%
+profiles throughout the day, you could
+ex<00:13:04.560><c> uh</c><00:13:04.720><c> you</c><00:13:04.959><c> can</c><00:13:05.120><c> make</c><00:13:05.279><c> this</c><00:13:05.600><c> post</c><00:13:05.920><c> ramping</c>
+
+00:13:06.310 --> 00:13:06.320 align:start position:0%
+ex uh you can make this post ramping
+ 
+
+00:13:06.320 --> 00:13:10.550 align:start position:0%
+ex uh you can make this post ramping
+time<00:13:06.560><c> bigger,</c><00:13:07.920><c> say</c><00:13:08.560><c> 5</c><00:13:08.800><c> minutes</c><00:13:09.120><c> or</c><00:13:09.600><c> 7</c><00:13:09.920><c> minutes,</c>
+
+00:13:10.550 --> 00:13:10.560 align:start position:0%
+time bigger, say 5 minutes or 7 minutes,
+ 
+
+00:13:10.560 --> 00:13:12.389 align:start position:0%
+time bigger, say 5 minutes or 7 minutes,
+so<00:13:10.800><c> the</c><00:13:10.959><c> minor</c><00:13:11.360><c> only</c><00:13:11.519><c> gets</c><00:13:11.760><c> checked</c><00:13:12.000><c> every</c><00:13:12.240><c> so</c>
+
+00:13:12.389 --> 00:13:12.399 align:start position:0%
+so the minor only gets checked every so
+ 
+
+00:13:12.399 --> 00:13:15.509 align:start position:0%
+so the minor only gets checked every so
+often<00:13:13.040><c> for</c><00:13:13.279><c> temperature</c><00:13:13.760><c> changes.</c><00:13:15.120><c> Typically</c>
+
+00:13:15.509 --> 00:13:15.519 align:start position:0%
+often for temperature changes. Typically
+ 
+
+00:13:15.519 --> 00:13:18.870 align:start position:0%
+often for temperature changes. Typically
+that<00:13:15.760><c> works</c><00:13:16.000><c> well</c><00:13:16.399><c> when</c><00:13:16.959><c> uptime</c><00:13:17.600><c> is</c><00:13:17.839><c> your</c><00:13:18.079><c> goal</c>
+
+00:13:18.870 --> 00:13:18.880 align:start position:0%
+that works well when uptime is your goal
+ 
+
+00:13:18.880 --> 00:13:21.910 align:start position:0%
+that works well when uptime is your goal
+and<00:13:19.440><c> uh</c><00:13:20.320><c> you</c><00:13:20.480><c> know</c><00:13:20.639><c> your</c><00:13:20.800><c> miners</c><00:13:21.279><c> are</c><00:13:21.519><c> in</c><00:13:21.760><c> a</c>
+
+00:13:21.910 --> 00:13:21.920 align:start position:0%
+and uh you know your miners are in a
+ 
+
+00:13:21.920 --> 00:13:23.269 align:start position:0%
+and uh you know your miners are in a
+safe<00:13:22.160><c> range</c><00:13:22.560><c> from</c><00:13:22.800><c> a</c><00:13:22.959><c> temperature</c>
+
+00:13:23.269 --> 00:13:23.279 align:start position:0%
+safe range from a temperature
+ 
+
+00:13:23.279 --> 00:13:25.990 align:start position:0%
+safe range from a temperature
+perspective<00:13:23.920><c> but</c><00:13:24.160><c> maybe</c><00:13:24.399><c> slightly</c><00:13:24.800><c> warmer</c><00:13:25.760><c> um</c>
+
+00:13:25.990 --> 00:13:26.000 align:start position:0%
+perspective but maybe slightly warmer um
+ 
+
+00:13:26.000 --> 00:13:29.509 align:start position:0%
+perspective but maybe slightly warmer um
+than<00:13:27.360><c> than</c><00:13:27.680><c> the</c><00:13:27.760><c> the</c><00:13:28.160><c> 5°</c><00:13:28.639><c> window</c><00:13:29.279><c> something</c>
+
+00:13:29.509 --> 00:13:29.519 align:start position:0%
+than than the the 5° window something
+ 
+
+00:13:29.519 --> 00:13:31.670 align:start position:0%
+than than the the 5° window something
+like<00:13:29.680><c> that.</c>
+
+00:13:31.670 --> 00:13:31.680 align:start position:0%
+like that.
+ 
+
+00:13:31.680 --> 00:13:33.110 align:start position:0%
+like that.
+Down<00:13:31.920><c> below</c><00:13:32.160><c> we</c><00:13:32.320><c> have</c><00:13:32.399><c> immersion</c><00:13:32.800><c> mode.</c><00:13:33.040><c> If</c>
+
+00:13:33.110 --> 00:13:33.120 align:start position:0%
+Down below we have immersion mode. If
+ 
+
+00:13:33.120 --> 00:13:34.629 align:start position:0%
+Down below we have immersion mode. If
+you<00:13:33.279><c> turn</c><00:13:33.360><c> this</c><00:13:33.519><c> on</c><00:13:33.839><c> it'll</c><00:13:34.079><c> turn</c><00:13:34.240><c> the</c><00:13:34.399><c> fans</c>
+
+00:13:34.629 --> 00:13:34.639 align:start position:0%
+you turn this on it'll turn the fans
+ 
+
+00:13:34.639 --> 00:13:36.629 align:start position:0%
+you turn this on it'll turn the fans
+off.<00:13:35.040><c> Don't</c><00:13:35.279><c> turn</c><00:13:35.519><c> this</c><00:13:35.680><c> on</c><00:13:36.000><c> before</c><00:13:36.320><c> you</c><00:13:36.560><c> put</c>
+
+00:13:36.629 --> 00:13:36.639 align:start position:0%
+off. Don't turn this on before you put
+ 
+
+00:13:36.639 --> 00:13:38.949 align:start position:0%
+off. Don't turn this on before you put
+the<00:13:36.800><c> minor</c><00:13:37.120><c> into</c><00:13:37.360><c> immersion</c><00:13:37.760><c> fluid.</c><00:13:38.639><c> uh</c><00:13:38.800><c> put</c>
+
+00:13:38.949 --> 00:13:38.959 align:start position:0%
+the minor into immersion fluid. uh put
+ 
+
+00:13:38.959 --> 00:13:41.990 align:start position:0%
+the minor into immersion fluid. uh put
+the<00:13:39.120><c> minor</c><00:13:39.839><c> in</c><00:13:40.079><c> into</c><00:13:40.480><c> immersion</c><00:13:40.880><c> fluid</c><00:13:41.839><c> uh</c>
+
+00:13:41.990 --> 00:13:42.000 align:start position:0%
+the minor in into immersion fluid uh
+ 
+
+00:13:42.000 --> 00:13:44.310 align:start position:0%
+the minor in into immersion fluid uh
+before<00:13:42.560><c> you</c><00:13:42.880><c> enable</c><00:13:43.360><c> this</c><00:13:43.760><c> because</c><00:13:44.000><c> as</c><00:13:44.240><c> soon</c>
+
+00:13:44.310 --> 00:13:44.320 align:start position:0%
+before you enable this because as soon
+ 
+
+00:13:44.320 --> 00:13:46.389 align:start position:0%
+before you enable this because as soon
+as<00:13:44.399><c> you</c><00:13:44.560><c> enable</c><00:13:44.800><c> this</c><00:13:45.279><c> the</c><00:13:45.519><c> fans</c><00:13:45.760><c> turn</c><00:13:46.000><c> off</c><00:13:46.160><c> and</c>
+
+00:13:46.389 --> 00:13:46.399 align:start position:0%
+as you enable this the fans turn off and
+ 
+
+00:13:46.399 --> 00:13:48.389 align:start position:0%
+as you enable this the fans turn off and
+we<00:13:46.639><c> ignore</c><00:13:46.880><c> them.</c><00:13:47.360><c> Temperature</c><00:13:47.680><c> is</c><00:13:47.920><c> going</c><00:13:48.000><c> to</c>
+
+00:13:48.389 --> 00:13:48.399 align:start position:0%
+we ignore them. Temperature is going to
+ 
+
+00:13:48.399 --> 00:13:50.230 align:start position:0%
+we ignore them. Temperature is going to
+go<00:13:48.720><c> way</c><00:13:48.959><c> up</c><00:13:49.200><c> if</c><00:13:49.360><c> you're</c><00:13:49.519><c> not</c><00:13:49.680><c> in</c><00:13:49.839><c> immersion</c>
+
+00:13:50.230 --> 00:13:50.240 align:start position:0%
+go way up if you're not in immersion
+ 
+
+00:13:50.240 --> 00:13:52.470 align:start position:0%
+go way up if you're not in immersion
+fluid.
+
+00:13:52.470 --> 00:13:52.480 align:start position:0%
+fluid.
+ 
+
+00:13:52.480 --> 00:13:54.949 align:start position:0%
+fluid.
+Uh<00:13:52.880><c> fans,</c><00:13:53.519><c> you</c><00:13:53.760><c> can</c><00:13:53.839><c> set</c><00:13:54.000><c> those</c><00:13:54.160><c> to</c><00:13:54.480><c> uh</c><00:13:54.639><c> manual</c>
+
+00:13:54.949 --> 00:13:54.959 align:start position:0%
+Uh fans, you can set those to uh manual
+ 
+
+00:13:54.959 --> 00:13:57.430 align:start position:0%
+Uh fans, you can set those to uh manual
+if<00:13:55.200><c> you</c><00:13:55.360><c> want</c><00:13:55.440><c> to.</c><00:13:56.480><c> Most</c><00:13:56.720><c> of</c><00:13:56.880><c> the</c><00:13:57.040><c> time</c><00:13:57.279><c> we</c>
+
+00:13:57.430 --> 00:13:57.440 align:start position:0%
+if you want to. Most of the time we
+ 
+
+00:13:57.440 --> 00:13:59.509 align:start position:0%
+if you want to. Most of the time we
+recommend<00:13:57.760><c> setting</c><00:13:58.079><c> to</c><00:13:58.240><c> automatic.</c><00:13:59.279><c> But</c><00:13:59.360><c> if</c>
+
+00:13:59.509 --> 00:13:59.519 align:start position:0%
+recommend setting to automatic. But if
+ 
+
+00:13:59.519 --> 00:14:00.949 align:start position:0%
+recommend setting to automatic. But if
+you<00:13:59.600><c> do</c><00:13:59.760><c> set</c><00:13:59.920><c> it</c><00:14:00.079><c> to</c><00:14:00.240><c> manual,</c><00:14:00.560><c> you</c><00:14:00.720><c> can</c><00:14:00.800><c> come</c>
+
+00:14:00.949 --> 00:14:00.959 align:start position:0%
+you do set it to manual, you can come
+ 
+
+00:14:00.959 --> 00:14:05.350 align:start position:0%
+you do set it to manual, you can come
+here<00:14:01.120><c> and</c><00:14:01.440><c> define</c><00:14:01.839><c> a</c><00:14:02.240><c> power</c><00:14:02.959><c> or</c><00:14:03.279><c> a</c><00:14:03.519><c> speed.</c><00:14:04.480><c> So</c>
+
+00:14:05.350 --> 00:14:05.360 align:start position:0%
+here and define a power or a speed. So
+ 
+
+00:14:05.360 --> 00:14:07.189 align:start position:0%
+here and define a power or a speed. So
+right<00:14:05.519><c> now</c><00:14:05.680><c> my</c><00:14:05.920><c> fans</c><00:14:06.079><c> are</c><00:14:06.240><c> running</c><00:14:06.399><c> at</c><00:14:06.639><c> 100%.</c>
+
+00:14:07.189 --> 00:14:07.199 align:start position:0%
+right now my fans are running at 100%.
+ 
+
+00:14:07.199 --> 00:14:09.110 align:start position:0%
+right now my fans are running at 100%.
+So<00:14:07.279><c> it's</c><00:14:07.440><c> pre-populated</c><00:14:08.079><c> at</c><00:14:08.320><c> 100,</c><00:14:08.720><c> but</c><00:14:08.959><c> I</c>
+
+00:14:09.110 --> 00:14:09.120 align:start position:0%
+So it's pre-populated at 100, but I
+ 
+
+00:14:09.120 --> 00:14:10.870 align:start position:0%
+So it's pre-populated at 100, but I
+could<00:14:09.199><c> easily</c><00:14:09.600><c> set</c><00:14:10.000><c> it</c><00:14:10.160><c> to</c><00:14:10.320><c> manual</c><00:14:10.639><c> and</c><00:14:10.800><c> come</c>
+
+00:14:10.870 --> 00:14:10.880 align:start position:0%
+could easily set it to manual and come
+ 
+
+00:14:10.880 --> 00:14:13.269 align:start position:0%
+could easily set it to manual and come
+in<00:14:10.959><c> here</c><00:14:11.040><c> and</c><00:14:11.199><c> change</c><00:14:11.360><c> this</c><00:14:11.600><c> to</c><00:14:11.760><c> 50</c><00:14:12.079><c> or</c><00:14:12.399><c> 80,</c>
+
+00:14:13.269 --> 00:14:13.279 align:start position:0%
+in here and change this to 50 or 80,
+ 
+
+00:14:13.279 --> 00:14:15.750 align:start position:0%
+in here and change this to 50 or 80,
+too.
+
+00:14:15.750 --> 00:14:15.760 align:start position:0%
+too.
+ 
+
+00:14:15.760 --> 00:14:19.189 align:start position:0%
+too.
+So<00:14:16.000><c> yeah,</c><00:14:17.120><c> fan</c><00:14:17.440><c> speed</c>
+
+00:14:19.189 --> 00:14:19.199 align:start position:0%
+So yeah, fan speed
+ 
+
+00:14:19.199 --> 00:14:22.230 align:start position:0%
+So yeah, fan speed
+pools<00:14:20.560><c> pretty</c><00:14:20.800><c> much</c><00:14:20.959><c> what</c><00:14:21.120><c> you</c><00:14:21.360><c> expect</c><00:14:21.680><c> here.</c>
+
+00:14:22.230 --> 00:14:22.240 align:start position:0%
+pools pretty much what you expect here.
+ 
+
+00:14:22.240 --> 00:14:24.310 align:start position:0%
+pools pretty much what you expect here.
+Um,<00:14:22.560><c> you</c><00:14:22.800><c> put</c><00:14:22.959><c> your</c><00:14:23.120><c> pool</c><00:14:23.360><c> information</c><00:14:23.760><c> in.</c>
+
+00:14:24.310 --> 00:14:24.320 align:start position:0%
+Um, you put your pool information in.
+ 
+
+00:14:24.320 --> 00:14:26.949 align:start position:0%
+Um, you put your pool information in.
+You<00:14:24.560><c> could</c><00:14:24.639><c> have</c><00:14:24.800><c> multiple</c><00:14:25.279><c> pools.</c><00:14:26.480><c> Uh,</c><00:14:26.720><c> you</c>
+
+00:14:26.949 --> 00:14:26.959 align:start position:0%
+You could have multiple pools. Uh, you
+ 
+
+00:14:26.959 --> 00:14:28.790 align:start position:0%
+You could have multiple pools. Uh, you
+put<00:14:27.120><c> in</c><00:14:27.279><c> another</c><00:14:27.519><c> pool</c><00:14:27.760><c> and</c><00:14:27.920><c> it'll</c><00:14:28.160><c> fail</c><00:14:28.399><c> over</c>
+
+00:14:28.790 --> 00:14:28.800 align:start position:0%
+put in another pool and it'll fail over
+ 
+
+00:14:28.800 --> 00:14:31.350 align:start position:0%
+put in another pool and it'll fail over
+if<00:14:29.040><c> it</c><00:14:29.199><c> needs</c><00:14:29.360><c> to.</c><00:14:29.680><c> If</c><00:14:30.160><c> if</c><00:14:30.480><c> this</c><00:14:30.720><c> pool</c><00:14:31.040><c> were</c>
+
+00:14:31.350 --> 00:14:31.360 align:start position:0%
+if it needs to. If if this pool were
+ 
+
+00:14:31.360 --> 00:14:33.110 align:start position:0%
+if it needs to. If if this pool were
+unreachable,<00:14:32.160><c> it</c><00:14:32.399><c> could</c><00:14:32.480><c> fail</c><00:14:32.720><c> over</c><00:14:32.880><c> to</c><00:14:33.040><c> a</c>
+
+00:14:33.110 --> 00:14:33.120 align:start position:0%
+unreachable, it could fail over to a
+ 
+
+00:14:33.120 --> 00:14:35.189 align:start position:0%
+unreachable, it could fail over to a
+different<00:14:33.360><c> pool.</c><00:14:34.000><c> If</c><00:14:34.240><c> you'd</c><00:14:34.560><c> like</c><00:14:34.800><c> to</c><00:14:34.959><c> have</c><00:14:35.040><c> a</c>
+
+00:14:35.189 --> 00:14:35.199 align:start position:0%
+different pool. If you'd like to have a
+ 
+
+00:14:35.199 --> 00:14:36.310 align:start position:0%
+different pool. If you'd like to have a
+different<00:14:35.279><c> worker</c><00:14:35.600><c> name</c><00:14:35.760><c> when</c><00:14:35.920><c> it</c><00:14:36.000><c> fails</c>
+
+00:14:36.310 --> 00:14:36.320 align:start position:0%
+different worker name when it fails
+ 
+
+00:14:36.320 --> 00:14:37.430 align:start position:0%
+different worker name when it fails
+over,<00:14:36.560><c> you</c><00:14:36.639><c> could</c><00:14:36.720><c> have</c><00:14:36.800><c> a</c><00:14:36.959><c> different</c><00:14:37.120><c> worker</c>
+
+00:14:37.430 --> 00:14:37.440 align:start position:0%
+over, you could have a different worker
+ 
+
+00:14:37.440 --> 00:14:39.829 align:start position:0%
+over, you could have a different worker
+name<00:14:37.600><c> there.</c><00:14:38.560><c> You</c><00:14:38.800><c> can</c><00:14:38.880><c> also</c><00:14:39.199><c> split</c><00:14:39.440><c> your</c><00:14:39.600><c> hash</c>
+
+00:14:39.829 --> 00:14:39.839 align:start position:0%
+name there. You can also split your hash
+ 
+
+00:14:39.839 --> 00:14:43.829 align:start position:0%
+name there. You can also split your hash
+rate<00:14:41.120><c> depending</c><00:14:41.600><c> upon</c><00:14:42.079><c> quota</c><00:14:42.560><c> or</c><00:14:42.880><c> percentage.</c>
+
+00:14:43.829 --> 00:14:43.839 align:start position:0%
+rate depending upon quota or percentage.
+ 
+
+00:14:43.839 --> 00:14:45.829 align:start position:0%
+rate depending upon quota or percentage.
+So<00:14:44.079><c> if</c><00:14:44.240><c> you</c><00:14:44.320><c> wanted</c><00:14:44.639><c> to</c><00:14:44.959><c> split</c><00:14:45.199><c> it,</c><00:14:45.519><c> say</c><00:14:45.760><c> you're</c>
+
+00:14:45.829 --> 00:14:45.839 align:start position:0%
+So if you wanted to split it, say you're
+ 
+
+00:14:45.839 --> 00:14:47.829 align:start position:0%
+So if you wanted to split it, say you're
+in<00:14:46.000><c> a</c><00:14:46.160><c> hosting</c><00:14:46.480><c> environment</c><00:14:47.199><c> and</c><00:14:47.440><c> you</c><00:14:47.600><c> want</c><00:14:47.680><c> to</c>
+
+00:14:47.829 --> 00:14:47.839 align:start position:0%
+in a hosting environment and you want to
+ 
+
+00:14:47.839 --> 00:14:49.670 align:start position:0%
+in a hosting environment and you want to
+split<00:14:48.079><c> some</c><00:14:48.320><c> percentage</c><00:14:48.639><c> of</c><00:14:48.800><c> the</c><00:14:48.959><c> hash</c><00:14:49.199><c> rate,</c>
+
+00:14:49.670 --> 00:14:49.680 align:start position:0%
+split some percentage of the hash rate,
+ 
+
+00:14:49.680 --> 00:14:51.509 align:start position:0%
+split some percentage of the hash rate,
+you<00:14:49.839><c> could</c><00:14:50.000><c> do</c><00:14:50.079><c> that</c><00:14:50.320><c> here</c><00:14:50.639><c> between</c><00:14:51.279><c> two</c>
+
+00:14:51.509 --> 00:14:51.519 align:start position:0%
+you could do that here between two
+ 
+
+00:14:51.519 --> 00:14:53.269 align:start position:0%
+you could do that here between two
+different<00:14:51.760><c> pools.</c><00:14:52.639><c> You</c><00:14:52.800><c> could</c><00:14:52.880><c> also</c><00:14:53.120><c> have</c>
+
+00:14:53.269 --> 00:14:53.279 align:start position:0%
+different pools. You could also have
+ 
+
+00:14:53.279 --> 00:14:55.189 align:start position:0%
+different pools. You could also have
+three,<00:14:53.600><c> four,</c><00:14:54.000><c> five</c><00:14:54.240><c> pools</c><00:14:54.639><c> if</c><00:14:54.800><c> you</c><00:14:54.880><c> wanted</c>
+
+00:14:55.189 --> 00:14:55.199 align:start position:0%
+three, four, five pools if you wanted
+ 
+
+00:14:55.199 --> 00:14:57.430 align:start position:0%
+three, four, five pools if you wanted
+more<00:14:55.440><c> failover</c><00:14:55.839><c> pools.</c><00:14:56.880><c> And</c><00:14:57.040><c> there's</c><00:14:57.279><c> some</c>
+
+00:14:57.430 --> 00:14:57.440 align:start position:0%
+more failover pools. And there's some
+ 
+
+00:14:57.440 --> 00:14:59.350 align:start position:0%
+more failover pools. And there's some
+characteristics<00:14:58.000><c> that</c><00:14:58.240><c> you</c><00:14:58.399><c> can</c><00:14:58.560><c> change</c><00:14:59.120><c> to</c>
+
+00:14:59.350 --> 00:14:59.360 align:start position:0%
+characteristics that you can change to
+ 
+
+00:14:59.360 --> 00:15:02.470 align:start position:0%
+characteristics that you can change to
+define<00:14:59.680><c> how</c><00:15:00.000><c> this</c><00:15:00.320><c> will</c><00:15:00.880><c> treat</c><00:15:01.199><c> failovers.</c><00:15:02.240><c> We</c>
+
+00:15:02.470 --> 00:15:02.480 align:start position:0%
+define how this will treat failovers. We
+ 
+
+00:15:02.480 --> 00:15:04.710 align:start position:0%
+define how this will treat failovers. We
+can<00:15:02.639><c> talk</c><00:15:02.720><c> about</c><00:15:02.880><c> that</c><00:15:03.040><c> here</c><00:15:03.199><c> in</c><00:15:03.360><c> just</c><00:15:03.519><c> a</c><00:15:03.680><c> sec.</c>
+
+00:15:04.710 --> 00:15:04.720 align:start position:0%
+can talk about that here in just a sec.
+ 
+
+00:15:04.720 --> 00:15:10.069 align:start position:0%
+can talk about that here in just a sec.
+But<00:15:05.519><c> pools,</c><00:15:06.720><c> that's</c><00:15:07.920><c> what</c><00:15:08.240><c> you</c><00:15:08.399><c> got.</c><00:15:09.680><c> On</c><00:15:09.920><c> the</c>
+
+00:15:10.069 --> 00:15:10.079 align:start position:0%
+But pools, that's what you got. On the
+ 
+
+00:15:10.079 --> 00:15:12.710 align:start position:0%
+But pools, that's what you got. On the
+log<00:15:10.399><c> side,</c><00:15:11.040><c> uh</c><00:15:11.199><c> we</c><00:15:11.440><c> try</c><00:15:11.600><c> to</c><00:15:11.760><c> do</c><00:15:11.920><c> a</c><00:15:12.160><c> good</c><00:15:12.320><c> job</c><00:15:12.480><c> of</c>
+
+00:15:12.710 --> 00:15:12.720 align:start position:0%
+log side, uh we try to do a good job of
+ 
+
+00:15:12.720 --> 00:15:14.230 align:start position:0%
+log side, uh we try to do a good job of
+providing<00:15:13.040><c> logs</c><00:15:13.440><c> that</c><00:15:13.519><c> are</c><00:15:13.680><c> both</c><00:15:13.839><c> valuable</c>
+
+00:15:14.230 --> 00:15:14.240 align:start position:0%
+providing logs that are both valuable
+ 
+
+00:15:14.240 --> 00:15:17.030 align:start position:0%
+providing logs that are both valuable
+and<00:15:14.560><c> readable.</c><00:15:15.680><c> Um</c><00:15:16.240><c> you'll</c><00:15:16.560><c> see</c><00:15:16.639><c> here</c><00:15:16.880><c> my</c>
+
+00:15:17.030 --> 00:15:17.040 align:start position:0%
+and readable. Um you'll see here my
+ 
+
+00:15:17.040 --> 00:15:18.629 align:start position:0%
+and readable. Um you'll see here my
+minor's<00:15:17.440><c> been</c><00:15:17.519><c> up</c><00:15:17.680><c> for</c><00:15:17.839><c> a</c><00:15:18.000><c> little</c><00:15:18.160><c> while.</c><00:15:18.480><c> So</c>
+
+00:15:18.629 --> 00:15:18.639 align:start position:0%
+minor's been up for a little while. So
+ 
+
+00:15:18.639 --> 00:15:20.389 align:start position:0%
+minor's been up for a little while. So
+I'm<00:15:18.800><c> getting</c><00:15:19.040><c> status</c><00:15:19.440><c> logs,</c><00:15:20.000><c> things</c><00:15:20.160><c> like</c>
+
+00:15:20.389 --> 00:15:20.399 align:start position:0%
+I'm getting status logs, things like
+ 
+
+00:15:20.399 --> 00:15:21.910 align:start position:0%
+I'm getting status logs, things like
+temperature,
+
+00:15:21.910 --> 00:15:21.920 align:start position:0%
+temperature,
+ 
+
+00:15:21.920 --> 00:15:23.590 align:start position:0%
+temperature,
+ASIC<00:15:22.399><c> summaries,</c><00:15:22.720><c> so</c><00:15:22.880><c> my</c><00:15:23.040><c> my</c><00:15:23.279><c> board</c>
+
+00:15:23.590 --> 00:15:23.600 align:start position:0%
+ASIC summaries, so my my board
+ 
+
+00:15:23.600 --> 00:15:25.590 align:start position:0%
+ASIC summaries, so my my board
+summaries,<00:15:24.079><c> what's</c><00:15:24.240><c> my</c><00:15:24.399><c> frequencies,</c><00:15:25.360><c> what's</c>
+
+00:15:25.590 --> 00:15:25.600 align:start position:0%
+summaries, what's my frequencies, what's
+ 
+
+00:15:25.600 --> 00:15:28.790 align:start position:0%
+summaries, what's my frequencies, what's
+my<00:15:25.760><c> my</c><00:15:26.079><c> hash</c><00:15:26.399><c> rates</c><00:15:27.360><c> over</c><00:15:27.920><c> various</c><00:15:28.320><c> periods</c><00:15:28.639><c> of</c>
+
+00:15:28.790 --> 00:15:28.800 align:start position:0%
+my my hash rates over various periods of
+ 
+
+00:15:28.800 --> 00:15:31.030 align:start position:0%
+my my hash rates over various periods of
+time.
+
+00:15:31.030 --> 00:15:31.040 align:start position:0%
+time.
+ 
+
+00:15:31.040 --> 00:15:33.590 align:start position:0%
+time.
+But<00:15:31.279><c> you</c><00:15:31.440><c> can</c><00:15:31.519><c> filter</c><00:15:31.920><c> this</c><00:15:32.079><c> out</c><00:15:32.240><c> for</c><00:15:32.480><c> info,</c>
+
+00:15:33.590 --> 00:15:33.600 align:start position:0%
+But you can filter this out for info,
+ 
+
+00:15:33.600 --> 00:15:35.590 align:start position:0%
+But you can filter this out for info,
+warning,
+
+00:15:35.590 --> 00:15:35.600 align:start position:0%
+warning,
+ 
+
+00:15:35.600 --> 00:15:37.750 align:start position:0%
+warning,
+or<00:15:36.079><c> error.</c>
+
+00:15:37.750 --> 00:15:37.760 align:start position:0%
+or error.
+ 
+
+00:15:37.760 --> 00:15:41.509 align:start position:0%
+or error.
+You<00:15:37.920><c> can</c><00:15:38.079><c> export</c><00:15:38.480><c> your</c><00:15:38.639><c> logs.</c>
+
+00:15:41.509 --> 00:15:41.519 align:start position:0%
+You can export your logs.
+ 
+
+00:15:41.519 --> 00:15:44.150 align:start position:0%
+You can export your logs.
+You<00:15:41.680><c> can</c><00:15:41.839><c> see</c><00:15:42.480><c> logs</c><00:15:42.880><c> from</c><00:15:43.040><c> the</c><00:15:43.199><c> past.</c><00:15:43.760><c> So</c><00:15:43.920><c> I</c><00:15:44.079><c> can</c>
+
+00:15:44.150 --> 00:15:44.160 align:start position:0%
+You can see logs from the past. So I can
+ 
+
+00:15:44.160 --> 00:15:47.670 align:start position:0%
+You can see logs from the past. So I can
+go<00:15:44.320><c> back</c><00:15:45.360><c> previous</c><00:15:45.760><c> times</c><00:15:46.959><c> and</c><00:15:47.199><c> see</c><00:15:47.440><c> or</c>
+
+00:15:47.670 --> 00:15:47.680 align:start position:0%
+go back previous times and see or
+ 
+
+00:15:47.680 --> 00:15:50.069 align:start position:0%
+go back previous times and see or
+download<00:15:48.000><c> my</c><00:15:48.160><c> logs</c><00:15:48.480><c> as</c><00:15:48.639><c> needed.</c><00:15:49.680><c> And</c><00:15:49.759><c> I</c><00:15:50.000><c> can</c>
+
+00:15:50.069 --> 00:15:50.079 align:start position:0%
+download my logs as needed. And I can
+ 
+
+00:15:50.079 --> 00:15:51.670 align:start position:0%
+download my logs as needed. And I can
+also<00:15:50.320><c> increase</c><00:15:50.560><c> my</c><00:15:50.720><c> logging</c><00:15:51.040><c> level,</c><00:15:51.279><c> which</c><00:15:51.519><c> we</c>
+
+00:15:51.670 --> 00:15:51.680 align:start position:0%
+also increase my logging level, which we
+ 
+
+00:15:51.680 --> 00:15:53.749 align:start position:0%
+also increase my logging level, which we
+we'll<00:15:51.920><c> see</c><00:15:52.079><c> here</c><00:15:52.240><c> in</c><00:15:52.399><c> just</c><00:15:52.560><c> a</c><00:15:52.800><c> second.</c><00:15:53.519><c> One</c>
+
+00:15:53.749 --> 00:15:53.759 align:start position:0%
+we'll see here in just a second. One
+ 
+
+00:15:53.759 --> 00:15:55.910 align:start position:0%
+we'll see here in just a second. One
+thing<00:15:53.920><c> with</c><00:15:54.079><c> our</c><00:15:54.320><c> logs,</c><00:15:55.040><c> we</c><00:15:55.199><c> do</c><00:15:55.360><c> have</c><00:15:55.519><c> in</c><00:15:55.759><c> our</c>
+
+00:15:55.910 --> 00:15:55.920 align:start position:0%
+thing with our logs, we do have in our
+ 
+
+00:15:55.920 --> 00:15:57.829 align:start position:0%
+thing with our logs, we do have in our
+documentation<00:15:56.560><c> section</c><00:15:56.880><c> here,</c><00:15:57.120><c> you</c><00:15:57.279><c> can</c><00:15:57.360><c> see</c>
+
+00:15:57.829 --> 00:15:57.839 align:start position:0%
+documentation section here, you can see
+ 
+
+00:15:57.839 --> 00:15:59.829 align:start position:0%
+documentation section here, you can see
+docs.luxor.te.
+
+00:15:59.829 --> 00:15:59.839 align:start position:0%
+docs.luxor.te.
+ 
+
+00:15:59.839 --> 00:16:01.990 align:start position:0%
+docs.luxor.te.
+You'd<00:16:00.160><c> see</c><00:16:00.399><c> we</c><00:16:00.639><c> have</c><00:16:00.720><c> a</c><00:16:00.880><c> knowledge</c><00:16:01.199><c> base</c><00:16:01.839><c> and</c>
+
+00:16:01.990 --> 00:16:02.000 align:start position:0%
+You'd see we have a knowledge base and
+ 
+
+00:16:02.000 --> 00:16:04.310 align:start position:0%
+You'd see we have a knowledge base and
+in<00:16:02.240><c> this</c><00:16:02.399><c> knowledge</c><00:16:02.720><c> base</c><00:16:03.600><c> we</c><00:16:03.839><c> try</c><00:16:04.000><c> to</c><00:16:04.079><c> match</c>
+
+00:16:04.310 --> 00:16:04.320 align:start position:0%
+in this knowledge base we try to match
+ 
+
+00:16:04.320 --> 00:16:07.430 align:start position:0%
+in this knowledge base we try to match
+up<00:16:04.480><c> log</c><00:16:04.800><c> entries</c><00:16:05.440><c> with</c><00:16:05.759><c> explanations.</c>
+
+00:16:07.430 --> 00:16:07.440 align:start position:0%
+up log entries with explanations.
+ 
+
+00:16:07.440 --> 00:16:09.189 align:start position:0%
+up log entries with explanations.
+So<00:16:08.000><c> we</c><00:16:08.160><c> have</c><00:16:08.240><c> a</c><00:16:08.399><c> bunch</c><00:16:08.560><c> of</c><00:16:08.639><c> different</c><00:16:08.880><c> event</c>
+
+00:16:09.189 --> 00:16:09.199 align:start position:0%
+So we have a bunch of different event
+ 
+
+00:16:09.199 --> 00:16:12.150 align:start position:0%
+So we have a bunch of different event
+codes<00:16:09.920><c> which</c><00:16:10.160><c> you</c><00:16:10.399><c> can</c><00:16:10.480><c> see</c><00:16:11.759><c> and</c><00:16:12.000><c> some</c>
+
+00:16:12.150 --> 00:16:12.160 align:start position:0%
+codes which you can see and some
+ 
+
+00:16:12.160 --> 00:16:14.150 align:start position:0%
+codes which you can see and some
+explanations<00:16:12.720><c> on</c><00:16:12.880><c> those.</c><00:16:13.519><c> We</c><00:16:13.759><c> also</c><00:16:14.000><c> have</c>
+
+00:16:14.150 --> 00:16:14.160 align:start position:0%
+explanations on those. We also have
+ 
+
+00:16:14.160 --> 00:16:16.470 align:start position:0%
+explanations on those. We also have
+things<00:16:14.399><c> like</c><00:16:14.639><c> this.</c><00:16:15.279><c> When</c><00:16:15.519><c> you</c><00:16:15.680><c> have</c><00:16:15.759><c> an</c><00:16:16.079><c> error</c>
+
+00:16:16.470 --> 00:16:16.480 align:start position:0%
+things like this. When you have an error
+ 
+
+00:16:16.480 --> 00:16:18.069 align:start position:0%
+things like this. When you have an error
+you<00:16:16.639><c> can</c><00:16:16.720><c> come</c><00:16:16.880><c> here</c><00:16:17.040><c> and</c><00:16:17.199><c> find</c><00:16:17.440><c> problem</c><00:16:17.759><c> and</c>
+
+00:16:18.069 --> 00:16:18.079 align:start position:0%
+you can come here and find problem and
+ 
+
+00:16:18.079 --> 00:16:19.749 align:start position:0%
+you can come here and find problem and
+solution.
+
+00:16:19.749 --> 00:16:19.759 align:start position:0%
+solution.
+ 
+
+00:16:19.759 --> 00:16:21.670 align:start position:0%
+solution.
+And<00:16:19.920><c> there's</c><00:16:20.079><c> a</c><00:16:20.240><c> few</c><00:16:20.399><c> different</c><00:16:20.560><c> ones</c><00:16:20.959><c> right</c>
+
+00:16:21.670 --> 00:16:21.680 align:start position:0%
+And there's a few different ones right
+ 
+
+00:16:21.680 --> 00:16:24.710 align:start position:0%
+And there's a few different ones right
+under<00:16:22.000><c> settings.</c><00:16:22.480><c> Most</c><00:16:22.720><c> of</c><00:16:22.800><c> these</c><00:16:23.199><c> are</c><00:16:24.160><c> uh</c>
+
+00:16:24.710 --> 00:16:24.720 align:start position:0%
+under settings. Most of these are uh
+ 
+
+00:16:24.720 --> 00:16:26.150 align:start position:0%
+under settings. Most of these are uh
+going<00:16:24.800><c> to</c><00:16:24.959><c> be</c><00:16:25.040><c> pulled</c><00:16:25.360><c> from</c><00:16:25.440><c> Bitmain.</c><00:16:26.000><c> So</c>
+
+00:16:26.150 --> 00:16:26.160 align:start position:0%
+going to be pulled from Bitmain. So
+ 
+
+00:16:26.160 --> 00:16:27.829 align:start position:0%
+going to be pulled from Bitmain. So
+things<00:16:26.320><c> like</c><00:16:26.480><c> your</c><00:16:26.639><c> network</c><00:16:26.959><c> configuration</c>
+
+00:16:27.829 --> 00:16:27.839 align:start position:0%
+things like your network configuration
+ 
+
+00:16:27.839 --> 00:16:29.590 align:start position:0%
+things like your network configuration
+that's<00:16:28.079><c> pulled</c><00:16:28.320><c> from</c><00:16:28.480><c> Bitmain</c><00:16:29.199><c> as</c><00:16:29.440><c> well</c><00:16:29.519><c> as</c>
+
+00:16:29.590 --> 00:16:29.600 align:start position:0%
+that's pulled from Bitmain as well as
+ 
+
+00:16:29.600 --> 00:16:31.430 align:start position:0%
+that's pulled from Bitmain as well as
+your<00:16:29.759><c> pool</c><00:16:30.079><c> configuration</c><00:16:30.560><c> and</c><00:16:30.720><c> such.</c><00:16:31.199><c> That</c>
+
+00:16:31.430 --> 00:16:31.440 align:start position:0%
+your pool configuration and such. That
+ 
+
+00:16:31.440 --> 00:16:33.590 align:start position:0%
+your pool configuration and such. That
+way<00:16:31.600><c> the</c><00:16:31.759><c> minor</c><00:16:32.160><c> looks</c><00:16:32.880><c> just</c><00:16:33.120><c> like</c><00:16:33.279><c> it</c><00:16:33.440><c> did</c>
+
+00:16:33.590 --> 00:16:33.600 align:start position:0%
+way the minor looks just like it did
+ 
+
+00:16:33.600 --> 00:16:37.990 align:start position:0%
+way the minor looks just like it did
+before<00:16:34.399><c> after</c><00:16:34.720><c> the</c><00:16:34.880><c> Luxos</c><00:16:35.440><c> install.</c>
+
+00:16:37.990 --> 00:16:38.000 align:start position:0%
+before after the Luxos install.
+ 
+
+00:16:38.000 --> 00:16:39.829 align:start position:0%
+before after the Luxos install.
+Firmware<00:16:38.399><c> updates</c><00:16:38.800><c> are</c><00:16:39.120><c> straightforward</c><00:16:39.600><c> as</c>
+
+00:16:39.829 --> 00:16:39.839 align:start position:0%
+Firmware updates are straightforward as
+ 
+
+00:16:39.839 --> 00:16:42.470 align:start position:0%
+Firmware updates are straightforward as
+clicking<00:16:40.079><c> this</c><00:16:40.320><c> button</c><00:16:40.880><c> and</c><00:16:41.120><c> then</c><00:16:41.279><c> having</c><00:16:42.240><c> cup</c>
+
+00:16:42.470 --> 00:16:42.480 align:start position:0%
+clicking this button and then having cup
+ 
+
+00:16:42.480 --> 00:16:45.910 align:start position:0%
+clicking this button and then having cup
+of<00:16:42.639><c> coffee</c><00:16:43.120><c> and</c><00:16:43.440><c> coming</c><00:16:43.759><c> back.</c><00:16:44.720><c> 5</c><00:16:45.040><c> 10</c><00:16:45.199><c> minutes</c>
+
+00:16:45.910 --> 00:16:45.920 align:start position:0%
+of coffee and coming back. 5 10 minutes
+ 
+
+00:16:45.920 --> 00:16:48.470 align:start position:0%
+of coffee and coming back. 5 10 minutes
+the<00:16:46.079><c> update</c><00:16:46.480><c> downloads,</c><00:16:47.360><c> installs,</c><00:16:48.079><c> minor</c>
+
+00:16:48.470 --> 00:16:48.480 align:start position:0%
+the update downloads, installs, minor
+ 
+
+00:16:48.480 --> 00:16:50.629 align:start position:0%
+the update downloads, installs, minor
+comes<00:16:48.720><c> back</c><00:16:48.880><c> up</c><00:16:49.360><c> and</c><00:16:49.519><c> starts</c><00:16:49.839><c> hashing.</c><00:16:50.399><c> Same</c>
+
+00:16:50.629 --> 00:16:50.639 align:start position:0%
+comes back up and starts hashing. Same
+ 
+
+00:16:50.639 --> 00:16:53.350 align:start position:0%
+comes back up and starts hashing. Same
+pool,<00:16:51.120><c> same</c><00:16:51.279><c> IP</c><00:16:51.680><c> address.</c><00:16:52.800><c> You</c><00:16:52.959><c> can</c><00:16:53.120><c> turn</c>
+
+00:16:53.350 --> 00:16:53.360 align:start position:0%
+pool, same IP address. You can turn
+ 
+
+00:16:53.360 --> 00:16:55.910 align:start position:0%
+pool, same IP address. You can turn
+automatic<00:16:53.839><c> updates</c><00:16:54.240><c> on.</c><00:16:54.880><c> That's</c><00:16:55.120><c> up</c><00:16:55.279><c> to</c><00:16:55.360><c> you.</c>
+
+00:16:55.910 --> 00:16:55.920 align:start position:0%
+automatic updates on. That's up to you.
+ 
+
+00:16:55.920 --> 00:16:57.670 align:start position:0%
+automatic updates on. That's up to you.
+Typically<00:16:56.320><c> on</c><00:16:56.480><c> a</c><00:16:56.720><c> large</c><00:16:57.040><c> fleet,</c><00:16:57.360><c> we</c><00:16:57.519><c> don't</c>
+
+00:16:57.670 --> 00:16:57.680 align:start position:0%
+Typically on a large fleet, we don't
+ 
+
+00:16:57.680 --> 00:16:59.430 align:start position:0%
+Typically on a large fleet, we don't
+recommend<00:16:57.920><c> it.</c><00:16:58.240><c> On</c><00:16:58.399><c> a</c><00:16:58.560><c> small</c><00:16:58.800><c> fleet,</c>
+
+00:16:59.430 --> 00:16:59.440 align:start position:0%
+recommend it. On a small fleet,
+ 
+
+00:16:59.440 --> 00:17:03.350 align:start position:0%
+recommend it. On a small fleet,
+shouldn't<00:16:59.759><c> be</c><00:16:59.839><c> a</c><00:17:00.079><c> problem.</c>
+
+00:17:03.350 --> 00:17:03.360 align:start position:0%
+ 
+ 
+
+00:17:03.360 --> 00:17:04.630 align:start position:0%
+ 
+Then<00:17:03.519><c> on</c><00:17:03.680><c> advanced</c><00:17:04.000><c> settings,</c><00:17:04.319><c> here's</c><00:17:04.480><c> where</c>
+
+00:17:04.630 --> 00:17:04.640 align:start position:0%
+Then on advanced settings, here's where
+ 
+
+00:17:04.640 --> 00:17:06.069 align:start position:0%
+Then on advanced settings, here's where
+you<00:17:04.720><c> can</c><00:17:04.799><c> change</c><00:17:04.959><c> your</c><00:17:05.120><c> logging</c><00:17:05.520><c> level.</c><00:17:05.919><c> This</c>
+
+00:17:06.069 --> 00:17:06.079 align:start position:0%
+you can change your logging level. This
+ 
+
+00:17:06.079 --> 00:17:07.590 align:start position:0%
+you can change your logging level. This
+is<00:17:06.240><c> one</c><00:17:06.400><c> of</c><00:17:06.480><c> the</c><00:17:06.640><c> few</c><00:17:06.799><c> places</c><00:17:07.039><c> where</c><00:17:07.280><c> if</c><00:17:07.439><c> you</c>
+
+00:17:07.590 --> 00:17:07.600 align:start position:0%
+is one of the few places where if you
+ 
+
+00:17:07.600 --> 00:17:11.029 align:start position:0%
+is one of the few places where if you
+change<00:17:07.760><c> it,</c><00:17:09.039><c> it</c><00:17:09.360><c> requires</c><00:17:09.760><c> a</c><00:17:10.079><c> restart</c><00:17:10.559><c> of</c><00:17:10.880><c> the</c>
+
+00:17:11.029 --> 00:17:11.039 align:start position:0%
+change it, it requires a restart of the
+ 
+
+00:17:11.039 --> 00:17:14.309 align:start position:0%
+change it, it requires a restart of the
+Lux<00:17:11.439><c> Minor</c><00:17:12.400><c> to</c><00:17:12.640><c> take</c><00:17:12.799><c> effect.</c>
+
+00:17:14.309 --> 00:17:14.319 align:start position:0%
+Lux Minor to take effect.
+ 
+
+00:17:14.319 --> 00:17:16.949 align:start position:0%
+Lux Minor to take effect.
+So<00:17:14.559><c> up</c><00:17:14.720><c> here,</c><00:17:15.520><c> you</c><00:17:15.760><c> just</c><00:17:15.919><c> restart</c><00:17:16.319><c> Lux</c><00:17:16.720><c> Minor</c>
+
+00:17:16.949 --> 00:17:16.959 align:start position:0%
+So up here, you just restart Lux Minor
+ 
+
+00:17:16.959 --> 00:17:20.230 align:start position:0%
+So up here, you just restart Lux Minor
+in<00:17:17.120><c> order</c><00:17:17.280><c> for</c><00:17:17.439><c> that</c><00:17:17.600><c> to</c><00:17:17.679><c> take</c><00:17:17.839><c> effect.</c>
+
+00:17:20.230 --> 00:17:20.240 align:start position:0%
+in order for that to take effect.
+ 
+
+00:17:20.240 --> 00:17:22.949 align:start position:0%
+in order for that to take effect.
+This<00:17:20.480><c> section</c><00:17:20.799><c> defines</c><00:17:21.760><c> uh</c><00:17:21.919><c> how</c><00:17:22.160><c> we</c><00:17:22.480><c> treat</c>
+
+00:17:22.949 --> 00:17:22.959 align:start position:0%
+This section defines uh how we treat
+ 
+
+00:17:22.959 --> 00:17:25.270 align:start position:0%
+This section defines uh how we treat
+failover<00:17:23.520><c> pools,</c><00:17:24.000><c> things</c><00:17:24.240><c> of</c><00:17:24.400><c> that</c><00:17:24.559><c> nature.</c>
+
+00:17:25.270 --> 00:17:25.280 align:start position:0%
+failover pools, things of that nature.
+ 
+
+00:17:25.280 --> 00:17:27.669 align:start position:0%
+failover pools, things of that nature.
+Uh<00:17:25.520><c> most</c><00:17:25.760><c> of</c><00:17:25.839><c> the</c><00:17:26.000><c> time</c><00:17:26.160><c> these</c><00:17:26.559><c> at</c><00:17:26.799><c> default</c><00:17:27.280><c> are</c>
+
+00:17:27.669 --> 00:17:27.679 align:start position:0%
+Uh most of the time these at default are
+ 
+
+00:17:27.679 --> 00:17:29.190 align:start position:0%
+Uh most of the time these at default are
+acceptable.<00:17:28.400><c> If</c><00:17:28.559><c> they're</c><00:17:28.720><c> not,</c><00:17:28.960><c> you</c><00:17:29.039><c> can</c><00:17:29.120><c> come</c>
+
+00:17:29.190 --> 00:17:29.200 align:start position:0%
+acceptable. If they're not, you can come
+ 
+
+00:17:29.200 --> 00:17:31.110 align:start position:0%
+acceptable. If they're not, you can come
+in<00:17:29.360><c> here</c><00:17:29.520><c> and</c><00:17:29.679><c> change</c><00:17:29.919><c> these</c><00:17:30.160><c> values</c><00:17:30.880><c> uh</c><00:17:30.960><c> to</c>
+
+00:17:31.110 --> 00:17:31.120 align:start position:0%
+in here and change these values uh to
+ 
+
+00:17:31.120 --> 00:17:34.070 align:start position:0%
+in here and change these values uh to
+meet<00:17:31.280><c> whatever</c><00:17:31.600><c> criteria</c><00:17:32.080><c> you</c><00:17:32.320><c> have.</c>
+
+00:17:34.070 --> 00:17:34.080 align:start position:0%
+meet whatever criteria you have.
+ 
+
+00:17:34.080 --> 00:17:37.110 align:start position:0%
+meet whatever criteria you have.
+Auto<00:17:34.400><c> updates.</c><00:17:34.960><c> Again,</c><00:17:36.400><c> if</c><00:17:36.559><c> you</c><00:17:36.720><c> have</c><00:17:36.799><c> a</c><00:17:36.960><c> large</c>
+
+00:17:37.110 --> 00:17:37.120 align:start position:0%
+Auto updates. Again, if you have a large
+ 
+
+00:17:37.120 --> 00:17:38.950 align:start position:0%
+Auto updates. Again, if you have a large
+fleet,<00:17:37.440><c> we</c><00:17:37.679><c> typically</c><00:17:38.000><c> don't</c><00:17:38.400><c> really</c><00:17:38.720><c> need</c><00:17:38.799><c> to</c>
+
+00:17:38.950 --> 00:17:38.960 align:start position:0%
+fleet, we typically don't really need to
+ 
+
+00:17:38.960 --> 00:17:41.029 align:start position:0%
+fleet, we typically don't really need to
+mess<00:17:39.120><c> with</c><00:17:39.280><c> this</c><00:17:39.440><c> too</c><00:17:39.679><c> much.</c><00:17:40.320><c> One</c><00:17:40.640><c> thing</c><00:17:40.799><c> about</c>
+
+00:17:41.029 --> 00:17:41.039 align:start position:0%
+mess with this too much. One thing about
+ 
+
+00:17:41.039 --> 00:17:43.190 align:start position:0%
+mess with this too much. One thing about
+this<00:17:41.280><c> though</c><00:17:41.520><c> is</c><00:17:41.760><c> that</c><00:17:42.320><c> if</c><00:17:42.559><c> you</c><00:17:42.720><c> come</c><00:17:42.799><c> back</c><00:17:42.960><c> up</c>
+
+00:17:43.190 --> 00:17:43.200 align:start position:0%
+this though is that if you come back up
+ 
+
+00:17:43.200 --> 00:17:45.590 align:start position:0%
+this though is that if you come back up
+to<00:17:43.440><c> firmware</c><00:17:43.840><c> updates,</c><00:17:44.799><c> what</c><00:17:45.120><c> whenever</c><00:17:45.520><c> you</c>
+
+00:17:45.590 --> 00:17:45.600 align:start position:0%
+to firmware updates, what whenever you
+ 
+
+00:17:45.600 --> 00:17:47.990 align:start position:0%
+to firmware updates, what whenever you
+click<00:17:45.840><c> this</c><00:17:46.080><c> button,</c><00:17:47.280><c> whatever</c><00:17:47.679><c> you</c><00:17:47.840><c> have</c>
+
+00:17:47.990 --> 00:17:48.000 align:start position:0%
+click this button, whatever you have
+ 
+
+00:17:48.000 --> 00:17:49.430 align:start position:0%
+click this button, whatever you have
+listed<00:17:48.320><c> here</c><00:17:48.640><c> is</c><00:17:48.880><c> what's</c><00:17:49.120><c> going</c><00:17:49.200><c> to</c><00:17:49.280><c> be</c>
+
+00:17:49.430 --> 00:17:49.440 align:start position:0%
+listed here is what's going to be
+ 
+
+00:17:49.440 --> 00:17:51.909 align:start position:0%
+listed here is what's going to be
+downloaded.<00:17:50.240><c> We</c><00:17:50.480><c> have</c><00:17:50.640><c> three</c><00:17:51.039><c> different</c><00:17:51.679><c> uh</c>
+
+00:17:51.909 --> 00:17:51.919 align:start position:0%
+downloaded. We have three different uh
+ 
+
+00:17:51.919 --> 00:17:55.110 align:start position:0%
+downloaded. We have three different uh
+sources<00:17:52.400><c> of</c><00:17:52.720><c> installs.</c><00:17:53.600><c> We</c><00:17:53.760><c> have</c><00:17:53.919><c> testing</c><00:17:54.320><c> for</c>
+
+00:17:55.110 --> 00:17:55.120 align:start position:0%
+sources of installs. We have testing for
+ 
+
+00:17:55.120 --> 00:17:57.029 align:start position:0%
+sources of installs. We have testing for
+uh<00:17:55.280><c> really</c><00:17:55.520><c> new</c><00:17:55.760><c> features,</c><00:17:56.480><c> things</c><00:17:56.640><c> that</c><00:17:56.880><c> we</c>
+
+00:17:57.029 --> 00:17:57.039 align:start position:0%
+uh really new features, things that we
+ 
+
+00:17:57.039 --> 00:17:58.870 align:start position:0%
+uh really new features, things that we
+haven't<00:17:57.200><c> rolled</c><00:17:57.440><c> out</c><00:17:57.520><c> to</c><00:17:57.760><c> production</c><00:17:58.080><c> yet.</c><00:17:58.640><c> We</c>
+
+00:17:58.870 --> 00:17:58.880 align:start position:0%
+haven't rolled out to production yet. We
+ 
+
+00:17:58.880 --> 00:18:01.110 align:start position:0%
+haven't rolled out to production yet. We
+have<00:17:59.039><c> preview,</c><00:17:59.440><c> which</c><00:17:59.679><c> is</c><00:17:59.840><c> kind</c><00:18:00.000><c> of</c><00:18:00.640><c> uh</c><00:18:00.880><c> the</c>
+
+00:18:01.110 --> 00:18:01.120 align:start position:0%
+have preview, which is kind of uh the
+ 
+
+00:18:01.120 --> 00:18:03.350 align:start position:0%
+have preview, which is kind of uh the
+things<00:18:01.280><c> that</c><00:18:01.440><c> we</c><00:18:01.600><c> plan</c><00:18:01.840><c> on</c><00:18:02.080><c> releasing</c><00:18:02.799><c> out</c><00:18:03.039><c> to</c>
+
+00:18:03.350 --> 00:18:03.360 align:start position:0%
+things that we plan on releasing out to
+ 
+
+00:18:03.360 --> 00:18:06.870 align:start position:0%
+things that we plan on releasing out to
+a<00:18:03.600><c> production</c><00:18:04.480><c> release,</c><00:18:05.280><c> but</c><00:18:06.080><c> we're</c><00:18:06.400><c> still</c>
+
+00:18:06.870 --> 00:18:06.880 align:start position:0%
+a production release, but we're still
+ 
+
+00:18:06.880 --> 00:18:08.630 align:start position:0%
+a production release, but we're still
+testing<00:18:07.280><c> them.</c><00:18:07.600><c> We</c><00:18:07.760><c> may</c><00:18:07.919><c> ask</c><00:18:08.160><c> you</c><00:18:08.240><c> to</c><00:18:08.400><c> update</c>
+
+00:18:08.630 --> 00:18:08.640 align:start position:0%
+testing them. We may ask you to update
+ 
+
+00:18:08.640 --> 00:18:10.310 align:start position:0%
+testing them. We may ask you to update
+to<00:18:08.799><c> a</c><00:18:08.880><c> preview</c><00:18:09.200><c> release</c><00:18:09.679><c> for</c><00:18:09.840><c> a</c><00:18:10.080><c> special</c>
+
+00:18:10.310 --> 00:18:10.320 align:start position:0%
+to a preview release for a special
+ 
+
+00:18:10.320 --> 00:18:12.630 align:start position:0%
+to a preview release for a special
+feature<00:18:10.960><c> or</c><00:18:11.200><c> for</c><00:18:11.360><c> a</c><00:18:11.520><c> bug</c><00:18:11.760><c> fix</c><00:18:12.240><c> if</c><00:18:12.480><c> you're</c>
+
+00:18:12.630 --> 00:18:12.640 align:start position:0%
+feature or for a bug fix if you're
+ 
+
+00:18:12.640 --> 00:18:14.230 align:start position:0%
+feature or for a bug fix if you're
+working<00:18:12.799><c> with</c><00:18:13.039><c> us.</c><00:18:13.440><c> If</c><00:18:13.679><c> you</c><00:18:13.760><c> need</c><00:18:13.840><c> to</c><00:18:14.000><c> do</c><00:18:14.080><c> that,</c>
+
+00:18:14.230 --> 00:18:14.240 align:start position:0%
+working with us. If you need to do that,
+ 
+
+00:18:14.240 --> 00:18:16.070 align:start position:0%
+working with us. If you need to do that,
+you'll<00:18:14.480><c> just</c><00:18:14.559><c> come</c><00:18:14.720><c> here</c><00:18:14.799><c> and</c><00:18:14.960><c> select</c><00:18:15.280><c> testing</c>
+
+00:18:16.070 --> 00:18:16.080 align:start position:0%
+you'll just come here and select testing
+ 
+
+00:18:16.080 --> 00:18:17.909 align:start position:0%
+you'll just come here and select testing
+update<00:18:16.480><c> and</c><00:18:16.720><c> then</c><00:18:16.880><c> go</c><00:18:17.120><c> back</c><00:18:17.280><c> here</c><00:18:17.440><c> and</c><00:18:17.840><c> uh</c>
+
+00:18:17.909 --> 00:18:17.919 align:start position:0%
+update and then go back here and uh
+ 
+
+00:18:17.919 --> 00:18:21.430 align:start position:0%
+update and then go back here and uh
+click<00:18:18.160><c> your</c><00:18:18.400><c> update</c><00:18:18.720><c> button.</c>
+
+00:18:21.430 --> 00:18:21.440 align:start position:0%
+click your update button.
+ 
+
+00:18:21.440 --> 00:18:23.190 align:start position:0%
+click your update button.
+Otherwise,<00:18:22.160><c> the</c><00:18:22.400><c> rest</c><00:18:22.559><c> of</c><00:18:22.640><c> this</c><00:18:22.799><c> stuff</c><00:18:22.960><c> under</c>
+
+00:18:23.190 --> 00:18:23.200 align:start position:0%
+Otherwise, the rest of this stuff under
+ 
+
+00:18:23.200 --> 00:18:24.549 align:start position:0%
+Otherwise, the rest of this stuff under
+auto<00:18:23.440><c> updates,</c><00:18:23.840><c> you</c><00:18:24.000><c> can</c><00:18:24.080><c> typically</c><00:18:24.400><c> leave</c>
+
+00:18:24.549 --> 00:18:24.559 align:start position:0%
+auto updates, you can typically leave
+ 
+
+00:18:24.559 --> 00:18:28.070 align:start position:0%
+auto updates, you can typically leave
+alone.<00:18:25.919><c> Uh</c><00:18:26.240><c> temperature</c><00:18:26.640><c> control,</c><00:18:27.520><c> we</c><00:18:27.760><c> only</c>
+
+00:18:28.070 --> 00:18:28.080 align:start position:0%
+alone. Uh temperature control, we only
+ 
+
+00:18:28.080 --> 00:18:30.390 align:start position:0%
+alone. Uh temperature control, we only
+require<00:18:28.720><c> one</c><00:18:29.120><c> temperature</c><00:18:29.520><c> sensor</c><00:18:29.840><c> per</c><00:18:30.160><c> board</c>
+
+00:18:30.390 --> 00:18:30.400 align:start position:0%
+require one temperature sensor per board
+ 
+
+00:18:30.400 --> 00:18:31.990 align:start position:0%
+require one temperature sensor per board
+to<00:18:30.640><c> be</c><00:18:30.720><c> functioning</c><00:18:31.120><c> in</c><00:18:31.280><c> order</c><00:18:31.440><c> for</c><00:18:31.520><c> the</c><00:18:31.679><c> minor</c>
+
+00:18:31.990 --> 00:18:32.000 align:start position:0%
+to be functioning in order for the minor
+ 
+
+00:18:32.000 --> 00:18:34.310 align:start position:0%
+to be functioning in order for the minor
+to<00:18:32.160><c> run.</c><00:18:32.799><c> And</c><00:18:32.960><c> then</c><00:18:33.200><c> these</c><00:18:33.440><c> two</c><00:18:34.000><c> kind</c><00:18:34.160><c> of</c>
+
+00:18:34.310 --> 00:18:34.320 align:start position:0%
+to run. And then these two kind of
+ 
+
+00:18:34.320 --> 00:18:37.590 align:start position:0%
+to run. And then these two kind of
+define<00:18:34.960><c> how</c><00:18:35.280><c> we</c><00:18:36.080><c> determine</c><00:18:36.480><c> if</c><00:18:36.720><c> a</c><00:18:37.120><c> uh</c><00:18:37.280><c> sensor</c>
+
+00:18:37.590 --> 00:18:37.600 align:start position:0%
+define how we determine if a uh sensor
+ 
+
+00:18:37.600 --> 00:18:40.549 align:start position:0%
+define how we determine if a uh sensor
+is<00:18:37.760><c> bad.</c>
+
+00:18:40.549 --> 00:18:40.559 align:start position:0%
+is bad.
+ 
+
+00:18:40.559 --> 00:18:43.510 align:start position:0%
+is bad.
+Fan<00:18:40.880><c> control,</c><00:18:41.840><c> power</c><00:18:42.160><c> off</c><00:18:42.480><c> speed.</c><00:18:43.120><c> So</c><00:18:43.360><c> this</c>
+
+00:18:43.510 --> 00:18:43.520 align:start position:0%
+Fan control, power off speed. So this
+ 
+
+00:18:43.520 --> 00:18:45.110 align:start position:0%
+Fan control, power off speed. So this
+one<00:18:43.679><c> matters</c><00:18:44.160><c> if</c><00:18:44.320><c> the</c><00:18:44.480><c> minor</c><00:18:44.799><c> goes</c><00:18:44.880><c> into</c>
+
+00:18:45.110 --> 00:18:45.120 align:start position:0%
+one matters if the minor goes into
+ 
+
+00:18:45.120 --> 00:18:47.110 align:start position:0%
+one matters if the minor goes into
+curtailment<00:18:45.679><c> or</c><00:18:45.919><c> for</c><00:18:46.160><c> whatever</c><00:18:46.480><c> reason</c><00:18:46.799><c> stops</c>
+
+00:18:47.110 --> 00:18:47.120 align:start position:0%
+curtailment or for whatever reason stops
+ 
+
+00:18:47.120 --> 00:18:49.350 align:start position:0%
+curtailment or for whatever reason stops
+hashing.<00:18:48.080><c> What</c><00:18:48.480><c> percentage</c><00:18:48.960><c> do</c><00:18:49.120><c> you</c><00:18:49.280><c> want</c>
+
+00:18:49.350 --> 00:18:49.360 align:start position:0%
+hashing. What percentage do you want
+ 
+
+00:18:49.360 --> 00:18:51.510 align:start position:0%
+hashing. What percentage do you want
+your<00:18:49.600><c> fans</c><00:18:49.840><c> to</c><00:18:50.000><c> run</c><00:18:50.160><c> at?</c><00:18:50.799><c> A</c><00:18:51.039><c> lot</c><00:18:51.120><c> of</c><00:18:51.200><c> places</c>
+
+00:18:51.510 --> 00:18:51.520 align:start position:0%
+your fans to run at? A lot of places
+ 
+
+00:18:51.520 --> 00:18:53.430 align:start position:0%
+your fans to run at? A lot of places
+might<00:18:51.760><c> have</c><00:18:52.000><c> problems</c><00:18:52.240><c> with</c><00:18:52.400><c> back</c><00:18:52.720><c> pressure</c>
+
+00:18:53.430 --> 00:18:53.440 align:start position:0%
+might have problems with back pressure
+ 
+
+00:18:53.440 --> 00:18:55.750 align:start position:0%
+might have problems with back pressure
+where<00:18:53.679><c> if</c><00:18:53.840><c> a</c><00:18:54.000><c> machine</c><00:18:54.240><c> goes</c><00:18:54.480><c> offline,</c><00:18:55.520><c> the</c>
+
+00:18:55.750 --> 00:18:55.760 align:start position:0%
+where if a machine goes offline, the
+ 
+
+00:18:55.760 --> 00:18:58.150 align:start position:0%
+where if a machine goes offline, the
+fans<00:18:56.160><c> don't</c><00:18:56.400><c> operate</c><00:18:56.799><c> at,</c><00:18:57.360><c> you</c><00:18:57.440><c> know,</c><00:18:57.679><c> 100%</c>
+
+00:18:58.150 --> 00:18:58.160 align:start position:0%
+fans don't operate at, you know, 100%
+ 
+
+00:18:58.160 --> 00:19:00.870 align:start position:0%
+fans don't operate at, you know, 100%
+anymore.<00:18:58.799><c> They're</c><00:18:59.039><c> operating</c><00:18:59.360><c> at</c><00:18:59.600><c> 20%.</c><00:19:00.559><c> So</c>
+
+00:19:00.870 --> 00:19:00.880 align:start position:0%
+anymore. They're operating at 20%. So
+ 
+
+00:19:00.880 --> 00:19:03.110 align:start position:0%
+anymore. They're operating at 20%. So
+hot<00:19:01.120><c> airs</c><00:19:01.600><c> might</c><00:19:01.840><c> be</c><00:19:02.000><c> allowed</c><00:19:02.320><c> or</c><00:19:02.559><c> be</c><00:19:02.720><c> forced</c>
+
+00:19:03.110 --> 00:19:03.120 align:start position:0%
+hot airs might be allowed or be forced
+ 
+
+00:19:03.120 --> 00:19:04.950 align:start position:0%
+hot airs might be allowed or be forced
+back<00:19:03.360><c> through</c><00:19:03.520><c> that</c><00:19:03.760><c> minor</c><00:19:04.320><c> and</c><00:19:04.559><c> then</c><00:19:04.720><c> that</c>
+
+00:19:04.950 --> 00:19:04.960 align:start position:0%
+back through that minor and then that
+ 
+
+00:19:04.960 --> 00:19:06.950 align:start position:0%
+back through that minor and then that
+enters<00:19:05.200><c> the</c><00:19:05.360><c> cold</c><00:19:05.600><c> aisle</c><00:19:06.000><c> inside</c><00:19:06.320><c> of</c><00:19:06.480><c> the</c><00:19:06.640><c> the</c>
+
+00:19:06.950 --> 00:19:06.960 align:start position:0%
+enters the cold aisle inside of the the
+ 
+
+00:19:06.960 --> 00:19:09.350 align:start position:0%
+enters the cold aisle inside of the the
+container<00:19:07.600><c> or</c><00:19:07.919><c> inside</c><00:19:08.160><c> of</c><00:19:08.240><c> the</c><00:19:08.400><c> mining</c><00:19:08.720><c> room</c>
+
+00:19:09.350 --> 00:19:09.360 align:start position:0%
+container or inside of the mining room
+ 
+
+00:19:09.360 --> 00:19:11.510 align:start position:0%
+container or inside of the mining room
+uh<00:19:09.440><c> which</c><00:19:09.679><c> increases</c><00:19:10.080><c> the</c><00:19:10.320><c> temperature</c><00:19:10.720><c> of</c>
+
+00:19:11.510 --> 00:19:11.520 align:start position:0%
+uh which increases the temperature of
+ 
+
+00:19:11.520 --> 00:19:13.909 align:start position:0%
+uh which increases the temperature of
+miners<00:19:12.080><c> you</c><00:19:12.240><c> know</c><00:19:12.400><c> next</c><00:19:12.640><c> to</c><00:19:12.799><c> it.</c><00:19:13.360><c> So</c><00:19:13.600><c> if</c><00:19:13.760><c> you</c>
+
+00:19:13.909 --> 00:19:13.919 align:start position:0%
+miners you know next to it. So if you
+ 
+
+00:19:13.919 --> 00:19:16.870 align:start position:0%
+miners you know next to it. So if you
+want<00:19:14.240><c> a</c><00:19:14.559><c> higher</c><00:19:15.679><c> fan</c><00:19:16.000><c> speed</c><00:19:16.240><c> when</c><00:19:16.400><c> the</c><00:19:16.559><c> miner</c>
+
+00:19:16.870 --> 00:19:16.880 align:start position:0%
+want a higher fan speed when the miner
+ 
+
+00:19:16.880 --> 00:19:19.029 align:start position:0%
+want a higher fan speed when the miner
+is<00:19:17.039><c> not</c><00:19:17.200><c> hashing</c><00:19:18.080><c> you</c><00:19:18.240><c> can</c><00:19:18.320><c> change</c><00:19:18.559><c> this</c><00:19:18.720><c> to</c>
+
+00:19:19.029 --> 00:19:19.039 align:start position:0%
+is not hashing you can change this to
+ 
+
+00:19:19.039 --> 00:19:22.310 align:start position:0%
+is not hashing you can change this to
+40%<00:19:19.760><c> 60%</c><00:19:21.120><c> whatever</c><00:19:21.440><c> percent</c><00:19:21.840><c> makes</c><00:19:22.000><c> sense</c><00:19:22.160><c> to</c>
+
+00:19:22.310 --> 00:19:22.320 align:start position:0%
+40% 60% whatever percent makes sense to
+ 
+
+00:19:22.320 --> 00:19:24.789 align:start position:0%
+40% 60% whatever percent makes sense to
+you<00:19:22.480><c> up</c><00:19:22.640><c> to</c><00:19:22.880><c> 100.</c>
+
+00:19:24.789 --> 00:19:24.799 align:start position:0%
+you up to 100.
+ 
+
+00:19:24.799 --> 00:19:27.430 align:start position:0%
+you up to 100.
+And<00:19:25.039><c> then</c><00:19:25.200><c> two</c><00:19:25.360><c> big</c><00:19:25.520><c> ones</c><00:19:26.400><c> are</c><00:19:26.880><c> no</c><00:19:27.200><c> pick</c>
+
+00:19:27.430 --> 00:19:27.440 align:start position:0%
+And then two big ones are no pick
+ 
+
+00:19:27.440 --> 00:19:30.310 align:start position:0%
+And then two big ones are no pick
+hashboard<00:19:27.919><c> protection</c><00:19:28.960><c> and</c><00:19:29.360><c> overtemp</c><00:19:30.000><c> auto</c>
+
+00:19:30.310 --> 00:19:30.320 align:start position:0%
+hashboard protection and overtemp auto
+ 
+
+00:19:30.320 --> 00:19:32.630 align:start position:0%
+hashboard protection and overtemp auto
+recovery.<00:19:31.360><c> No</c><00:19:31.679><c> pick</c><00:19:31.840><c> hashboard</c><00:19:32.320><c> protection</c>
+
+00:19:32.630 --> 00:19:32.640 align:start position:0%
+recovery. No pick hashboard protection
+ 
+
+00:19:32.640 --> 00:19:34.470 align:start position:0%
+recovery. No pick hashboard protection
+when<00:19:32.880><c> enabled</c><00:19:33.360><c> means</c><00:19:33.600><c> that</c><00:19:33.760><c> if</c><00:19:34.000><c> the</c><00:19:34.160><c> machine</c>
+
+00:19:34.470 --> 00:19:34.480 align:start position:0%
+when enabled means that if the machine
+ 
+
+00:19:34.480 --> 00:19:36.630 align:start position:0%
+when enabled means that if the machine
+doesn't<00:19:34.720><c> have</c><00:19:34.799><c> a</c><00:19:34.960><c> pick,</c><00:19:35.280><c> if</c><00:19:35.520><c> one</c><00:19:35.679><c> board</c><00:19:35.919><c> fails,</c>
+
+00:19:36.630 --> 00:19:36.640 align:start position:0%
+doesn't have a pick, if one board fails,
+ 
+
+00:19:36.640 --> 00:19:39.190 align:start position:0%
+doesn't have a pick, if one board fails,
+all<00:19:36.880><c> three</c><00:19:37.120><c> boards</c><00:19:37.440><c> will</c><00:19:37.679><c> shut</c><00:19:37.840><c> down.</c><00:19:38.720><c> Uh</c><00:19:39.039><c> this</c>
+
+00:19:39.190 --> 00:19:39.200 align:start position:0%
+all three boards will shut down. Uh this
+ 
+
+00:19:39.200 --> 00:19:41.110 align:start position:0%
+all three boards will shut down. Uh this
+is<00:19:39.280><c> a</c><00:19:39.520><c> safety</c><00:19:39.840><c> feature.</c><00:19:40.480><c> If</c><00:19:40.720><c> you</c><00:19:40.799><c> have</c><00:19:40.960><c> a</c>
+
+00:19:41.110 --> 00:19:41.120 align:start position:0%
+is a safety feature. If you have a
+ 
+
+00:19:41.120 --> 00:19:42.950 align:start position:0%
+is a safety feature. If you have a
+machine<00:19:41.360><c> with</c><00:19:41.520><c> a</c><00:19:41.679><c> board</c><00:19:41.919><c> that</c><00:19:42.080><c> fails</c><00:19:42.400><c> out</c><00:19:42.720><c> and</c>
+
+00:19:42.950 --> 00:19:42.960 align:start position:0%
+machine with a board that fails out and
+ 
+
+00:19:42.960 --> 00:19:44.870 align:start position:0%
+machine with a board that fails out and
+you<00:19:43.120><c> want</c><00:19:43.200><c> to</c><00:19:43.280><c> run</c><00:19:43.440><c> it</c><00:19:43.600><c> temporarily</c><00:19:44.480><c> with</c><00:19:44.720><c> just</c>
+
+00:19:44.870 --> 00:19:44.880 align:start position:0%
+you want to run it temporarily with just
+ 
+
+00:19:44.880 --> 00:19:46.789 align:start position:0%
+you want to run it temporarily with just
+two<00:19:45.120><c> boards,</c><00:19:45.679><c> you</c><00:19:45.840><c> come</c><00:19:46.080><c> set</c><00:19:46.240><c> this</c><00:19:46.400><c> to</c><00:19:46.559><c> false</c>
+
+00:19:46.789 --> 00:19:46.799 align:start position:0%
+two boards, you come set this to false
+ 
+
+00:19:46.799 --> 00:19:49.029 align:start position:0%
+two boards, you come set this to false
+and<00:19:47.039><c> hit</c><00:19:47.200><c> update</c><00:19:48.080><c> and</c><00:19:48.320><c> that</c><00:19:48.559><c> machine</c><00:19:48.799><c> will</c><00:19:48.960><c> be</c>
+
+00:19:49.029 --> 00:19:49.039 align:start position:0%
+and hit update and that machine will be
+ 
+
+00:19:49.039 --> 00:19:50.630 align:start position:0%
+and hit update and that machine will be
+able<00:19:49.200><c> to</c><00:19:49.360><c> run</c><00:19:49.520><c> on</c><00:19:49.760><c> less</c><00:19:50.000><c> than</c><00:19:50.160><c> three</c><00:19:50.320><c> hash</c>
+
+00:19:50.630 --> 00:19:50.640 align:start position:0%
+able to run on less than three hash
+ 
+
+00:19:50.640 --> 00:19:54.710 align:start position:0%
+able to run on less than three hash
+boards.<00:19:52.000><c> Then</c><00:19:52.240><c> overtemp</c><00:19:52.880><c> auto</c><00:19:53.200><c> recovery.</c><00:19:54.320><c> Uh</c>
+
+00:19:54.710 --> 00:19:54.720 align:start position:0%
+boards. Then overtemp auto recovery. Uh
+ 
+
+00:19:54.720 --> 00:19:56.630 align:start position:0%
+boards. Then overtemp auto recovery. Uh
+this<00:19:54.960><c> is</c><00:19:55.600><c> what</c><00:19:55.840><c> happens</c><00:19:56.080><c> when</c><00:19:56.240><c> a</c><00:19:56.400><c> board</c>
+
+00:19:56.630 --> 00:19:56.640 align:start position:0%
+this is what happens when a board
+ 
+
+00:19:56.640 --> 00:19:59.029 align:start position:0%
+this is what happens when a board
+overheats.<00:19:57.679><c> Well,</c><00:19:57.840><c> we</c><00:19:58.080><c> will</c><00:19:58.320><c> let</c><00:19:58.559><c> that</c><00:19:58.720><c> board</c>
+
+00:19:59.029 --> 00:19:59.039 align:start position:0%
+overheats. Well, we will let that board
+ 
+
+00:19:59.039 --> 00:20:01.029 align:start position:0%
+overheats. Well, we will let that board
+go<00:19:59.200><c> down</c><00:19:59.440><c> and</c><00:19:59.600><c> then</c><00:19:59.840><c> come</c><00:20:00.000><c> back</c><00:20:00.160><c> up.</c><00:20:00.640><c> If</c><00:20:00.799><c> it's</c>
+
+00:20:01.029 --> 00:20:01.039 align:start position:0%
+go down and then come back up. If it's
+ 
+
+00:20:01.039 --> 00:20:03.270 align:start position:0%
+go down and then come back up. If it's
+still<00:20:01.200><c> too</c><00:20:01.440><c> warm,</c><00:20:01.919><c> take</c><00:20:02.160><c> it</c><00:20:02.320><c> down</c><00:20:02.480><c> again,</c><00:20:03.120><c> wait</c>
+
+00:20:03.270 --> 00:20:03.280 align:start position:0%
+still too warm, take it down again, wait
+ 
+
+00:20:03.280 --> 00:20:05.350 align:start position:0%
+still too warm, take it down again, wait
+a<00:20:03.440><c> few</c><00:20:03.600><c> minutes,</c><00:20:03.919><c> bring</c><00:20:04.080><c> it</c><00:20:04.240><c> back</c><00:20:04.400><c> up.</c><00:20:04.960><c> If</c><00:20:05.200><c> it's</c>
+
+00:20:05.350 --> 00:20:05.360 align:start position:0%
+a few minutes, bring it back up. If it's
+ 
+
+00:20:05.360 --> 00:20:06.710 align:start position:0%
+a few minutes, bring it back up. If it's
+still<00:20:05.520><c> too</c><00:20:05.760><c> warm,</c><00:20:06.000><c> take</c><00:20:06.160><c> it</c><00:20:06.240><c> down</c><00:20:06.400><c> again,</c>
+
+00:20:06.710 --> 00:20:06.720 align:start position:0%
+still too warm, take it down again,
+ 
+
+00:20:06.720 --> 00:20:08.870 align:start position:0%
+still too warm, take it down again,
+double<00:20:06.960><c> the</c><00:20:07.200><c> wait</c><00:20:07.360><c> time,</c><00:20:07.840><c> bring</c><00:20:08.080><c> it</c><00:20:08.240><c> back</c><00:20:08.400><c> up.</c>
+
+00:20:08.870 --> 00:20:08.880 align:start position:0%
+double the wait time, bring it back up.
+ 
+
+00:20:08.880 --> 00:20:11.270 align:start position:0%
+double the wait time, bring it back up.
+It'll<00:20:09.200><c> do</c><00:20:09.280><c> this</c><00:20:09.520><c> five</c><00:20:09.840><c> times.</c><00:20:10.720><c> Each</c><00:20:11.039><c> time,</c>
+
+00:20:11.270 --> 00:20:11.280 align:start position:0%
+It'll do this five times. Each time,
+ 
+
+00:20:11.280 --> 00:20:12.710 align:start position:0%
+It'll do this five times. Each time,
+evaluating<00:20:11.919><c> temperature.</c><00:20:12.320><c> If</c><00:20:12.480><c> temperature</c>
+
+00:20:12.710 --> 00:20:12.720 align:start position:0%
+evaluating temperature. If temperature
+ 
+
+00:20:12.720 --> 00:20:14.390 align:start position:0%
+evaluating temperature. If temperature
+is<00:20:12.880><c> too</c><00:20:13.039><c> high</c><00:20:13.120><c> on</c><00:20:13.360><c> that</c><00:20:13.520><c> board,</c><00:20:13.919><c> shut</c><00:20:14.080><c> it</c><00:20:14.240><c> down</c>
+
+00:20:14.390 --> 00:20:14.400 align:start position:0%
+is too high on that board, shut it down
+ 
+
+00:20:14.400 --> 00:20:17.669 align:start position:0%
+is too high on that board, shut it down
+again.<00:20:15.360><c> Uh</c><00:20:15.679><c> when</c><00:20:15.919><c> that</c><00:20:16.080><c> occurs</c><00:20:17.200><c> after</c><00:20:17.520><c> the</c>
+
+00:20:17.669 --> 00:20:17.679 align:start position:0%
+again. Uh when that occurs after the
+ 
+
+00:20:17.679 --> 00:20:19.590 align:start position:0%
+again. Uh when that occurs after the
+fifth<00:20:18.000><c> time,</c><00:20:18.320><c> the</c><00:20:18.559><c> minor</c><00:20:18.880><c> or</c><00:20:19.039><c> the</c><00:20:19.200><c> board</c><00:20:19.440><c> will</c>
+
+00:20:19.590 --> 00:20:19.600 align:start position:0%
+fifth time, the minor or the board will
+ 
+
+00:20:19.600 --> 00:20:21.430 align:start position:0%
+fifth time, the minor or the board will
+stay<00:20:19.760><c> down</c><00:20:20.000><c> and</c><00:20:20.240><c> require</c><00:20:20.640><c> user</c><00:20:20.960><c> intervention</c>
+
+00:20:21.430 --> 00:20:21.440 align:start position:0%
+stay down and require user intervention
+ 
+
+00:20:21.440 --> 00:20:23.190 align:start position:0%
+stay down and require user intervention
+in<00:20:21.679><c> order</c><00:20:21.760><c> for</c><00:20:22.000><c> you</c><00:20:22.160><c> to</c><00:20:22.320><c> come</c><00:20:22.480><c> back</c><00:20:22.720><c> and</c><00:20:23.039><c> start</c>
+
+00:20:23.190 --> 00:20:23.200 align:start position:0%
+in order for you to come back and start
+ 
+
+00:20:23.200 --> 00:20:25.590 align:start position:0%
+in order for you to come back and start
+hashing<00:20:23.679><c> again.</c><00:20:24.640><c> Turn</c><00:20:24.880><c> this</c><00:20:25.120><c> off</c><00:20:25.360><c> for</c>
+
+00:20:25.590 --> 00:20:25.600 align:start position:0%
+hashing again. Turn this off for
+ 
+
+00:20:25.600 --> 00:20:27.750 align:start position:0%
+hashing again. Turn this off for
+immersion<00:20:26.160><c> machines</c><00:20:26.960><c> because</c><00:20:27.280><c> immersion</c>
+
+00:20:27.750 --> 00:20:27.760 align:start position:0%
+immersion machines because immersion
+ 
+
+00:20:27.760 --> 00:20:29.270 align:start position:0%
+immersion machines because immersion
+machines<00:20:28.080><c> have</c><00:20:28.240><c> a</c><00:20:28.400><c> shared</c><00:20:28.720><c> environment,</c><00:20:29.120><c> a</c>
+
+00:20:29.270 --> 00:20:29.280 align:start position:0%
+machines have a shared environment, a
+ 
+
+00:20:29.280 --> 00:20:30.789 align:start position:0%
+machines have a shared environment, a
+shared<00:20:29.520><c> fluid,</c><00:20:30.000><c> and</c><00:20:30.240><c> you</c><00:20:30.400><c> don't</c><00:20:30.480><c> want</c><00:20:30.559><c> a</c>
+
+00:20:30.789 --> 00:20:30.799 align:start position:0%
+shared fluid, and you don't want a
+ 
+
+00:20:30.799 --> 00:20:32.549 align:start position:0%
+shared fluid, and you don't want a
+machine<00:20:31.039><c> that's</c><00:20:31.360><c> already</c><00:20:31.600><c> overheating,</c>
+
+00:20:32.549 --> 00:20:32.559 align:start position:0%
+machine that's already overheating,
+ 
+
+00:20:32.559 --> 00:20:34.630 align:start position:0%
+machine that's already overheating,
+continuously<00:20:33.200><c> rebooting</c><00:20:33.760><c> and</c><00:20:34.000><c> warming</c><00:20:34.400><c> the</c>
+
+00:20:34.630 --> 00:20:34.640 align:start position:0%
+continuously rebooting and warming the
+ 
+
+00:20:34.640 --> 00:20:36.630 align:start position:0%
+continuously rebooting and warming the
+rest<00:20:34.720><c> of</c><00:20:34.880><c> that</c><00:20:35.039><c> fluid</c><00:20:35.360><c> up.</c><00:20:36.080><c> Aircooled</c>
+
+00:20:36.630 --> 00:20:36.640 align:start position:0%
+rest of that fluid up. Aircooled
+ 
+
+00:20:36.640 --> 00:20:38.710 align:start position:0%
+rest of that fluid up. Aircooled
+machines,<00:20:37.360><c> you</c><00:20:37.919><c> pretty</c><00:20:38.080><c> much</c><00:20:38.240><c> leave</c><00:20:38.400><c> it</c><00:20:38.559><c> at</c>
+
+00:20:38.710 --> 00:20:38.720 align:start position:0%
+machines, you pretty much leave it at
+ 
+
+00:20:38.720 --> 00:20:42.390 align:start position:0%
+machines, you pretty much leave it at
+true.<00:20:40.080><c> And</c><00:20:40.320><c> then</c><00:20:40.720><c> last</c><00:20:41.120><c> but</c><00:20:41.360><c> not</c><00:20:41.520><c> least,</c><00:20:42.159><c> the</c>
+
+00:20:42.390 --> 00:20:42.400 align:start position:0%
+true. And then last but not least, the
+ 
+
+00:20:42.400 --> 00:20:44.789 align:start position:0%
+true. And then last but not least, the
+uninstall<00:20:42.960><c> button.</c><00:20:43.520><c> Now,</c><00:20:44.240><c> I</c><00:20:44.480><c> hope</c><00:20:44.640><c> that</c>
+
+00:20:44.789 --> 00:20:44.799 align:start position:0%
+uninstall button. Now, I hope that
+ 
+
+00:20:44.799 --> 00:20:46.710 align:start position:0%
+uninstall button. Now, I hope that
+everyone<00:20:45.120><c> installs</c><00:20:45.440><c> Lux</c><00:20:45.760><c> OS.</c><00:20:46.240><c> I</c><00:20:46.400><c> hope</c><00:20:46.559><c> you</c>
+
+00:20:46.710 --> 00:20:46.720 align:start position:0%
+everyone installs Lux OS. I hope you
+ 
+
+00:20:46.720 --> 00:20:48.789 align:start position:0%
+everyone installs Lux OS. I hope you
+don't<00:20:46.880><c> need</c><00:20:46.960><c> to</c><00:20:47.120><c> uninstall</c><00:20:47.600><c> Luxos.</c><00:20:48.480><c> But</c><00:20:48.640><c> in</c>
+
+00:20:48.789 --> 00:20:48.799 align:start position:0%
+don't need to uninstall Luxos. But in
+ 
+
+00:20:48.799 --> 00:20:50.149 align:start position:0%
+don't need to uninstall Luxos. But in
+the<00:20:48.960><c> event</c><00:20:49.120><c> that</c><00:20:49.280><c> you</c><00:20:49.440><c> do,</c><00:20:49.919><c> for</c>
+
+00:20:50.149 --> 00:20:50.159 align:start position:0%
+the event that you do, for
+ 
+
+00:20:50.159 --> 00:20:52.549 align:start position:0%
+the event that you do, for
+troubleshooting,<00:20:50.799><c> for</c><00:20:51.039><c> testing,</c><00:20:52.320><c> you</c><00:20:52.480><c> can</c>
+
+00:20:52.549 --> 00:20:52.559 align:start position:0%
+troubleshooting, for testing, you can
+ 
+
+00:20:52.559 --> 00:20:54.310 align:start position:0%
+troubleshooting, for testing, you can
+just<00:20:52.720><c> hit</c><00:20:52.880><c> the</c><00:20:52.960><c> uninstall</c><00:20:53.440><c> button</c><00:20:53.760><c> here.</c><00:20:54.159><c> And</c>
+
+00:20:54.310 --> 00:20:54.320 align:start position:0%
+just hit the uninstall button here. And
+ 
+
+00:20:54.320 --> 00:20:56.149 align:start position:0%
+just hit the uninstall button here. And
+when<00:20:54.480><c> you</c><00:20:54.559><c> hit</c><00:20:54.720><c> uninstall,</c><00:20:55.520><c> the</c><00:20:55.760><c> machine</c><00:20:56.000><c> will</c>
+
+00:20:56.149 --> 00:20:56.159 align:start position:0%
+when you hit uninstall, the machine will
+ 
+
+00:20:56.159 --> 00:20:57.750 align:start position:0%
+when you hit uninstall, the machine will
+revert<00:20:56.480><c> back</c><00:20:56.559><c> to</c><00:20:56.720><c> Bitmain</c><00:20:57.120><c> with</c><00:20:57.280><c> its</c><00:20:57.440><c> previous</c>
+
+00:20:57.750 --> 00:20:57.760 align:start position:0%
+revert back to Bitmain with its previous
+ 
+
+00:20:57.760 --> 00:21:00.230 align:start position:0%
+revert back to Bitmain with its previous
+configuration,<00:20:58.720><c> same</c><00:20:58.960><c> pools,</c><00:20:59.679><c> same</c><00:20:59.919><c> IP</c>
+
+00:21:00.230 --> 00:21:00.240 align:start position:0%
+configuration, same pools, same IP
+ 
+
+00:21:00.240 --> 00:21:02.390 align:start position:0%
+configuration, same pools, same IP
+addresses,<00:21:01.200><c> and</c><00:21:01.520><c> come</c><00:21:01.679><c> back</c><00:21:01.840><c> up</c><00:21:02.000><c> and</c><00:21:02.159><c> start</c>
+
+00:21:02.390 --> 00:21:02.400 align:start position:0%
+addresses, and come back up and start
+ 
+
+00:21:02.400 --> 00:21:04.870 align:start position:0%
+addresses, and come back up and start
+hashing<00:21:02.799><c> again.</c><00:21:03.200><c> Takes</c><00:21:03.520><c> about</c><00:21:04.240><c> 5</c><00:21:04.480><c> minutes</c><00:21:04.720><c> or</c>
+
+00:21:04.870 --> 00:21:04.880 align:start position:0%
+hashing again. Takes about 5 minutes or
+ 
+
+00:21:04.880 --> 00:21:06.789 align:start position:0%
+hashing again. Takes about 5 minutes or
+so,<00:21:05.520><c> and</c><00:21:05.919><c> uh</c><00:21:06.000><c> your</c><00:21:06.240><c> machine</c><00:21:06.400><c> will</c><00:21:06.559><c> be</c><00:21:06.720><c> back</c>
+
+00:21:06.789 --> 00:21:06.799 align:start position:0%
+so, and uh your machine will be back
+ 
+
+00:21:06.799 --> 00:21:09.990 align:start position:0%
+so, and uh your machine will be back
+online<00:21:07.200><c> running</c><00:21:07.840><c> Bitmate.</c>
+
+00:21:09.990 --> 00:21:10.000 align:start position:0%
+online running Bitmate.
+ 
+
+00:21:10.000 --> 00:21:12.070 align:start position:0%
+online running Bitmate.
+But<00:21:10.159><c> that's</c><00:21:10.400><c> Lux</c><00:21:10.720><c> OS</c><00:21:10.960><c> in</c><00:21:11.039><c> a</c><00:21:11.200><c> nutshell.</c><00:21:11.840><c> There's</c>
+
+00:21:12.070 --> 00:21:12.080 align:start position:0%
+But that's Lux OS in a nutshell. There's
+ 
+
+00:21:12.080 --> 00:21:14.149 align:start position:0%
+But that's Lux OS in a nutshell. There's
+lots<00:21:12.320><c> of</c><00:21:12.640><c> little</c><00:21:13.039><c> corner</c><00:21:13.440><c> cases</c><00:21:13.760><c> that</c><00:21:13.919><c> we</c><00:21:14.080><c> can</c>
+
+00:21:14.149 --> 00:21:14.159 align:start position:0%
+lots of little corner cases that we can
+ 
+
+00:21:14.159 --> 00:21:16.310 align:start position:0%
+lots of little corner cases that we can
+get<00:21:14.240><c> into</c><00:21:14.720><c> and</c><00:21:15.039><c> tuning</c><00:21:15.360><c> that</c><00:21:15.520><c> we</c><00:21:15.679><c> can</c><00:21:15.840><c> do</c><00:21:16.080><c> to</c>
+
+00:21:16.310 --> 00:21:16.320 align:start position:0%
+get into and tuning that we can do to
+ 
+
+00:21:16.320 --> 00:21:17.990 align:start position:0%
+get into and tuning that we can do to
+try<00:21:16.480><c> to</c><00:21:16.559><c> make</c><00:21:16.720><c> your</c><00:21:16.960><c> experience</c><00:21:17.440><c> the</c><00:21:17.679><c> best</c><00:21:17.840><c> it</c>
+
+00:21:17.990 --> 00:21:18.000 align:start position:0%
+try to make your experience the best it
+ 
+
+00:21:18.000 --> 00:21:20.070 align:start position:0%
+try to make your experience the best it
+can<00:21:18.159><c> be.</c><00:21:18.720><c> But</c><00:21:18.799><c> for</c><00:21:19.039><c> the</c><00:21:19.200><c> average</c><00:21:19.520><c> person</c><00:21:19.840><c> just</c>
+
+00:21:20.070 --> 00:21:20.080 align:start position:0%
+can be. But for the average person just
+ 
+
+00:21:20.080 --> 00:21:21.669 align:start position:0%
+can be. But for the average person just
+installing<00:21:20.400><c> it</c><00:21:20.559><c> for</c><00:21:20.720><c> Luxo,</c><00:21:21.200><c> just</c><00:21:21.360><c> installing</c>
+
+00:21:21.669 --> 00:21:21.679 align:start position:0%
+installing it for Luxo, just installing
+ 
+
+00:21:21.679 --> 00:21:23.669 align:start position:0%
+installing it for Luxo, just installing
+Lux<00:21:21.919><c> OS</c><00:21:22.159><c> for</c><00:21:22.320><c> the</c><00:21:22.480><c> first</c><00:21:22.640><c> time,</c><00:21:23.200><c> this</c><00:21:23.440><c> is</c><00:21:23.600><c> kind</c>
+
+00:21:23.669 --> 00:21:23.679 align:start position:0%
+Lux OS for the first time, this is kind
+ 
+
+00:21:23.679 --> 00:21:25.110 align:start position:0%
+Lux OS for the first time, this is kind
+of<00:21:23.760><c> where</c><00:21:23.919><c> you're</c><00:21:24.159><c> going</c><00:21:24.240><c> to</c><00:21:24.320><c> start.</c><00:21:24.799><c> If</c><00:21:24.960><c> you</c>
+
+00:21:25.110 --> 00:21:25.120 align:start position:0%
+of where you're going to start. If you
+ 
+
+00:21:25.120 --> 00:21:26.710 align:start position:0%
+of where you're going to start. If you
+have<00:21:25.200><c> any</c><00:21:25.360><c> questions,</c><00:21:25.760><c> feel</c><00:21:25.919><c> free</c><00:21:26.240><c> to</c><00:21:26.480><c> reach</c>
+
+00:21:26.710 --> 00:21:26.720 align:start position:0%
+have any questions, feel free to reach
+ 
+
+00:21:26.720 --> 00:21:28.950 align:start position:0%
+have any questions, feel free to reach
+out<00:21:26.799><c> to</c><00:21:27.039><c> support</c><00:21:27.679><c> and</c><00:21:28.080><c> me</c><00:21:28.400><c> or</c><00:21:28.640><c> one</c><00:21:28.720><c> of</c><00:21:28.799><c> my</c>
+
+00:21:28.950 --> 00:21:28.960 align:start position:0%
+out to support and me or one of my
+ 
+
+00:21:28.960 --> 00:21:30.070 align:start position:0%
+out to support and me or one of my
+colleagues<00:21:29.360><c> will</c><00:21:29.520><c> be</c><00:21:29.600><c> happy</c><00:21:29.760><c> to</c><00:21:29.840><c> help</c><00:21:30.000><c> you</c>
+
+00:21:30.070 --> 00:21:30.080 align:start position:0%
+colleagues will be happy to help you
+ 
+
+00:21:30.080 --> 00:21:33.720 align:start position:0%
+colleagues will be happy to help you
+out.<00:21:30.559><c> Thank</c><00:21:30.720><c> you.</c>
+

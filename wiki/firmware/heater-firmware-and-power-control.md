@@ -45,6 +45,8 @@ Mining firmware is built for industrial sites that care about cooling and uptime
 
 ### Vnish
 
+> **Update (2026-10-10, vendor docs):** Vnish is now "Vnish by Hashcore" — an umbrella rebrand, not a migration: vnish.com still runs VNISH-branded in parallel with hashcore.com, the firmware version line is unchanged (current 1.3.7; Toolkit v1.7.5 — [rebrand evidence](../../raw/firmware/vnish-hashcore/docs-rebrand-evidence.md)), and the rename is documented in Pulse release notes: "developer name Vnish has been universally replaced with "HashCore"" and "The version name (e.g., Vnish 1.3.7) remains unchanged." Full evidence chain and device-count claim verification: [Vnish → HashCore](vnish-hashcore.md).
+
 - Chosen on StealthMiner for superior low volt operation, better thermal management, constant temp and near-constant fan speed [#1344 · 2024-10-08 · Mark | @satstackingpleb] [#1346 · 2024-10-08 · Mark | @satstackingpleb] [#1347 · 2024-10-08 · Mark | @satstackingpleb] [#1350 · 2024-10-08 · Mark | @satstackingpleb]. Its toolbox is "superuser" and can load any FW file [#1379 · 2024-10-08 · Mark | @satstackingpleb]. Both LuxOS and Vnish have advanced thermal modes that can hold a target chip temp; testing Vnish thermal mode with manual fan at 65-70% needed extra settings so it didn't try to tune the preset [#2274 · 2024-11-30 · Mark | @satstackingpleb] [#2278 · 2024-11-30 · Mark | @satstackingpleb] [#2279 · 2024-11-30 · Mark | @satstackingpleb].
 - 67c was found best for jpro; manual tuning after autotune eked out about a percent; autotune didn't match LuxOS numbers for one builder but saves pool fees [#4725 · 2025-03-22 · Karl] [#4727 · 2025-03-22 · Karl] [#4729 · 2025-03-22 · Karl]. An S19 rated 88 TH runs on VNISH at 66TH and 2100 watts for basement heat [#3325 · 2025-01-12 · Zackery Miller].
 - **January 2025 hotfix:** added a max fan-speed limit in auto mode, a minimum preset for the autoswitcher, a water inlet/outlet temp widget for S19 Pro Hydro / S19 Pro Plus Hydro, and S21 Hydro submodels HHB68502 and HHB68503 [#3022 · 2025-01-02 · Brett Rowan]. Gotcha: "AUTOTUNING MODE CAN EXCEED PRESET VALUES BY 10-20%" — machines tuned before the update were unaffected, but new tunes could overshoot power [#3022 · 2025-01-02 · Brett Rowan]. A "dev fee offline" status appeared on older S19s at the time; the dev fee was cut to the lowest rate for several days to compensate [#3018 · 2025-01-02 · Karl] [#3022 · 2025-01-02 · Brett Rowan].
@@ -188,6 +190,7 @@ The firmware panel gave the fullest public walkthrough of what the "tuning" butt
 
 ## See Also
 
+- Per-firmware reference pages (2026-10-10): [Braiins OS](braiins-os.md), [LuxOS](luxos.md), [Vnish → HashCore](vnish-hashcore.md)
 - [Home Assistant Heater Control](../mining-software/home-assistant-heater-control.md)
 - [Mujina](mujina.md)
 - [asic-rs](../mining-software/asic-rs.md)
