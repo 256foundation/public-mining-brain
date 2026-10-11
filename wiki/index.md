@@ -18,6 +18,38 @@ ASIC manufacturers and models, components, cooling, repair, DIY builds.
 |---------|---------|---------|
 | [ASIC Thermals and Heat Reuse](hardware/asic-thermals-and-heat-reuse.md) | What mining silicon and hashboards tolerate: chip limits, secondary-component blockers, cooling, TIMs, immersion. | 2026-10-09 |
 | [Ember One & the BZM2 Hardware Stack](hardware/ember-one-bzm2.md) | The 256F open hardware program: emberOne series, Intel BZM2 donation, BitaxeBIRDS, aditBoard, Libre Board. | 2026-10-10 |
+| [Bitmain ASIC reference](hardware/bitmain-asic-reference.md) | Antminer lineage, silicon frontier, current-gen lineup (S23 confirmation), desoldering economy, open questions. | 2026-10-10 |
+| [Antminer S23 XP Hyd.](hardware/antminer-s23-xp-hyd.md) | 600 TH/s, 8.9 J/T wall @35℃, $15,300, shipping Nov 2026 — the live efficiency flagship; price Disputed. | 2026-10-10 |
+| [Antminer S23e U2H](hardware/antminer-s23e-u2h.md) | 2U rack hydro, 865 TH/s / 10 J/T, feeds ANTSPACE HW7 (242 slots); naming + release-date Disputed. | 2026-10-10 |
+| [Antminer S21 XP+ Hyd](hardware/antminer-s21-xp-plus-hyd.md) | 480 T / 5280 W / 11 J/T live sheet; DBs still carry older 500 Th / 5500 W rows — Disputed. | 2026-10-10 |
+| [Antminer S21 XP Hyd](hardware/antminer-s21-xp-hyd.md) | 473 TH/s / 5676 W / 12 J/T @35℃, $8,041 on sale; specs agree, price Disputed. | 2026-10-10 |
+| [Antminer S21 XP](hardware/antminer-s21-xp.md) | Air flagship 270 TH/s / 13.5 J/T @25℃, 76 dBA, single-phase; @25℃ vs @35℃ band convention. | 2026-10-10 |
+| [Whatsminer overview](hardware/whatsminer-overview.md) | MicroBT lineup ladder M70S→M73, 17-row catalog, image-only-PDF gap, M7B/M6B paper launch, family Disputed table. | 2026-10-10 |
+| [Whatsminer M66S](hardware/whatsminer-m66s.md) | 270–298 T ±10%, 18.5 J/T; AMV 298 vs MN 310 TH/s Disputed with $/kWh caveat; heater-fit immersion. | 2026-10-10 |
+| [Whatsminer M66S+](hardware/whatsminer-m66s-plus.md) | 280–318 T, 17 J/T manual-only SKU (image-only performance gap); release-month dispute. | 2026-10-10 |
+| [Whatsminer M63S+](hardware/whatsminer-m63s-plus.md) | Hydro 2U, 390–450 T, ≥10 L/min, 70 °C outlet; AMV/MN Disputed inside maker ±10% band. | 2026-10-10 |
+| [Whatsminer M64](hardware/whatsminer-m64.md) | Compact hydro heater-fit (371×290×109 mm, single-phase, 80 °C outlet); 5 kW vs ~4 kW field record Disputed. | 2026-10-10 |
+| [Whatsminer M65S](hardware/whatsminer-m65s.md) | 2U rack hydro 370–400 T / 18.5 J/T; absent from both spec DBs (omission Disputed). | 2026-10-10 |
+| [Whatsminer M70S](hardware/whatsminer-m70s.md) | Shop card 248TH @13.5 J/TH; DBs agree on 226 @ 3140 W — bin-mismatch Disputed. | 2026-10-10 |
+| [Whatsminer M73](hardware/whatsminer-m73.md) | 512TH @14.5 J/TH, 7424 W, 3-phase 10 kW input; DBs 470 @ 7200 W — Disputed. | 2026-10-10 |
+| [Avalon overview](hardware/avalon-overview.md) | Canaan lineup ladder A16XP→A15→A14, Wayback park note (live 403), lab-results disclaimer, A4 attribution confusion. | 2026-10-10 |
+| [Avalon A16XP](hardware/avalon-a16xp.md) | 300 TH/s / 12.8 J/TH flagship launched Dubai Oct 2025; release-date Disputed; no hydro variant. | 2026-10-10 |
+| [Avalon A15Pro](hardware/avalon-a15pro.md) | 221T / 16.8 J/TH; 5,000+ sold via Luxor financing, 6,840 to Cipher — IR-corroborated field scale. | 2026-10-10 |
+| [Avalon A15Pro+ 240T](hardware/avalon-a15pro-plus.md) | Higher-bin refresh 240T / 3720 W / 15.5 J/TH ($3,600); AMV doesn't carry the + SKU. | 2026-10-10 |
+| [Avalon A15XP](hardware/avalon-a15xp.md) | 209T / 3667 W / 17.8 J/TH; 209-vs-206 dual-bin release-date Disputed. | 2026-10-10 |
+| [Avalon A15](hardware/avalon-a15.md) | 194T / 18.8 J/TH entry card; specs agree everywhere; bulk-vs-street price spread recorded. | 2026-10-10 |
+| [Avalon A1566HA-500T](hardware/avalon-a1566ha-500t.md) | A15-gen hydro heater-class: 500T / 8064 W / 16.8 J/TH 2U loop; bin-rotation + price Disputed. | 2026-10-10 |
+| [Avalon A14 series](hardware/avalon-a14-series.md) | Prior-gen 1446/1466 air cards + immersion claims; PSU-vs-wall-power Disputed; Panther Creek fleet. | 2026-10-10 |
+| [SEALMINER overview](hardware/sealminer-overview.md) | Bitdeer lineup A2→A4, SEAL01→04 chip ladder (18.1→6-7 J/TH target), DL1 Scrypt, DesiWeMiner fold-in pending. | 2026-10-10 |
+| [SEALMINER A2](hardware/sealminer-a2.md) | $2,892.8 sold-out 226T / 16.5 J/T; release-date + roadmap-vs-page efficiency Disputed. | 2026-10-10 |
+| [SEALMINER A2 Pro Air](hardware/sealminer-a2-pro-air.md) | 260T / 14.9 J/T, $3,380→$3,067 coupon history; vendor-vs-DBs Disputed. | 2026-10-10 |
+| [SEALMINER A2 Pro Hydro](hardware/sealminer-a2-pro-hydro.md) | 500T / 7450 W 2U hydro, inlet 55→60 °C, outlet to 70 °C — heater-class; price spread dated. | 2026-10-10 |
+| [SEALMINER A3](hardware/sealminer-a3.md) | 240–690 TH/s series (no product page — flagged); three-price A3 Pro Hydro Disputed. | 2026-10-10 |
+| [SEALMINER A4 Ultra](hardware/sealminer-a4-ultra.md) | Roadmap flagship 886T / 9.45 J/T "Stay tuned", Q3 2026 mass production; unshipped-SKU price Disputed. | 2026-10-10 |
+| [Teraflux overview](hardware/teraflux-overview.md) | Auradine (now velaura.ai): enterprise fleet posture, 500-unit minimum, Gen-3 9.8 J/TH, FluxOS demand-response. | 2026-10-10 |
+| [Auradine AT2880](hardware/auradine-at2880.md) | Air flagship 0–270 TH/s, 16–18 J/TH modes, 5000 W; AMV-only cross-check. | 2026-10-10 |
+| [Auradine AH3880](hardware/auradine-ah3880.md) | Hydro 600 TH/s, 10 kW 3-phase — commercial heater-class; efficiency Disputed across PRs. | 2026-10-10 |
+| [Auradine AI3680](hardware/auradine-ai3680.md) | Single-phase immersion 365 TH/s / 7500 W; fluid-locked warranty flagged as deployment risk. | 2026-10-10 |
 
 ## firmware
 
@@ -115,7 +147,6 @@ How the brain works, data dictionary.
 | [Bitaxe Troubleshooting](getting-started/bitaxe-troubleshooting.md) | Symptom → cause → fix for Bitaxe: power faults, 0 GH/s, overheat, Wi-Fi/router, failed OTA, dead-subscription "hashing for nothing", rejects, duplicate shares, Flatline of Death, 2.14.0-era error-rate/upgrade reports (OSMU forum). | 2026-10-10 |
 | [Bitaxe Models & Open-Source Miner Family](hardware/bitaxe-models.md) | Bitaxe lineage BM1387 → Max → Ultra → Hex → Supra → Gamma → GT/Naja: specs, board numbers, BM1370 primer, ESP32 module, derivatives, clones, legitlist; field reports from the OSMU forum. | 2026-10-10 |
 | [Bitaxe Board Design, Power & Errata](hardware/bitaxe-board-design-and-errata.md) | Bitaxe power design (TPS40305 → TPS546, series domains, PMBus faults, 5V window), EMC2101 thermals, per-board errata, DFM, reflow, BAP. | 2026-10-10 |
-| [Bitmain BM13xx ASIC Reference](hardware/bitmain-asic-reference.md) | BM1387–BM1370 (+BM1340/72/73) specs with disputed figures, pinouts, UART frames, CRC5, registers, PLL, nonce math, temp sensing. | 2026-10-10 |
 | [Libre Board & Mining Control Boards](hardware/libre-board-and-control-boards.md) | Libre Board (CM5, CERN-OHL-S, errata) vs Braiins BCB100 and stock Antminer Amlogic/Zynq boards; emberone-usbserial firmware. | 2026-10-10 |
 | [OSMU Open Miners](hardware/osmu-open-miners.md) | Open miners beside the Bitaxe: NerdMiner ESP32 line and display hybrids (NerdNOS, NerdAxe, NerdQAxe+/++), PiAxe/QAxe build paths, BitForge Nano, WarpAxe, firmware forks, OSMU-forum pool/tool ecosystem (dvb-WarpPool, Pogolo, BTC PoW Lab, Bitaxe Monitor). | 2026-10-10 |
 | [ESP-Miner / AxeOS](firmware/esp-miner-axeos.md) | Bitaxe's open firmware: architecture, flashing/recovery, AxeOS API, mDNS, security posture, stratum/SV2 behavior, releases 1.0 → 2.15.3; OSMU-forum feature requests and independent API reimplementations. | 2026-10-10 |
