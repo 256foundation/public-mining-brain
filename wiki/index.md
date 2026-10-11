@@ -101,6 +101,7 @@ Profitability math, hashprice, difficulty, electricity, curtailment, heat reuse.
 | Article | Summary | Updated |
 |---------|---------|---------|
 | [Open Mining Economics](economics/open-mining-economics.md) | $8-$12/TH vs Bitmain's scale, the mission-over-price debate, heat-as-service, sell-vs-hodl math. | 2026-10-10 |
+| [Hashprice and Difficulty](economics/hashprice-and-difficulty.md) | Luxor hashprice methodology + live Oct 2026 snapshot ($39.44/PH/day, 132.7T difficulty), fee share, energy-tier margin ladder, CBECI/DMIR cost curve, public-miner repricing. | 2026-10-10 |
 
 ## history
 

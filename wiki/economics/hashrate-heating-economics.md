@@ -377,3 +377,4 @@ The podcast is where the heatpunks think out loud, and several of its numbers an
 - [Hashrate Heating Products and Installs](../industry/hashrate-heating-products-and-installs.md)
 - [On-Demand Hashrate](../hashrate-market/on-demand-hashrate.md)
 - [Heatpunks Community Timeline](../history/heatpunks-community-timeline.md)
+- Live market state (hashprice, difficulty, energy tiers): [Hashprice and Difficulty](hashprice-and-difficulty.md)

@@ -175,3 +175,4 @@ Quoted as read on air; treat each as a dated datapoint.
 - [On-Demand Hashrate](../hashrate-market/on-demand-hashrate.md)
 - [Repair, Supply & Vendors](../industry/repair-supply-and-vendors.md)
 - Same topic: [Hashrate Heating Economics](hashrate-heating-economics.md)
+- Live-market side of the same math: [Hashprice and Difficulty](hashprice-and-difficulty.md)

@@ -166,8 +166,8 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | `cambridge-report` | Cambridge Digital Mining Industry Report | https://www.jbs.cam.ac.uk (2025 report PDF) | report | annual | verbatim | agent | active |
 | `minermag` | TheMinerMag news + public-miner stats | https://theminermag.com | data | weekly | extract | agent | active |
 | `whattomine` | WhatToMine profitability calc | https://whattomine.com | data | weekly | extract | agent | active |
-| `galaxy-research` | Galaxy mining research | https://www.galaxy.com/research/ | report | monthly | extract | agent | proposed |
-| `coinshares-research` | CoinShares mining reports | https://www.coinshares.com/research | report | monthly | extract | agent | proposed |
+| `galaxy-research` | Galaxy mining research | https://www.galaxy.com/research/ | report | monthly | extract | agent | active |
+| `coinshares-research` | CoinShares mining reports | https://www.coinshares.com/research | report | monthly | extract | agent | active |
 | `elektronics-dev` | Rapha Zagury's curated mining data (dataset "coming soon") | https://elektronics.dev/about | data | event | link-only | agent | proposed |
 
 ## Industry & Public Miners
