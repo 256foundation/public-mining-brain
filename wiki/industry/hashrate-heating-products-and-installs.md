@@ -181,4 +181,5 @@ The 2026 summit's workforce panel made the servicing case. It was convened by Mi
 - [Home Assistant Heater Control](../mining-software/home-assistant-heater-control.md)
 - [Hashrate Heatpunks Community Timeline](../history/heatpunks-community-timeline.md)
 - [Repair, Supply & Vendors](repair-supply-and-vendors.md)
+- [Hashrate Heating & Mining Infrastructure Companies](hashrate-heating-companies.md)
 - [ASIC Thermals & Heat Reuse](../hardware/asic-thermals-and-heat-reuse.md)

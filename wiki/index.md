@@ -156,6 +156,7 @@ Farms, public miners, hosting, colocation, energy interplay.
 | [Repair, Supply & Vendors](industry/repair-supply-and-vendors.md) | Repair grey market (ZeusBTC), schematics peer review, JLCPCB economics, GekkoScience dispute, hosting, Canaan. | 2026-10-10 |
 | [Mining Policy and Legal](industry/mining-policy-and-legal.md) | Samourai prosecution and money-transmitter theory, operation Red Sunset, Bitaxe USPTO trademark fight, tariffs/customs, UL-FCC-CE, net metering. | 2026-10-10 |
 | [Public Miner Economics](industry/public-miner-economics.md) | 8-ticker EDGAR snapshot (FY25 10-Ks + H1'26 10-Qs): margin stress, BTC treasury divergence, AI/HPC pivot contract values, demand-charge economics, Crusoe/NYDIG exit. | 2026-10-10 |
+| [Hashrate Heating & Mining Infrastructure Companies](industry/hashrate-heating-companies.md) | Bot-facing company tracker: 18 vetted vendors (appliance, liquid-cooling, DIY, infra) + Gridless/GRIID, vetting bar, skip list, registry mapping. | 2026-10-11 |
 
 ## hashrate-market
 

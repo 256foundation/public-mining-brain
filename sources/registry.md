@@ -179,9 +179,35 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 | `crusoe` | Crusoe (flared gas / wasted energy) | https://www.crusoe.ai | site | monthly | extract | agent | active |
 | `upstream-data` | Upstream Data (BlackBox, field gas) | https://www.upstreamdata.ca | site | monthly | extract | agent | active |
 | `giga-energy` | Giga Energy (mining containers + blog; pivoted to AI energy infra, mining container + blog content active) | https://www.gigaenergy.com | site | monthly | extract | agent | active |
-| `exergy-docs` | Exergy hashrate-heating & solar docs | https://docs.exergyheat.com | docs | monthly | verbatim | agent | proposed |
-| `exergy-calculators` | Exergy calculator source (heating + solar monetization math) | https://github.com/exergyheat/webapp-calculators | repo | monthly | verbatim | agent | proposed |
-| `exergy-forum` | Exergy customer community (verify public Discourse at capture; else extract) | https://support.exergyheat.com | forum | weekly | verbatim | agent | proposed |
+| `exergy-docs` | Exergy hashrate-heating & solar docs | https://docs.exergyheat.com | docs | monthly | verbatim | agent | active |
+| `exergy-calculators` | Exergy calculator source (heating + solar monetization math) | https://github.com/exergyheat/webapp-calculators | repo | monthly | verbatim | agent | active |
+| `exergy-forum` | Exergy customer community (public Discourse verified 2026-10-11) | https://support.exergyheat.com | forum | weekly | verbatim | agent | active |
+
+| `griid` | GRIID Infrastructure (NASDAQ GRDI; acquired by CleanSpark 2024-10-30 — 0.06959 CLSK/share, ~400 MW Tennessee TVA buildout planned; row kept for history) | *delisted — see sec-edgar-miners (CLSK); PR captured in raw/industry/griid/* | site | static | extract | agent | dormant |
+
+## Heat-Reuse & Home-Mining Companies
+
+The tracked-company list (A15, 2026-10-11): every row below passed the notability bar — live official site + independent corroboration (press, patents, funding, or sustained community adoption). Vetting decisions and skips documented in `raw/industry/_REPORT-companies-2026-10-11.md`; wiki-facing tracker in `wiki/industry/hashrate-heating-companies.md`.
+
+| ID | Source | URL | Type | Cadence | Posture | Owner | Status |
+|---|---|---|---|---|---|---|---|
+| `foghashing` | Fog Hashing → Fog Computing (C Series home immersion, H/B Series hydro/immersion; AI DC FogStack/FogPod + transformers/switchboards; rebrand per site banner) | https://foghashing.io | site | monthly | extract | agent | active |
+| `heatbit` | Heatbit UL-certified bitcoin heaters (Trio/Maxi) + Bitair air-purifier miner | https://heatbit.com | site | monthly | extract | agent | active |
+| `mintgreen` | MintGreen Digital Boilers (district heat, BC) | https://mintgreen.co | site | monthly | extract | agent | active |
+| `heatcore` | HeatCore (MicroBT WhatsMiner authorized hydro partner; rack systems + heating/cooling solutions) | https://heatcore.tech | site | monthly | extract | agent | active |
+| `ry3t` | RY3T ONE bitcoin boiler for existing home water systems (Switzerland) | https://ry3t.com | site | monthly | extract | agent | active |
+| `hestia` | Hestia Thermal Compute Furnaces (Labrador/Quebec, 4 US patents, ETL listed) | https://hestiaheat.ca | site | monthly | extract | agent | active |
+| `constellation-heating` | Constellation Heating Star Heater (immersion pool boiler, 600 TH) | https://constellationheating.com | site | monthly | extract | agent | active |
+| `superheat` | Superheat H1C computational water heater (CES 2026 award, Founding Batch preorders) | https://www.superheat.xyz | site | weekly | extract | agent | active |
+| `hotmine` | Hotmine heater-miners (Ukraine, building since ~2013) | https://hotmine.io | site | monthly | extract | agent | active |
+| `hashrate-house` | Hashrate House (HashTub immersion, Aqueon line, hydro) | https://www.hashratehouse.com | site | monthly | extract | agent | active |
+| `pivotal-pleb-tech` | Pivotal Pleb Tech (Loki Kit 120V conversion, Njord Cloudline board) | https://pivotalpleb.com | site | monthly | extract | agent | active |
+| `256heat` | 256 \| HEAT — Toine's heat-reuse accessories (Wi-Fi PDU, shrouds, consulting) | https://256heat.com | site | monthly | extract | agent | active |
+| `d-central` | D-Central (Quebec: Bitaxe/open-source units, Bitcoin Space Heaters, quiet modded Antminers, repair) | https://d-central.tech | site | monthly | extract | agent | active |
+| `cryptocloaks` | CryptoCloaks (S9 ASIC space-heater STLs + testing data, 3D-printed mining parts) | https://www.cryptocloaks.com | site | monthly | extract | agent | active |
+| `altair-tech` | Altair Technology (miner/parts reseller: Loki Rigs, home-miner lines, consulting) | https://altairtech.io | site | monthly | extract | agent | active |
+| `nakamoto-mining` | Nakamoto Mining LTD. — Schnitzel's 120V home-mining store + HashTub builds | https://nakamotomining.com | site | monthly | extract | agent | active |
+| `gridless` | Gridless (bitcoin mining as energy infrastructure beside renewables, Africa) | https://gridlesscompute.com | site | monthly | extract | agent | active |
 
 ## History & Reference
 
@@ -215,6 +241,11 @@ The 2026-10-10 verification pass (capture-loop A0) promoted the four queue entri
 - `giga-energy` → Industry & Public Miners (`active` — URL verified live)
 - `hashworks` → Firmware (`dead` — phantom, no such firmware vendor)
 - `heatpunk-summit-2025` → Podcasts & Video (`active`, cadence `event` — 14 recorded talks verified)
+
+The 2026-10-11 pass (A15 company deep-dive) resolved the remaining seed-list queue entries:
+
+- `exergy-docs`, `exergy-calculators`, `exergy-forum` → Industry & Public Miners (`active` — all three verified live; forum confirmed public Discourse)
+- 18 new company rows added (17 `active` + `griid` `dormant`) — see Heat-Reuse & Home-Mining Companies + Industry & Public Miners; decisions in `raw/industry/_REPORT-companies-2026-10-11.md`
 
 ## Notes on Tyler's seed list (integrated above)
 
