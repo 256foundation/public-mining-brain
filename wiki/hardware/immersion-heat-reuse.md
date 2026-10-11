@@ -1,9 +1,9 @@
 # Immersion Heat Reuse
 
-> Sources: Hashrate Heatpunks Telegram group, 2024-08-02 → 2026-10-08
-> Raw: [Hashrate Heatpunks Telegram signal digest](../../raw/economics/2026-10-09-heatpunks-telegram-signal.md)
-> Updated: 2026-10-09
-> As-Of: 2026-10-09
+> Sources: Hashrate Heatpunks Telegram group, 2024-08-02 → 2026-10-08; Braiins — Bitcoin Mining Heat Reuse (Tyler Stevens, 2025)
+> Raw: [Hashrate Heatpunks Telegram signal digest](../../raw/economics/2026-10-09-heatpunks-telegram-signal.md); [Heat Reuse book ch. 6: picking hardware](../../raw/books/braiins-heat-reuse/06-picking-hardware.md); [Heat Reuse book ch. 5: managing and controlling the heat](../../raw/books/braiins-heat-reuse/05-managing-and-controlling-heat.md)
+> Updated: 2026-10-11
+> As-Of: 2026-10-11
 > Status: Draft
 
 ## Overview
@@ -47,6 +47,8 @@ The evolution of Karl's canola experience, from first trial to more than a year 
 
 > **Status: Disputed**
 > Is mineral oil safe for hashboards? Jonathan Y used farm-store mineral oil successfully [#1183 · 2024-09-17 · Jonathan Y]. Karl has heard mineral oil is bad for hashboards [#9818 · 2026-04-08 · Karl], and Gianluca L says mineral oil usually needs Nylon-covered wires and Viton seals to avoid damage over months [#8937 · 2026-01-29 · Gianluca L]. Current best assessment: mineral oil works short-term; plan cable insulation and seal materials for it, or use an engineered fluid for long-lived installs.
+
+The book's hardware chapter (Braiins Heat Reuse, 2025) gives the thermal argument for the group's immersion-for-reuse preference: "Immersion cooling submerges miners in dielectric oil, insulating hardware from dust and debris while leveraging the oil's high specific heat capacity and thermal mass to absorb and store heat. This helps stabilize temperatures, reducing wear and extending hardware lifespan. Thanks to full hardware submersion, immersion-cooling captures all heat from ASIC chips, power supplies, and control boards, making it ideal for applications where every watt of heat is valuable." — against which "Oil's high viscosity (thickness) makes it less efficient for pumping and transferring heat over long distances compared to water", "immersion systems are notorious for eroding thermal paste between ASIC chips and heat sinks", and "most hydronic hardware - like pumps, valves, manifolds, and expansion tanks - is incompatible with dielectric oil" ([Heat Reuse book ch. 6](../../raw/books/braiins-heat-reuse/06-picking-hardware.md), p. 115). On control, the book documents the oil-as-battery pattern — "The immersion tank acts as a thermal battery, storing heat energy due to the high thermal mass of the liquid... When the oil cools down sufficiently, the miners turn on to warm it back up; if the oil overheats, they switch off." — a scheme it credits as "designed by Heatpunk Cody Harris" ([Heat Reuse book ch. 5](../../raw/books/braiins-heat-reuse/05-managing-and-controlling-heat.md), pp. 90–91), matching Karl's thermal-buffer argument in the overview above.
 
 ## Tanks, containers and plumbing
 

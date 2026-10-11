@@ -189,7 +189,7 @@ Monitored via GitHub API: commits, releases, PRs, issues, discussions. Posture a
 |---|---|---|---|---|---|---|---|
 | `bitcoin-wiki` | Bitcoin wiki (Mining, hardware comparison) | https://en.bitcoin.it/wiki/Mining | wiki | static | verbatim | agent | active |
 | `bitcoinbook` | Mastering Bitcoin (open source, mining ch.) | https://github.com/bitcoinbook/bitcoinbook | book | static | extract | agent | active |
-| `braiins-books` | Braiins Publishing mining books (Handbook, Economics, Glossary, Ultimate Guide, Heat Reuse) — free PDFs; Glossary/Ultimate/Heat-Reuse PDFs are email-gated at braiins.com | https://braiins.com/books | book | static | extract | agent | active |
+| `braiins-books` | Braiins Publishing mining books (Handbook, Economics, Glossary, Ultimate Guide, Heat Reuse) — free PDFs; Glossary/Ultimate PDFs are email-gated at braiins.com; Heat Reuse (Tyler Stevens, 2025, ISBN 978-80-909253-2-8, foreword by Paul Jin Li) distributed free at braiins.com/books/bitcoin-mining-heat-reuse — ingested from the author's final per-chapter production PDFs | https://braiins.com/books | book | static | extract | agent | active |
 | `learnmeabitcoin` | Learn Me A Bitcoin — technical mining pages | https://learnmeabitcoin.com/technical/mining/ | docs | static | verbatim | agent | active |
 | `bitcointalk-mining` | Bitcointalk mining boards | https://bitcointalk.org | forum | weekly | extract | agent | active |
 | `bitcoin-se` | Bitcoin Stack Exchange (mining tags) | https://bitcoin.stackexchange.com | forum | weekly | extract | agent | active |

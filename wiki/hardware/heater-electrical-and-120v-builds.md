@@ -1,9 +1,9 @@
 # Heater Electrical & 120V Builds
 
-> Sources: Hashrate Heatpunks Telegram group, 2024-08-02 → 2026-10-08
-> Raw: [Hashrate Heatpunks Telegram signal digest](../../raw/economics/2026-10-09-heatpunks-telegram-signal.md)
-> Updated: 2026-10-09
-> As-Of: 2026-10-09
+> Sources: Hashrate Heatpunks Telegram group, 2024-08-02 → 2026-10-08; Braiins — Bitcoin Mining Heat Reuse (Tyler Stevens, 2025)
+> Raw: [Hashrate Heatpunks Telegram signal digest](../../raw/economics/2026-10-09-heatpunks-telegram-signal.md); [Heat Reuse book ch. 4: successful case studies](../../raw/books/braiins-heat-reuse/04-successful-case-studies.md); [Heat Reuse book ch. 3: ideal candidates](../../raw/books/braiins-heat-reuse/03-ideal-candidates.md)
+> Updated: 2026-10-11
+> As-Of: 2026-10-11
 > Status: Draft
 
 ## Overview
@@ -79,6 +79,8 @@ A hashrate heater is an electric resistance heater that happens to compute, so t
 ### Why 120V
 
 Most US rooms only have 120V outlets. Running one or two S19 hashboards at reduced power lets builders heat with an ordinary outlet anywhere in the house [#2219 · 2024-11-29 · Jonathan Y]. A full miner can also run on 120V if it is underclocked [#1566 · 2024-10-15 · Mark | @satstackingpleb]. Splitting an S19 into 3 miners needs a control board, power supply, enclosure and cooling for each hashboard, and it spreads the hashpower across house circuits [#4327 · 2025-02-27 · Josh]. With Loki boards, S19s became the common space heater and S9s were left looking for new uses. One builder called S19-era machines "the next S9's. Durable as hell. Reliable" [#5930 · 2025-05-09 · Jason] [#2216 · 2024-11-29 · Jonathan Y] [#2334 · 2024-12-01 · Karl].
+
+The book documents the commercial counterpart in print: the Pivotal Pleb Tech Loki Kit "connects to the control board of certain Bitmain ASIC miners, allowing them to run with different power supplies on standard 120V outlets, transforming new-generation miners into practical home space heaters" ([Heat Reuse book ch. 4](../../raw/books/braiins-heat-reuse/04-successful-case-studies.md), p. 57) — the same S19-on-120V builds this section covers. Chapter 3 supplies the economics frame for why 120V output caps don't kill the value: "An electrically resistive heater is a bitcoin miner with zero hashrate, and a bitcoin miner is an electrically resistive heater that pays you for securing the bitcoin network." ([Heat Reuse book ch. 3](../../raw/books/braiins-heat-reuse/03-ideal-candidates.md), p. 40) — and "Those with electric heat are already paying the price of a bitcoin heating system, and are rewarded nothing in return." (p. 43)
 
 ### 120V circuit limits
 

@@ -1,0 +1,42 @@
+# Bitcoin Mining Heat Reuse — ch. 3: What Makes an Ideal Candidate? (extract)
+
+> Source: https://braiins.com/books/bitcoin-mining-heat-reuse?lang=en (Braiins Publishing, free distribution; authored by Tyler Stevens; foreword by Paul Jin Li)
+> Collected: 2026-10-11
+> Published: 2025
+> Registry ID: braiins-books
+> Posture: extract (key information with chapter attribution; full text at source)
+> Note: text extracted via pdftotext from the author's final per-chapter production PDFs; the typeset font's space glyph extracts as "!" and is normalized to spaces in quotes; typography otherwise verbatim.
+
+## Key points (ch. 3)
+
+- The Heat Audit: "All of the variables that must come together for well aligned incentives can be determined in an analysis which I've started to refer to as the Heat Audit." — the book's core feasibility framework. (p. 38)
+- Low-grade classification: "Bitcoin miner heat exhaust is low-grade. This means it's best suited for heating applications, rather than used for work like boiling fluids or spinning turbines. This makes hashrate heat great for human comfort and water heating." (p. 38)
+- Natural gas dominance: "In the United States, natural gas is used for over 60% of heating needs" (EIA data). (p. 39)
+- Gas vs. electric economics: "Natural gas is roughly 2-5 times cheaper than electricity in the US, coming in around $0.04/kWh equivalent, compared to an average electric cost of $0.13/kWh." (p. 39)
+- Gas verdict: "it's extremely difficult for bitcoin-powered heating systems to compete with natural gas systems. If the use case application has access to cheap natural gas, it's likely not worth installing bitcoin-powered heaters." (p. 39)
+- Propane: "it typically costs 2-3x more than natural gas on a per unit energy basis, around $0.10/kWh" — close to resistive electric; "rural heating applications with propane heat good candidates for bitcoin-powered heating system upgrades." (p. 40)
+- Resistive electric substitution: "The upgrade from traditional electric heat to bitcoin electric heat has no impact on your utility bill. It's only upside, and the sats are essentially free." (p. 40)
+- The book's defining aphorism: "An electrically resistive heater is a bitcoin miner with zero hashrate, and a bitcoin miner is an electrically resistive heater that pays you for securing the bitcoin network." (p. 40)
+- "Electric heaters are dumb heaters. Bitcoin miners are smart heaters." (p. 40)
+- Heat pump competition: "a heat pump can deliver 2.5 to 4 times as much heat as the electricity it consumes - called a coefficient of performance (COP)"; "COPheat pump= 2.5-4", "COPelectric heat= 1.0" — "$10 worth of heat from a heat pump could cost upwards of $40 from an electric resistive heater for the same amount of warmth." (p. 41)
+- Heat pump cold-weather weakness: "Around the freezing point of water, heat pumps begin to struggle and operate with similar efficiency to resistive heaters." — "in extremely cold climates or at high altitude, hashrate heaters are the best electrically powered alternative." (p. 41)
+- Heating oil: "2-3x more expensive than natural gas", "prices average around $0.09/kWh equivalent in the Americas" — energy arbitrage potential vs. electric heat. (p. 42)
+- Wood: "wood can undercut many common electric rates, coming in at around $0.06/kWh" — but lowest efficiency and more local emissions. (pp. 42–43)
+- Takeaway for electric-heat customers: "Those with electric heat are already paying the price of a bitcoin heating system, and are rewarded nothing in return." (p. 43)
+- Global electricity baseline: "the average cost of electricity is around $0.16/kWh for residential consumers and $0.13/kWh for commercial users." (pp. 43–44)
+- The no-brainer rule: "If your electric cost is equal to or cheaper than your existing heating cost on a $/kWh unit basis, then switching to hashrate heating is a no-brainer." (p. 44)
+- Offset factors: "Electricity Rate", "Miner Hashrate and Efficiency", and "Bitcoin Hashprice ($/TH/s/day): Fluctuates based on the price of bitcoin, the block subsidy, on-chain transaction fees, and network difficulty." (p. 44)
+- "In certain scenarios, mining rewards can fully offset heating bills." (p. 44)
+- Commercial bill mechanics: "Demand Charges" (peak power penalties), "Dynamic Pricing" (TOU — run heaters off-peak), "Load Management" (steady loads may qualify for lower rates). (pp. 44–45)
+- Solar blending: "if your standard electric rate is $0.10/kWh, but you generate part of your electricity from solar, your blended cost could drop to $0.07/kWh." (p. 45)
+- Bill reduction vs. payback: "The percentage of your bill reduction – whether it's 30%, 70%, or even 100% – is determined by factors like bitcoin's hashprice, electricity cost, and the efficiency of your miner... How quickly the system pays itself off, however, depends on how often it's running." (p. 47)
+- Symbiotic candidates: "the most suitable candidates for integrated bitcoin-powered heating systems are commercial operations and businesses that require heat for purposes beyond just keeping spaces warm in winter months." (pp. 47–48)
+- Climate: "the climate is the most important external factor for feasibility in most bitcoin heating systems." — cold/high-altitude climates push duty cycles toward year-round operation. (p. 50)
+- Design condition sizing: "A heating system should be designed to best match mining power with the peak heat demand on the coldest and most stressed day of the year – known as a design condition." (pp. 50–51)
+- Sizing example: "If, for example, your peak heat demand is 7 kW on a very cold day in January, then a bitcoin-powered system should be sized to provide close to that amount, avoiding oversizing." (p. 51)
+- Undersizing heuristic: "Two 3kW miners totalling 6kW are better than three that total 9kW of heating power." — "it might even be more cost-effective to size the hashrate heating system to cover 80% of your heating needs during the season, then rely on a traditional backup system." (p. 51)
+- Miner run-profile mismatch: "Unlike traditional heating systems that can operate intermittently with high peak outputs on an extremely cold day, bitcoin miners like to run at a consistent rate, providing a steady stream of heat and sats." (p. 50)
+- Outlet-temperature envelope: "Most current miners can produce fluid outlet temperatures from 40°C - 70°C from the manufacturers, without overclocking" — sufficient for comfort heating and domestic water. (p. 53)
+- High-grade barrier: "if the use case requires high-grade heat – for example, to heat fluids above 100°C (212°F) or run industrial processes like steam turbines – bitcoin miners are not yet suitable." — "There's a temperature output barrier between combustion fuel heat sources and electric heat." (p. 53)
+- Overclock/underclock footnote: overclocking pushes hardware "beyond its factory-set performance limits to increase hashrate"; underclocking lowers "power consumption, and therefore hashrate to improve efficiency or reduce heating power." (p. 53)
+- Section flow: THE HEAT AUDIT → Existing Heat Sources (Natural Gas / Propane / Resistive Electric / Heat Pumps / Heating Oil / Wood / Takeaway) → Electric Pricing Variables (Utility Rate / Demand Charges, Dynamic Pricing and Load Management / Solar and Self-Generation / Utility Relationships / Takeaway) → Duty Cycle Investigation (Symbiotic Relationships / Climate / Matching Hashrate and Heat Demand) → Target Application (Temperature Requirements / Specific Use Cases) → BRINGING IT ALL TOGETHER (pp. 38–54)

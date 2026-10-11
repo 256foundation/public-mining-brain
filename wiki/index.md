@@ -16,7 +16,7 @@ ASIC manufacturers and models, components, cooling, repair, DIY builds.
 
 | Article | Summary | Updated |
 |---------|---------|---------|
-| [ASIC Thermals and Heat Reuse](hardware/asic-thermals-and-heat-reuse.md) | What mining silicon and hashboards tolerate: chip limits, secondary-component blockers, cooling, TIMs, immersion. | 2026-10-09 |
+| [ASIC Thermals and Heat Reuse](hardware/asic-thermals-and-heat-reuse.md) | What mining silicon and hashboards tolerate: chip limits, secondary-component blockers, cooling, TIMs, immersion. | 2026-10-11 |
 | [Ember One & the BZM2 Hardware Stack](hardware/ember-one-bzm2.md) | The 256F open hardware program: emberOne series, Intel BZM2 donation, BitaxeBIRDS, aditBoard, Libre Board. | 2026-10-10 |
 | [Bitmain ASIC reference](hardware/bitmain-asic-reference.md) | Antminer lineage, silicon frontier, current-gen lineup (S23 confirmation), desoldering economy, open questions. | 2026-10-10 |
 | [Antminer S23 XP Hyd.](hardware/antminer-s23-xp-hyd.md) | 600 TH/s, 8.9 J/T wall @35℃, $15,300, shipping Nov 2026 — the live efficiency flagship; price Disputed. | 2026-10-10 |
@@ -172,17 +172,17 @@ How the brain works, data dictionary.
 | Article | Summary | Updated |
 |---------|---------|---------|
 | [Data Resources](meta/data-resources.md) | Pointer table for live endpoints: pool Prometheus API, stratum.work, mempool.space, ASIC Miner Value, Hashrate Index, CBECI, elektronics.dev (link-only), dash.256f.org. | 2026-10-10 |
-| [Air-Cooled Hashrate Heating](hardware/air-cooled-hashrate-heating.md) | Air-cooled ASIC space heating: HVAC return/furnace ducting, inline fans, CFM/static pressure, shrouds, quiet mods, VOCs, field data. | 2026-10-10 |
-| [Heater Electrical & 120V Builds](hardware/heater-electrical-and-120v-builds.md) | Electrical rules for hashrate heaters: 80% rule, circuits/receptacles, contactors, 120V S19 builds (Loki/APW12), 208V, solar. | 2026-10-09 |
-| [Hydronic Heat Reuse](hardware/hydronic-heat-reuse.md) | Water-side heat reuse: loop isolation, plate HX sizing, radiant floors, DHW, pools, dry coolers, glycol/corrosion, buffer tanks. | 2026-10-09 |
-| [Immersion Heat Reuse](hardware/immersion-heat-reuse.md) | Immersion for heat: canola vs mineral vs engineered fluids, tanks, cable wicking, fan sims, Vnish limits, DIY hot-water builds. | 2026-10-09 |
+| [Air-Cooled Hashrate Heating](hardware/air-cooled-hashrate-heating.md) | Air-cooled ASIC space heating: HVAC return/furnace ducting, inline fans, CFM/static pressure, shrouds, quiet mods, VOCs, field data. | 2026-10-11 |
+| [Heater Electrical & 120V Builds](hardware/heater-electrical-and-120v-builds.md) | Electrical rules for hashrate heaters: 80% rule, circuits/receptacles, contactors, 120V S19 builds (Loki/APW12), 208V, solar. | 2026-10-11 |
+| [Hydronic Heat Reuse](hardware/hydronic-heat-reuse.md) | Water-side heat reuse: loop isolation, plate HX sizing, radiant floors, DHW, pools, dry coolers, glycol/corrosion, buffer tanks. | 2026-10-11 |
+| [Immersion Heat Reuse](hardware/immersion-heat-reuse.md) | Immersion for heat: canola vs mineral vs engineered fluids, tanks, cable wicking, fan sims, Vnish limits, DIY hot-water builds. | 2026-10-11 |
 | [Whatsminer M64-Family Hydro Heaters](hardware/whatsminer-m64-hydro-heaters.md) | M64/M64S/M74 hydro as heating cores: specs, coolant and fittings, power-control limits, HS05/RY3T/Aqueon, dated prices and MOQ. | 2026-10-09 |
 | [Heater Firmware & Power Control](firmware/heater-firmware-and-power-control.md) | Braiins DPS vs LuxOS ATM vs Vnish vs Whatsminer modes for heaters: retune latency, temp offsets, sleep draw, drain:// fallback. | 2026-10-10 |
 | [Home Assistant Heater Control](mining-software/home-assistant-heater-control.md) | Firmware → pyasic → hass-miner → Home Assistant stack: thermostats/deadband, sensors/plugs, miner APIs, outage fallbacks. | 2026-10-09 |
 | [Pool Choice for Heat Miners](pools/pool-choice-for-heat-miners.md) | FPPS vs PPLNS vs OCEAN TIDES for on/off heaters (disputed; S9 side-by-side data), payout lag, DATUM setup, failover, solo. | 2026-10-10 |
-| [Hashrate Heating Economics](economics/hashrate-heating-economics.md) | When hash heating pays vs gas, propane, oil, resistive and heat pumps: break-even/payback math, sizing, dated prices, tax. | 2026-10-10 |
+| [Hashrate Heating Economics](economics/hashrate-heating-economics.md) | When hash heating pays vs gas, propane, oil, resistive and heat pumps: break-even/payback math, sizing, dated prices, tax. | 2026-10-11 |
 | [Hashrate Heatpunks Community Timeline](history/heatpunks-community-timeline.md) | Dated Heatpunks milestones 2024-08 → 2026-10: heatpunks.org, Manifesto, Undermine/2026 summits, forum launch + backfilled threads (builds, TIDES-vs-FPPS experiment, The Space demo), Telehash, HA office hours. | 2026-10-10 |
-| [Hashrate Heating Products & Installs](industry/hashrate-heating-products-and-installs.md) | Heating vendors (Heat Core, RY3T, Superheat, Softwarm, Ecobit…), commercial installs, UL/permits/insurance, barriers, scams. | 2026-10-10 |
+| [Hashrate Heating Products & Installs](industry/hashrate-heating-products-and-installs.md) | Heating vendors (Heat Core, RY3T, Superheat, Softwarm, Ecobit…), commercial installs, UL/permits/insurance, barriers, scams. | 2026-10-11 |
 | [Bitaxe Troubleshooting](getting-started/bitaxe-troubleshooting.md) | Symptom → cause → fix for Bitaxe: power faults, 0 GH/s, overheat, Wi-Fi/router, failed OTA, dead-subscription "hashing for nothing", rejects, duplicate shares, Flatline of Death, 2.14.0-era error-rate/upgrade reports (OSMU forum). | 2026-10-10 |
 | [Bitaxe Models & Open-Source Miner Family](hardware/bitaxe-models.md) | Bitaxe lineage BM1387 → Max → Ultra → Hex → Supra → Gamma → GT/Naja: specs, board numbers, BM1370 primer, ESP32 module, derivatives, clones, legitlist; field reports from the OSMU forum. | 2026-10-10 |
 | [Bitaxe Board Design, Power & Errata](hardware/bitaxe-board-design-and-errata.md) | Bitaxe power design (TPS40305 → TPS546, series domains, PMBus faults, 5V window), EMC2101 thermals, per-board errata, DFM, reflow, BAP. | 2026-10-10 |

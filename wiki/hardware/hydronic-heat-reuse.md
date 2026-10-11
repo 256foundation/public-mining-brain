@@ -1,9 +1,9 @@
 # Hydronic Heat Reuse
 
-> Sources: Hashrate Heatpunks Telegram group, 2024-08-02 → 2026-10-08
-> Raw: [Hashrate Heatpunks Telegram signal digest](../../raw/economics/2026-10-09-heatpunks-telegram-signal.md)
-> Updated: 2026-10-09
-> As-Of: 2026-10-09
+> Sources: Hashrate Heatpunks Telegram group, 2024-08-02 → 2026-10-08; Braiins — Bitcoin Mining Heat Reuse (Tyler Stevens, 2025)
+> Raw: [Hashrate Heatpunks Telegram signal digest](../../raw/economics/2026-10-09-heatpunks-telegram-signal.md); [Heat Reuse book ch. 6: picking hardware](../../raw/books/braiins-heat-reuse/06-picking-hardware.md)
+> Updated: 2026-10-11
+> As-Of: 2026-10-11
 > Status: Draft
 
 ## Overview
@@ -92,6 +92,8 @@ Wrapping PEX around a duct won't conduct heat well. Put a water-to-air heat exch
 - **Budget builds.** Vevor heat exchangers cost about $40, versus about $200 for an Amazon equivalent [#8222 · 2025-12-09 · Elijah Sanders] [#8223 · 2025-12-09 · Travis Bitkle]. Karl upgraded his water heater to a bigger, cheaper, lower-quality HX to speed up heat recovery [#4406 · 2025-03-04 · Karl].
 - **Tank-in-tank.** In a double-wall tank, the whole outside of the inner tank sits in a boiler water jacket; one such product has a built-in aquastat at 200° boiler temp [#5747 · 2025-04-24 · Travis Bitkle] [#5758 · 2025-04-24 · Dane O].
 - **Aquariums.** Aluminum in tank water built up deposits, so the choices are stainless or titanium HXs [#8395 · 2025-12-22 · Jonathan Y] [#8397 · 2025-12-22 · Jonathan Y] [#8405 · 2025-12-22 · Jonathan Y]. Aluminum inside an aquarium corroded seriously [#4638 · 2025-03-20 · Jonathan Y].
+
+The book's hardware chapter (Braiins Heat Reuse, 2025) codifies the loop-isolation rule this article's builders converged on: with immersion or hydro miners, "it's better to isolate the miner cooling loop from the heating liquid loop used for heat reuse. Using this dual-loop system also improves reliability and makes maintenance easier", with "a liquid-to-liquid heat exchanger" as the part that "transfers heat from one liquid to another without mixing them" — and notes the whole discipline predates us: "This type of system is well-established in an industry called hydronics" ([Heat Reuse book ch. 6](../../raw/books/braiins-heat-reuse/06-picking-hardware.md), pp. 102–103). The same chapter supplies the closed-loop safety logic behind expansion tanks: "in a closed-loop (air-tight) system like a hydronic loop, this expansion has no place to go... the rising pressure from the heated fluid could cause the system to explode" — while, for immersion cooling, "this isn't typically needed for the cooling oil side of an immersion system, since the immersion tanks are open to the air" (p. 103). On sizing it matches the group's low-delta-T field experience above: "Heat exchanger size is determined by the flow rates and the temperature difference between the two loops. A larger temperature difference allows for more efficient heat transfer." (pp. 117–118); and it gives the unit bridge for sizing work: "1 kW of power consumption equals roughly 3,412 BTU/hr of heat output." (p. 116)
 
 ## Dry coolers, radiators and heat dumps
 

@@ -1,8 +1,8 @@
 # ASIC Thermals and Heat Reuse
 
-> Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07; bitaxeorg/ESP-Miner and bitaxeorg hardware GitHub issues, 2023-01 → 2026-10; OSMU wiki (captured 2026-10-07)
-> Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md); [ESP-Miner #1927 EMC2101 fan scaling](../../raw/firmware/esp-miner/2026-08-29-github-esp-miner-issue-1927-emc2101-fan-duty-cycle-is-scaled.md); [ESP-Miner #2000 overheat on sensor faults](../../raw/firmware/esp-miner/2026-09-25-github-esp-miner-issue-2000-overheat-protection-acts-on-sens.md); [OSMU wiki: tips & FAQ](../../raw/hardware/bitaxe-osmu/osmu-wiki-tips-faq.md)
-> Updated: 2026-10-09
+> Sources: 256 Foundation Telegram group (t.me/the256foundation), 2024-02-24 → 2026-10-07; bitaxeorg/ESP-Miner and bitaxeorg hardware GitHub issues, 2023-01 → 2026-10; OSMU wiki (captured 2026-10-07); Braiins — Bitcoin Mining Heat Reuse (Tyler Stevens, 2025)
+> Raw: [256F Telegram signal digest](../../raw/history/2026-10-08-256f-telegram-signal.md); [ESP-Miner #1927 EMC2101 fan scaling](../../raw/firmware/esp-miner/2026-08-29-github-esp-miner-issue-1927-emc2101-fan-duty-cycle-is-scaled.md); [ESP-Miner #2000 overheat on sensor faults](../../raw/firmware/esp-miner/2026-09-25-github-esp-miner-issue-2000-overheat-protection-acts-on-sens.md); [OSMU wiki: tips & FAQ](../../raw/hardware/bitaxe-osmu/osmu-wiki-tips-faq.md); [Heat Reuse book ch. 10: innovation ahead](../../raw/books/braiins-heat-reuse/10-innovation-ahead.md); [Heat Reuse book appendix A: thermodynamics](../../raw/books/braiins-heat-reuse/11-appendix-a-thermodynamics.md)
+> Updated: 2026-10-11
 > Status: Draft
 
 ## Overview
@@ -73,6 +73,8 @@ Bitaxes are single-digit-to-tens-of-watts boards, which makes them a clean lab f
 ### Heat-reuse thresholds
 
 - Most absorption chillers need input heat somewhat above 80C; ~100C input enables efficient absorption chilling, opening a miner-driven heater/chiller/load-balancer appliance for buildings [#546 · 2024-03-22 · Tyler Stevens] [#590 · 2024-03-24 · Tyler Stevens]
+
+The published book record — by this community's own author — states the same envelope from the manufacturer side ([Heat Reuse book ch. 10](../../raw/books/braiins-heat-reuse/10-innovation-ahead.md), p. 155): "Most bitcoin miners cap their device operating temperature around 80°C (176°F), a limit set by hardware manufacturers for internal electronics, not the outlet temperature of air, immersion fluid, or water used for cooling. Outlet fluid temperatures for heating from typical machines usually range between 40-70°C (104-158°F)", while "many ASIC chips are rated to operate at or above 100°C (212°F), the boiling point of water. However, the hashboards, control boards, and other sensitive electronic components have lower temperature limits, which ultimately cap the device's peak output temperature." — the print twin of the group's finding that secondary components, not silicon, set the practical ceiling. The book's appendix classifies the exhaust formally as "ultra low-grade heat, with temperatures below 100°C (212°F) – the boiling point of water" ([Heat Reuse book appendix A](../../raw/books/braiins-heat-reuse/11-appendix-a-thermodynamics.md), p. 178), and argues heat miners can spend efficiency on temperature instead: "Because the heat is valuable in addition to the bitcoin mined, marginal improvements in hashing efficiency are less important." (p. 156)
 
 ## Related hardware facts
 
